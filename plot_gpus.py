@@ -201,6 +201,7 @@ if __name__ == '__main__':
 
     # SEABORN
     # Select subset to plot
+    #NOTE: Choose subset of algorithm you wish to plot
     #subset = ["GreedyILS"]
     subset = ["DualAnnealing"]
     frames = []

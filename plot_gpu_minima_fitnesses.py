@@ -1,24 +1,11 @@
 import numpy as np
-import csv
-import sys
-from timeit import default_timer as timer
-import random
 import json
-from bitarray import bitarray
-import statistics
-import itertools
-import math
 import os
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 
 from bloopy.individual import individual, continuous_individual
-#import fitness_functions as ff
-#import dynamic_programming as dp
-#import mutation_functions as mut
-#import reproductive_functions as rep
-#import selection_functions as sel
 
 import bloopy.utils as utils
 import bloopy.analysis.analysis_utils as anutil

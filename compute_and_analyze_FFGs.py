@@ -177,7 +177,7 @@ if __name__ == '__main__':
             writer.writerows(centralities)
 
         #NOTE: Uncomment continue if you only want to compute pagerank centralities
-        #continue
+        continue
 
         ## Plot the graph with NetworkX
         color_map = []

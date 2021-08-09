@@ -57,29 +57,62 @@ python tune_hyperparameters.py
 
 In ```tune_hyperparameters.py```, set the bool related to the algorithm you wish to use to True, and choose other parameters (such as if you want to save the results to csv, how many runs to do etc.). Also choose which GPU cache files you wish to load, by default it runs over the P100 cache files as in the paper. You can add or remove parameter values to add to the tuning run by adding the values to the ```hyperpars``` dictionary.
 
-
-## Generating the violin plots
-
-```
-./violins.py [algorithm]
-```
-
-When all data for the experiments of the specified algorithm is present violins.py will generate three different violin plots, one for each of the strategies.
-The plots will be stored as PDF and PNG using the filename format [algorithm]-[strategy].[pdf/png]. Also, a matplotlib pop-up will be shown
-for each generated plot.
-
-## Generating the scatter plots
+After creating all the tuning files in ```tune_hyperpars_data/```, we can select the best hyperparameters by running ```choose_hyperparameters.py```
 
 ```
-./scatter.py [algorithm]
+python choose_hyperparameters.py
 ```
 
-scatter.py will generate the scatter plots that plot the performance of the best performing kernel configuration against the performance of the tuner using a 
-particular strategy. The plots will be stored as PDF and PNG using the filename format [algorithm]-summary.[pdf/png]. Also, a matplotlib pop-up will be shown 
-with the plot. Information used for the tables that show averages and standard deviations are also printed to standard output, in a format ready to be 
-copy/pasted into a LaTeX tabular environment.
+Select different algorithms, stdev limits, and kernels to obtain optimal settings for every function evaluation bin.
+
+# Generating the figures
+## Creating and plotting FFGs (Figures 2 and 3)
+
+To create new FFGs, run:
+```
+python compute_and_analyze_FFGs.py
+```
+
+Select the GPU and kernel you wish to analyze. By default, the script creates the FFG and computes the PageRank centralities (and saves them). By uncommenting line 180, the script will also draw the graph using networkX and save it as PDF. **NOTE:** Plotting FFGs for the GEMM kernels (and also most convolution kernels) is very expensive and may take a lot of RAM and time to plot.
+
+## Plot pagerank centralities(Figure 4)
+
+To plot FFGs proportion of PageRank centralities run:
+```
+python plot_centralities.py
+```
+
+In the script select the kernel to plot.
+
+## Plot Algorithm competition heatmaps (Figure 5)
+
+To perform the statistical competition between algorithms, and plot them, run:
+```
+python plot_algorithm_competition.py
+```
+
+In the script select the kernel to perform competitions on. When choosing point-in-polygon, uncomment/comment lines 122-123. To choose mid to high-range competition, uncomment/comment lines 128-129.
+
+## Plot DSA/GreedyILS per GPU (Figures 6 and 7)
+
+To plot fraction of optimal runtime for DSA and GreedyILS per GPU, run
+```
+python plot_gpus.py
+```
+
+To select DSA or GreedyILS (or another algorithm) uncomment/comment lines 205-206.
+
+## Plot GPU box-stripplot (Figure 8)
+
+To create the box-stripplot of Figure 8 run:
+```
+python plot_gpu_minima_fitnesses.py
+```
+
+In the script, change line 58 to select another kernel than convolution.
 
 # Contributing new GPU data
 **New cache files for GPUs** are always welcome! Please contact us if you generated new data and wish to share it to this GPU tuning benchmarking database. Please use the provided scripts, or new scripts with similar lay-out.
 
+Send an email to ```richard.schoonhoven@cwi.nl```.
 
