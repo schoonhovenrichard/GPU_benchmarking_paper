@@ -1,0 +1,13 @@
+pnpoly_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.8776731876706173,0.12172746840900474,0.08,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,25
+Simulated annealing,0.9443845462906737,0.0728937844856628,0.15,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,50
+Simulated annealing,0.9814770721858824,0.041423455632232306,0.47,74.47,1.992181688197108,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,75
+Simulated annealing,0.9911793112418424,0.020106023437569558,0.68,94.24,10.60028587378947,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,100
+Simulated annealing,0.9988937319736483,0.006636844487534449,0.96,111.1,26.546509595748585,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,150
+Simulated annealing,0.999805506632053,0.0019449336794700512,0.99,118.83,38.326100766970804,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,200
+Simulated annealing,1.0,0.0,1.0,123.11,42.627087466288216,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,400
+Simulated annealing,1.0,0.0,1.0,112.27,43.987568262136996,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,600
+Simulated annealing,1.0,0.0,1.0,122.01,41.176019057875735,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,800
+Simulated annealing,1.0,0.0,1.0,191.53,67.24919060006326,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,1000
+Simulated annealing,1.0,0.0,1.0,206.64,81.31104016383786,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,2000

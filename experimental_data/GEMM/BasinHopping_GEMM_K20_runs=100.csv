@@ -1,0 +1,13 @@
+GEMM_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.7909472107430748,0.1945012901285456,0.0,25,0.0,method=COBYLA; iterations=1000000; temperature=0.5,25
+Basin hopping,0.8392177029189486,0.1388752307864013,0.0,50,0.0,method=COBYLA; iterations=1000000; temperature=0.5,50
+Basin hopping,0.8498999056094532,0.11472308229076814,0.0,75,0.0,method=COBYLA; iterations=1000000; temperature=1.0,75
+Basin hopping,0.8837695237131814,0.04803382899810165,0.0,100,0.0,method=COBYLA; iterations=1000000; temperature=1.0,100
+Basin hopping,0.8847110536585666,0.09828993660702302,0.01,148.83,11.015191530084461,method=COBYLA; iterations=1000000; temperature=0.1,150
+Basin hopping,0.9081921791024656,0.037895277770159226,0.02,196.64,22.026393717583915,method=COBYLA; iterations=1000000; temperature=0.25,200
+Basin hopping,0.9115385529437511,0.10240875996810442,0.0,370.93,65.79985800236436,method=COBYLA; iterations=1000000; temperature=0.25,400
+Basin hopping,0.926315359346237,0.03380204778434597,0.0,600,0.0,method=SLSQP; iterations=1000000; temperature=2.0,600
+Basin hopping,0.9387905080738534,0.03228272850507287,0.03,794.79,36.10850511187276,method=SLSQP; iterations=1000000; temperature=0.005,800
+Basin hopping,0.9434058268465707,0.029469380696751698,0.0,1000,0.0,method=SLSQP; iterations=1000000; temperature=1.0,1000
+Basin hopping,0.9709527570040082,0.02567700501646904,0.1,1901.78,328.521160857734,method=SLSQP; iterations=1000000; temperature=0.1,2000

@@ -1,0 +1,13 @@
+pnpoly_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Genetic algorithm,0.9033920656481241,0.06648085947327238,0.0,28.11,1.4417651919389887,pop_size=10; reproductor=<function onepoint_crossover at 0x7f110204b700>; selector=<function tournament8_selection at 0x7f11020533a0>; mutation=0.02,25
+Genetic algorithm,0.9442118226168422,0.047182421303600286,0.06,51.87,5.55715027616846,pop_size=14; reproductor=<function onepoint_crossover at 0x7f110204b700>; selector=<function tournament8_selection at 0x7f11020533a0>; mutation=0.02,50
+Genetic algorithm,0.9720667103370323,0.025494569386883062,0.14,71.1,10.290232693622087,pop_size=16; reproductor=<function onepoint_crossover at 0x7f110204b700>; selector=<function tournament8_selection at 0x7f11020533a0>; mutation=0.02,75
+Genetic algorithm,0.9802802226109087,0.020594247410868138,0.17,94.95,13.353299444729235,pop_size=20; reproductor=<function onepoint_crossover at 0x7f110204b700>; selector=<function tournament8_selection at 0x7f11020533a0>; mutation=0.02,100
+Genetic algorithm,0.9944845633273718,0.009911672334746928,0.41,132.78,25.256094374037783,pop_size=12; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function select_best_half at 0x7f11020531f0>; mutation=0.02,150
+Genetic algorithm,0.9927947754437576,0.014047130632166038,0.44,158.33,30.76238520391979,pop_size=32; reproductor=<function uniform_crossover at 0x7f110204b670>; selector=<function tournament8_selection at 0x7f11020533a0>; mutation=0.02,200
+Genetic algorithm,0.9972265950731679,0.006638710764806105,0.57,335.36,91.12711955939308,pop_size=24; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function select_best_half at 0x7f11020531f0>; mutation=0.05,400
+Genetic algorithm,0.9988330070842693,0.004069678170850388,0.76,464.95,135.82537623096366,pop_size=40; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function select_best_half at 0x7f11020531f0>; mutation=0.05,600
+Genetic algorithm,0.9998959980362951,0.0007244818829519796,0.94,515.94,184.21346971446584,pop_size=50; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function select_best_half at 0x7f11020531f0>; mutation=0.05,800
+Genetic algorithm,0.9999464911800722,0.0005148261771126828,0.91,816.44,155.95190400773043,pop_size=160; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function tournament4_selection at 0x7f1102053310>; mutation=0.05,1000
+Genetic algorithm,1.0,0.0,1.0,1151.23,376.44009959867265,pop_size=160; reproductor=<function twopoint_crossover at 0x7f110204b790>; selector=<function select_best_half at 0x7f11020531f0>; mutation=0.05,2000

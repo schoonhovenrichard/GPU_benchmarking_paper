@@ -1,0 +1,13 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.7795085481730222,0.0945169480710212,0.0,26.46,1.6722331285929113,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=103",25
+Differential evolution,0.7938352984894684,0.14838249458696895,0.02,44.95,10.122856426040144,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",50
+Differential evolution,0.8405574414327927,0.032349947073544945,0.0,78.09,2.449881464871146,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=105",75
+Differential evolution,0.8566181359150131,0.03825622010442421,0.02,100.94,11.28852103114961,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=107",100
+Differential evolution,0.8740142547470013,0.025652089362439262,0.01,144.92,19.367618502661767,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",150
+Differential evolution,0.8738910117379316,0.014921976929711759,0.0,194.72,26.352727802378688,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=108",200
+Differential evolution,0.8872948983106381,0.026338745151788627,0.04,333.25,54.76420990819357,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=108",400
+Differential evolution,0.8879681335518698,0.028051559027330215,0.05,421.03,103.0666602963658,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=108",600
+Differential evolution,0.8955200964465674,0.034628631649936986,0.09,683.72,124.86397285515032,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",800
+Differential evolution,0.9005203911245513,0.03940634063414236,0.12,798.03,175.04472473218283,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",1000
+Differential evolution,0.93037732490373,0.05467685003930276,0.35,1759.09,380.78552766722646,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=109",2000

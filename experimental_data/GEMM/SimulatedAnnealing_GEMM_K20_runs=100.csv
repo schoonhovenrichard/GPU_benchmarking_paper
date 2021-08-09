@@ -1,0 +1,13 @@
+GEMM_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.5767373349440046,0.34661917862054464,0.01,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,25
+Simulated annealing,0.7885726570300091,0.20642477617625116,0.01,49.86,1.4,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,50
+Simulated annealing,0.8710035270703991,0.1777928631394512,0.04,74.32,4.101933517971566,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,75
+Simulated annealing,0.9220527830939608,0.059862699388614944,0.14,96.62,11.060695724003526,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,100
+Simulated annealing,0.9297291478415225,0.06284040093143566,0.1,144.6,19.118450552153842,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,150
+Simulated annealing,0.9452031752226415,0.04287103721488818,0.16,190.03,30.608130893076055,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,200
+Simulated annealing,0.9823236234050259,0.026103973623267284,0.31,346.71,102.10098932038818,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,400
+Simulated annealing,0.9883663761861762,0.021321258359222623,0.51,455.3,182.26373941920184,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,600
+Simulated annealing,0.9934417051883224,0.015365980337463944,0.57,546.37,281.53007823231775,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,800
+Simulated annealing,0.995115512922926,0.014191994037431679,0.61,702.55,317.35492589512296,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,1000
+Simulated annealing,0.9994772507241867,0.002033482827979974,0.74,1145.55,676.8506747123665,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,2000

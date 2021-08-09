@@ -1,0 +1,13 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.4998899735392533,0.33313046733690865,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,25
+Simulated annealing,0.7717374093299284,0.211883283644277,0.05,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,50
+Simulated annealing,0.832617819269135,0.22839128797716082,0.19,73.21,4.991497821801639,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,75
+Simulated annealing,0.8921791443382068,0.12754156885959697,0.2,95.65,11.188355237893232,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,100
+Simulated annealing,0.952559997150906,0.05892886776063281,0.41,131.19,29.791767217461167,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,150
+Simulated annealing,0.9667463095243668,0.04451039122754912,0.49,158.63,54.891013229246674,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,200
+Simulated annealing,0.9915187141045604,0.01952136141089732,0.76,244.74,125.24889321876363,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,400
+Simulated annealing,0.9967466936246219,0.013142890252140984,0.92,283.49,172.0630900852852,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,600
+Simulated annealing,0.9992997497661623,0.004048101022845797,0.97,268.03,199.57917620773358,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,800
+Simulated annealing,0.9981822367375729,0.00626263174747683,0.92,450.58,276.8946917205715,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,1000
+Simulated annealing,0.9995827372052483,0.0029355542133838986,0.98,551.54,447.499617290057,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,2000

@@ -1,0 +1,13 @@
+pnpoly_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.9950904532301529,0.004477417527373762,0.0,26.47,1.789164920042619,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=104",25
+Differential evolution,0.9952919054746736,0.005407627713135727,0.02,42.81,10.136138965667012,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",50
+Differential evolution,0.9984728319594228,0.0013389719995758492,0.07,75.76,7.056940132975767,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=106",75
+Differential evolution,0.9985739195777691,0.0019266116542370482,0.05,100.47,6.44393850330242,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=109",100
+Differential evolution,0.999350349813833,0.0006083895417676634,0.29,130.95,31.244353025140335,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",150
+Differential evolution,0.999352102673314,0.000640054938491068,0.32,167.28,42.53414077318515,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=110",200
+Differential evolution,0.9994563691564948,0.0005898450952968653,0.44,297.88,59.7451287055305,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=110",400
+Differential evolution,0.9997895777452886,0.0003873441107874645,0.76,285.11,87.64804445604989,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=110",600
+Differential evolution,0.9999440635719027,0.0002225181469916991,0.94,416.43,132.00652379042606,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",800
+Differential evolution,0.9999347408338864,0.00023906520838504091,0.93,502.34,157.50184991698583,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",1000
+Differential evolution,1.0,0.0,1.0,924.8,292.01739950927856,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=111",2000

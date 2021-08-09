@@ -1,0 +1,13 @@
+pnpoly_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.9799395912412655,0.011682033615553991,0.0,26.45,1.4864709750264078,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=104",25
+Differential evolution,0.9854359660687387,0.010869297271711943,0.0,47,8.268230546110598,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",50
+Differential evolution,0.9913916214643019,0.006466817114595259,0.01,77.55,1.914194716882641,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=106",75
+Differential evolution,0.9934829724901652,0.005313624270720585,0.01,101.55,7.663866418776393,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=109",100
+Differential evolution,0.9962696770939424,0.003460808938641807,0.02,151.54,13.922164582659791,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",150
+Differential evolution,0.9971938113759794,0.002757370952032064,0.01,204.68,7.259796585624591,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=110",200
+Differential evolution,0.9983034346440791,0.0011462824309961532,0.04,382.54,66.13277431337535,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=110",400
+Differential evolution,0.99884824405565,0.0014340078258689788,0.2,492.73,124.94231840850773,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=110",600
+Differential evolution,0.9991182853745457,0.0005383622961170727,0.21,729.81,165.27923693439587,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",800
+Differential evolution,0.9992321594430464,0.0005404140222756853,0.28,866.39,218.09922192905825,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",1000
+Differential evolution,0.9994761962181421,0.0004931425292538548,0.45,1663.55,547.2581865328948,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=111",2000

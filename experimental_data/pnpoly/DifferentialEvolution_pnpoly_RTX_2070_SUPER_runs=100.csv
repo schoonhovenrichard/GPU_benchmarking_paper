@@ -1,0 +1,13 @@
+pnpoly_RTX_2070_SUPER_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.9615330725373769,0.03315663614632408,0.01,25.85,2.61840802894824,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=104",25
+Differential evolution,0.9743148918469012,0.02580573119794097,0.02,44.17,9.826839149836925,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",50
+Differential evolution,0.9841761038034542,0.008356069668856771,0.05,75.9,8.08852535535634,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=106",75
+Differential evolution,0.9859893095449747,0.008497447351935791,0.04,100.42,5.4627850224972425,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=109",100
+Differential evolution,0.991176447285689,0.006083513977433555,0.09,139.69,25.258939811560587,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",150
+Differential evolution,0.99347927322489,0.005689813625144302,0.21,184.06,32.138846503032035,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=110",200
+Differential evolution,0.9956556615756076,0.004057110455143643,0.35,291.19,67.42278711401822,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=110",400
+Differential evolution,0.9945235984325046,0.004814859553358594,0.35,327.58,92.15228722285758,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=110",600
+Differential evolution,0.9964723527337007,0.004354387364760024,0.57,456.86,146.01985612867307,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",800
+Differential evolution,0.9975800837755359,0.004099201678540685,0.72,522.98,166.04009373423256,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",1000
+Differential evolution,0.9999972073549039,2.792645096028057e-05,0.99,1014.37,396.36030071110554,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=111",2000

@@ -1,0 +1,13 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.5741309764826678,0.24994948434702816,0.0,25,0.0,method=COBYLA; iterations=1000000; temperature=0.5,25
+Basin hopping,0.7515510076283731,0.2209709632868667,0.05,49.3,3.4713837371435976,method=COBYLA; iterations=1000000; temperature=0.5,50
+Basin hopping,0.7962729489107084,0.21359367844025012,0.08,73.28,7.325174524759244,method=COBYLA; iterations=1000000; temperature=1.0,75
+Basin hopping,0.8619381675162244,0.18645699726233123,0.26,91.91,17.675580941405055,method=COBYLA; iterations=1000000; temperature=1.0,100
+Basin hopping,0.9096001127185118,0.11543220154913,0.41,124.55,36.84841320268154,method=COBYLA; iterations=1000000; temperature=0.1,150
+Basin hopping,0.9019869346678304,0.17582328634350675,0.43,136.53,53.27410631855221,method=COBYLA; iterations=1000000; temperature=0.25,200
+Basin hopping,0.96378236844948,0.07852684557513313,0.53,155.03,80.88531037427893,method=COBYLA; iterations=1000000; temperature=0.25,400
+Basin hopping,0.9997049828525213,0.0009330651428405731,0.88,270.03,182.32524246632457,method=SLSQP; iterations=1000000; temperature=2.0,600
+Basin hopping,0.9679426109511687,0.06457183954519541,0.75,344.36,299.6573302216309,method=SLSQP; iterations=1000000; temperature=0.005,800
+Basin hopping,1.0,0.0,1.0,250.71,202.70291217952592,method=SLSQP; iterations=1000000; temperature=1.0,1000
+Basin hopping,0.996460012499125,0.017429693581236597,0.96,321.59,418.1861046003419,method=SLSQP; iterations=1000000; temperature=0.1,2000

@@ -1,0 +1,13 @@
+pnpoly_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.9779352051536843,0.015292560620899925,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,25
+Simulated annealing,0.9851804386970608,0.0111971455727731,0.02,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,50
+Simulated annealing,0.9893564863749045,0.009179966958643225,0.05,75,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,75
+Simulated annealing,0.9929810449428365,0.006518713824307012,0.09,98.5,7.28149723753309,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,100
+Simulated annealing,0.9934211474093506,0.005970796224924962,0.08,145.54,17.84241909584906,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,150
+Simulated annealing,0.995911389204179,0.004916215345020266,0.1,195.07,19.888708029198554,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,200
+Simulated annealing,0.9984925925231987,0.002329638908125666,0.3,346.73,105.49612037483375,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,400
+Simulated annealing,0.9992634551012854,0.000685689234383877,0.43,480.29,172.67879301047813,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,600
+Simulated annealing,0.9994912269748143,0.0005961576609305721,0.56,575.22,266.27792043106183,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,800
+Simulated annealing,0.9992132378505741,0.0009482904808553272,0.4,801.09,293.1696201205305,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,1000
+Simulated annealing,0.9997837977672664,0.0004613867814784253,0.8,1087.9,695.9465540259583,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,2000

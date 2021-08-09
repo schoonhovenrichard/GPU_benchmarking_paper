@@ -1,0 +1,13 @@
+GEMM_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.6192650842931473,0.34012964834544784,0.01,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,25
+Simulated annealing,0.8005185805655184,0.2811741916942926,0.03,49.99,0.1,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,50
+Simulated annealing,0.9018266529837577,0.1456904098531149,0.04,74.11,5.204689028058053,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,75
+Simulated annealing,0.9303112909202913,0.05781210942423732,0.06,99.12,5.998787756326652,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,100
+Simulated annealing,0.95893120831962,0.046015101988037974,0.1,145.77,16.696854479061304,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=32; nbour_method=Hamming,150
+Simulated annealing,0.9694536845649813,0.02368329942559388,0.14,190.15,32.959839351868965,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,200
+Simulated annealing,0.9843616467822908,0.016364070125900052,0.32,339.28,108.75401583204162,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,400
+Simulated annealing,0.9887368659703878,0.010144772063188312,0.32,510.88,165.70243989108485,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=16; nbour_method=Hamming,600
+Simulated annealing,0.9918260441681895,0.008759976498233488,0.46,619.05,254.40972977867926,hillclimb=<function RandomGreedyHillclimb at 0x7ffadf629a60>; explore=22; nbour_method=Hamming,800
+Simulated annealing,0.993823885619859,0.008106725029121652,0.58,737.61,300.1436321146759,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,1000
+Simulated annealing,0.9982347609402338,0.004495645748787663,0.86,916.95,673.0831724762603,hillclimb=<function BestHillclimb at 0x7ffadf629ca0>; explore=16; nbour_method=Hamming,2000

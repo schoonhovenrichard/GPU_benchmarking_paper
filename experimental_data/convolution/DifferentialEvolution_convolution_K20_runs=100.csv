@@ -1,0 +1,13 @@
+convolution_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.653965597611416,0.1558854275775862,0.01,26.6,2.681775380586374,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=103",25
+Differential evolution,0.7287396165238439,0.17208402801885836,0.01,43.86,9.87499648382497,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",50
+Differential evolution,0.8036980424205954,0.1167446291588882,0.0,78.11,2.6662689097294554,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=105",75
+Differential evolution,0.8463236829601057,0.09622348828586147,0.0,102.63,1.9881212897170693,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=107",100
+Differential evolution,0.9187674685079804,0.05581337436528049,0.02,147.95,16.56659350023475,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",150
+Differential evolution,0.9215373305345621,0.06362519607452476,0.0,200.24,17.71726316735782,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=108",200
+Differential evolution,0.9472098487239511,0.03352433400881755,0.01,325.55,47.25951884236784,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=108",400
+Differential evolution,0.9538980854186944,0.042365912364234384,0.05,424.35,90.02304699297281,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=108",600
+Differential evolution,0.9684204941013157,0.024298070927846003,0.03,699.16,108.935410387824,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",800
+Differential evolution,0.9739457562839073,0.015454567428967983,0.04,857.5,145.32315088043674,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",1000
+Differential evolution,0.9772609133905525,0.010894512893206174,0.09,1859.73,235.84894390994066,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=109",2000

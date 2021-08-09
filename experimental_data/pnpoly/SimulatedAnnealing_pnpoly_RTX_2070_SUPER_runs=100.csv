@@ -1,0 +1,13 @@
+pnpoly_RTX_2070_SUPER_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.948891897195917,0.06082063302274528,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,25
+Simulated annealing,0.9606252788670251,0.058731195515332166,0.01,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,50
+Simulated annealing,0.983700284277442,0.02327903763704877,0.05,74.68,2.5893332085010736,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,75
+Simulated annealing,0.9871680192333324,0.009071819707982594,0.09,98.94,6.114761077123376,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,100
+Simulated annealing,0.9907400814164835,0.005762965230740021,0.12,147.74,11.28028583347286,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=51; nbour_method=Hamming,150
+Simulated annealing,0.9927174793246238,0.0059206448743428005,0.19,192.6,26.52309837622195,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,200
+Simulated annealing,0.9962924417825749,0.004495002144209562,0.47,321.08,110.00263357728939,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,400
+Simulated annealing,0.9983360625937654,0.0031316015939306034,0.59,444.48,168.02257424091994,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=25; nbour_method=Hamming,600
+Simulated annealing,0.998813108571128,0.002558288397681921,0.68,525.19,255.67224501045644,hillclimb=<function RandomGreedyHillclimb at 0x7f871a895a60>; explore=35; nbour_method=Hamming,800
+Simulated annealing,0.9983234939813826,0.0033560302929697195,0.71,634.23,321.2262444150697,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,1000
+Simulated annealing,0.9998528351538238,0.0009055089553607181,0.92,879.15,594.6258372822664,hillclimb=<function BestHillclimb at 0x7f871a895ca0>; explore=25; nbour_method=Hamming,2000

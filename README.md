@@ -1,6 +1,6 @@
 # Data and Plotting scripts for GPU Benchmarking 2021 paper
 
-This repository contains the data and Python scripts for plotting the figures and generating the tables that are used in the paper about benchmarking GPU tuning optimization algorithms that is currently under submission.
+This repository contains the cached GPU tuning data, the experimental optimization algorithm data, Python scripts for re-running the experiments/tuning the GPUs, and Python scripts for plotting the figures that are used in the paper about benchmarking GPU tuning optimization algorithms that is currently under submission.
 
 The data for all experiments is stored as JSON files where the filenames indicate the GPU model and kernel that was run. The original scripts used to generate the data can be found in ```generate_cache_scipts```. In these scripts the exact search space for the parameters can be easily found.
 

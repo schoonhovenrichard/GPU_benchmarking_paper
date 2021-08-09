@@ -1,0 +1,13 @@
+convolution_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.6785401531371964,0.16306867934618377,0.0,26.02,2.7265251500654446,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=103",25
+Differential evolution,0.741211976042919,0.1380782928125442,0.0,43.82,10.012497241452854,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",50
+Differential evolution,0.7993191864512829,0.07538243072764524,0.0,78.18,2.2758281875822566,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=105",75
+Differential evolution,0.8243097162746672,0.0621823732443742,0.0,102.83,2.2520697550960054,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=107",100
+Differential evolution,0.8571150172974334,0.04338642118904537,0.0,148.44,15.565644635841233,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=107",150
+Differential evolution,0.8761428152268601,0.04917015002599123,0.05,194.95,25.461547557845027,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=108",200
+Differential evolution,0.8935573144730099,0.03615369462754538,0.06,329,50.60183252161382,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=108",400
+Differential evolution,0.9113290232929007,0.03611661852779197,0.11,427.52,86.97189607609292,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=108",600
+Differential evolution,0.9163771246138501,0.03358175079236772,0.12,686.37,127.07038175433297,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",800
+Differential evolution,0.9272867510418357,0.040969912988215874,0.23,791.62,193.7289984707629,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=109",1000
+Differential evolution,0.9471336389018462,0.04376150556126047,0.39,1687.79,426.00633786246647,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=109",2000

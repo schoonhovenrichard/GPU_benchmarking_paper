@@ -1,0 +1,13 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.6544665662633593,0.19695304138612751,0.11,24.95,0.5,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=22; nbour_method=Hamming,25
+Simulated annealing,0.776635033561805,0.1700989746619092,0.22,47.05,7.777687589664697,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=22; nbour_method=Hamming,50
+Simulated annealing,0.7948281773470184,0.1593066046844558,0.19,70.6,12.307507768624298,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=11; nbour_method=Hamming,75
+Simulated annealing,0.8701585499125793,0.1486140894062867,0.34,88.17,22.16059611567388,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=11; nbour_method=Hamming,100
+Simulated annealing,0.9243389271883168,0.11547889710784567,0.47,122.29,42.227927711265664,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=22; nbour_method=Hamming,150
+Simulated annealing,0.935134310516063,0.11149209738752729,0.55,155.89,57.93306744019604,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=15; nbour_method=Hamming,200
+Simulated annealing,0.9974116572245024,0.0138330797221565,0.95,193.89,114.85642288869995,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=11; nbour_method=Hamming,400
+Simulated annealing,1.0,0.0,1.0,193.26,112.31886607675345,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=11; nbour_method=Hamming,600
+Simulated annealing,1.0,0.0,1.0,200.54,118.25596446400974,hillclimb=<function RandomGreedyHillclimb at 0x7f3fbbdf4a60>; explore=15; nbour_method=Hamming,800
+Simulated annealing,1.0,0.0,1.0,230.11,144.59695953605217,hillclimb=<function BestHillclimb at 0x7f3fbbdf4ca0>; explore=11; nbour_method=Hamming,1000
+Simulated annealing,1.0,0.0,1.0,209.81,134.183553990853,hillclimb=<function BestHillclimb at 0x7f3fbbdf4ca0>; explore=11; nbour_method=Hamming,2000

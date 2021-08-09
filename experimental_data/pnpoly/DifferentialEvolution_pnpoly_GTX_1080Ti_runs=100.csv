@@ -1,0 +1,13 @@
+pnpoly_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.8749857677669444,0.07962684771026486,0.01,26.35,1.5200677815828019,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=104",25
+Differential evolution,0.8942112326500045,0.07449844612053158,0.02,43.32,9.574671975286853,"pop_size=1; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",50
+Differential evolution,0.9561240788214181,0.03799412515693075,0.04,76.91,2.6971552540865096,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=106",75
+Differential evolution,0.9672674222837341,0.03247063493194968,0.11,98.43,12.448889447852306,"pop_size=2; method=best2exp; mutation=(0.2, 0.7); recombination=0.7; iterations=109",100
+Differential evolution,0.9658833598736043,0.04284429999530812,0.23,134.85,26.75001180024284,"pop_size=3; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=109",150
+Differential evolution,0.9799152860962504,0.029587389525080027,0.35,179.48,37.10440633802096,"pop_size=4; method=best2exp; mutation=(0.2, 0.7); recombination=0.9; iterations=110",200
+Differential evolution,0.9915520144674148,0.014142399989676098,0.66,282.12,71.06779804659716,"pop_size=8; method=randtobest1bin; mutation=(0.2, 0.7); recombination=0.9; iterations=110",400
+Differential evolution,0.9974022045274793,0.009339267788149178,0.89,293.56,76.78151082155394,"pop_size=12; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=110",600
+Differential evolution,0.9994354287767216,0.003226460706807343,0.97,387.53,94.54318183942844,"pop_size=16; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",800
+Differential evolution,1.0,0.0,1.0,438.28,130.67247049571895,"pop_size=20; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=111",1000
+Differential evolution,1.0,0.0,1.0,890.47,318.9361246647385,"pop_size=40; method=best1bin; mutation=(0.5, 1.0); recombination=0.9; iterations=111",2000

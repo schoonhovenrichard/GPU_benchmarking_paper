@@ -1,0 +1,13 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.5027870902128563,0.3670215343519118,0.01,25,0.0,walksize=0.5; no_improve=100; iterations=100000,25
+RandomGreedyILS,0.7017600038867162,0.3257139296499249,0.08,49.77,1.6566669715260984,walksize=0.5; no_improve=100; iterations=100000,50
+RandomGreedyILS,0.891842983013624,0.1252846144624168,0.17,73.49,4.67638598263508,walksize=0.02; no_improve=100; iterations=100000,75
+RandomGreedyILS,0.9189798101844835,0.09330362789661681,0.23,95.62,10.783245515074942,walksize=0.02; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9471805282198756,0.05954080670595244,0.34,134.91,29.404904078034058,walksize=0.5; no_improve=10; iterations=100000,150
+RandomGreedyILS,0.9630544427338514,0.0557688475951381,0.42,169.16,49.59690443256443,walksize=0.02; no_improve=50; iterations=100000,200
+RandomGreedyILS,0.9980499137402625,0.009143137313981208,0.94,198.56,101.33356459303755,walksize=0.1; no_improve=5; iterations=100000,400
+RandomGreedyILS,1.0,0.0,1.0,186.76,101.69215974466937,walksize=0.05; no_improve=5; iterations=100000,600
+RandomGreedyILS,1.0,0.0,1.0,205.94,114.54413996359656,walksize=0.05; no_improve=5; iterations=100000,800
+RandomGreedyILS,1.0,0.0,1.0,177.66,93.34417902352432,walksize=0.05; no_improve=5; iterations=100000,1000
+RandomGreedyILS,1.0,0.0,1.0,199.76,120.556296418149,walksize=0.05; no_improve=5; iterations=100000,2000
