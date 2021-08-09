@@ -39,22 +39,23 @@ pip install bloopy
 
 For anyone interested in repeating the experiments described in the paper the following describes how to run the experiments.
 
-The main file for running experiments is experiment.py. It can be used as follows:
+The main file for running experiments is ```run_experiment.py```. It can be used as follows:
 
 ```
-./experiment.py [algorithm] [strategy]
+python run_experiment.py
 ```
 
-Where algorithm is any of 'convolution', 'gemm', 'gemm_amd', or 'pnpoly', and strategy is any of 'brute_force', 'minimize', 'basinhopping', 'diff_evo'.
+In ```run_experiment.py```, set the bool related to the algorithm you wish to use to True, and choose other parameters (such as if you want to save the results to csv, how many runs to do etc.). Also choose which GPU cache files you wish to load, by default it runs over all convolution files.
 
-The command will start to benchmark the algorithm on the current device using the specified strategy. All supported methods for that strategy will be 
-benchmarked, and every run will be performed 7 times, except for when 'brute_force' is used. Note that all kernel execution times are also measured as the
-average of 7 kernel executions by default.
+## Re-tuning hyperparameters
 
-experiment.py will store the tuning results using the JSON format in the algorithm's subdirectory. Also note that experiment.py will continue where it left off 
-if for some reason the previous run did not run to completion, for example when the compute node reservation time ended.
+For anyone interested in re-tuning the hyperparamers, one can run the tuning script as follows:
 
-If you wish to add a kernel to this experiment, please extend the algorithm dictionary inside experiment.py with another entry.
+```
+python tune_hyperparameters.py
+```
+
+In ```tune_hyperparameters.py```, set the bool related to the algorithm you wish to use to True, and choose other parameters (such as if you want to save the results to csv, how many runs to do etc.). Also choose which GPU cache files you wish to load, by default it runs over the P100 cache files as in the paper. You can add or remove parameter values to add to the tuning run by adding the values to the ```hyperpars``` dictionary.
 
 
 ## Generating the violin plots
