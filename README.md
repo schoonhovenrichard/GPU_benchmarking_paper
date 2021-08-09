@@ -1,24 +1,39 @@
 # Data and Plotting scripts for GPU Benchmarking 2021 paper
 
-This repository contains the data and Python scripts for plotting the figures and generating the tables that are used in the paper about Kernel Tuner 
-that is currently under submission.
+This repository contains the data and Python scripts for plotting the figures and generating the tables that are used in the paper about benchmarking GPU tuning optimization algorithms that is currently under submission.
 
-The data for all experiments is stored as JSON files and sorted into subdirectories named after the kernel with which they were obtained.
+The data for all experiments is stored as JSON files where the filenames indicate the GPU model and kernel that was run. The original scripts used to generate the data can be found in ```generate_cache_scipts```. In these scripts the exact search space for the parameters can be easily found.
+
+The raw files are stored in ```cache_files```, but the processed cache files used for experiments are stored in ```processed_cache_files```. The Python script to process cache files is ```process_cache_files.py```.
+
+### Generating new cache files for GPUs
+
+If users want to generate new cache scripts for different GPUs, please install the latest version of [Kernel Tuner](https://github.com/benvanwerkhoven/kernel_tuner). Running the scripts will generate new cache files for the GPU model that is being used with the same parameter search space. If users want to change the parameter search space, simply edit the correct ```kernel.py``` file and change the values for the ```tune_params``` dictionary.
 
 ## Installation
 
-Please first ensure that the latest version of [Kernel Tuner](https://github.com/benvanwerkhoven/kernel_tuner) is installed along with all the dependencies 
-required for compiling and benchmarking OpenCL and CUDA kernels. The scripts in this repository can just be executed directly without prior installation. The 
-dependencies of the scripts themselves can be installed with the following command:
+The survey and benchmarking makes use of the [BlooPy](https://github.com/schoonhovenrichard/BlooPy) Python package. Please ensure the latest version is installed.
 
 ```
-pip install -r requirements.txt
-
+pip install bloopy
 ```
 
-More information about how to install Kernel Tuner and its dependencies can be found in the [installation 
-guide](http://benvanwerkhoven.github.io/kernel_tuner/install.html).
+To re-create the plots requires the seaborn package.
 
+```
+pip install seaborn
+```
+
+### Conda installation
+
+To install and run in a (virtual) conda environment, please run:
+```
+conda create -n gpubenchmarking
+conda activate gpubenchmarking
+conda install pip #Make sure the correct pip is used, i.e., the conda version
+conda install seaborn
+pip install bloopy
+```
 
 ## Running the experiments
 
@@ -62,3 +77,8 @@ scatter.py will generate the scatter plots that plot the performance of the best
 particular strategy. The plots will be stored as PDF and PNG using the filename format [algorithm]-summary.[pdf/png]. Also, a matplotlib pop-up will be shown 
 with the plot. Information used for the tables that show averages and standard deviations are also printed to standard output, in a format ready to be 
 copy/pasted into a LaTeX tabular environment.
+
+# Contributing new GPU data
+**New cache files for GPUs** are always welcome! Please contact us if you generated new data and wish to share it to this GPU tuning benchmarking database. Please use the provided scripts, or new scripts with similar lay-out.
+
+
