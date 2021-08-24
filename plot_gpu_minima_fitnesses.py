@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
     gpu_order = ["V100", "A100", "P100", "GTX_1080Ti", "GTX_Titan_X", "MI50", "RTX_2070_SUPER", "K20", "TITAN_RTX"]
 
-    g = sns.boxplot(x="GPU", y="Fitness_minima", data=fitdf, palette=palette, order=gpu_order)
+    g = sns.boxplot(x="GPU", y="Fitness_minima", data=fitdf, palette=palette, order=gpu_order, whis=[0, 100])
     g = sns.stripplot(x="GPU", y="Fitness_minima", data=fitdf, palette=palette, order=gpu_order)
     g.set_title("Fraction of global optimal fitness for minima (convolution)", fontdict={'fontsize': 22})
 
