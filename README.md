@@ -66,25 +66,7 @@ python choose_hyperparameters.py
 Select different algorithms, stdev limits, and kernels to obtain optimal settings for every function evaluation bin.
 
 # Generating the figures
-## Creating and plotting FFGs (Figures 2 and 3)
-
-To create new FFGs, run:
-```
-python compute_and_analyze_FFGs.py
-```
-
-Select the GPU and kernel you wish to analyze. By default, the script creates the FFG and computes the PageRank centralities (and saves them). By uncommenting line 180, the script will also draw the graph using networkX and save it as PDF. **NOTE:** Plotting FFGs for the GEMM kernels (and also most convolution kernels) is very expensive and may take a lot of RAM and time to plot.
-
-## Plot pagerank centralities(Figure 4)
-
-To plot FFGs proportion of PageRank centralities run:
-```
-python plot_centralities.py
-```
-
-In the script select the kernel to plot.
-
-## Plot Algorithm competition heatmaps (Figure 5)
+## Plot Algorithm competition heatmaps (Figure 1)
 
 To perform the statistical competition between algorithms, and plot them, run:
 ```
@@ -93,7 +75,16 @@ python plot_algorithm_competition.py
 
 In the script select the kernel to perform competitions on. When choosing point-in-polygon, uncomment/comment lines 122-123. To choose mid to high-range competition, uncomment/comment lines 128-129.
 
-## Plot DSA/GreedyILS per GPU (Figures 6 and 7)
+## Plot GPU box-stripplot (Figure 2)
+
+To create the box-stripplot of Figure 2 run:
+```
+python plot_gpu_minima_fitnesses.py
+```
+
+In the script, change line 58 to select another kernel than convolution.
+
+## Plot DSA/GreedyILS per GPU (Figures 3 and 4)
 
 To plot fraction of optimal runtime for DSA and GreedyILS per GPU, run
 ```
@@ -102,14 +93,23 @@ python plot_gpus.py
 
 To select DSA or GreedyILS (or another algorithm) uncomment/comment lines 205-206.
 
-## Plot GPU box-stripplot (Figure 8)
+## Creating and plotting FFGs (Figures 5 and 6)
 
-To create the box-stripplot of Figure 8 run:
+To create new FFGs, run:
 ```
-python plot_gpu_minima_fitnesses.py
+python compute_and_analyze_FFGs.py
 ```
 
-In the script, change line 58 to select another kernel than convolution.
+Select the GPU and kernel you wish to analyze. By default, the script creates the FFG and computes the PageRank centralities (and saves them). By uncommenting line 180, the script will also draw the graph using networkX and save it as PDF. **NOTE:** Plotting FFGs for the GEMM kernels (and also most convolution kernels) is very expensive and may take a lot of RAM and time to plot.
+
+## Plot pagerank centralities(Figure 7)
+
+To plot FFGs proportion of PageRank centralities run:
+```
+python plot_centralities.py
+```
+
+In the script select the kernel to plot.
 
 # Contributing new GPU data
 **New cache files for GPUs** are always welcome! Please contact us if you generated new data and wish to share it to this GPU tuning benchmarking database. Please use the provided scripts, or new scripts with similar lay-out.
