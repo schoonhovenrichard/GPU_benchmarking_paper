@@ -56,7 +56,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #NOTE: Choose the GPU-kernel combination you wish to analyze
-    for filename in convolution_files[4:5]:
+    for filename in pnpoly_files[4:5]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -176,8 +176,8 @@ if __name__ == '__main__':
             writer = csv.writer(f)
             writer.writerows(centralities)
 
-        #NOTE: Uncomment continue if you only want to compute pagerank centralities
-        continue
+        #NOTE: (Un)comment continue if you only want to compute pagerank centralities
+        #continue
 
         ## Plot the graph with NetworkX
         color_map = []
@@ -190,24 +190,52 @@ if __name__ == '__main__':
                 fit = spacedict[pt][1]
                 color_map.append(fit)
                 if fit > cmax:#70 for convolution
-                    siz = 3 + 30*(glob_fit/float(cmax) - 1/float(threshold))
+                    siz = 5 + 15*(glob_fit/float(cmax) - 1/float(threshold))
                 else:
-                    siz = 3 + 30*(glob_fit/float(fit) - 1/float(threshold))
+                    siz = 5 + 40*(glob_fit/float(fit) - 1/float(threshold))
                 size_map.append(siz)
             else:
                 fit = spacedict[pt][1]
                 color_map.append(fit)
-                size_map.append(0.28)
+                size_map.append(0.7)
+
+        # Define colormap with transparency
+        from matplotlib.colors import ListedColormap
+        cmap = plt.get_cmap('viridis_r')
+
+        # Get the colormap colors
+        my_cmap = cmap(np.arange(cmap.N))
+
+        # Set alpha
+        my_cmap[:,-1] = np.linspace(1, 0.5, cmap.N)
+
+        # Create new colormap
+        my_cmap = ListedColormap(my_cmap)
+
+        cf = plt.gcf()
+        cf.set_facecolor("w")
+        if cf._axstack() is None:
+            ax = cf.add_axes((0, 0, 1, 1))
+        else:
+            ax = cf.gca()
 
         if nx.is_directed(G):
             arz = 2
             arst = '-|>'
-            wdth = 0.07
+            wdth = 0.001
+            alp = 0.1
             #pos = nx.drawing.nx_agraph.graphviz_layout(G, prog='dot')
             #nx.draw(G, pos=pos, node_color=color_map, arrowsize=arz, node_size=size_map, with_labels=False, arrows=True,arrowstyle=arst, font_size=1, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
 
-            nx.draw_kamada_kawai(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
-
+            #nx.draw_kamada_kawai(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
+            pos = nx.kamada_kawai_layout(G)
+            #nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, linewidths=0.0)
+            nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=my_cmap, vmin=glob_fit, vmax=cmax, linewidths=0.0)
+            nx.drawing.nx_pylab.draw_networkx_edges(G, pos, ax=ax, arrows=True, arrowstyle=arst, arrowsize=arz, width=wdth, node_size=size_map, alpha=alp)
+            
+            plt.draw_if_interactive() 
+            ax.set_axis_off()
+            plt.draw_if_interactive()
 
             #nx.draw(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
             #nx.draw_circular(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
