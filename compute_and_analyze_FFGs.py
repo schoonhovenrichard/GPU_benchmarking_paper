@@ -56,7 +56,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #NOTE: Choose the GPU-kernel combination you wish to analyze
-    for filename in pnpoly_files[4:5]:
+    for filename in pnpoly_files[3:4]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -182,17 +182,15 @@ if __name__ == '__main__':
         ## Plot the graph with NetworkX
         color_map = []
         size_map = []
-        threshold = 1.25
-        cmax = threshold
+        threshold = 0.75
         for node in G:
             pt = idxs_to_pts[node][0]
             if spacedict[pt][0] == 1:
                 fit = spacedict[pt][1]
                 color_map.append(glob_fit/fit)
-                if fit > cmax:
-                    siz = 5 + 15*(glob_fit/float(cmax) - 1/float(threshold))
-                else:
-                    siz = 5 + 40*(glob_fit/float(fit) - 1/float(threshold))
+                siz = 5
+                if glob_fit/fit > threshold:
+                    siz += 4*8*(glob_fit/fit - threshold)
                 size_map.append(siz)
             else:
                 fit = spacedict[pt][1]
