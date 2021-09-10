@@ -56,7 +56,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #NOTE: Choose the GPU-kernel combination you wish to analyze
-    for filename in pnpoly_files[3:5]:
+    for filename in convolution_files[4:5]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -183,35 +183,37 @@ if __name__ == '__main__':
         color_map = []
         size_map = []
         threshold = 1.25
-        cmax = threshold * glob_fit
+        cmax = threshold
         for node in G:
             pt = idxs_to_pts[node][0]
             if spacedict[pt][0] == 1:
                 fit = spacedict[pt][1]
-                color_map.append(fit)
-                if fit > cmax:#70 for convolution
+                color_map.append(glob_fit/fit)
+                if fit > cmax:
                     siz = 5 + 15*(glob_fit/float(cmax) - 1/float(threshold))
                 else:
                     siz = 5 + 40*(glob_fit/float(fit) - 1/float(threshold))
                 size_map.append(siz)
             else:
                 fit = spacedict[pt][1]
-                color_map.append(fit)
+                color_map.append(glob_fit/fit)
                 size_map.append(0.7)
 
         # Define colormap with transparency
         from matplotlib.colors import ListedColormap
-        cmap = plt.get_cmap('viridis_r')
+        #cmap = plt.get_cmap('viridis')
+        cmap = plt.get_cmap('winter')
 
         # Get the colormap colors
         my_cmap = cmap(np.arange(cmap.N))
 
         # Set alpha
-        my_cmap[:,-1] = np.linspace(1, 0.5, cmap.N)
+        my_cmap[:,-1] = np.linspace(0.5, 1.0, cmap.N)
 
         # Create new colormap
         my_cmap = ListedColormap(my_cmap)
 
+        # Some technicalities for plotting
         cf = plt.gcf()
         cf.set_facecolor("w")
         if cf._axstack() is None:
@@ -225,28 +227,20 @@ if __name__ == '__main__':
             wdth = 0.001
             alp = 0.1
             #pos = nx.drawing.nx_agraph.graphviz_layout(G, prog='dot')
-            #nx.draw(G, pos=pos, node_color=color_map, arrowsize=arz, node_size=size_map, with_labels=False, arrows=True,arrowstyle=arst, font_size=1, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
+            #nx.draw(G, pos=pos, node_color=color_map, arrowsize=arz, node_size=size_map, with_labels=False, arrows=True,arrowstyle=arst, font_size=1, cmap=my_cmap, vmin=0.75, vmax=1.0, width=wdth)
 
-            #nx.draw_kamada_kawai(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
+            #nx.draw_kamada_kawai(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=my_cmap, vmin=0.75, vmax=1.0, width=wdth)
             pos = nx.kamada_kawai_layout(G)
-            #nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, linewidths=0.0)
-            nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=my_cmap, vmin=glob_fit, vmax=cmax, linewidths=0.0)
+            pltnodes = nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=my_cmap, vmin=0.75, vmax=1.0, linewidths=0.0)
             nx.drawing.nx_pylab.draw_networkx_edges(G, pos, ax=ax, arrows=True, arrowstyle=arst, arrowsize=arz, width=wdth, node_size=size_map, alpha=alp)
             
             plt.draw_if_interactive() 
             ax.set_axis_off()
             plt.draw_if_interactive()
 
-            #nx.draw(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=False, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
-            #nx.draw_circular(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
-            #nx.draw_shell(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
-            #nx.draw_spring(G, arrows=True, arrowstyle=arst, arrowsize=arz, node_size=size_map, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=wdth)
-        else:
-            nx.draw_kamada_kawai(G, node_size=size_map, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=cmax, width=0.35)
-            #nx.draw(G, node_size=3, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=1.15*glob_fit)
-            #nx.draw_circular(G, node_size=3, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=1.15*glob_fit)
-            #nx.draw_shell(G, node_size=3, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=1.15*glob_fit)
-            #nx.draw_spring(G, node_size=3, node_color=color_map, font_size=1, with_labels=True, cmap=plt.get_cmap('viridis_r'), vmin=glob_fit, vmax=1.15*glob_fit)
+            # Draw colorbar
+            cbar = plt.colorbar(pltnodes, shrink=0.5)
+            cbar.set_label('Fraction of optimal fitness', rotation=270, labelpad=15)
 
         plt.axis('off')
         plt.draw()
