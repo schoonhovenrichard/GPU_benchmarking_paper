@@ -168,11 +168,11 @@ if __name__ == '__main__':
             PSO = False
 
         ILS = True
-        
+
         ### SEED
         #np.random.seed(1234567)
         #random.seed(1234567)
-    
+
         # Random sampling
         if RANDSAM:
             experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
@@ -245,7 +245,7 @@ if __name__ == '__main__':
                                 max_funcevals=maxfeval)
                     results[0].append(best_fit/float(x[0]))
                     results[1].append(x[2])
-                
+
                 settings = "method=" + method + "; iterations=" + str(iterations) + "; temperature=" + str(temperature)
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                 experiment_results.append(["Basin hopping", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
@@ -357,7 +357,7 @@ if __name__ == '__main__':
 
                     nprocs = None
                     iterations = 100
-                    
+
                     x = test_pso.solve(max_iter=iterations,
                                 max_funcevals=maxfeval,
                                 n_procs=nprocs)
@@ -438,7 +438,7 @@ if __name__ == '__main__':
                     results[0].append(best_fit/float(x[0]))
                     results[1].append(x[2])
 
-                settings = "pop_size=" + str(pop_size) + "; method=" + str(methd) + "; mutation=" + str(mutate) + "; recombination=" + str(recomb) + "; iterations=" + str(iterations) 
+                settings = "pop_size=" + str(pop_size) + "; method=" + str(methd) + "; mutation=" + str(mutate) + "; recombination=" + str(recomb) + "; iterations=" + str(iterations)
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                 experiment_results.append(["Differential evolution", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
 
@@ -576,7 +576,7 @@ if __name__ == '__main__':
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                 experiment_results.append(["Genetic local search", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
 
-                print("GLS: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0]))) 
+                print("GLS: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])))
 
             ### Write results to file
             if LOG_RESULTS:
@@ -622,7 +622,7 @@ if __name__ == '__main__':
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                 experiment_results.append(["Genetic algorithm", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
 
-                print("GA: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1]))) 
+                print("GA: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1])))
 
             ### Write results to file
             if LOG_RESULTS:
@@ -758,7 +758,7 @@ if __name__ == '__main__':
                 paramsettings[800] = ["Hamming"]
                 paramsettings[1000] = ["Hamming"]
                 paramsettings[2000] = ["Hamming"]
-            
+
             hprun = 0
             for maxfeval in maxfevals:
                 combi = paramsettings[maxfeval]
@@ -926,8 +926,8 @@ if __name__ == '__main__':
                                 verbose=False)
                     results[0].append(best_fit/float(x[0]))
                     results[1].append(x[2])
-         
-                settings = "walksize=" + str(walksize) + "; no_improve=" + str(noimp) + "; iterations=" + str(iterations) 
+
+                settings = "walksize=" + str(walksize) + "; no_improve=" + str(noimp) + "; iterations=" + str(iterations)
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                 if ILS_TYPE == "RandomGreedy":
                     experiment_results.append(["RandomGreedyILS", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])

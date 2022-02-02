@@ -35,6 +35,14 @@ conda install seaborn
 pip install bloopy
 ```
 
+### SMAC benchmarking
+
+For additional benchmarking with SMAC, please also run:
+```
+conda install gxx_linux-64 gcc_linux-64 swig
+pip install smac
+```
+
 ## Running the experiments
 
 For anyone interested in repeating the experiments described in the paper the following describes how to run the experiments.

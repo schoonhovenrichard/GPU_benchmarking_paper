@@ -6,3 +6,5 @@ report.log
 dist/
 build/
 .hypothesis/
+BayesianOptimization-autotuning/
+scratch_dir/

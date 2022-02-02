@@ -56,7 +56,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #NOTE: Choose the GPU-kernel combination you wish to analyze
-    for filename in pnpoly_files[3:4]:
+    for filename in convolution_files[3:4]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)

@@ -1,7 +1,9 @@
 class GPU_tuning_space:
-    def __init__(self, tune_params, orig_params, fitness_dict):
+    def __init__(self, tune_params, orig_params, fitness_dict, objective='time', multi_objective_weights=None):
         self.tune_params = tune_params
         self.fitness_dict = fitness_dict
+        self.objective_var = objective
+        self.objective_weights = multi_objective_weights
 
         # For GPU tuning, there are missing configurations that
         # need to be scored poorly
@@ -23,7 +25,7 @@ class GPU_tuning_space:
         self.orig_nrparams = len(orig_params.keys())
         self.tunable_nrparams = len(tune_params.keys())
 
-    def get_runtime(self, params):
+    def get_config_as_str(self, params):
         if len(params) == self.tunable_nrparams:
             it = 0
             for var in params:
@@ -38,10 +40,28 @@ class GPU_tuning_space:
         for sett in self.settings:
             str_key += str(sett) + ","
         str_key = str_key[:-1]
+        return str_key
 
+    def get_runtime(self, params):
+        str_key = self.get_config_as_str(params)
         if not str_key in self.fitness_dict.keys():
             return float(self.fail_fit)
-        return float(self.fitness_dict[str_key]['time'])
+
+        if isinstance(self.objective_var, str):
+            return float(self.fitness_dict[str_key][self.objective_var])
+        elif isinstance(self.objective_var, list):
+            fit = float(self.fitness_dict[str_key][self.objective_var[0]])
+            if self.objective_weights is not None:
+                fit *= self.objective_weights[0]
+            for i in range(1, len(self.objective_var)):
+                fitvar = float(self.fitness_dict[str_key][self.objective_var[i]])
+                if self.objective_weights is not None:
+                    fitvar *= self.objective_weights[i]
+                fit += fitvar
+            return fit
+        else:
+            raise Exception("Unknown objective var type")
+
 
 def convert_gpusetting_to_bitidxs(settings, boundary_list, sspace):
     bitidxs = []

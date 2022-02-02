@@ -1,5 +1,6 @@
 import json
 import os
+import copy
 
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -9,6 +10,8 @@ if __name__ == '__main__':
     # We do hyperparameter tuning on GTX 1080Ti files
     data_path = root_dir + 'GPU_benchmarking_paper/cache_files/'
     processed_data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
+
+    FJ_files = ['convolution_A100_FJ.json']
 
     convolution_files = ['MI50_convolution_15x15.json',
     'convolution_GTX_1080Ti.json',
@@ -40,7 +43,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X.json',
     ]
 
-    for filename in convolution_files:
+    for filename in FJ_files:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -63,6 +66,44 @@ if __name__ == '__main__':
             except:
                 continue
 
-        newfilename = filename[:-5] + '_processed' + '.json'
+        # If want to do WHITEBOX
+        restrict_space = True
+        if restrict_space:
+            new_dict = copy.deepcopy(data)
+            # The restrictions are
+            # ['block_size_x*block_size_y>=64', 'tile_size_x*tile_size_y<30']
+            temp = []
+            temp2 = []
+            for k in data['cache'].keys():
+                bs_x = data['cache'][k]['block_size_x']
+                bs_y = data['cache'][k]['block_size_y']
+                ts_x = data['cache'][k]['tile_size_x']
+                ts_y = data['cache'][k]['tile_size_y']
+                #print(bs_x, bs_y, ts_x, ts_y)
+                if bs_x*bs_y not in temp:
+                    temp.append(bs_x*bs_y)
+                if ts_x*ts_y not in temp2:
+                    temp2.append(ts_x*ts_y)
+                if not bs_x*bs_y >= 64:
+                    del new_dict['cache'][k]
+                    raise Exception("PAUSE")
+                if not ts_x*ts_y < 30:
+                    del new_dict['cache'][k]
+                    raise Exception("PAUSE")
+                if not bs_x*bs_y <= 1024:
+                    del new_dict['cache'][k]
+
+            temp.sort()
+            temp2.sort()
+            print(temp)
+            print(temp2)
+            print(len(data['cache'].keys()))
+            print(len(new_dict['cache'].keys()))
+            data = new_dict
+
+        if not restrict_space:
+            newfilename = filename[:-5] + '_processed' + '.json'
+        else:
+            newfilename = filename[:-5] + '_processed_whitebox' + '.json'
         with open(processed_data_path + newfilename, 'w') as outfile:
             json.dump(data, outfile)
