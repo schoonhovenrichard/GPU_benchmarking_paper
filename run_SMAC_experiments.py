@@ -54,20 +54,7 @@ class SMAC_GPU:
         param_vec = [bx, by, tx, ty, pd, ro]
         return param_vec
 
-
     def return_GPU_score(self, cfg):
-        # limits are 11, 5, 7, 7, 1, 1
-        #config_vec = [
-        #    cfg['block_size_x'],
-        #    cfg['block_size_y'],
-        #    cfg['tile_size_x'],
-        #    cfg['tile_size_y'],
-        #    cfg['use_padding'],
-        #    cfg['read_only']
-        #]
-        #self.fevals += 1
-        #self.visited.append(config_vec)
-
         param_vec = self.map_cfg_to_kernelcfg(cfg)
         fitness = self.gpu_space.get_runtime(param_vec)
         return fitness
@@ -77,8 +64,7 @@ if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = "/".join(current_dir.split('/')[:-1]) + "/"
 
-    # Read file
-    # We do hyperparameter tuning on GTX 1080Ti files
+    # Read files
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
 
     convolution_files = ['convolution_A100_processed.json',
@@ -87,7 +73,7 @@ if __name__ == '__main__':
     'convolution_V100_processed.json',
     'MI50_convolution_15x15_processed.json',
     'convolution_GTX_1080Ti_processed.json',
-    'convolution_P100_processed.json',#tuning
+    'convolution_P100_processed.json',
     'convolution_K20_processed.json',
     'convolution_GTX_Titan_X_processed.json']
 
@@ -97,7 +83,7 @@ if __name__ == '__main__':
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
     'GEMM_GTX_1080Ti_processed.json',
-    'GEMM_P100_processed.json',#tuning
+    'GEMM_P100_processed.json',
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 
@@ -106,7 +92,7 @@ if __name__ == '__main__':
     'pnpoly_RTX_2070_SUPER_processed.json',
     'pnpoly_TITAN_RTX_processed.json',
     'pnpoly_GTX_1080Ti_processed.json',
-    'pnpoly_P100_processed.json',#tuning
+    'pnpoly_P100_processed.json',
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
@@ -115,7 +101,6 @@ if __name__ == '__main__':
     tune_files = convolution_files[1:2] + convolution_files[5:6]
 
     for filename in tune_files:
-    #for filename in convolution_files[6:7]:
         ###  SETUP THE GPU CACHE DATA  ###
 
         with open(data_path + filename, 'r') as myfile:
