@@ -1,0 +1,9 @@
+GEMM_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+BestILS,0.4837414905452159,0.36133861435582243,0.0,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+BestILS,0.7617361863908664,0.2742620571923494,0.0,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+BestILS,0.943151420137514,0.05923191371994776,0.02,100,0.0,walksize=1.0; no_improve=25; iterations=100000,100
+BestILS,0.975552060544798,0.0510528993895038,0.04,199.02,4.859201244514769,walksize=1.0; no_improve=25; iterations=100000,200
+BestILS,0.995085589601553,0.0036923651039321016,0.06,390.7,45.24502453196328,walksize=1.0; no_improve=25; iterations=100000,400
+BestILS,0.9989606711762271,0.0021107489598347555,0.38,659.38,237.78002954196887,walksize=0.05; no_improve=25; iterations=100000,800
+BestILS,0.9997340361626719,0.0003030939221932668,0.56,1096.94,563.9944785516386,walksize=0.05; no_improve=25; iterations=100000,1600

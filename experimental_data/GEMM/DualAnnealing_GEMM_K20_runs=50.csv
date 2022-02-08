@@ -1,0 +1,9 @@
+GEMM_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Dual annealing,0.7070820181253861,0.20770942184591706,0.0,25,0.0,iterations=1000000; method=COBYLA,25
+Dual annealing,0.845138109025783,0.0869893471339589,0.0,50,0.0,iterations=1000000; method=Powell,50
+Dual annealing,0.9022282287241257,0.058595946248536354,0.04,97.92,10.985779305027728,iterations=1000000; method=Powell,100
+Dual annealing,0.9321728289341705,0.03561156219216818,0.04,199.26,4.952055850135087,iterations=1000000; method=Powell,200
+Dual annealing,0.957224275632599,0.03321930679998029,0.1,381.22,67.13716997190703,iterations=1000000; method=Powell,400
+Dual annealing,0.9757219432886334,0.029305174706029596,0.22,704.3,194.22848421802775,iterations=1000000; method=Powell,800
+Dual annealing,0.977543871926378,0.025310503808873456,0.24,1321.9,534.2181106962945,iterations=1000000; method=Powell,1600

@@ -1,0 +1,9 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Random sampling,0.6204965555585555,0.1431813269996043,0.02,25,0.0,NA,25
+Random sampling,0.7260102502464183,0.1627901362619324,0.04,50,0.0,NA,50
+Random sampling,0.818639369832538,0.123370380482332,0.02,100,0.0,NA,100
+Random sampling,0.9157322821115509,0.07671447720116586,0.24,200,0.0,NA,200
+Random sampling,0.9526687818778086,0.04897618172073068,0.36,400,0.0,NA,400
+Random sampling,0.9986344482115673,0.006757728794091377,0.96,800,0.0,NA,800
+Random sampling,1.0,0.0,1.0,1600,0.0,NA,1600

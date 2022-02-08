@@ -1,0 +1,9 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.7132561558861306,0.14298224903946835,0.0,25,0.0,"pop_size=1; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=1000000",25
+Differential evolution,0.7919924378625768,0.10154600104583245,0.0,50,0.0,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",50
+Differential evolution,0.8916818712699237,0.07315423960748167,0.0,99.62,1.5893780069510184,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",100
+Differential evolution,0.9453933754505763,0.05588999771906764,0.18,186.66,33.57514265169446,"pop_size=4; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",200
+Differential evolution,0.9590077664874843,0.025079661449695877,0.1,389.72,42.38118566013914,"pop_size=8; method=best2bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",400
+Differential evolution,0.9686695186143923,0.027538941556914713,0.2,752.24,107.41499914265384,"pop_size=16; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",800
+Differential evolution,0.9825867936939454,0.01575372709403448,0.38,1437.6,261.68621184423864,"pop_size=32; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",1600

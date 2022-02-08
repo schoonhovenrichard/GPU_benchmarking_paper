@@ -1,0 +1,9 @@
+GEMM_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.9727670442993028,0.03929469806573665,0.0,25,0.0,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.9398313480789487,0.14408501533836268,0.0,50,0.0,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.9401623619994302,0.1538545801884943,0.0,100,0.0,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9667914191833977,0.14060603255904489,0.06,191.66,31.149154016094357,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9904999891006955,0.006684771493792904,0.06,316.76,75.77963756437316,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9791284866150674,0.020791005537443733,0.0,800,0.0,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.9906432188811872,0.006858985956893274,0.06,1559.34,178.65068069919496,method=SLSQP; iterations=1000000; temperature=1.0,1600

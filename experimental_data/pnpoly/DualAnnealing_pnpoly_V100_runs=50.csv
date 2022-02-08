@@ -1,0 +1,9 @@
+pnpoly_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Dual annealing,0.9800171649504342,0.02404648494464396,0.08,24.84,0.7102744511232031,iterations=1000000; method=COBYLA,25
+Dual annealing,0.9882196019761895,0.0122808711883315,0.0,50,0.0,iterations=1000000; method=Powell,50
+Dual annealing,0.9928057938202723,0.00878514225696088,0.08,97.18,12.802566706942569,iterations=1000000; method=Powell,100
+Dual annealing,0.9976939871851218,0.0030279107390838653,0.18,179.8,46.16209240827591,iterations=1000000; method=Powell,200
+Dual annealing,0.9991637604627619,0.0011926657486464897,0.42,317.98,114.079365498994,iterations=1000000; method=Powell,400
+Dual annealing,0.9997615496833926,0.0004354150104209038,0.76,503.72,256.93531624650956,iterations=1000000; method=Powell,800
+Dual annealing,1.0,0.0,1.0,489.28,247.97622005806468,iterations=1000000; method=Powell,1600

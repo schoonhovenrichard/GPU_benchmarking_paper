@@ -1,0 +1,9 @@
+convolution_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+BestILS,0.4497959372935681,0.304692890088266,0.02,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+BestILS,0.6651492616083173,0.2727967705439946,0.0,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+BestILS,0.8446348408415015,0.13355017431524016,0.04,100,0.0,walksize=1.0; no_improve=25; iterations=100000,100
+BestILS,0.9411040927471963,0.07255934241704849,0.08,193.28,23.783925286647204,walksize=1.0; no_improve=25; iterations=100000,200
+BestILS,0.9825252417677754,0.009474614850981885,0.22,372.86,74.95386608318697,walksize=1.0; no_improve=25; iterations=100000,400
+BestILS,0.9862644413498333,0.010862486341523776,0.38,587.76,298.7124451675209,walksize=0.05; no_improve=25; iterations=100000,800
+BestILS,0.9946830095547742,0.009557713703659897,0.76,859.92,596.1683038627701,walksize=0.05; no_improve=25; iterations=100000,1600

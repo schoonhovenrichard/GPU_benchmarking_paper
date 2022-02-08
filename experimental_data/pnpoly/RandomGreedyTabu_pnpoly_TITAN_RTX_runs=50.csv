@@ -1,0 +1,9 @@
+pnpoly_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyTabu,0.9887490322704447,0.009040854694407512,0.02,24.98,0.1414213562373095,tabu_size=4; iterations=100000,25
+RandomGreedyTabu,0.9952388550259552,0.004556114767750886,0.02,49.54,3.2526911934581184,tabu_size=4; iterations=100000,50
+RandomGreedyTabu,0.9985175848112778,0.0026190088613484144,0.16,94.48,16.346053633454012,tabu_size=2000; iterations=100000,100
+RandomGreedyTabu,0.9993437620581199,0.00046149211838285406,0.32,155.26,67.00679526917325,tabu_size=2000; iterations=100000,200
+RandomGreedyTabu,0.999769935155801,0.0004010941727313272,0.74,277,118.14294351352862,tabu_size=2000; iterations=100000,400
+RandomGreedyTabu,1.0,0.0,1.0,313.3,192.67962729751738,tabu_size=2000; iterations=100000,800
+RandomGreedyTabu,1.0,0.0,1.0,295.48,196.43727149564324,tabu_size=2000; iterations=100000,1600

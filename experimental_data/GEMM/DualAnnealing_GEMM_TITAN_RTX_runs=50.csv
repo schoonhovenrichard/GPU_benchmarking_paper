@@ -1,0 +1,9 @@
+GEMM_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Dual annealing,0.7526104313478406,0.1662410736099011,0.0,25,0.0,iterations=1000000; method=COBYLA,25
+Dual annealing,0.8885904198376752,0.08538419987015462,0.0,50,0.0,iterations=1000000; method=Powell,50
+Dual annealing,0.9315270454522098,0.07154992133921503,0.0,100,0.0,iterations=1000000; method=Powell,100
+Dual annealing,0.9644982199863033,0.02843278357631706,0.06,198.3,7.635176380893039,iterations=1000000; method=Powell,200
+Dual annealing,0.9862721948967403,0.016547836499107394,0.04,394.32,35.45991700900771,iterations=1000000; method=Powell,400
+Dual annealing,0.9902162640000767,0.012035928035103572,0.28,704.72,181.6095879874727,iterations=1000000; method=Powell,800
+Dual annealing,0.9952518132175403,0.005651599038154738,0.32,1228.62,551.6416645998097,iterations=1000000; method=Powell,1600

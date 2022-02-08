@@ -1,0 +1,9 @@
+pnpoly_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+BestILS,0.947212870537296,0.029816642433437606,0.0,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+BestILS,0.9660074460226621,0.025545496271163932,0.0,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+BestILS,0.9776890897466411,0.020929157271451736,0.1,99.18,5.236021234424755,walksize=1.0; no_improve=25; iterations=100000,100
+BestILS,0.9902184870697932,0.00897437826810282,0.28,186.66,31.4094812151376,walksize=1.0; no_improve=25; iterations=100000,200
+BestILS,0.9968990874342971,0.005684848819178991,0.6,314.54,105.45570885737881,walksize=1.0; no_improve=25; iterations=100000,400
+BestILS,0.9996763134386026,0.0005911223286459331,0.76,523.8,242.7475382922323,walksize=0.05; no_improve=25; iterations=100000,800
+BestILS,1.0,0.0,1.0,552.04,313.8491097222826,walksize=0.05; no_improve=25; iterations=100000,1600

@@ -1,0 +1,9 @@
+pnpoly_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+BestTabu,0.5172196376278468,0.17123534506903207,0.0,25,0.0,tabu_size=2000; iterations=100000,25
+BestTabu,0.7247410176159746,0.16429506517117914,0.0,50,0.0,tabu_size=2000; iterations=100000,50
+BestTabu,0.883855435667096,0.116739709064026,0.24,98.56,4.651793597470699,tabu_size=2000; iterations=100000,100
+BestTabu,0.9608836619901411,0.058715273124016795,0.56,178.64,31.392030705845308,tabu_size=2000; iterations=100000,200
+BestTabu,1.0,0.0,1.0,187.64,68.67693074334737,tabu_size=2000; iterations=100000,400
+BestTabu,1.0,0.0,1.0,192.12,71.27544729957927,tabu_size=2000; iterations=100000,800
+BestTabu,1.0,0.0,1.0,214.44,75.57511738229017,tabu_size=2000; iterations=100000,1600

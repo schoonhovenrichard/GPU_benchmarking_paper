@@ -1,0 +1,9 @@
+pnpoly_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.974231134005124,0.027739259422925554,0.0,25,0.0,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.9843783600827085,0.023934101394303336,0.1,48.72,4.526745914167104,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.9917355554642672,0.015225752265117926,0.34,92.14,18.05661165583942,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9988699227381891,0.0031789184058052026,0.62,121.5,53.343036957383056,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9983225436997911,0.004658518680557175,0.66,151.44,82.13109481002843,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9996812961196343,0.0005246654626341222,0.72,512.74,261.7508403978478,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.999956686035513,0.00021736474082170552,0.96,613.2,479.33150728650315,method=SLSQP; iterations=1000000; temperature=1.0,1600

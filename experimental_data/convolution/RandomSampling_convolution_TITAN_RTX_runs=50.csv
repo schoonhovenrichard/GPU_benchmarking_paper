@@ -1,0 +1,9 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Random sampling,0.6354643548378547,0.127313294071276,0.0,25,0.0,NA,25
+Random sampling,0.7207655954017975,0.09285543434415194,0.0,50,0.0,NA,50
+Random sampling,0.7459776669203196,0.09384345693804787,0.0,100,0.0,NA,100
+Random sampling,0.7784327373332158,0.06981892766632901,0.0,200,0.0,NA,200
+Random sampling,0.853392384713971,0.07139733339517572,0.06,400,0.0,NA,400
+Random sampling,0.8873189169978406,0.07190311331027689,0.08,800,0.0,NA,800
+Random sampling,0.9385718591894644,0.05156302179690752,0.12,1600,0.0,NA,1600

@@ -1,0 +1,450 @@
+convolution_RTX_2070_SUPER_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+Simulated annealing,0.11522622253262418,0.16920828035326305,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.18253061361017203,0.3086507132698303,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.5784729377625731,0.2224312226844571,0.0,25,0.0,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.5677350293769251,0.1550036395386734,0.0,25,0.0,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.5644436324582135,0.1970205101159564,0.0,25,0.0,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.6228453747309486,0.10745875063982442,0.0,25,0.0,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.59406234673152,0.10799642958397196,0.0,25,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.5955330502501927,0.13054109361590083,0.0,25,0.0,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.629100965344277,0.13532869615874613,0.0,25,0.0,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.6511311488233418,0.11619536919101232,0.0,25,0.0,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.6092058651035014,0.12623337104404989,0.0,25,0.0,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.6526504407709868,0.12966033980657962,0.0,25,0.0,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.6106396671071604,0.13201704445660992,0.0,25,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.6443986640668102,0.14636694622761545,0.0,25,0.0,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.6007474815638627,0.15243004299150287,0.0,25,0.0,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.6571679315914979,0.1439695962425524,0.0,25,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.44723517144044134,0.20417993014610974,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.42944748198089094,0.3541010162705389,0.0,19.4,7.3870441350131095,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.5111949992626564,0.2689600865794264,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.5887154754846505,0.24556117762219626,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.5494666174142401,0.26093785565346433,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.45399472759890014,0.22148747752876904,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.43200632527120286,0.24929169894459707,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.5839589956992658,0.31825483789329373,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.4704997686683824,0.24484164212764523,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.5086401820424543,0.30313641579108974,0.05,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.5221362584273392,0.20734183941492923,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.4457952047741698,0.27192102668811424,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.4507307668372825,0.23083877064954342,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.49520884407266236,0.2657437009976153,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.4696234838232058,0.25961528187449945,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.6391048797170391,0.15285942944783215,0.0,25,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.40292610386100514,0.30533533573176197,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.31130793816520974,0.37139648647020945,0.0,16.25,7.2828204484396375,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.5726511159381015,0.26148515524468396,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.32706284530345764,0.308026537529327,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.547715750374064,0.3182062126761522,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.34304327846338717,0.3592218059779662,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.5218283448182851,0.26673953811096696,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.523653089671727,0.34544330999099815,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.6215738474709815,0.2124857753020245,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.639845009336251,0.254604759216266,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.4234414949832844,0.3133534245288844,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.5213106815997155,0.28318024568747796,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.5936856944394231,0.2252398868731402,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.5897183942771552,0.23776897420477142,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.5603788136054436,0.2136010861681615,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.5523472555106342,0.25964657122649837,0.0,25,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.3456695323230711,0.2633722214408434,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.2752379613833548,0.3288760273426306,0.0,16.9,7.390605701265557,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.45104884282723456,0.2629627960740952,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.39741278550737796,0.2913516557619272,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.34609146104782396,0.1994551258474202,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.35150963777436167,0.2870347410397574,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.3407849909764313,0.23521449019083218,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.4356367801690192,0.2902498900492469,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.36348054931306273,0.2533900727710858,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.4984942342511481,0.24432367641265737,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.37187411432820033,0.24214574651214094,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.420422924627442,0.277515765217278,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.3547558425187893,0.2527082197829614,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.4899250127423559,0.21957840485903796,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.36791451769497474,0.2608661210725302,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.45012314602994147,0.25438969837841025,0.0,25,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.12823591008660967,0.22633931002825108,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.05014798251059951,0.1479893397801449,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.5986303425355447,0.19849592862078463,0.0,50,0.0,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.6568194024786351,0.1491318210434777,0.0,50,0.0,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.7111037766113948,0.13332938037647885,0.0,50,0.0,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.6941615755699468,0.13919949707376977,0.0,50,0.0,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.7336879922954397,0.12853515487188105,0.0,50,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.7343806599551216,0.12075729357474,0.0,50,0.0,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.6971433760958164,0.10377296295081045,0.0,50,0.0,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.7401551694894665,0.11484147188285061,0.0,50,0.0,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.6965219476682258,0.14205727881977342,0.0,50,0.0,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.7424538226601177,0.1057986864417445,0.0,50,0.0,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.6944038577708953,0.07771680952685744,0.0,50,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.7025860591999873,0.0881004935157032,0.0,50,0.0,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.6966835969179599,0.12171660152409397,0.0,50,0.0,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.7340101910673382,0.1596108281239208,0.0,50,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6539231337399464,0.27935706710926,0.0,48.3,5.232489595634286,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.27812265961989624,0.31790252964592003,0.0,22.45,14.412987564218454,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.6021694546603015,0.29308808632845773,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.5588388694019354,0.2994288329714499,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.6795823491832874,0.1733100087302503,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.5588595416507123,0.21981763603295512,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.5651237130543922,0.3030091662964242,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.7135457426852512,0.19787947158478061,0.05,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.671672774935829,0.20408716390268736,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.6639428748054571,0.20388915291900622,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.6364100648981145,0.22099546502136444,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.6973802620913604,0.15244300526153354,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.6574387674452304,0.22166194575417472,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.6998444555195256,0.15753959242870316,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.6660670959658395,0.1978304663374904,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.6812922132228917,0.15721660265416532,0.0,50,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.5320790572262519,0.3746847337893454,0.0,44.15,8.19033448324111,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.45655236703384156,0.3591697775234102,0.0,21.5,11.731648603131974,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.6500837489663807,0.15739261206834004,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.6417790326585452,0.3279019077083013,0.05,49.85,0.6708203932499369,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.7637900822747647,0.11236141871582236,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.6597730538557646,0.253471974298648,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.648869180243007,0.2839604065731867,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.6981945576990429,0.2141354116433407,0.05,48.85,5.142956348249516,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.6688778559131625,0.33187653493068586,0.05,49.65,1.5652475842498528,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.7005827262342678,0.21821076890056815,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.6947036571011478,0.2092236020326002,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.7633177755767873,0.1633274716750983,0.05,48.8,5.366563145999495,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.7286813322590519,0.13322071201230962,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.785471621656023,0.2021721401828159,0.05,48.9,4.919349550499537,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.7116344977598391,0.2174905534295561,0.1,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.6867640633744173,0.23799364932999334,0.0,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.4944519032209631,0.25148293947056055,0.0,48.3,5.232489595634286,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.4894691608307865,0.34381563270797244,0.0,35.2,17.896191891308227,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.4682566500725954,0.28678074313386864,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.5767677927016854,0.26896162025212805,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.610137986374528,0.2727570686933187,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.6483774108405431,0.2468485315352627,0.1,48.7,4.600915240757167,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.4473048051015953,0.265215641997417,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.6972050556900525,0.2136754277014537,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.46721155438771933,0.1919117869364895,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.6310624305048363,0.2112191014999259,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.5230508023644466,0.1397345454851932,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.669048050890253,0.17834917888326127,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.4754056112409803,0.21360982528676115,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.669201015944997,0.2399153783263795,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.5362787483117261,0.2561027661524848,0.0,50,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.6932541010523977,0.15622941635315857,0.05,49.45,2.4596747752497685,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.12780783979005128,0.21078222908849706,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.21391369256560164,0.2391316258436285,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.7221084939874827,0.08525047299668082,0.0,100,0.0,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.7829699083746239,0.11678798081306117,0.0,100,0.0,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.7549605473769373,0.0808976715005102,0.0,100,0.0,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.7631573601426065,0.11948564117521693,0.05,95.8,18.782971010998235,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.7710409538211643,0.07160288589530672,0.0,100,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.7489704909757758,0.0754528386470676,0.0,100,0.0,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.773307895037757,0.10511766878568246,0.1,96.45,10.937501879699086,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.7760324248432585,0.08557100325697828,0.05,99.85,0.6708203932499369,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.7525021854299243,0.08328721118224923,0.0,100,0.0,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.7227576838567181,0.08188475659673505,0.0,100,0.0,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.7902302255807798,0.07830792785963056,0.0,100,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.7454103223000011,0.09955017680561223,0.0,100,0.0,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.7658616788530959,0.04846788372652883,0.0,100,0.0,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.7320886816138091,0.07100069499186937,0.0,100,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.80135564370379,0.2266899519515143,0.0,94.25,15.552542523567277,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.40422609147055144,0.37647699062584206,0.0,32.8,26.855559063843355,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.7691649344893832,0.21504627265248666,0.05,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.7858921614274621,0.12243389082892583,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8521394617501298,0.12327698971522384,0.3,99.25,3.3541019662496847,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.788867251010724,0.12851577224409527,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.8474570110580928,0.09723443118099667,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.7910159575232971,0.1429916603602241,0.05,97.8,9.838699100999074,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.8434770497063415,0.11175619698503123,0.05,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.7922111773413666,0.11707775490450248,0.05,96.8,14.310835055998654,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8801767562933691,0.11970860408489635,0.1,97.95,9.167878707749137,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8181895204112171,0.12725725378648414,0.1,93.65,19.59934209422132,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.8099765175606618,0.15970918252268984,0.05,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.8109062885615734,0.1095453384049546,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.7737529206686453,0.12019246746775414,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.7521076308672938,0.12634724607199063,0.0,100,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6796152866301578,0.3631946087855432,0.0,76.55,25.242977136955183,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.19288887249313788,0.35205105877379633,0.0,14.25,7.092434813161653,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8819401456810417,0.0809557288935963,0.15,98.75,4.387482193696061,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.6293691804138599,0.37374279270288274,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8375573511690907,0.13360507310985542,0.05,99.2,3.5777087639996634,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.7856785910131212,0.1304308858988544,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.8111209608491786,0.14081856482734353,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.8498690127231486,0.09594499022711542,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.843260057934058,0.07345095594128488,0.05,97.05,13.192801067248759,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.8343800949934448,0.0988409751543999,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8271682983906679,0.21924670476763908,0.1,98.6,5.205260497045778,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8062814226341565,0.11365700062000048,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.901539546199439,0.10051161258888401,0.05,99.95,0.22360679774997896,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.8862991039399083,0.09757888396667505,0.15,94.55,14.865980237476862,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8375742730733673,0.16232386853078268,0.1,99.3,3.1304951684997055,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.80065884711956,0.14269444180679836,0.0,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6855596491447962,0.27394592073979956,0.0,93.3,20.622164876911597,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.36837259713268533,0.3522337993722122,0.0,29.3,18.298978976405962,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.6025978957318152,0.26412862546679916,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.802411518960462,0.11778411015676933,0.05,98.7,5.813776741499453,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.6939741895176267,0.2234202887986855,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.7973137532518381,0.1073498084076676,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.6867602610268329,0.1400316303094866,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.7210749267053718,0.20658569553427225,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.6948067965995687,0.15461634592432988,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.7650596844104542,0.19740493737083423,0.1,96.5,12.576084237028715,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.7127184501212912,0.14177639295490335,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.7870465235033468,0.1174720474480956,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.720573256376128,0.18977533112848932,0.05,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.755876522239052,0.12566072340560863,0.05,98.75,5.5901699437494745,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.7021635084110529,0.19319299538993415,0.0,100,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.7736157916938522,0.15067998354692327,0.1,95.95,14.612449630726749,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.07658687477551308,0.15121220120188555,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.15087659793426672,0.19316298374645471,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8359941933030667,0.08108665444514548,0.0,200,0.0,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.7750251754404154,0.07508152293654294,0.0,200,0.0,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8092801939639797,0.06186964587154322,0.0,200,0.0,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.8085791923782862,0.06483901336150727,0.0,200,0.0,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.797194810249607,0.06801885061469752,0.0,200,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.812132723932528,0.07475907173686692,0.05,199.1,4.024922359499621,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.8138372742031512,0.08533363848598456,0.0,200,0.0,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.8352125565064666,0.0677982049287488,0.05,191.85,36.44790803324657,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8031415863134886,0.07166364344653939,0.0,200,0.0,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8391184706034405,0.08828095560734787,0.0,200,0.0,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.8374343814519041,0.10413047053383816,0.0,200,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.7839637923234923,0.09211816349224902,0.05,192.15,35.1062672467467,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8303180628818331,0.07137761868507116,0.0,200,0.0,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.8055196803849,0.08562912697487304,0.0,200,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7625619813171395,0.33635355499756037,0.0,145.45,56.975040703433415,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.329401981172303,0.39716413535809747,0.0,27.05,20.221080714520625,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8662662051575116,0.09116640853285037,0.0,200,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.8300351347578512,0.10019073774500084,0.05,192.7,32.64659247149693,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8873775535066024,0.07874323619148922,0.05,197.8,9.838699100999074,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.8686076800668332,0.11167202623019229,0.05,196.6,15.20526224699857,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9139581310832021,0.06048151592268409,0.05,195.25,21.242645786248,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.8498062913130202,0.10975192203787676,0.05,195.6,19.677398201998148,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.8994452088865497,0.0723865672399779,0.1,193.9,19.31702276286521,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.879779685584497,0.10133005041725757,0.05,191.7,37.11872842649651,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8833001042532359,0.09471086014878786,0.05,198.2,8.049844718999243,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8533233402432564,0.08712430385478473,0.05,192.35,34.211840055746784,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9204786660417593,0.07911474114851465,0.15,193.55,16.381873808379925,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9177882311245312,0.08645731644059686,0.1,188.3,42.57513482378133,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8861602174095635,0.07896356334564057,0.0,200,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.8383030416524972,0.10693288623848449,0.0,200,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6484091084355128,0.392542569673408,0.0,86.25,43.84167087672592,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.38548975724686313,0.37971270423335535,0.0,23.55,17.418909869811934,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8746868613608036,0.0821945616290259,0.05,198.6,6.260990336999411,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.8690109686771215,0.13224463515347717,0.1,186,43.84782296702276,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.943540272741084,0.058284135038149935,0.15,190,36.538372043359395,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.8791379244517126,0.0912509415095536,0.15,181.55,49.09976417565835,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.910653413296237,0.06851677282362299,0.1,195.6,14.005262168951091,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.8740121114546973,0.07058045790327197,0.05,199.7,1.3416407864998738,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9332892741896847,0.054879123870482896,0.1,197.25,11.836051084004238,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9000576186185762,0.08488982001049356,0.1,189,33.8588400957797,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9119486349635695,0.05447108100565259,0.15,188.5,30.967725134404045,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8741371357284149,0.05408171750143455,0.0,200,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9168340980230855,0.07145828937742907,0.1,194.95,18.96666050010691,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9084159118924072,0.07739017446413837,0.05,198.7,5.813776741499454,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9189750815244949,0.06241468988985022,0.1,191.35,26.735104067006812,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9004974940935337,0.06330709549701997,0.1,188.3,40.19046757889893,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7379766018812852,0.32552653868096826,0.05,144.55,53.607221626627094,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.40296200351809575,0.35149632838772676,0.0,32.55,21.505140144430097,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8817158713871555,0.090685513876653,0.05,195.2,21.46625258399798,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.834413019863097,0.1467926681125779,0.15,196.95,7.897201369705866,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8862416696681492,0.09266434028145912,0.1,197.55,10.956733089748969,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.8369646428362084,0.1281928905911272,0.1,192.5,29.376861643136763,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.8146524905241652,0.14544678599181718,0.1,196.25,16.77050983124842,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.8695864115698924,0.09833637311585562,0.1,193.1,22.30388212609493,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.8691124350804981,0.07242739535359624,0.05,200,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.8264747667306117,0.12417868300134234,0.15,181.6,47.67698330265984,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8312029925685417,0.08816260347613283,0.05,199.65,1.5652475842498528,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8573835829565766,0.10899910179224022,0.1,190.15,39.387781968791444,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.8524191263604903,0.11986427401070265,0.15,194.05,20.972350218423554,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.8557397126858249,0.07164444810641502,0.0,200,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8242760641975867,0.12259726399352071,0.0,200,0.0,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.8649858986081512,0.09319223218967371,0.05,196.25,16.77050983124842,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.09780850017367025,0.18940465354847863,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.10375082701547352,0.20229732594195438,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.872991286915593,0.0863003567448691,0.15,354.8,114.15252953833306,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.8647232943676028,0.07862173389415002,0.0,400,0.0,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.8796507352271926,0.06893445449753435,0.05,392.65,32.87019926924691,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.8791878618527678,0.07044224272064625,0.0,400,0.0,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.8543354760905231,0.059652493289117516,0.0,400,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.8632772219226241,0.07380679870118444,0.1,373.4,87.03381073195816,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.860773353102087,0.07108543875781352,0.05,391.25,39.131189606246316,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.8296597117257788,0.06138520443385731,0.0,400,0.0,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8682444667580327,0.08644889327760515,0.05,388.95,49.417102302745356,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.8823870514442934,0.07115703539322711,0.05,391.1,39.802009999496256,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.8573399552619206,0.06120912308555045,0.0,400,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.8202884777655189,0.04058412244599195,0.0,400,0.0,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8452534043738807,0.06857606481101816,0.0,400,0.0,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.8584919002384706,0.06320589502486045,0.0,400,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7441855402859028,0.339545150273268,0.1,121.7,55.08758576361064,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.2944196038270124,0.3809054861707593,0.0,20.45,17.19080231433444,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.8939533451219239,0.09729900128960756,0.15,389.95,25.703726946638856,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9289254044211332,0.07903041854360876,0.25,358.55,88.52503362861472,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9465600194197183,0.059581191828615994,0.3,360.05,75.77423183725662,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9265890891355326,0.06094778095191337,0.05,384.9,67.52925292049365,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9384276224525236,0.059845049360956006,0.15,373.75,81.32771586870649,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9282795861495456,0.060509234346458864,0.25,336.7,118.15649747151801,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9532505184849344,0.05567177606236967,0.2,384.9,41.66268051108115,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9160242980848048,0.05421588207408673,0.05,383.35,74.461063650743,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9461729620684722,0.046726864847461115,0.1,387.65,55.2308790442448,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.910989808988663,0.048721075850957175,0.0,400,0.0,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9803219909661344,0.030672012217764603,0.35,365.3,69.73793047810081,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.93251266375242,0.05375857237504631,0.15,377.1,66.26732146946067,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9289435969297397,0.058996453512363635,0.2,386.1,29.456301264933558,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9130529470458737,0.052652849438261706,0.05,397.3,12.074767078498864,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6390653384765528,0.3932693105950941,0.1,74.55,42.75077715513978,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.27029506413557847,0.3577259323750462,0.0,16.85,10.712879606981693,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9543535574877551,0.06068213698254214,0.4,331.9,108.91372732580591,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9570912032257681,0.05748331498442348,0.25,346.7,100.00268417450235,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9373290878378919,0.0629423497184952,0.25,350.75,104.18398452535277,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.944785588932907,0.04690913030055404,0.25,353.05,90.2338919872012,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9373290878378919,0.0629423497184952,0.25,352.35,102.75995277702711,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.944602421285027,0.053542365823852495,0.15,361.65,94.55840578850278,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9631954807814047,0.039836106089487566,0.25,350.1,104.54558310788849,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9263568858352235,0.0487944264056703,0.15,358.25,106.44438874237026,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9598210763206408,0.04869248346324744,0.4,353.75,88.07465433847644,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.9504781191467454,0.04635539657720846,0.1,369.05,96.44931857007379,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9758479915270025,0.03395607983400891,0.25,360.25,97.261922554242,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9429065943208563,0.05843535796313911,0.2,350.15,104.19934084042445,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9585788730443341,0.03703482184363823,0.05,384.8,67.97646651599361,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9601160756650017,0.0363133032778174,0.15,363.1,95.81171228261353,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7540907295866616,0.27963623637826923,0.05,159,65.0764732328132,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.23822628356859957,0.36923433030219804,0.0,24.75,24.20933921574808,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9342370008525152,0.06280619670107385,0.25,340.25,109.5703931389843,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9184860807969444,0.07345064427226232,0.2,366.2,96.55192221913826,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9196017329076492,0.07155441376654112,0.2,366.7,74.16418485892954,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9057532638280039,0.07097631843799476,0.2,351.95,102.03120007857245,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9357870821484638,0.06394947619969167,0.25,359.3,77.30193706294953,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9079604944546135,0.08419315439528761,0.1,395.2,21.46625258399798,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9444922111907913,0.048686068242016,0.25,338.9,114.46162307906846,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9208467101015485,0.06095278723377307,0.15,358.2,102.29194545643932,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9206407706007937,0.053183012532518247,0.1,389.5,44.88406117285312,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.923100222063742,0.06312965307438241,0.1,391.7,25.678375092057927,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9314369254954797,0.06617503498903703,0.25,358.15,88.75351735061132,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.931374458988159,0.0619854569425274,0.2,373.9,62.853966085137216,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.94277425191737,0.056125752638030525,0.2,392.1,27.71642112539063,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9346292991215626,0.04828162670004166,0.1,367.5,100.47440103408378,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.1297072117767741,0.18614817685635138,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.14639982895878823,0.21383672494811662,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9300298836329782,0.0691276543899188,0.05,785.1,66.63482572949373,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9146072079912393,0.05723410522932914,0.1,764.8,148.0521245337174,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9205651255248487,0.06403717584777603,0.1,762.7,149.05495277704938,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9157363705697129,0.06673519798294779,0.1,772.35,98.4422219001155,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9170086583759472,0.05976311344146582,0.05,792.5,33.54101966249684,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9042257554948437,0.07106995931816963,0.05,776,107.33126291998991,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9055237440878621,0.07148706745408107,0.1,773.35,100.59835459573094,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.8983230947177828,0.07544265036326388,0.0,800,0.0,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.8901011690580221,0.05728352293483709,0.05,765.45,154.51229724523546,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.9039703203638559,0.06691358779887405,0.0,800,0.0,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.8873244783242807,0.05515239412320079,0.0,800,0.0,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.899842599018822,0.05864711452839246,0.0,800,0.0,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.8961548724433803,0.07697629323318689,0.15,732.8,173.34012807194992,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9201575563340396,0.06747973954648416,0.2,715.45,188.3402506104311,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.796902304128511,0.28193372693741336,0.05,136.5,51.94582197879471,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.2927021174719556,0.30969473287883764,0.0,29.1,24.224606889428948,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9065995144216435,0.11476313330861015,0.5,509.8,181.4005744782872,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9807470516970799,0.02978642819300871,0.55,500.9,312.8638345149027,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9582610848579978,0.05738975328028144,0.45,624.4,252.89261294907473,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9508776352230093,0.051651222929544605,0.15,738.2,152.81519626832377,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9862426171670008,0.02941546853115443,0.4,610.9,260.4588865424779,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9584155611998303,0.04303182084597945,0.15,778.05,77.26269270618599,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9817830114559392,0.02737676140092801,0.4,672.35,204.9136596099363,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.942803690863916,0.04134414647101214,0.1,738.75,191.96295558203275,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.989255374187758,0.01973675042238593,0.5,614.65,218.51563234457018,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.96151236782611,0.04750739203096649,0.25,724.9,161.12397972401644,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9831300475248858,0.03174473229604739,0.6,659.4,163.68435606695172,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9603772438999402,0.031854638874467885,0.15,721.35,209.51479661350888,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9766004252568651,0.03264795326575375,0.35,678.8,212.66420281254375,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9502104222875247,0.038967435269938525,0.15,741.95,146.79720167991158,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.6828923015762711,0.3632804166918009,0.0,92.65,51.10595289252155,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.39944734206137633,0.41344319990501716,0.1,23.15,15.905229196382983,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9864579561565179,0.028426925204874304,0.65,625.8,212.6337597595304,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.984942638279215,0.03464066206821374,0.55,600.05,241.33586009630034,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.985494350630794,0.026418960613355878,0.5,650.15,216.12162146152312,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9776918321242869,0.03831941040727356,0.4,616.95,278.80109397202875,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.971417839057791,0.03641078077274074,0.3,658.55,243.55707749929996,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.969733203455513,0.034369101080383074,0.3,690.1,219.76779611791696,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9810203511916622,0.03096647673600461,0.4,664.5,213.9398587404758,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9591298002882513,0.034415081530164364,0.2,714,220.96224969318558,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9799181073540828,0.03203239042148253,0.5,671.85,172.4035275619077,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.962760239727746,0.03517679167272731,0.2,757.5,110.45766038098989,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9906520946388135,0.01996359108063855,0.6,636.75,219.3053326925007,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9723773675182573,0.03234888706792434,0.35,659.2,214.27124963711915,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9847959904052662,0.026199025732249553,0.45,630.6,223.35371993885911,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9584314400627235,0.033675856324090175,0.15,717.85,207.6247310591116,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7143988816076334,0.38047288511367644,0.05,152.25,72.53084643246987,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.2621579569653581,0.37217964459067504,0.0,25.8,25.423983703747552,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9602346656441748,0.04801341373530837,0.3,662.4,230.6515713547624,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9796143133399671,0.040884096838513816,0.6,654.75,214.5359434981271,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9385381245978134,0.04927869140947979,0.15,708.55,223.9585194205673,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9729451436263159,0.03509642732405191,0.4,607.95,279.4069800959092,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9557900898589835,0.04825224807940511,0.25,703.55,214.49585322945427,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9559359424036029,0.04251837165923817,0.3,686.55,207.59714910323186,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9683551757263549,0.039111399922193264,0.35,672.85,220.73520097023135,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9691654273474544,0.031497414217690624,0.25,690.25,235.71456311216303,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9580396877103159,0.03985362756398112,0.15,744.5,155.57922334567075,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.9548218264278531,0.04430949475828524,0.25,723.75,156.47931593597116,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9697518961774105,0.040002044183869136,0.45,713.6,147.37113907267917,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.970282286841674,0.030835006421162714,0.2,767.35,87.05489798488017,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9520290663020197,0.048700362925270115,0.25,719.45,169.11580429740414,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9370076842599573,0.04686460158255446,0.1,734.95,201.87423781834283,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.06817564476045317,0.14846126148318173,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.1321972277508909,0.18653070857547127,0.0,1,0.0,hillclimb=None; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9474146233340969,0.054759390179935315,0.15,1454.4,378.75188378895785,hillclimb=None; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9678106198191933,0.0316124008308474,0.2,1456.2,370.7958155671464,hillclimb=None; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9367738413335427,0.05402792421644694,0.1,1532.1,211.02179982172458,hillclimb=None; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9419345071416009,0.05187354106668541,0.1,1540.75,182.77304736231014,hillclimb=None; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9508904021876821,0.050215520446575006,0.0,1600,0.0,hillclimb=None; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9441143899412877,0.04828047920901506,0.15,1446.1,380.7202177590866,hillclimb=None; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9388688763357554,0.06027850412411527,0.25,1365.95,481.99775878491823,hillclimb=None; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9168119572164852,0.06313034487308337,0.0,1600,0.0,hillclimb=None; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9312202373442316,0.05032803085824702,0.1,1516.95,271.2306214275962,hillclimb=None; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.9345424746483428,0.0528238522363629,0.05,1593.6,28.621670111997307,hillclimb=None; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9433970472133691,0.05845440942919719,0.05,1581.75,81.61648117874232,hillclimb=None; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.941620900456876,0.05673976128257413,0.1,1529.1,251.2848876013878,hillclimb=None; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9290822020006079,0.05531569834551017,0.1,1563.05,114.56254324948218,hillclimb=None; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.939123750962,0.04172478556332713,0.0,1600,0.0,hillclimb=None; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7941724731758324,0.275047550600484,0.0,123.4,55.67896702006111,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.3495142418264971,0.40701043561683653,0.0,30.35,26.053133966447955,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9583223772758318,0.07421306490918413,0.75,558.3,168.67723772434675,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9903641794875911,0.018223710171842832,0.7,1058.45,532.783996420787,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9972065590978888,0.005732019786790721,0.8,900.7,531.2225324168473,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9888368749190662,0.021956733440208043,0.6,1108.35,540.1159987495863,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9838284077504136,0.031964822567020906,0.65,988.4,514.3206454302506,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9925978984760302,0.012133015267118668,0.6,1176.4,484.9330284743071,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9958098386468331,0.0065668536394882775,0.7,1122.45,486.0881959177021,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9798994146321852,0.02464844169946288,0.35,1233.6,602.3730615350904,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9951114784213053,0.006834997972396588,0.65,978.3,595.8943830826681,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.9794889695578799,0.025709045776597488,0.2,1432.5,349.56988609312145,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.993016397744722,0.007165024733488401,0.5,1292.95,413.67460833237925,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9752907540103266,0.02353673930271104,0.15,1525.4,257.1813613611588,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9951114784213053,0.006834997972396588,0.65,1072.7,521.8222221973182,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9792010544066574,0.02424350002365689,0.3,1329.2,534.3761340400401,hillclimb=<function BestHillclimb at 0x7fc6349f8280>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.7431360335375644,0.33466892986450053,0.0,101.6,43.84710276691758,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.4601184383567264,0.4025126145780637,0.0,26.25,16.186007602409656,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.01; nbour_method=adjacent
+Simulated annealing,1.0,0.0,1.0,753.5,379.58751851256426,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9993016397744722,0.0031231618741245385,0.95,807.65,518.1942609729127,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9972065590978888,0.005732019786790721,0.8,783.65,519.347594279795,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.986472571813158,0.02843417029845727,0.7,1078.2,541.3778328438807,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9972065590978888,0.005732019786790721,0.8,912.3,562.5376806092754,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9923180375191941,0.007129109596379166,0.45,1326.6,426.3763348819543,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9993016397744722,0.0031231618741245385,0.95,932.6,421.89963885165616,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9921793992073384,0.015579275344992592,0.7,925.7,555.6046587656598,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.9948422559919805,0.020022983931123516,0.9,933.6,423.0503764950831,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.986872378359952,0.017313934737478817,0.45,1343.7,316.49446656840786,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9960896996036692,0.011723997603665394,0.85,1014.75,522.8266166260394,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.9878505995423159,0.0201860092272877,0.65,1041.55,554.1074829232853,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.9979049193234165,0.005116851132294672,0.85,675.2,556.9495488821227,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9861740181344243,0.017036015557079513,0.4,1236.65,527.4530934495253,hillclimb=<function RandomGreedyHillclimb at 0x7fc6349f8160>; explore=1.0; nbour_method=adjacent
+Simulated annealing,0.8387965959391714,0.21048438368823105,0.05,180.4,61.48803905938472,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=Hamming
+Simulated annealing,0.4205655524912203,0.4071694741386514,0.0,39.8,30.55038978130187,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.01; nbour_method=adjacent
+Simulated annealing,0.9934455355409249,0.02010560252691251,0.8,1091.9,479.63866882433376,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=Hamming
+Simulated annealing,0.9939946189270858,0.01209905526780796,0.7,1055.25,501.4996326807701,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.05; nbour_method=adjacent
+Simulated annealing,0.9913504548643414,0.020037656231498384,0.65,959.05,613.8165742647434,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=Hamming
+Simulated annealing,0.9881385146935384,0.021804584360689078,0.55,1015,625.9530838312842,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.1; nbour_method=adjacent
+Simulated annealing,0.9875894313073775,0.02695400827467399,0.65,1303.5,421.0035004230025,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=Hamming
+Simulated annealing,0.9831113548029882,0.024276039018833177,0.45,1297.75,480.2897015015219,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.2; nbour_method=adjacent
+Simulated annealing,0.9831300475248858,0.03174473229604739,0.6,1039.3,538.6438233388113,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=Hamming
+Simulated annealing,0.9918995382505024,0.012086413555663285,0.55,997.5,638.6184512804101,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.3; nbour_method=adjacent
+Simulated annealing,0.985494350630794,0.026418960613355878,0.5,1219.15,438.01973940139175,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=Hamming
+Simulated annealing,0.97056214779851,0.032560198426996485,0.35,1311.15,465.6645816803968,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.5; nbour_method=adjacent
+Simulated annealing,0.9862202529035552,0.024379703567882077,0.5,1253.1,419.66238310036044,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=Hamming
+Simulated annealing,0.976007806957752,0.03159442626700212,0.35,1296.85,504.9585991367067,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=0.7; nbour_method=adjacent
+Simulated annealing,0.985479734974154,0.02641059287972125,0.45,1192.85,564.571684414039,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=Hamming
+Simulated annealing,0.9720975065614212,0.030629252142704545,0.2,1456.4,374.98033632655853,hillclimb=<function StochasticHillclimb at 0x7fc6349f8310>; explore=1.0; nbour_method=adjacent

@@ -1,0 +1,9 @@
+convolution_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.5493171072743447,0.404012812926114,0.0,19.74,8.530401813633448,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.6947424718347724,0.2722421020729645,0.02,49.84,1.131370849898476,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.869818562003477,0.21479134957287452,0.22,95.56,12.330748028354789,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9466228912421483,0.07254799526830526,0.4,147.62,57.57865605111899,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9461737234928651,0.14614863434737052,0.54,173.38,92.03390901272891,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9970851054671187,0.016043480320949773,0.9,271.38,234.34632404165578,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,1.0,0.0,1.0,293.68,214.16934363979837,method=SLSQP; iterations=1000000; temperature=1.0,1600

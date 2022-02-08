@@ -1,0 +1,9 @@
+pnpoly_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.7864101461591689,0.0018580852840113832,0.0,25,0.0,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.9147547021554208,0.07058812124147955,0.04,49.4,3.9641248358604595,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.9356634832971129,0.05620778178079343,0.02,98.9,4.54119466435781,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9612147533590993,0.043967530436975925,0.16,166.5,41.34387894877079,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9816834809490425,0.0320970968368902,0.56,250.42,101.97500494068663,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9860879334604863,0.004389601920885447,0.06,777.42,99.71757874218609,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.9888612100517555,0.005000723385242471,0.16,1498.66,285.73932818824466,method=SLSQP; iterations=1000000; temperature=1.0,1600

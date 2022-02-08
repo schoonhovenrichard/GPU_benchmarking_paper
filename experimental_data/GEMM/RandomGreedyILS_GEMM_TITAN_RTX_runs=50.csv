@@ -1,0 +1,9 @@
+GEMM_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.5816428533559177,0.3728172370793523,0.02,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.8174987019409852,0.2554198595873101,0.06,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.9252320778904151,0.053455041518784996,0.02,99.28,5.091168824543142,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9674858706031595,0.03223841863951495,0.08,194.98,21.528803676821013,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,0.9817891001521203,0.02621250048632171,0.24,338.6,122.23563727656581,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,0.9988006011335865,0.0027772388324739626,0.84,380.2,244.2956556038989,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,0.9998477717369737,0.00107641637074152,0.98,478.5,311.75462944372106,walksize=0.05; no_improve=10; iterations=100000,1600

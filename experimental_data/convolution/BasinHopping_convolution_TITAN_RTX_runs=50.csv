@@ -1,0 +1,9 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.6670931387442502,0.37840003442897263,0.12,20.08,7.850230725843642,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.7718597959895256,0.23299613487454615,0.04,49.56,3.111269837220809,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.9414397779580745,0.10218784408880775,0.36,85.12,24.00224479297803,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9493306082821087,0.13379889447762358,0.48,144.68,48.77580531035309,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9277876948497323,0.12285759942082983,0.5,161.94,91.50140179588641,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9998193373233432,0.001023855524764425,0.96,234.2,197.18519214180358,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,1.0,0.0,1.0,178.22,125.81299533799506,method=SLSQP; iterations=1000000; temperature=1.0,1600

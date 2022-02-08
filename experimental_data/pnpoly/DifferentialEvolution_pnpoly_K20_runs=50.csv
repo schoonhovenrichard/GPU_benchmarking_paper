@@ -1,0 +1,9 @@
+pnpoly_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.8392843794656045,0.09234589277839841,0.02,24.64,1.8926280184776223,"pop_size=1; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=1000000",25
+Differential evolution,0.8929434641925961,0.06797391063788813,0.0,49.58,2.829076433995334,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",50
+Differential evolution,0.896205839787926,0.08539435602381484,0.12,70,21.0402917648739,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",100
+Differential evolution,0.9605667632969223,0.06056204818786723,0.46,133.68,41.033803884413274,"pop_size=4; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",200
+Differential evolution,0.9897267729407297,0.026349131695495857,0.68,291.04,106.1702444959346,"pop_size=8; method=best2bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",400
+Differential evolution,0.9995094691117332,0.003434939214154602,0.96,329.54,111.41212515993519,"pop_size=16; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",800
+Differential evolution,1.0,0.0,1.0,547.82,203.76834486089083,"pop_size=32; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",1600

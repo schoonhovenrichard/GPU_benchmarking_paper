@@ -1,0 +1,9 @@
+pnpoly_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.862453445191477,0.06841873365450724,0.02,24.58,1.553008929367078,"pop_size=1; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=1000000",25
+Differential evolution,0.9163830992165283,0.06387723836407834,0.04,47.94,5.70502821542326,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",50
+Differential evolution,0.9255761258954059,0.07370099013876429,0.08,64.14,15.663567503566213,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",100
+Differential evolution,0.9699041801925921,0.041783332818524074,0.24,126.92,37.33512872262119,"pop_size=4; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",200
+Differential evolution,0.991912265739407,0.014732634093369203,0.52,298.18,92.45709208898482,"pop_size=8; method=best2bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",400
+Differential evolution,0.9962197759538229,0.0061249108512396585,0.72,389,88.06885061688719,"pop_size=16; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",800
+Differential evolution,0.9981244943015193,0.00469559420502439,0.86,550.28,201.07121694990133,"pop_size=32; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",1600

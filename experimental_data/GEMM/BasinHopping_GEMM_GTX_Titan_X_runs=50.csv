@@ -1,0 +1,9 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.8258133368941106,0.12805269826743698,0.04,25,0.0,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.8574585486509975,0.1586981286359154,0.12,48.08,5.4542250988175605,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.9401104773861702,0.10777476881434607,0.36,87.78,19.732176147353947,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.9771241005804485,0.03943553755423003,0.56,146.2,56.77955941487164,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.9916476921314719,0.021789631875226395,0.82,179.84,110.35903558247452,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9531839369132408,0.02955282961032476,0.1,777.68,80.0184774579839,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.9849916241548742,0.02528297101861516,0.58,1203.88,441.8471265780803,method=SLSQP; iterations=1000000; temperature=1.0,1600

@@ -1,0 +1,9 @@
+convolution_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.7978139763527994,0.12747213971414728,0.0,25,0.0,"pop_size=1; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=1000000",25
+Differential evolution,0.8868921573405816,0.05563512702348708,0.0,49.68,1.6343256738371534,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",50
+Differential evolution,0.9406649920028679,0.055388433172662385,0.14,78.84,16.213322815965082,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",100
+Differential evolution,0.9795424151367391,0.032063280265083635,0.36,144.12,40.30882822227733,"pop_size=4; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",200
+Differential evolution,0.987724878865356,0.018461684365408144,0.36,343.82,94.32373475841334,"pop_size=8; method=best2bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",400
+Differential evolution,0.9937170050045906,0.012490770762261471,0.64,575.38,190.0435922065659,"pop_size=16; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",800
+Differential evolution,0.9983529081898743,0.008235362743857595,0.92,899.38,359.6812018145729,"pop_size=32; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",1600

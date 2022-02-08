@@ -1,0 +1,9 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.23522056874048555,0.4229097283241432,0.1,8.28,6.830424135992655,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.7128387742904111,0.173543978174723,0.02,49.62,1.7366399648018407,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.7150728047248598,0.19308001654864246,0.08,84.48,19.117509871148737,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.7548369796598753,0.1932041644410572,0.08,102.38,44.955256667500144,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.8008026737286933,0.19035121465591182,0.1,108.1,50.04171729055424,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.9571646574818102,0.10141816916239756,0.62,532.84,203.08743065437585,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.9644947217553584,0.07857441762247812,0.56,568.98,184.0472976033662,method=SLSQP; iterations=1000000; temperature=1.0,1600

@@ -32,7 +32,7 @@ from ConfigSpace.hyperparameters import \
     CategoricalHyperparameter, UniformFloatHyperparameter, UniformIntegerHyperparameter
 from smac.configspace import ConfigurationSpace
 from smac.facade.smac_bb_facade import SMAC4BB
-from smac.optimizer.acquisition import EI
+from smac.optimizer.acquisition import EI, LogEI, PI, TS, LCB
 from smac.scenario.scenario import Scenario
 
 
@@ -43,19 +43,7 @@ class SMAC_GPU:
         self.fevals = 0
         self.visited = []
 
-    def return_GPU_score(self, cfg):
-        # limits are 11, 5, 7, 7, 1, 1
-        config_vec = [
-            cfg['block_size_x'],
-            cfg['block_size_y'],
-            cfg['tile_size_x'],
-            cfg['tile_size_y'],
-            cfg['use_padding'],
-            cfg['read_only']
-        ]
-        self.fevals += 1
-        self.visited.append(config_vec)
-
+    def map_cfg_to_kernelcfg(self, cfg):
         bx = self.gpu_space.tune_params['block_size_x'][cfg['block_size_x']]
         by = self.gpu_space.tune_params['block_size_y'][cfg['block_size_y']]
         tx = self.gpu_space.tune_params['tile_size_x'][cfg['tile_size_x']]
@@ -64,6 +52,23 @@ class SMAC_GPU:
         ro = self.gpu_space.tune_params['read_only'][cfg['read_only']]
 
         param_vec = [bx, by, tx, ty, pd, ro]
+        return param_vec
+
+
+    def return_GPU_score(self, cfg):
+        # limits are 11, 5, 7, 7, 1, 1
+        #config_vec = [
+        #    cfg['block_size_x'],
+        #    cfg['block_size_y'],
+        #    cfg['tile_size_x'],
+        #    cfg['tile_size_y'],
+        #    cfg['use_padding'],
+        #    cfg['read_only']
+        #]
+        #self.fevals += 1
+        #self.visited.append(config_vec)
+
+        param_vec = self.map_cfg_to_kernelcfg(cfg)
         fitness = self.gpu_space.get_runtime(param_vec)
         return fitness
 
@@ -82,7 +87,7 @@ if __name__ == '__main__':
     'convolution_V100_processed.json',
     'MI50_convolution_15x15_processed.json',
     'convolution_GTX_1080Ti_processed.json',
-    #'convolution_P100_processed.json',#tuning
+    'convolution_P100_processed.json',#tuning
     'convolution_K20_processed.json',
     'convolution_GTX_Titan_X_processed.json']
 
@@ -92,7 +97,7 @@ if __name__ == '__main__':
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
     'GEMM_GTX_1080Ti_processed.json',
-    #'GEMM_P100_processed.json',#tuning
+    'GEMM_P100_processed.json',#tuning
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 
@@ -101,11 +106,16 @@ if __name__ == '__main__':
     'pnpoly_RTX_2070_SUPER_processed.json',
     'pnpoly_TITAN_RTX_processed.json',
     'pnpoly_GTX_1080Ti_processed.json',
-    #'pnpoly_P100_processed.json',#tuning
+    'pnpoly_P100_processed.json',#tuning
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
-    for filename in convolution_files[0:1]:
+    #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
+    #tune_files = convolution_files[5:6] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
+    tune_files = convolution_files[1:2] + convolution_files[5:6]
+
+    for filename in tune_files:
+    #for filename in convolution_files[6:7]:
         ###  SETUP THE GPU CACHE DATA  ###
 
         with open(data_path + filename, 'r') as myfile:
@@ -145,12 +155,11 @@ if __name__ == '__main__':
         print("There are", len(data['cache'].keys()), "keys in the searchspace")
 
         ## Define experimental parameters
-        maxtime = 100
         #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
-        maxfevals = [50]
+        maxfevals = [25, 50, 100, 200, 400]
+        #maxfevals = [400]
         minvar = 1e-10
         exper_runs = 20
-        #exper_runs = 100
         output_dir = '/experiment_files/'
         LOG_RESULTS = True
 
@@ -177,66 +186,81 @@ if __name__ == '__main__':
         # Add all hyperparameters
         cs.add_hyperparameters([blockx, blocky, tilex, tiley, padding, read_only])
 
-
-        experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
-        # Run for different function eval limits
-        for maxfeval in maxfevals:
+        #EI, LCB, PI, TS
+        #acqstr = "EI"
+        for acqstr in ["TS"]:
+        #for acqstr in ["EI", "LCB", "PI", "TS"]:
+            experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
             # Use 'gp' or 'gp_mcmc' here
-            model_type = 'gm'
+            model_type = 'gp'
 
-            #EI,  EIPS, LCB, LogEI, PI, TS
-            acqstr = "EI"
-            acq_fun = EI
+            # Run for different function eval limits
+            for maxfeval in maxfevals:
+                if acqstr == "EI":
+                    acq_fun = EI
+                elif acqstr == "LogEI":
+                    acq_fun = LogEI
+                elif acqstr == "LCB":
+                    acq_fun = LCB
+                elif acqstr == "PI":
+                    acq_fun = PI
+                elif acqstr == "TS":
+                    acq_fun = TS
 
-            # Define object for SMAC GPU tuning
-            smacgpu = SMAC_GPU(GPU_space)
+                # Define object for SMAC GPU tuning
+                smacgpu = SMAC_GPU(GPU_space)
 
-            # SMAC scenario object
-            scenario = Scenario({
-                'run_obj': 'quality',  # we optimize quality (alternative to runtime)
-                'wallclock-limit': maxtime,  # max duration to run the optimization (in seconds)
-                'cs': cs,  # configuration space
-                'deterministic': 'true',
-                'limit_resources': True,  # Uses pynisher to limit memory and runtime
-                                          # Alternatively, you can also disable this.
-                                          # Then you should handle runtime and memory yourself in the TA
-                'cutoff': 10,  # runtime limit for target algorithm
-                'memory_limit': 128*3072,  # adapt this to reasonable value for your hardware
-                "runcount-limit": maxfeval,
-            })
+                # SMAC scenario object
+                scenario = Scenario({
+                    'run_obj': 'quality',  # we optimize quality (alternative to runtime)
+                    'wallclock-limit': 2.3*maxfeval,  # max duration to run the optimization (in seconds)
+                    'cs': cs,  # configuration space
+                    'deterministic': 'true',
+                    'limit_resources': True,  # Uses pynisher to limit memory and runtime
+                                              # Alternatively, you can also disable this.
+                                              # Then you should handle runtime and memory yourself in the TA
+                    'cutoff': 10,  # runtime limit for target algorithm
+                    'memory_limit': 128*3072,  # adapt this to reasonable value for your hardware
+                    "runcount-limit": maxfeval,
+                })
 
-            results = [[],[]]
-            for i in range(exper_runs):
-                # Optimize, using a SMAC-object
-                smac = SMAC4BB(scenario=scenario,
-                               model_type=model_type,
-                               #rng=np.random.RandomState(42),
-                               acquisition_function=acq_fun,  # or others like PI, LCB as acquisition functions
-                               tae_runner=smacgpu.return_GPU_score)
+                results = [[],[]]
+                for i in range(exper_runs):
+                    # Optimize, using a SMAC-object
+                    smac = SMAC4BB(scenario=scenario,
+                                   model_type=model_type,
+                                   #rng=np.random.RandomState(42),
+                                   acquisition_function=acq_fun,  # or others like PI, LCB as acquisition functions
+                                   tae_runner=smacgpu.return_GPU_score)
 
-                # Start optimization
-                try:
-                    incumbent = smac.optimize()
-                finally:
-                    incumbent = smac.solver.incumbent
+                    # Start optimization
+                    try:
+                        incumbent = smac.optimize()
+                    finally:
+                        incumbent = smac.solver.incumbent
+                    #inccfg = incumbent.get_dictionary()
+                    #inc_vec = smacgpu.map_cfg_to_kernelcfg(inccfg)
+                    #inc_fitness = smacgpu.gpu_space.get_runtime(inc_vec)
 
-                # It returns: Status, Cost, Runtime, Additional Infos
-                inc_value = smac.get_tae_runner().run(
-                    config=incumbent)
-                #print('Optimized Value: %.4f' % inc_value[1])
-                print(inc_value)
-                results[0].append(best_fit/float(inc_value[1]))
-                results[1].append(maxfeval)
+                    # It returns: Status, Cost, Runtime, Additional Infos
+                    inc_value = smac.get_tae_runner().run(
+                        config=incumbent)
+                    #print('Optimized Value: %.4f' % inc_value[1])
+                    #print(smac.stats.submitted_ta_runs)
+                    #print(smac.stats.finished_ta_runs)
+                    #print(smac.stats.n_configs)
+                    results[0].append(best_fit/float(inc_value[1]))
+                    results[1].append(smac.stats.finished_ta_runs)
 
-            settings = "model_type=" + model_type + "; acq_func=" + acqstr
-            success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
+                settings = "model_type=" + model_type + "; acq_func=" + acqstr
+                success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
 
-            algo_name = "SMAC4BB_"+model_type+"_"+acqstr
-            experiment_results.append([algo_name, statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
+                algo_name = "SMAC4BB_"+model_type+"_"+acqstr
+                experiment_results.append([algo_name, statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
 
-        ### Write results to file
-        if LOG_RESULTS:
-            export_filename = algo_name+"_"+ filename[:-15] + "_runs={0}".format(exper_runs) + ".csv"
-            with open(export_filename, "w", newline="") as f:
-                writer = csv.writer(f)
-                writer.writerows(experiment_results)
+            ### Write results to file
+            if LOG_RESULTS:
+                export_filename = algo_name+"_"+ filename[:-15] + "_runs={0}".format(exper_runs) + ".csv"
+                with open(export_filename, "w", newline="") as f:
+                    writer = csv.writer(f)
+                    writer.writerows(experiment_results)

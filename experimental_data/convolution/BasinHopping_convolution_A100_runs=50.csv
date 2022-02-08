@@ -1,0 +1,9 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Basin hopping,0.6363399137525878,0.31169389750393006,0.0,21.54,7.4620399902658345,method=Powell; iterations=1000000; temperature=0.1,25
+Basin hopping,0.7660962231453392,0.1899394028117556,0.04,49.06,4.679133008826071,method=COBYLA; iterations=1000000; temperature=0.1,50
+Basin hopping,0.8282326764792625,0.12948314933921132,0.02,98.82,8.34386001800126,method=COBYLA; iterations=1000000; temperature=0.1,100
+Basin hopping,0.8655770450454477,0.09791372409397865,0.12,181.44,32.213040837524176,method=COBYLA; iterations=1000000; temperature=0.1,200
+Basin hopping,0.8775883530170819,0.08525208482962683,0.16,216.3,93.00411445803056,method=COBYLA; iterations=1000000; temperature=0.1,400
+Basin hopping,0.8901032997182456,0.04125433588526864,0.1,756.28,151.66504985308507,method=SLSQP; iterations=1000000; temperature=1.0,800
+Basin hopping,0.9189859354654804,0.04858865856946787,0.22,1386.24,468.4907840010063,method=SLSQP; iterations=1000000; temperature=1.0,1600

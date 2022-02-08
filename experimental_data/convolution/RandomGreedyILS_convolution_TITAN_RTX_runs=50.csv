@@ -1,0 +1,9 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.4915210456436506,0.26396406200068556,0.0,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.6977403013225556,0.23305657821475004,0.1,49.94,0.4242640687119285,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.7914080151542146,0.18540455478432494,0.1,99.4,3.9641248358604595,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9033230020659193,0.08875910047152402,0.38,171,44.99206279207161,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,0.9775874575954033,0.05025306517306177,0.78,254.02,115.00887099768985,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,0.9898792653522228,0.023440266586737417,0.72,510.88,231.62448850125799,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,1.0,0.0,1.0,500.04,315.58801353301476,walksize=0.05; no_improve=10; iterations=100000,1600

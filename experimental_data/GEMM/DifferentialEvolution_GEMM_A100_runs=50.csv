@@ -1,0 +1,9 @@
+GEMM_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Differential evolution,0.8188225761152729,0.07832446364200049,0.0,25,0.0,"pop_size=1; method=best1bin; mutation=(0.2, 0.7); recombination=0.5; iterations=1000000",25
+Differential evolution,0.8901579142915762,0.07257068307150213,0.0,50,0.0,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",50
+Differential evolution,0.9423280595372953,0.051428365149056125,0.04,97.9,4.6434065608985735,"pop_size=2; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",100
+Differential evolution,0.9812520018657227,0.020104117540394244,0.08,194.4,16.22922533893842,"pop_size=4; method=best1bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",200
+Differential evolution,0.9882700466395701,0.011483172891958065,0.06,388.78,46.4157300922866,"pop_size=8; method=best2bin; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",400
+Differential evolution,0.992304414950789,0.007363918773568717,0.2,742.3,142.51290668367048,"pop_size=16; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",800
+Differential evolution,0.995612991051246,0.004118259462321014,0.18,1481.96,288.64913805164775,"pop_size=32; method=best1exp; mutation=(0.2, 0.7); recombination=0.7; iterations=1000000",1600

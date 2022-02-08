@@ -1,0 +1,9 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.6581889678287007,0.18510779425940943,0.06,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.7239198404818501,0.15663273635726846,0.18,47.66,6.196147585230616,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.8668201856270533,0.1519171134976968,0.3,90.54,21.41352805292648,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9707178418314223,0.06810588358733626,0.76,128.74,68.18995377559929,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,0.9955060903432211,0.018865143699442102,0.92,210.74,109.5923448093722,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,1.0,0.0,1.0,157.82,83.28085994184414,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,1.0,0.0,1.0,156.26,100.9911715680825,walksize=0.05; no_improve=10; iterations=100000,1600

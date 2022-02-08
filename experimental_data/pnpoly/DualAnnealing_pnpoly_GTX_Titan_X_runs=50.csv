@@ -1,0 +1,9 @@
+pnpoly_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Dual annealing,0.9112286015734063,0.06719014168892944,0.02,24.96,0.282842712474619,iterations=1000000; method=COBYLA,25
+Dual annealing,0.9189173864120495,0.05896241706157246,0.04,49.9,0.5802884574739972,iterations=1000000; method=Powell,50
+Dual annealing,0.9525086689485026,0.04242495218016591,0.06,97.62,11.390812624431057,iterations=1000000; method=Powell,100
+Dual annealing,0.9868661494965473,0.021008388198140215,0.48,159.4,58.287114829111594,iterations=1000000; method=Powell,200
+Dual annealing,0.997271279718002,0.00619039028299894,0.82,254.58,110.48854220770438,iterations=1000000; method=Powell,400
+Dual annealing,1.0,0.0,1.0,251.48,126.67075109777106,iterations=1000000; method=Powell,800
+Dual annealing,1.0,0.0,1.0,325.02,244.01434300433394,iterations=1000000; method=Powell,1600

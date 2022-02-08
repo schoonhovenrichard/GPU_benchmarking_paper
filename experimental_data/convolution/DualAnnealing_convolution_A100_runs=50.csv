@@ -1,0 +1,9 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Dual annealing,0.7901405945724543,0.09899718387868567,0.0,25,0.0,iterations=1000000; method=COBYLA,25
+Dual annealing,0.8483846126317962,0.039923657020265055,0.0,50,0.0,iterations=1000000; method=Powell,50
+Dual annealing,0.8558962404220759,0.030525647950298516,0.02,99.72,1.9798989873223332,iterations=1000000; method=Powell,100
+Dual annealing,0.8747862860325732,0.01733784716964583,0.0,200,0.0,iterations=1000000; method=Powell,200
+Dual annealing,0.8900452024053128,0.03871377112298301,0.08,378.64,84.86694508079655,iterations=1000000; method=Powell,400
+Dual annealing,0.8947448106641827,0.02630363700692816,0.04,791.06,45.44851763371431,iterations=1000000; method=Powell,800
+Dual annealing,0.9105307244825602,0.038989285669066336,0.1,1516.92,306.66233773933686,iterations=1000000; method=Powell,1600

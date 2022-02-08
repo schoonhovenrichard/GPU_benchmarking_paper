@@ -1,0 +1,9 @@
+pnpoly_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.7326229887370875,0.1691908678299506,0.02,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.9431609730753594,0.06715644754425527,0.16,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.9861444860719196,0.02495888662599551,0.7,97.3,7.701709325248015,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9994052625215102,0.0029478751953818435,0.96,110.66,35.65973548266837,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,1.0,0.0,1.0,112.76,42.916416154080295,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,1.0,0.0,1.0,246.1,191.7474157024585,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,1.0,0.0,1.0,306.06,207.90582738640225,walksize=0.05; no_improve=10; iterations=100000,1600

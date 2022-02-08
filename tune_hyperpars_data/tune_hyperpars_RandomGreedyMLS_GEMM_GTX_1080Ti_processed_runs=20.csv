@@ -1,0 +1,30 @@
+GEMM_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+RandomGreedyMLS,0.5860396731918911,0.36703511003974054,0.0,25,0.0,restart=False; nbour=Hamming
+RandomGreedyMLS,0.5759673722007357,0.39345038648220676,0.0,25,0.0,restart=False; nbour=adjacent
+RandomGreedyMLS,0.5765713315483846,0.33700613659033035,0.0,25,0.0,restart=True; nbour=Hamming
+RandomGreedyMLS,0.5169661018667157,0.3690540820153812,0.0,25,0.0,restart=True; nbour=adjacent
+RandomGreedyMLS,0.7515868297206716,0.24243214966576065,0.0,50,0.0,restart=False; nbour=Hamming
+RandomGreedyMLS,0.8155409669085072,0.24953444817477224,0.05,50,0.0,restart=False; nbour=adjacent
+RandomGreedyMLS,0.7365089667630688,0.2882206748224797,0.05,50,0.0,restart=True; nbour=Hamming
+RandomGreedyMLS,0.8133183579535322,0.2873252096516431,0.1,49.6,1.7888543819998317,restart=True; nbour=adjacent
+RandomGreedyMLS,0.9315579974627877,0.06292940276824636,0.15,93.7,15.765051287746044,restart=False; nbour=Hamming
+RandomGreedyMLS,0.9311987080575295,0.08042135594950824,0.35,93.05,16.7409834333527,restart=False; nbour=adjacent
+RandomGreedyMLS,0.9442115360698073,0.09362514614109597,0.25,92.75,15.454091606057634,restart=True; nbour=Hamming
+RandomGreedyMLS,0.9098980591747654,0.07096957772912009,0.15,96.05,12.398960058259556,restart=True; nbour=adjacent
+RandomGreedyMLS,0.9546052004228924,0.0651939807510188,0.55,155.9,54.800019208602095,restart=False; nbour=Hamming
+RandomGreedyMLS,0.973115157077651,0.03719874972417303,0.4,171.05,48.344678039437206,restart=False; nbour=adjacent
+RandomGreedyMLS,0.960885219295824,0.045061241194473634,0.4,170.8,42.443274837686225,restart=True; nbour=Hamming
+RandomGreedyMLS,0.9628016344058682,0.044472061255338556,0.4,163.15,55.32513942713185,restart=True; nbour=adjacent
+RandomGreedyMLS,0.9966602628692388,0.0081570886975844,0.85,246,118.3567310695665,restart=False; nbour=Hamming
+RandomGreedyMLS,0.9866546100886477,0.026190189303135568,0.65,254.45,133.6635505171178,restart=False; nbour=adjacent
+RandomGreedyMLS,0.9884768746145909,0.01385104868946202,0.5,300.35,125.30857701563852,restart=True; nbour=Hamming
+RandomGreedyMLS,0.9824210284909236,0.03207154385720683,0.6,257.75,149.86480749767702,restart=True; nbour=adjacent
+RandomGreedyMLS,1.0,0.0,1.0,267.9,197.7691104612436,restart=False; nbour=Hamming
+RandomGreedyMLS,0.9942966757930192,0.016548603688679463,0.85,438.45,234.42572047676984,restart=False; nbour=adjacent
+RandomGreedyMLS,1.0,0.0,1.0,303.5,200.48664478424018,restart=True; nbour=Hamming
+RandomGreedyMLS,1.0,0.0,1.0,216.25,113.07606894662129,restart=True; nbour=adjacent
+RandomGreedyMLS,1.0,0.0,1.0,293.25,202.1231711501417,restart=False; nbour=Hamming
+RandomGreedyMLS,1.0,0.0,1.0,219.9,225.9526964933846,restart=False; nbour=adjacent
+RandomGreedyMLS,0.9988938692024483,0.004946767310663303,0.95,360.8,366.8168336836305,restart=True; nbour=Hamming
+RandomGreedyMLS,1.0,0.0,1.0,329.15,249.42275990353153,restart=True; nbour=adjacent

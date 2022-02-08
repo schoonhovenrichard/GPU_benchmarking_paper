@@ -1,0 +1,9 @@
+GEMM_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Simulated annealing,0.7677363079902784,0.07875810594061065,0.0,25,0.0,hillclimb=None; explore=32; nbour_method=Hamming,25
+Simulated annealing,0.8345482496343343,0.21491635475799192,0.02,50,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=32; nbour_method=Hamming,50
+Simulated annealing,0.9034010608250923,0.19215026613055117,0.04,100,0.0,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=32; nbour_method=Hamming,100
+Simulated annealing,0.9722722848000837,0.024020683744414954,0.12,188.6,36.357072691484355,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=32; nbour_method=Hamming,200
+Simulated annealing,0.9828335957772385,0.013633855960294709,0.2,364.8,84.65632804197817,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=22; nbour_method=Hamming,400
+Simulated annealing,0.9946222365544302,0.007213142614420226,0.62,534.5,266.42142847567726,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=3; nbour_method=Hamming,800
+Simulated annealing,0.9987725100114051,0.00374616093257727,0.9,821.14,465.55838801707915,hillclimb=<function RandomGreedyHillclimb at 0x7fc122e640d0>; explore=3; nbour_method=Hamming,1600

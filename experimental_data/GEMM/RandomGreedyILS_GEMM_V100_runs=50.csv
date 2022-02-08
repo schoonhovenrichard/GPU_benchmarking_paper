@@ -1,0 +1,9 @@
+GEMM_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.602946134302821,0.38088927985918314,0.0,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.8714567346631453,0.19685100124698654,0.0,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.9457410348013933,0.05318300093629191,0.06,98.36,8.156029446153969,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.9639886970649447,0.027485168448618105,0.06,198.02,12.89595728458009,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,0.9849760812800556,0.013194590840726762,0.26,350.66,100.26345092722839,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,0.9977641603512208,0.00517496321677045,0.84,398.5,257.18969811469225,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,0.9989387167729078,0.0036523675462423826,0.92,510.92,454.3854266130983,walksize=0.05; no_improve=10; iterations=100000,1600

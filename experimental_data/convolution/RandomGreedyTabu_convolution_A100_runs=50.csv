@@ -1,0 +1,9 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyTabu,0.6559810762145527,0.2634093609374573,0.0,25,0.0,tabu_size=4; iterations=100000,25
+RandomGreedyTabu,0.7134633837160697,0.27928903286421386,0.0,50,0.0,tabu_size=4; iterations=100000,50
+RandomGreedyTabu,0.7852232075567063,0.244581122178484,0.02,99.86,0.9899494936611666,tabu_size=2000; iterations=100000,100
+RandomGreedyTabu,0.8520951669780783,0.1311491965501673,0.02,197.8,15.556349186104045,tabu_size=2000; iterations=100000,200
+RandomGreedyTabu,0.8837577604997688,0.02137314583339728,0.0,400,0.0,tabu_size=2000; iterations=100000,400
+RandomGreedyTabu,0.8895501152878855,0.017283798142870347,0.02,785.56,102.10621920333746,tabu_size=2000; iterations=100000,800
+RandomGreedyTabu,0.9018386972859231,0.03567095362731196,0.1,1583.8,94.10805773477766,tabu_size=2000; iterations=100000,1600

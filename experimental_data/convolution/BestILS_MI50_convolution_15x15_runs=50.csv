@@ -1,0 +1,9 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+BestILS,0.6177023363839426,0.2006535528409255,0.08,24.6,1.6781914463529615,walksize=1.0; no_improve=25; iterations=100000,25
+BestILS,0.7381054219409335,0.1688019830114437,0.16,47.92,7.070606012765461,walksize=1.0; no_improve=25; iterations=100000,50
+BestILS,0.8414956958803985,0.14874584277196012,0.26,89.5,21.8830378818567,walksize=1.0; no_improve=25; iterations=100000,100
+BestILS,0.9564666707766025,0.0683027805669081,0.58,151.92,59.24760909668397,walksize=1.0; no_improve=25; iterations=100000,200
+BestILS,0.9986344482115673,0.006757728794091377,0.96,211.22,114.44975548515708,walksize=1.0; no_improve=25; iterations=100000,400
+BestILS,1.0,0.0,1.0,185.46,88.60234713802647,walksize=0.05; no_improve=25; iterations=100000,800
+BestILS,1.0,0.0,1.0,189.48,94.16642670488962,walksize=0.05; no_improve=25; iterations=100000,1600

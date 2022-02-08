@@ -1,0 +1,9 @@
+convolution_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Random sampling,0.6141551065710483,0.16766712949554255,0.0,25,0.0,NA,25
+Random sampling,0.6496646611320939,0.14069626394067328,0.0,50,0.0,NA,50
+Random sampling,0.7259773092931067,0.10798733271131307,0.0,100,0.0,NA,100
+Random sampling,0.776513131383126,0.08016034869145278,0.0,200,0.0,NA,200
+Random sampling,0.8560310718404496,0.07289710717473404,0.02,400,0.0,NA,400
+Random sampling,0.905218687111275,0.060795590408859596,0.04,800,0.0,NA,800
+Random sampling,0.9479717393324508,0.050732642703426964,0.06,1600,0.0,NA,1600

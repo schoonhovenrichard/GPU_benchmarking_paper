@@ -64,30 +64,30 @@ if __name__ == '__main__':
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
 
     convolution_files = ['convolution_A100_processed.json',
-    'convolution_RTX_2070_SUPER_processed.json',
+    #'convolution_RTX_2070_SUPER_processed.json',
     'convolution_TITAN_RTX_processed.json',
     'convolution_V100_processed.json',
     'MI50_convolution_15x15_processed.json',
-    'convolution_GTX_1080Ti_processed.json',
+    #'convolution_GTX_1080Ti_processed.json',
     #'convolution_P100_processed.json',#tuning
     'convolution_K20_processed.json',
     'convolution_GTX_Titan_X_processed.json']
 
     GEMM_files = ['GEMM_A100_processed.json',
     'GEMM_V100_processed.json',
-    'GEMM_RTX_2070_SUPER_processed.json',
+    #'GEMM_RTX_2070_SUPER_processed.json',
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
-    'GEMM_GTX_1080Ti_processed.json',
+    #'GEMM_GTX_1080Ti_processed.json',
     #'GEMM_P100_processed.json',#tuning
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 
     pnpoly_files = ['pnpoly_A100_processed.json',
     'pnpoly_V100_processed.json',
-    'pnpoly_RTX_2070_SUPER_processed.json',
+    #'pnpoly_RTX_2070_SUPER_processed.json',
     'pnpoly_TITAN_RTX_processed.json',
-    'pnpoly_GTX_1080Ti_processed.json',
+    #'pnpoly_GTX_1080Ti_processed.json',
     #'pnpoly_P100_processed.json',#tuning
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
@@ -131,14 +131,15 @@ if __name__ == '__main__':
         print("There are", len(data['cache'].keys()), "keys in the searchspace")
 
         ## Define experimental parameters
-        maxtime = 10
-        maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
+        maxtime = 6
+        maxfevals = [25,50,100,200,400,800,1600]
+        #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
         minvar = 1e-10
-        exper_runs = 100
+        exper_runs = 50
         output_dir = '/experiment_files/'
 
         #NOTE: To log results, set LOG_results to True
-        LOG_RESULTS = False
+        LOG_RESULTS = True
 
         ## Which algorithms to run
         allruns = False
@@ -209,17 +210,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = ["COBYLA", 0.5]
-            paramsettings[50] = ["COBYLA", 0.5]
-            paramsettings[75] = ["COBYLA", 1.0]
-            paramsettings[100] = ["COBYLA", 1.0]
-            paramsettings[150] = ["COBYLA", 0.1]
-            paramsettings[200] = ["COBYLA", 0.25]
-            paramsettings[400] = ["COBYLA", 0.25]
-            paramsettings[600] = ["SLSQP", 2.0]
-            paramsettings[800] = ["SLSQP", 0.005]
-            paramsettings[1000] = ["SLSQP", 1.0]
-            paramsettings[2000] = ["SLSQP", 0.1]
+            paramsettings[25] = ["Powell", 0.1]
+            paramsettings[50] = ["COBYLA", 0.1]
+            paramsettings[100] = ["COBYLA", 0.1]
+            paramsettings[200] = ["COBYLA", 0.1]
+            paramsettings[400] = ["COBYLA", 0.1]
+            paramsettings[800] = ["SLSQP", 1.0]
+            paramsettings[1600] = ["SLSQP", 1.0]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -266,17 +263,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = ["Powell"]
+            paramsettings[25] = ["COBYLA"]
             paramsettings[50] = ["Powell"]
-            paramsettings[75] = ["Powell"]
             paramsettings[100] = ["Powell"]
-            paramsettings[150] = ["Powell"]
             paramsettings[200] = ["Powell"]
             paramsettings[400] = ["Powell"]
-            paramsettings[600] = ["Powell"]
             paramsettings[800] = ["Powell"]
-            paramsettings[1000] = ["Powell"]
-            paramsettings[2000] = ["Powell"]
+            paramsettings[1600] = ["Powell"]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -321,17 +314,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = [10, 2, 1000]
-            paramsettings[50] = [10, 2, 1000]
-            paramsettings[75] = [10, 5, 10]
+            paramsettings[25] = [25, 5, 10]
+            paramsettings[50] = [25, 5, 10]
             paramsettings[100] = [10, 5, 10]
-            paramsettings[150] = [15, 7, 1000]
             paramsettings[200] = [20, 10, 1000]
-            paramsettings[400] = [28, 9, 100]
-            paramsettings[600] = [42, 13, 1000]
-            paramsettings[800] = [56, 11, 1000]
-            paramsettings[1000] = [100, 10, 1000]
-            paramsettings[2000] = [200, 20, 1000]
+            paramsettings[400] = [40, 20, 100]
+            paramsettings[800] = [80, 26, 1000]
+            paramsettings[1600] = [160, 32, 10]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -384,17 +373,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = ["best2exp", 1, 0.9, (0.2,0.7)]
-            paramsettings[50] = ["best2exp", 1, 0.9, (0.2,0.7)]
-            paramsettings[75] = ["best2exp", 2, 0.7, (0.2,0.7)]
-            paramsettings[100] = ["best2exp", 2, 0.7, (0.2,0.7)]
-            paramsettings[150] = ["best2exp", 3, 0.9, (0.2,0.7)]
-            paramsettings[200] = ["best2exp", 4, 0.9, (0.2,0.7)]
-            paramsettings[400] = ["randtobest1bin", 8, 0.9, (0.2,0.7)]
-            paramsettings[600] = ["best1bin", 12, 0.7, (0.2,0.7)]
-            paramsettings[800] = ["best1bin", 16, 0.5, (0.2,0.7)]
-            paramsettings[1000] = ["best1bin", 20, 0.5, (0.2,0.7)]
-            paramsettings[2000] = ["best1bin", 40, 0.9, (0.5,1.0)]
+            paramsettings[25] = ["best1bin", 1, 0.5, (0.2,0.7)]
+            paramsettings[50] = ["best1bin", 2, 0.7, (0.2,0.7)]
+            paramsettings[100] = ["best1bin", 2, 0.7, (0.2,0.7)]
+            paramsettings[200] = ["best1bin", 4, 0.7, (0.2,0.7)]
+            paramsettings[400] = ["best2bin", 8, 0.7, (0.2,0.7)]
+            paramsettings[800] = ["best1exp", 16, 0.7, (0.2,0.7)]
+            paramsettings[1600] = ["best1exp", 32, 0.7, (0.2,0.7)]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -412,12 +397,13 @@ if __name__ == '__main__':
                     recomb = combi[2]
                     mutate = combi[3]
 
-                    iterations = max(0, int(maxfeval / (pop_size * nr_vars))-1)
-                    if maxfeval >= 200:
-                        iterations += 1
-                    if maxfeval >= 800:
-                        iterations += 1
-                    iterations += 100
+                    iterations = 1000000
+                    #iterations = max(0, int(maxfeval / (pop_size * nr_vars))-1)
+                    #if maxfeval >= 200:
+                    #    iterations += 1
+                    #if maxfeval >= 800:
+                    #    iterations += 1
+                    #iterations += 100
 
                     hc = False # For accurate Feval measurements
 
@@ -458,17 +444,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = [1.0, hill.RandomGreedyHillclimb, "Hamming"]
+            paramsettings[25] = [1.0, None, "Hamming"]
             paramsettings[50] = [1.0, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[75] = [0.5, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[100] = [0.5, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[150] = [1.0, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[200] = [0.7, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[400] = [0.5, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[600] = [0.5, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[800] = [0.7, hill.RandomGreedyHillclimb, "Hamming"]
-            paramsettings[1000] = [0.5, hill.BestHillclimb, "Hamming"]
-            paramsettings[2000] = [0.5, hill.BestHillclimb, "Hamming"]
+            paramsettings[100] = [1.0, hill.RandomGreedyHillclimb, "Hamming"]
+            paramsettings[200] = [1.0, hill.RandomGreedyHillclimb, "Hamming"]
+            paramsettings[400] = [0.7, hill.RandomGreedyHillclimb, "Hamming"]
+            paramsettings[800] = [0.1, hill.RandomGreedyHillclimb, "Hamming"]
+            paramsettings[1600] = [0.1, hill.RandomGreedyHillclimb, "Hamming"]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -520,17 +502,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = [hill.RandomGreedyHillclimb, 4, rep.onepoint_crossover, sel.select_best_half, 'Hamming']
-            paramsettings[50] = [hill.RandomGreedyHillclimb, 4, rep.onepoint_crossover, sel.select_best_half, 'Hamming']
-            paramsettings[75] = [hill.RandomGreedyHillclimb, 4, rep.twopoint_crossover, sel.select_best_half, 'Hamming']
-            paramsettings[100] = [hill.RandomGreedyHillclimb, 4, rep.twopoint_crossover, sel.select_best_half, 'Hamming']
-            paramsettings[150] = [hill.RandomGreedyHillclimb, 6, rep.uniform_crossover, sel.select_best_half, 'Hamming']
-            paramsettings[200] = [hill.RandomGreedyHillclimb, 4, rep.twopoint_crossover, sel.tournament8_selection, 'Hamming']
-            paramsettings[400] = [hill.RandomGreedyHillclimb, 10, rep.onepoint_crossover, sel.tournament4_selection, 'Hamming']
-            paramsettings[600] = [hill.RandomGreedyHillclimb, 20, rep.uniform_crossover, sel.select_best_half, 'adjacent']
-            paramsettings[800] = [hill.RandomGreedyHillclimb, 20, rep.onepoint_crossover, sel.RTS, 'adjacent']
-            paramsettings[1000] = [hill.RandomGreedyHillclimb, 24, rep.uniform_crossover, sel.RTS, 'adjacent']
-            paramsettings[2000] = [hill.RandomGreedyHillclimb, 50, rep.onepoint_crossover, sel.RTS, 'adjacent']
+            paramsettings[25] = [hill.RandomGreedyHillclimb, 2, rep.uniform_crossover, sel.RTS, 'Hamming']
+            paramsettings[50] = [hill.RandomGreedyHillclimb, 2, rep.uniform_crossover, sel.RTS, 'Hamming']
+            paramsettings[100] = [hill.RandomGreedyHillclimb, 4, rep.twopoint_crossover, sel.RTS, 'Hamming']
+            paramsettings[200] = [hill.RandomGreedyHillclimb, 16, rep.twopoint_crossover, sel.RTS, 'Hamming']
+            paramsettings[400] = [hill.RandomGreedyHillclimb, 20, rep.uniform_crossover, sel.RTS, 'Hamming']
+            paramsettings[800] = [hill.RandomGreedyHillclimb, 40, rep.uniform_crossover, sel.RTS, 'Hamming']
+            paramsettings[1600] = [hill.RandomGreedyHillclimb, 80, rep.uniform_crossover, sel.RTS, 'Hamming']
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -592,17 +570,13 @@ if __name__ == '__main__':
 
             #Feval settings
             paramsettings = dict()
-            paramsettings[25] = [0.02, 10, rep.onepoint_crossover, sel.tournament8_selection]
-            paramsettings[50] = [0.02, 14, rep.onepoint_crossover, sel.tournament8_selection]
-            paramsettings[75] = [0.02, 16, rep.onepoint_crossover, sel.tournament8_selection]
+            paramsettings[25] = [0.02, 8, rep.onepoint_crossover, sel.tournament8_selection]
+            paramsettings[50] = [0.02, 10, rep.onepoint_crossover, sel.tournament8_selection]
             paramsettings[100] = [0.02, 20, rep.onepoint_crossover, sel.tournament8_selection]
-            paramsettings[150] = [0.02, 24, rep.twopoint_crossover, sel.select_best_half]
-            paramsettings[200] = [0.02, 32, rep.uniform_crossover, sel.tournament8_selection]
-            paramsettings[400] = [0.05, 24, rep.twopoint_crossover, sel.select_best_half]
-            paramsettings[600] = [0.05, 40, rep.twopoint_crossover, sel.select_best_half]
-            paramsettings[800] = [0.05, 50, rep.twopoint_crossover, sel.select_best_half]
-            paramsettings[1000] = [0.05, 160, rep.twopoint_crossover, sel.tournament4_selection]
-            paramsettings[2000] = [0.05, 160, rep.twopoint_crossover, sel.select_best_half]
+            paramsettings[200] = [0.05, 40, rep.onepoint_crossover, sel.tournament8_selection]
+            paramsettings[400] = [0.05, 80, rep.onepoint_crossover, sel.tournament8_selection]
+            paramsettings[800] = [0.02, 128, rep.twopoint_crossover, sel.tournament4_selection]
+            paramsettings[1600] = [0.02, 320, rep.twopoint_crossover, sel.tournament4_selection]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -641,29 +615,21 @@ if __name__ == '__main__':
             #Feval settings
             paramsettings = dict()
             if TABU_TYPE == "Best":
-                paramsettings[25] = [100, "Hamming"]
-                paramsettings[50] = [100, "Hamming"]
-                paramsettings[75] = [100, "Hamming"]
-                paramsettings[100] = [100, "Hamming"]
-                paramsettings[150] = [100, "Hamming"]
-                paramsettings[200] = [100, "Hamming"]
-                paramsettings[400] = [400, "Hamming"]
-                paramsettings[600] = [400, "Hamming"]
-                paramsettings[800] = [400, "Hamming"]
-                paramsettings[1000] = [400, "Hamming"]
-                paramsettings[2000] = [400, "adjacent"]
+                paramsettings[25] = [2000, "Hamming"]
+                paramsettings[50] = [2000, "Hamming"]
+                paramsettings[100] = [2000, "Hamming"]
+                paramsettings[200] = [2000, "Hamming"]
+                paramsettings[400] = [2000, "Hamming"]
+                paramsettings[800] = [2000, "Hamming"]
+                paramsettings[1600] = [2000, "Hamming"]
             elif TABU_TYPE == "RandomGreedy":
-                paramsettings[25] = [100, "Hamming"]
-                paramsettings[50] = [100, "Hamming"]
-                paramsettings[75] = [32, "Hamming"]
-                paramsettings[100] = [32, "Hamming"]
-                paramsettings[150] = [16, "Hamming"]
-                paramsettings[200] = [16, "Hamming"]
-                paramsettings[400] = [16, "Hamming"]
-                paramsettings[600] = [400, "Hamming"]
-                paramsettings[800] = [400, "Hamming"]
-                paramsettings[1000] = [400, "Hamming"]
-                paramsettings[2000] = [400, "adjacent"]
+                paramsettings[25] = [4, "Hamming"]
+                paramsettings[50] = [4, "Hamming"]
+                paramsettings[100] = [2000, "Hamming"]
+                paramsettings[200] = [2000, "Hamming"]
+                paramsettings[400] = [2000, "Hamming"]
+                paramsettings[800] = [2000, "Hamming"]
+                paramsettings[1600] = [2000, "Hamming"]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -737,27 +703,19 @@ if __name__ == '__main__':
             if MLS_TYPE == "RandomGreedy":
                 paramsettings[25] = ["Hamming", True]
                 paramsettings[50] = ["Hamming", True]
-                paramsettings[75] = ["Hamming", True]
-                paramsettings[100] = ["Hamming", True]
-                paramsettings[150] = ["Hamming", False]
-                paramsettings[200] = ["Hamming", True]
+                paramsettings[100] = ["Hamming", False]
+                paramsettings[200] = ["Hamming", False]
                 paramsettings[400] = ["Hamming", True]
-                paramsettings[600] = ["Hamming", False]
-                paramsettings[800] = ["Hamming", False]
-                paramsettings[1000] = ["Hamming", True]
-                paramsettings[2000] = ["Hamming", True]
+                paramsettings[800] = ["Hamming", True]
+                paramsettings[1600] = ["Hamming", True]
             if MLS_TYPE == "Best":
                 paramsettings[25] = ["adjacent"]
                 paramsettings[50] = ["adjacent"]
-                paramsettings[75] = ["adjacent"]
                 paramsettings[100] = ["adjacent"]
-                paramsettings[150] = ["Hamming"]
                 paramsettings[200] = ["Hamming"]
                 paramsettings[400] = ["Hamming"]
-                paramsettings[600] = ["Hamming"]
                 paramsettings[800] = ["Hamming"]
-                paramsettings[1000] = ["Hamming"]
-                paramsettings[2000] = ["Hamming"]
+                paramsettings[1600] = ["Hamming"]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -843,29 +801,21 @@ if __name__ == '__main__':
             #Feval settings
             paramsettings = dict()
             if ILS_TYPE == "RandomGreedy":
-                paramsettings[25] = [0.5, 100, 'Hamming', False]
-                paramsettings[50] = [0.5, 100, 'Hamming', False]
-                paramsettings[75] = [0.02, 100, 'Hamming', False]
-                paramsettings[100] = [0.02, 100, 'Hamming', False]
-                paramsettings[150] = [0.5, 10, 'Hamming', False]
-                paramsettings[200] = [0.02, 50, 'adjacent', False]
-                paramsettings[400] = [0.1, 5, 'adjacent', False]
-                paramsettings[600] = [0.05, 5, 'adjacent', True]
-                paramsettings[800] = [0.05, 5, 'adjacent', True]
-                paramsettings[1000] = [0.05, 5, 'adjacent', True]
-                paramsettings[2000] = [0.05, 5, 'adjacent', True]
+                paramsettings[25] = [1.0, 25, 'Hamming', False]
+                paramsettings[50] = [1.0, 25, 'Hamming', False]
+                paramsettings[100] = [1.0, 25, 'Hamming', False]
+                paramsettings[200] = [1.0, 25, 'Hamming', False]
+                paramsettings[400] = [1.0, 25, 'Hamming', True]
+                paramsettings[800] = [0.05, 10, 'adjacent', True]
+                paramsettings[1600] = [0.05, 10, 'adjacent', True]
             elif ILS_TYPE == "Best":
-                paramsettings[25] = [0.02, 100, 'adjacent']
-                paramsettings[50] = [0.02, 100, 'adjacent']
-                paramsettings[75] = [0.02, 25, 'Hamming']
-                paramsettings[100] = [0.02, 25, 'Hamming']
-                paramsettings[150] = [0.35, 50, 'Hamming']
-                paramsettings[200] = [0.35, 10, 'Hamming']
-                paramsettings[400] = [0.02, 10, 'adjacent']
-                paramsettings[600] = [0.02, 10, 'adjacent']
-                paramsettings[800] = [0.02, 10, 'adjacent']
-                paramsettings[1000] = [0.02, 10, 'adjacent']
-                paramsettings[2000] = [0.02, 10, 'adjacent']
+                paramsettings[25] = [1.0, 25, 'adjacent']
+                paramsettings[50] = [1.0, 25, 'adjacent']
+                paramsettings[100] = [1.0, 25, 'Hamming']
+                paramsettings[200] = [1.0, 25, 'Hamming']
+                paramsettings[400] = [1.0, 25, 'Hamming']
+                paramsettings[800] = [0.05, 25, 'adjacent']
+                paramsettings[1600] = [0.05, 25, 'adjacent']
 
             hprun = 0
             for maxfeval in maxfevals:

@@ -1,0 +1,9 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyILS,0.5484234718428214,0.3207249356279804,0.0,25,0.0,walksize=1.0; no_improve=25; iterations=100000,25
+RandomGreedyILS,0.7900403939946626,0.1924615298898579,0.0,50,0.0,walksize=1.0; no_improve=25; iterations=100000,50
+RandomGreedyILS,0.8732985437806596,0.036676932570548305,0.02,99.08,6.505382386916237,walksize=1.0; no_improve=25; iterations=100000,100
+RandomGreedyILS,0.8760955017181573,0.020310454609864158,0.0,200,0.0,walksize=1.0; no_improve=25; iterations=100000,200
+RandomGreedyILS,0.897582576215389,0.02836269462107819,0.06,399.48,3.676955262170047,walksize=1.0; no_improve=25; iterations=100000,400
+RandomGreedyILS,0.9360049603482532,0.05544503947504301,0.4,651.04,233.74929531706505,walksize=0.05; no_improve=10; iterations=100000,800
+RandomGreedyILS,0.991240862128024,0.028123318418017167,0.9,856.26,458.611783271104,walksize=0.05; no_improve=10; iterations=100000,1600

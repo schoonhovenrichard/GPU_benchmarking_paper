@@ -1,0 +1,9 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+RandomGreedyTabu,0.4605524145059329,0.36128874465348765,0.0,25,0.0,tabu_size=4; iterations=100000,25
+RandomGreedyTabu,0.6307257545020272,0.35857212833674695,0.08,49.16,4.639493286899301,tabu_size=4; iterations=100000,50
+RandomGreedyTabu,0.7644021218217796,0.37090006031007877,0.26,92.04,16.64878496516567,tabu_size=2000; iterations=100000,100
+RandomGreedyTabu,0.9154816478812632,0.25404295666190424,0.52,157.46,57.38847569727865,tabu_size=2000; iterations=100000,200
+RandomGreedyTabu,0.9341564432976469,0.24014629467368714,0.84,206.26,116.62337953026925,tabu_size=2000; iterations=100000,400
+RandomGreedyTabu,1.0,0.0,1.0,193.6,100.44919519999416,tabu_size=2000; iterations=100000,800
+RandomGreedyTabu,1.0,0.0,1.0,194.88,112.2918282595735,tabu_size=2000; iterations=100000,1600

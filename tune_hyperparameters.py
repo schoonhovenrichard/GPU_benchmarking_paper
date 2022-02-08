@@ -63,7 +63,9 @@ if __name__ == '__main__':
     # Read file
     # We do hyperparameter tuning on GTX 1080Ti files
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
-    filenames = ['convolution_P100_processed.json', 'GEMM_P100_processed.json', 'pnpoly_P100_processed.json']
+    filenames = ['convolution_GTX_1080Ti_processed.json', 'GEMM_GTX_1080Ti_processed.json', 'pnpoly_GTX_1080Ti_processed.json']
+    filenames += ['convolution_RTX_2070_SUPER_processed.json', 'GEMM_RTX_2070_SUPER_processed.json', 'pnpoly_RTX_2070_SUPER_processed.json']
+    filenames += ['convolution_P100_processed.json', 'GEMM_P100_processed.json', 'pnpoly_P100_processed.json']
     for filename in filenames:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
@@ -101,13 +103,14 @@ if __name__ == '__main__':
         print("Optimal settings in cache are:", bestkey, "with time {0:.4f}".format(best_fit))
 
         ## Define experimental parameters
-        maxtime = 3
-        maxfevals = [50,100,150,200,400,600,800,1000,2000]
+        maxtime = 2.5
+        #maxfevals = [50,100,150,200,400,600,800,1000,2000]
+        maxfevals = [25,50,100,200,400,800,1600]
         minvar = 0.00001
-        exper_runs = 50
+        exper_runs = 20
 
         #NOTE: To log results, set LOG_results to True
-        LOG_RESULTS = False
+        LOG_RESULTS = True
 
         ## Which algorithms to run
         allruns = False
@@ -140,7 +143,7 @@ if __name__ == '__main__':
             GILS = False
             BILS = False
 
-        GILS = True
+        SAN = True
 
         # Basin Hopping
         if BASH:
@@ -151,10 +154,10 @@ if __name__ == '__main__':
             hyperpars = dict()
             hyperpars['method'] = ['Powell','BFGS','COBYLA','L-BFGS-B','SLSQP','CG','Nelder-Mead']
             hyperpars['temperature'] = [0.005, 0.1, 0.25, 0.5, 1.0, 2.0]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
-           
+
             hprun = 0
             for maxfeval in maxfevals:
                 for combi in hp_combis:
@@ -200,7 +203,7 @@ if __name__ == '__main__':
             # Hyper parameters
             hyperpars = dict()
             hyperpars['method'] = ['COBYLA','L-BFGS-B','SLSQP','CG','Powell','Nelder-Mead', 'BFGS', 'trust-constr']
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -255,7 +258,7 @@ if __name__ == '__main__':
             # We save the multiplies which is times nr_particles
             hyperpars['kvar'] = [0.5, 0.33, 0.2, 0.1]
             hyperpars['scaling'] = [10.0, 100.0, 1000.0]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -333,10 +336,10 @@ if __name__ == '__main__':
                 "best2bin",
                 "rand2bin",
                 "rand1bin"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
-            
+
             hprun = 0
             for maxfeval in maxfevals:
                 for combi in hp_combis:
@@ -380,7 +383,7 @@ if __name__ == '__main__':
                     #    print("CHECK THIS THOROUGHLY!")
                     #    continue
 
-                    settings = "pop_size=" + str(pop_size) + "; method=" + str(methd) + "; mutation=" + str(mutate) + "; recombination=" + str(recomb) + "; iterations=" + str(iterations) 
+                    settings = "pop_size=" + str(pop_size) + "; method=" + str(methd) + "; mutation=" + str(mutate) + "; recombination=" + str(recomb) + "; iterations=" + str(iterations)
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["Differential evolution", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
@@ -403,8 +406,8 @@ if __name__ == '__main__':
             hyperpars['hillclimb'] = [None, hill.BestHillclimb, hill.RandomGreedyHillclimb, hill.StochasticHillclimb]
             hyperpars['explore'] = [0.01, 0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0]
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-            
-           
+
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -437,7 +440,7 @@ if __name__ == '__main__':
                         results[0].append(best_fit/float(x[0]))
                         results[1].append(x[2])
 
-                    settings = "hillclimb=" + str(hillclimber) + "; explore=" + str(explore) + "; nbour_method=" + str(nbour)
+                    settings = "hillclimb=" + str(hillclimber) + "; explore=" + str(explr) + "; nbour_method=" + str(nbour)
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["Simulated annealing", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
@@ -463,7 +466,7 @@ if __name__ == '__main__':
             hyperpars['selector'] = [sel.RTS, sel.select_best_half, sel.tournament2_selection, sel.tournament4_selection, sel.tournament8_selection]
             hyperpars['reproductor'] = [rep.uniform_crossover, rep.twopoint_crossover, rep.onepoint_crossover]
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -511,7 +514,7 @@ if __name__ == '__main__':
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["Genetic local search", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
-                    print("GLS: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1]))) 
+                    print("GLS: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1])))
 
             ### Write results to file
             if LOG_RESULTS:
@@ -532,7 +535,7 @@ if __name__ == '__main__':
             hyperpars['selector'] = [sel.RTS, sel.select_best_half, sel.tournament2_selection, sel.tournament4_selection, sel.tournament8_selection]
             hyperpars['reproductor'] = [rep.uniform_crossover, rep.twopoint_crossover, rep.onepoint_crossover]
             hyperpars['mutation'] = [0.02, 0.05, 0.1, 0.2, 0.3, 0.5]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -553,7 +556,7 @@ if __name__ == '__main__':
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["Genetic algorithm", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
-                    print("GA: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1]))) 
+                    print("GA: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1])))
 
             ### Write results to file
             if LOG_RESULTS:
@@ -571,7 +574,7 @@ if __name__ == '__main__':
             hyperpars = dict()
             hyperpars['tabu_size'] = [4, 8, 16, 32, 64, 100, 200, 400, 700, 1000, 2000]
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -605,7 +608,7 @@ if __name__ == '__main__':
                     experiment_results.append(["Tabu search", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
                     print("BestTabu: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1])))
-     
+
             ### Write results to file
             if LOG_RESULTS:
                 export_filename = "tune_hyperpars_BestTabu_" + filename[:-5] + "_runs={0}".format(exper_runs) + ".csv"
@@ -621,7 +624,7 @@ if __name__ == '__main__':
             hyperpars = dict()
             hyperpars['tabu_size'] = [4, 8, 16, 32, 64, 100, 200, 400, 700, 1000, 2000]
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -655,7 +658,7 @@ if __name__ == '__main__':
                     experiment_results.append(["Tabu search", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
 
                     print("RandomGreedyTabu: Average fraction of optimal fitness: {0:.4f} +- {1:.5f}".format(statistics.mean(results[0]), statistics.stdev(results[0])), "\nAverage number of function evaluations: {0:.4f} +- {1:.5f}".format(statistics.mean(results[1]), statistics.stdev(results[1])))
-     
+
             ### Write results to file
             if LOG_RESULTS:
                 export_filename = "tune_hyperpars_RandomGreedyTabu_" + filename[:-5] + "_runs={0}".format(exper_runs) + ".csv"
@@ -670,7 +673,7 @@ if __name__ == '__main__':
             # Hyper parameters
             hyperpars = dict()
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -719,7 +722,7 @@ if __name__ == '__main__':
             hyperpars = dict()
             hyperpars['restart'] = [False, True]
             hyperpars['nbour_method'] = ["Hamming","adjacent"]
-           
+
             hp_combis = list(itertools.product(*list(hyperpars.values())))
             print("There are", len(maxfevals) * len(hp_combis), "combinations to tune...")
 
@@ -805,7 +808,7 @@ if __name__ == '__main__':
                                     verbose=False)
                         results[0].append(best_fit/float(x[0]))
                         results[1].append(x[2])
-             
+
                     settings = "walksize=" + str(walksize) + "; no_improve=" + str(noimp) + "; restart=" + str(restart) + "; nbour=" + str(nbour)
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["RandomGreedyILS", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
@@ -859,7 +862,7 @@ if __name__ == '__main__':
                                     verbose=False)
                         results[0].append(best_fit/float(x[0]))
                         results[1].append(x[2])
-             
+
                     settings = "walksize=" + str(walksize) + "; no_improve=" + str(noimp) + "; nbour=" + str(nbour)
                     success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
                     experiment_results.append(["BestILS", statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings])
