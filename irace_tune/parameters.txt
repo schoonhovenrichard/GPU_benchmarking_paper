@@ -1,0 +1,6 @@
+bx "--block_size_x " i (0,11)
+by "--block_size_y " i (0, 5)
+tx "--tile_size_x " i (0, 7)
+ty "--tile_size_y " i (0, 7)
+up "--use_padding " i (0, 1)
+ro "--read_only " i (0, 1)

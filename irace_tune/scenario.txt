@@ -1,0 +1,6 @@
+maxExperiments = 200
+trainInstancesDir = "convolution_instances/"
+trainInstancesFile = ""
+targetRunner = "gputune-runner.py"
+parameters = "parameters.txt"
+deterministic = "0"
