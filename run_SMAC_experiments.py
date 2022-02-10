@@ -59,8 +59,7 @@ if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = "/".join(current_dir.split('/')[:-1]) + "/"
 
-    # Read file
-    # We do hyperparameter tuning on GTX 1080Ti files
+    # Read files
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
 
     convolution_files = ['convolution_A100_processed.json',
@@ -69,7 +68,7 @@ if __name__ == '__main__':
     'convolution_V100_processed.json',
     'MI50_convolution_15x15_processed.json',
     'convolution_GTX_1080Ti_processed.json',
-    'convolution_P100_processed.json',#tuning
+    'convolution_P100_processed.json',
     'convolution_K20_processed.json',
     'convolution_GTX_Titan_X_processed.json']
 
@@ -79,7 +78,7 @@ if __name__ == '__main__':
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
     'GEMM_GTX_1080Ti_processed.json',
-    'GEMM_P100_processed.json',#tuning
+    'GEMM_P100_processed.json',
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 
@@ -88,7 +87,7 @@ if __name__ == '__main__':
     'pnpoly_RTX_2070_SUPER_processed.json',
     'pnpoly_TITAN_RTX_processed.json',
     'pnpoly_GTX_1080Ti_processed.json',
-    'pnpoly_P100_processed.json',#tuning
+    'pnpoly_P100_processed.json',
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
@@ -96,7 +95,6 @@ if __name__ == '__main__':
     tune_files = GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
 
     for filename in tune_files:
-    #for filename in convolution_files[6:7]:
         ###  SETUP THE GPU CACHE DATA  ###
 
         with open(data_path + filename, 'r') as myfile:
