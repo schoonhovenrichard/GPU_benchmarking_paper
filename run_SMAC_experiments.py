@@ -32,7 +32,7 @@ from ConfigSpace.hyperparameters import \
     CategoricalHyperparameter, UniformFloatHyperparameter, UniformIntegerHyperparameter
 from smac.configspace import ConfigurationSpace
 from smac.facade.smac_bb_facade import SMAC4BB
-from smac.optimizer.acquisition import EI, LogEI, PI, TS, LCB
+from smac.optimizer.acquisition import EI, PI, TS, LCB
 from smac.scenario.scenario import Scenario
 
 
@@ -44,30 +44,12 @@ class SMAC_GPU:
         self.visited = []
 
     def map_cfg_to_kernelcfg(self, cfg):
-        bx = self.gpu_space.tune_params['block_size_x'][cfg['block_size_x']]
-        by = self.gpu_space.tune_params['block_size_y'][cfg['block_size_y']]
-        tx = self.gpu_space.tune_params['tile_size_x'][cfg['tile_size_x']]
-        ty = self.gpu_space.tune_params['tile_size_y'][cfg['tile_size_y']]
-        pd = self.gpu_space.tune_params['use_padding'][cfg['use_padding']]
-        ro = self.gpu_space.tune_params['read_only'][cfg['read_only']]
-
-        param_vec = [bx, by, tx, ty, pd, ro]
+        param_vec = []
+        for key, vals in self.gpu_space.tune_params.items():
+            param_vec.append(vals[cfg[key]])
         return param_vec
 
-
     def return_GPU_score(self, cfg):
-        # limits are 11, 5, 7, 7, 1, 1
-        #config_vec = [
-        #    cfg['block_size_x'],
-        #    cfg['block_size_y'],
-        #    cfg['tile_size_x'],
-        #    cfg['tile_size_y'],
-        #    cfg['use_padding'],
-        #    cfg['read_only']
-        #]
-        #self.fevals += 1
-        #self.visited.append(config_vec)
-
         param_vec = self.map_cfg_to_kernelcfg(cfg)
         fitness = self.gpu_space.get_runtime(param_vec)
         return fitness
@@ -111,8 +93,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    #tune_files = convolution_files[5:6] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    tune_files = convolution_files[1:2] + convolution_files[5:6]
+    tune_files = GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
 
     for filename in tune_files:
     #for filename in convolution_files[6:7]:
@@ -171,25 +152,15 @@ if __name__ == '__main__':
         #NOTE: SMAC does not allow for aribitrary integer distributions!
         #  Instead, we will use a uniform integer distribution over the
         # indices of the allowed values.
-        blockx = UniformIntegerHyperparameter(
-            'block_size_x', 0, len(searchspace['block_size_x']) - 1, default_value=0)
-        blocky = UniformIntegerHyperparameter(
-            'block_size_y', 0, len(searchspace['block_size_y']) - 1, default_value=0)
-        tilex = UniformIntegerHyperparameter(
-            'tile_size_x', 0, len(searchspace['tile_size_x']) - 1, default_value=0)
-        tiley = UniformIntegerHyperparameter(
-            'tile_size_y', 0, len(searchspace['tile_size_y']) - 1, default_value=0)
-        padding = UniformIntegerHyperparameter(
-            'use_padding', 0, len(searchspace['use_padding']) - 1, default_value=0)
-        read_only = UniformIntegerHyperparameter(
-            'read_only', 0, len(searchspace['read_only']) - 1, default_value=0)
-        # Add all hyperparameters
-        cs.add_hyperparameters([blockx, blocky, tilex, tiley, padding, read_only])
+        cs_pars = []
+        for var, vals in searchspace.items():
+            param = UniformIntegerHyperparameter(var, 0, len(vals)-1, default_value=0)
+            cs_pars.append(param)
+        cs.add_hyperparameters(cs_pars)
 
         #EI, LCB, PI, TS
         #acqstr = "EI"
-        for acqstr in ["TS"]:
-        #for acqstr in ["EI", "LCB", "PI", "TS"]:
+        for acqstr in ["EI", "LCB", "PI", "TS"]:
             experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
             # Use 'gp' or 'gp_mcmc' here
             model_type = 'gp'
@@ -198,8 +169,6 @@ if __name__ == '__main__':
             for maxfeval in maxfevals:
                 if acqstr == "EI":
                     acq_fun = EI
-                elif acqstr == "LogEI":
-                    acq_fun = LogEI
                 elif acqstr == "LCB":
                     acq_fun = LCB
                 elif acqstr == "PI":
