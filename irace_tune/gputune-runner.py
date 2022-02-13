@@ -1,9 +1,11 @@
-#!/home/schoonho/anaconda3/envs/gpubenchmarking/bin/python
+#!/export/scratch2/schoonho/anaconda3/envs/gpubenchmarking/bin/python
+##!/home/schoonho/anaconda3/envs/gpubenchmarking/bin/python
+##!/usr/bin/python
+
 #NOTE: The above is to use the correct conda isntallation!
 #NOTE: Change to correct path for your installation.
 #NOTE: Find path by running "which python" when the correct conda
 #NOTE: Environment is active.
-###!/usr/bin/python
 
 ###############################################################################
 # This script is the command that is executed every run.
@@ -85,19 +87,20 @@ if __name__=='__main__':
     instance = sys.argv[4]
     cand_params = sys.argv[5:]
 
-    
+
     ###  LOAD THE GPU CACHE  DATA  ###
     # Firstly, load instance to see which cache file to load.
-    with open(instance, 'r') as myfile:
-        cache_filename = myfile.read()
-    cache_filename = cache_filename.rstrip("\n")
+    #with open(instance, 'r') as myfile:
+    #    cache_filename = myfile.read()
+    #cache_filename = cache_filename.rstrip("\n")
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = "/".join(current_dir.split('/')[:-2]) + "/"
 
     # Read file
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
-    with open(data_path + cache_filename, 'r') as myfile:
+    #with open(data_path + cache_filename, 'r') as myfile:
+    with open(instance, 'r') as myfile:
         data=myfile.read()
     data = json.loads(data)
     #print("Device: " + str(data['device_name']))

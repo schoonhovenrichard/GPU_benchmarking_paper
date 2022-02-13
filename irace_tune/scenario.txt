@@ -1,6 +1,8 @@
 maxExperiments = 200
-trainInstancesDir = "convolution_instances/"
-trainInstancesFile = ""
+trainInstancesDir = "stochastic_cache_files/"
+trainInstancesFile = "convolution_instances/conv_A100.txt"
 targetRunner = "gputune-runner.py"
 parameters = "parameters.txt"
 deterministic = "0"
+firstTest = 5
+nbConfiguration = 0
