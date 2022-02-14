@@ -92,7 +92,8 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    tune_files = GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
+    #tune_files = GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
+    tune_files = pnpoly_files[4:6]
 
     for filename in tune_files:
         ###  SETUP THE GPU CACHE DATA  ###
@@ -158,7 +159,7 @@ if __name__ == '__main__':
 
         #EI, LCB, PI, TS
         #acqstr = "EI"
-        for acqstr in ["EI", "LCB", "PI", "TS"]:
+        for acqstr in ["EI", "LCB", "PI"]:
             experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
             # Use 'gp' or 'gp_mcmc' here
             model_type = 'gp'
