@@ -33,7 +33,11 @@ def parse_irace_output(file):
         if '# Best configurations as commandlines' in final_entry[i]:
             list_of_cfgs = final_entry[i+1:]
             for entry in list_of_cfgs:
-                if '   ' in entry:
+                if '     ' in entry:
+                    cfg = entry.split('     ')[-1]
+                elif '    ' in entry:
+                    cfg = entry.split('    ')[-1]
+                elif '   ' in entry:
                     cfg = entry.split('   ')[-1]
                 elif '  ' in entry:
                     cfg = entry.split('  ')[-1]
@@ -74,7 +78,7 @@ if __name__ == '__main__':
     irace_gpu_reader = iRace_GPU_reader(GPU_space)
 
     # create results dict
-    budgets = [200, 400]
+    budgets = [200, 400, 800, 1600, 3200, 6400, 25600]
     result_dict = {}
     for bud in budgets:
         result_dict[bud] = {'mean_times':[], 'fevals_used':[]}
@@ -131,7 +135,10 @@ if __name__ == '__main__':
         fevals_used = vals['fevals_used']
         fracs = [best_fit/float(x) for x in times]
         success_rate = (np.array(fracs) == 1.0).sum()/float(exper_runs)
-        experiment_results.append(["iRace", statistics.mean(fracs), statistics.stdev(fracs), success_rate, statistics.mean(fevals_used), statistics.stdev(fevals_used), settings])
+        if len(fracs) == 1:
+            experiment_results.append(["iRace", fracs[0], 0, success_rate, fevals_used[0], 0, settings])
+        else:
+            experiment_results.append(["iRace", statistics.mean(fracs), statistics.stdev(fracs), success_rate, statistics.mean(fevals_used), statistics.stdev(fevals_used), settings])
 
     with open(export_filename, "w", newline="") as f:
         writer = csv.writer(f)

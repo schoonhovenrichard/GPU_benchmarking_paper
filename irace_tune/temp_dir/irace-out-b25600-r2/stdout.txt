@@ -1,0 +1,1450 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.4.1.9fcaeaf
+# Copyright (C) 2010-2020
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace
+# called with: -s scenario.txt --exec-dir=temp_dir/irace-out-b25600-r2 --max-experiments 25600
+# 2022-02-14 14:30:12 CET: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 4
+# minNbSurvival: 4
+# nbParameters: 6
+# seed: 1072781322
+# confidence level: 0.95
+# budget: 25600
+# mu: 5
+# deterministic: TRUE
+
+# 2022-02-14 14:30:12 CET: Iteration 1 of 4
+# experimentsUsedSoFar: 0
+# remainingBudget: 25600
+# currentBudget: 6400
+# nbConfigurations: 1024
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|       1024|        166|   0.8304640055|       1024|00:01:57|   NA|  NA|    NA|
+|x|          2|       1024|        166|   0.8279040158|       2048|00:02:00|+1.00|1.00|0.0000|
+|x|          3|       1024|        166|   0.8270506859|       3072|00:01:52|+1.00|1.00|0.0000|
+|x|          4|       1024|        166|   0.8268800080|       4096|00:01:52|+1.00|1.00|0.0000|
+|-|          5|          2|        166|   0.8269824028|       5120|00:01:55|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         166    mean value:    0.8269824028
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+166  166  2  5  4  0  1  1       NA
+
+# 2022-02-14 14:39:51 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+166  2  5  4  0  1  1
+463  5  2  1  3  1  0
+# 2022-02-14 14:39:51 CET: Iteration 2 of 4
+# experimentsUsedSoFar: 5120
+# remainingBudget: 20480
+# currentBudget: 6826
+# nbConfigurations: 976
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          6|        976|       1221|   0.8232960105|        976|00:01:45|   NA|  NA|    NA|
+|x|          5|        976|       1221|   0.8217599988|       1950|00:01:50|+1.00|1.00|0.0000|
+|x|          2|        976|       1221|   0.8229546746|       2924|00:01:50|+1.00|1.00|0.0000|
+|x|          1|        976|       1221|   0.8220160007|       3898|00:01:51|+1.00|1.00|0.0000|
+|-|          4|         15|       1221|   0.8214527965|       4872|00:01:56|+0.90|0.92|0.0513|
+|-|          3|         13|       1221|   0.8212479949|       4885|00:00:01|+1.00|1.00|0.0000|
+|=|          7|         13|       1221|   0.8301714233|       4898|00:00:01|+1.00|1.00|0.0000|
+|=|          8|         13|       1221|   0.8289279938|       4911|00:00:01|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8289279938
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 14:49:15 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 14:49:15 CET: Iteration 3 of 4
+# experimentsUsedSoFar: 10031
+# remainingBudget: 15569
+# currentBudget: 7784
+# nbConfigurations: 868
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          9|        868|       1221|   0.8202239871|        868|00:01:34|   NA|  NA|    NA|
+|x|          5|        868|       1221|   0.8202239871|       1732|00:01:33|+1.00|1.00|0.0000|
+|x|          4|        868|       1221|   0.8198826512|       2596|00:01:37|+1.00|1.00|0.0000|
+|x|          7|        868|       1221|   0.8358399868|       3460|00:01:38|+1.00|1.00|0.0000|
+|-|          8|         34|       1221|   0.8327167869|       4324|00:01:35|+1.00|1.00|0.0000|
+|=|          6|         34|       1221|   0.8311466575|       4354|00:00:03|+1.00|1.00|0.0000|
+|=|          3|         34|       1221|   0.8295862760|       4384|00:00:03|+1.00|1.00|0.0000|
+|=|          2|         34|       1221|   0.8290559947|       4414|00:00:03|+1.00|1.00|0.0000|
+|=|          1|         34|       1221|   0.8279608819|       4444|00:00:03|+1.00|1.00|0.0000|
+|=|         10|         34|       1221|   0.8273919940|       4478|00:00:03|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8273919940
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 14:57:39 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 14:57:39 CET: Iteration 4 of 4
+# experimentsUsedSoFar: 14509
+# remainingBudget: 11091
+# currentBudget: 11091
+# nbConfigurations: 1011
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         11|       1011|       1221|   0.8202239871|       1011|00:01:57|   NA|  NA|    NA|
+|x|          5|       1011|       1221|   0.8202239871|       2018|00:01:54|+1.00|1.00|0.0000|
+|x|          3|       1011|       1221|   0.8202239871|       3025|00:01:54|+1.00|1.00|0.0000|
+|x|          6|       1011|       1221|   0.8209919930|       4032|00:01:58|+1.00|1.00|0.0000|
+|-|          9|         38|       1221|   0.8208383918|       5039|00:01:48|+1.00|1.00|0.0000|
+|=|          2|         38|       1221|   0.8215893308|       5073|00:00:03|+1.00|1.00|0.0000|
+|=|          8|         38|       1221|   0.8213942817|       5107|00:00:03|+1.00|1.00|0.0000|
+|=|          7|         38|       1221|   0.8291839957|       5141|00:00:04|+1.00|1.00|0.0000|
+|=|          4|         38|       1221|   0.8280746606|       5175|00:00:03|+1.00|1.00|0.0000|
+|=|         10|         38|       1221|   0.8274943948|       5209|00:00:04|+1.00|1.00|0.0000|
+|=|          1|         38|       1221|   0.8267403570|       5243|00:00:04|+1.00|1.00|0.0000|
+|=|         12|         38|       1221|   0.8262826602|       5281|00:00:04|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8262826602
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:07:48 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:07:48 CET: Iteration 5 of 5
+# experimentsUsedSoFar: 19790
+# remainingBudget: 5810
+# currentBudget: 5810
+# nbConfigurations: 450
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|        450|       1221|   0.8243200183|        450|00:00:49|   NA|  NA|    NA|
+|x|          6|        450|       1221|   0.8238080144|        896|00:00:48|+1.00|1.00|0.0000|
+|x|         11|        450|       1221|   0.8226133386|       1342|00:00:51|+1.00|1.00|0.0000|
+|x|         12|        450|       1221|   0.8222720027|       1788|00:00:52|+1.00|1.00|0.0000|
+|-|          5|          9|       1221|   0.8218623996|       2234|00:00:51|+1.00|1.00|0.0000|
+|=|          1|          9|       1221|   0.8214186629|       2239|00:00:00|+1.00|1.00|0.0000|
+|=|         10|          9|       1221|   0.8215405686|       2244|00:00:00|+1.00|1.00|0.0000|
+|=|          8|          9|       1221|   0.8213759959|       2249|00:00:00|+1.00|1.00|0.0000|
+|=|          3|          9|       1221|   0.8212479949|       2254|00:00:00|+1.00|1.00|0.0000|
+|=|          2|          9|       1221|   0.8216575980|       2259|00:00:00|+1.00|1.00|0.0000|
+|=|          9|          9|       1221|   0.8215272698|       2264|00:00:00|+1.00|1.00|0.0000|
+|=|          7|          9|       1221|   0.8267093301|       2269|00:00:00|+1.00|1.00|0.0000|
+|=|          4|          9|       1221|   0.8261316877|       2274|00:00:00|+1.00|1.00|0.0000|
+|=|         14|          9|       1221|   0.8256365657|       2283|00:00:01|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8256365657
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:12:10 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:12:10 CET: Iteration 6 of 6
+# experimentsUsedSoFar: 22073
+# remainingBudget: 3527
+# currentBudget: 3527
+# nbConfigurations: 238
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         15|        238|       1221|   0.8212479949|        238|00:00:27|   NA|  NA|    NA|
+|x|          6|        238|       1221|   0.8222720027|        472|00:00:25|+1.00|1.00|0.0000|
+|x|         13|        238|       1221|   0.8229546746|        706|00:00:26|+1.00|1.00|0.0000|
+|x|          3|        238|       1221|   0.8222720027|        940|00:00:26|+1.00|1.00|0.0000|
+|-|          8|          8|       1221|   0.8218623996|       1174|00:00:25|+1.00|1.00|0.0000|
+|=|         12|          8|       1221|   0.8217599988|       1178|00:00:00|+1.00|1.00|0.0000|
+|=|          4|          8|       1221|   0.8213942817|       1182|00:00:00|+1.00|1.00|0.0000|
+|=|         10|          8|       1221|   0.8215039968|       1186|00:00:00|+1.00|1.00|0.0000|
+|=|         11|          8|       1221|   0.8213617735|       1190|00:00:00|+1.00|1.00|0.0000|
+|=|          7|          8|       1221|   0.8275967956|       1194|00:00:00|+1.00|1.00|0.0000|
+|=|          2|          8|       1221|   0.8273919983|       1198|00:00:00|+1.00|1.00|0.0000|
+|=|          5|          8|       1221|   0.8267946641|       1202|00:00:00|+1.00|1.00|0.0000|
+|=|          1|          8|       1221|   0.8262104575|       1206|00:00:00|+1.00|1.00|0.0000|
+|=|          9|          8|       1221|   0.8257828525|       1210|00:00:00|+1.00|1.00|0.0000|
+|=|         14|          8|       1221|   0.8253439943|       1214|00:00:00|+1.00|1.00|0.0000|
+|=|         16|          8|       1221|   0.8250879943|       1222|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8250879943
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:14:27 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:14:27 CET: Iteration 7 of 7
+# experimentsUsedSoFar: 23295
+# remainingBudget: 2305
+# currentBudget: 2305
+# nbConfigurations: 139
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|        139|       1221|   0.8212479949|        139|00:00:15|   NA|  NA|    NA|
+|x|         12|        139|       1221|   0.8212479949|        274|00:00:14|+1.00|1.00|0.0000|
+|x|          3|        139|       1221|   0.8209066590|        409|00:00:15|+1.00|1.00|0.0000|
+|x|          9|        139|       1221|   0.8207359910|        544|00:00:14|+1.00|1.00|0.0000|
+|-|          2|          7|       1221|   0.8216575980|        679|00:00:13|+1.00|1.00|0.0000|
+|=|          4|          7|       1221|   0.8212479949|        682|00:00:00|+1.00|1.00|0.0000|
+|=|          5|          7|       1221|   0.8211017081|        685|00:00:00|+1.00|1.00|0.0000|
+|=|         14|          7|       1221|   0.8208639920|        688|00:00:00|+1.00|1.00|0.0000|
+|=|         13|          7|       1221|   0.8212479949|        691|00:00:00|+1.00|1.00|0.0000|
+|=|         15|          7|       1221|   0.8212479949|        694|00:00:00|+1.00|1.00|0.0000|
+|=|         10|          7|       1221|   0.8213410865|        697|00:00:00|+1.00|1.00|0.0000|
+|=|         16|          7|       1221|   0.8213333289|        700|00:00:00|+1.00|1.00|0.0000|
+|=|         11|          7|       1221|   0.8212479949|        703|00:00:00|+1.00|1.00|0.0000|
+|=|          6|          7|       1221|   0.8213942817|        706|00:00:00|+1.00|1.00|0.0000|
+|=|          8|          7|       1221|   0.8213162621|        709|00:00:00|+1.00|1.00|0.0000|
+|=|          1|          7|       1221|   0.8211839944|        712|00:00:00|+1.00|1.00|0.0000|
+|=|          7|          7|       1221|   0.8248621120|        715|00:00:00|+1.00|1.00|0.0000|
+|=|         18|          7|       1221|   0.8248888850|        722|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8248888850
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:15:47 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:15:47 CET: Iteration 8 of 8
+# experimentsUsedSoFar: 24017
+# remainingBudget: 1583
+# currentBudget: 1583
+# nbConfigurations: 87
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         19|         87|       1221|   0.8202239871|         87|00:00:08|   NA|  NA|    NA|
+|x|          2|         87|       1221|   0.8227840066|        170|00:00:09|+1.00|1.00|0.0000|
+|x|         17|         87|       1221|   0.8222720027|        253|00:00:08|+1.00|1.00|0.0000|
+|x|         16|         87|       1221|   0.8220160007|        336|00:00:08|+1.00|1.00|0.0000|
+|-|          6|          4|       1221|   0.8222720027|        419|00:00:08|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8217599988|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8215405686|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8216319978|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8220444454|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8222720027|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8220858195|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8218453328|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8266043067|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8262217130|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8258218646|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8254719973|        419|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8251632908|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8248319957|        419|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8246433641|        419|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8246433641
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:16:31 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:16:31 CET: Iteration 9 of 9
+# experimentsUsedSoFar: 24436
+# remainingBudget: 1164
+# currentBudget: 1164
+# nbConfigurations: 62
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         20|         62|       1221|   0.8253440261|         62|00:00:07|   NA|  NA|    NA|
+|x|         13|         62|       1221|   0.8248320222|        120|00:00:06|+1.00|1.00|0.0000|
+|x|         11|         62|       1221|   0.8232960105|        178|00:00:05|+1.00|1.00|0.0000|
+|x|          5|         62|       1221|   0.8225280046|        236|00:00:06|+1.00|1.00|0.0000|
+|-|         14|          5|       1221|   0.8218623996|        294|00:00:05|+1.00|1.00|0.0000|
+|=|          4|          5|       1221|   0.8214186629|        295|00:00:00|+1.00|1.00|0.0000|
+|=|         16|          5|       1221|   0.8213942817|        296|00:00:00|+1.00|1.00|0.0000|
+|=|          1|          5|       1221|   0.8211199939|        297|00:00:00|+1.00|1.00|0.0000|
+|=|         10|          5|       1221|   0.8212479949|        298|00:00:00|+1.00|1.00|0.0000|
+|=|         18|          5|       1221|   0.8216575980|        299|00:00:00|+1.00|1.00|0.0000|
+|=|         12|          5|       1221|   0.8216203614|        300|00:00:00|+1.00|1.00|0.0000|
+|=|         15|          5|       1221|   0.8215893308|        301|00:00:00|+1.00|1.00|0.0000|
+|=|          6|          5|       1221|   0.8217206139|        302|00:00:00|+1.00|1.00|0.0000|
+|=|          7|          5|       1221|   0.8261485696|        303|00:00:00|+1.00|1.00|0.0000|
+|=|          9|          5|       1221|   0.8257535974|        304|00:00:00|+1.00|1.00|0.0000|
+|=|          3|          5|       1221|   0.8254079968|        305|00:00:00|+1.00|1.00|0.0000|
+|=|          8|          5|       1221|   0.8251030550|        306|00:00:00|+1.00|1.00|0.0000|
+|=|         17|          5|       1221|   0.8248888850|        307|00:00:00|+1.00|1.00|0.0000|
+|=|         19|          5|       1221|   0.8246433641|        308|00:00:00|+1.00|1.00|0.0000|
+|=|          2|          5|       1221|   0.8246783972|        309|00:00:00|+1.00|1.00|0.0000|
+|=|         21|          5|       1221|   0.8244175201|        314|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8244175201
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:17:05 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:17:05 CET: Iteration 10 of 10
+# experimentsUsedSoFar: 24750
+# remainingBudget: 850
+# currentBudget: 850
+# nbConfigurations: 42
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         22|         42|       1221|   0.8243200183|         42|00:00:04|   NA|  NA|    NA|
+|x|          5|         42|       1221|   0.8222720027|         80|00:00:03|+1.00|1.00|0.0000|
+|x|         17|         42|       1221|   0.8219306668|        118|00:00:03|+1.00|1.00|0.0000|
+|x|         14|         42|       1221|   0.8212479949|        156|00:00:03|+1.00|1.00|0.0000|
+|-|         20|          4|       1221|   0.8220672011|        194|00:00:03|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8226133386|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8224182895|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8300800025|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8288711111|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8285184026|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8279505480|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8272213340|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8266830765|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8262217130|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8258218646|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8255359977|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8252837623|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8250026637|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8249128398|        194|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8246783972|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8244175201|        194|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8244130882|        194|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8244130882
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:17:25 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:17:25 CET: Iteration 11 of 11
+# experimentsUsedSoFar: 24944
+# remainingBudget: 656
+# currentBudget: 656
+# nbConfigurations: 32
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         23|         32|       1221|   0.8191999793|         32|00:00:03|   NA|  NA|    NA|
+|x|         10|         32|       1221|   0.8207359910|         60|00:00:02|+1.00|1.00|0.0000|
+|x|         21|         32|       1221|   0.8202239871|         88|00:00:02|+1.00|1.00|0.0000|
+|x|          6|         32|       1221|   0.8209919930|        116|00:00:02|+1.00|1.00|0.0000|
+|-|         22|          4|       1221|   0.8216575980|        144|00:00:02|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8215893308|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8213942817|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8218879998|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8218168881|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8215551972|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8215272698|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8214186629|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8217206139|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8216137120|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8215210636|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8215039968|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8216696452|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8215324415|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8214635755|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8214015961|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8212967572|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8214807239|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8241864313|        144|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8241864313
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:17:40 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:17:40 CET: Iteration 12 of 12
+# experimentsUsedSoFar: 25088
+# remainingBudget: 512
+# currentBudget: 512
+# nbConfigurations: 25
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         24|         25|       1221|   0.8202239871|         25|00:00:02|   NA|  NA|    NA|
+|x|          6|         25|       1221|   0.8217599988|         46|00:00:02|+1.00|1.00|0.0000|
+|x|         18|         25|       1221|   0.8229546746|         67|00:00:02|+1.00|1.00|0.0000|
+|x|         17|         25|       1221|   0.8225280046|         88|00:00:02|+1.00|1.00|0.0000|
+|-|         15|          4|       1221|   0.8222720027|        109|00:00:01|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8222720027|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8219794290|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8217599988|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8214755522|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8213503957|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8216203614|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8215039968|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8217993837|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8262217130|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8260949334|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8257279992|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8257054126|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8253439996|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8250206301|        109|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8247807980|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8245150447|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8243665424|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8241419092|        109|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8240213295|        109|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8240213295
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:17:52 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:17:52 CET: Iteration 13 of 13
+# experimentsUsedSoFar: 25197
+# remainingBudget: 403
+# currentBudget: 403
+# nbConfigurations: 19
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         25|         19|       1221|   0.8202239871|         19|00:00:02|   NA|  NA|    NA|
+|x|         12|         19|       1221|   0.8207359910|         34|00:00:01|+1.00|1.00|0.0000|
+|x|          5|         19|       1221|   0.8205653230|         49|00:00:01|+1.00|1.00|0.0000|
+|x|         10|         19|       1221|   0.8209919930|         64|00:00:01|+1.00|1.00|0.0000|
+|-|          6|          4|       1221|   0.8214527965|         79|00:00:01|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8219306668|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8216868554|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8216319978|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8285297751|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8282112002|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8278574564|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8271360000|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8269981559|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8265142867|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8260266662|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8256639987|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8252837623|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8249457743|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8246972592|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8245247960|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8242712333|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8241338134|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8239638209|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8238079945|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8238694358|         79|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8238694358
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:01 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:01 CET: Iteration 14 of 14
+# experimentsUsedSoFar: 25276
+# remainingBudget: 324
+# currentBudget: 324
+# nbConfigurations: 16
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         26|         16|       1221|   0.8191999793|         16|00:00:01|   NA|  NA|    NA|
+|x|         19|         16|       1221|   0.8197119832|         28|00:00:01|+1.00|1.00|0.0000|
+|x|          5|         16|       1221|   0.8198826512|         40|00:00:01|+1.00|1.00|0.0000|
+|x|          6|         16|       1221|   0.8207359910|         52|00:00:01|+1.00|1.00|0.0000|
+|-|         15|          4|       1221|   0.8208383918|         64|00:00:01|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8205653230|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8211017081|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8216319978|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8213617735|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8212479949|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8216203614|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8219306668|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8217993837|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8219794290|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8219989340|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8258560002|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8255247053|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8252302210|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8250206301|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8247295976|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8244662824|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8243199966|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8240973872|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8239359955|         64|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8238284755|         64|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8236898413|         64|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8236898413
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:08 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:08 CET: Iteration 15 of 15
+# experimentsUsedSoFar: 25340
+# remainingBudget: 260
+# currentBudget: 260
+# nbConfigurations: 13
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         27|         13|       1221|   0.8212479949|         13|00:00:01|   NA|  NA|    NA|
+|x|          2|         13|       1221|   0.8232960105|         22|00:00:00|+1.00|1.00|0.0000|
+|x|          1|         13|       1221|   0.8219306668|         31|00:00:00|+1.00|1.00|0.0000|
+|x|         12|         13|       1221|   0.8217599988|         40|00:00:00|+1.00|1.00|0.0000|
+|-|         10|          4|       1221|   0.8218623996|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8222720027|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8227108632|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8303360045|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8292124470|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8283136010|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8275781816|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8273920019|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8271556955|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8266605735|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8264362693|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8261120021|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8257656483|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8254008889|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8251284204|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8248831987|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8246125692|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8244596340|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8242309534|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8241066635|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8239103961|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8237292262|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8235994026|         49|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8235994026
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:13 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:13 CET: Iteration 16 of 16
+# experimentsUsedSoFar: 25389
+# remainingBudget: 211
+# currentBudget: 211
+# nbConfigurations: 11
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         28|         11|       1221|   0.8202239871|         11|00:00:01|   NA|  NA|    NA|
+|x|          1|         11|       1221|   0.8197119832|         18|00:00:00|+1.00|1.00|0.0000|
+|x|          8|         11|       1221|   0.8198826512|         25|00:00:00|+1.00|1.00|0.0000|
+|x|         25|         11|       1221|   0.8199679852|         32|00:00:00|+1.00|1.00|0.0000|
+|-|          3|          4|       1221|   0.8200191855|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8202239871|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8205165608|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8206079900|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8211342163|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8211455941|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8211549033|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8214186629|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8212479949|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8257097091|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8253439943|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8250239938|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8250428193|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8247751064|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8248050495|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8245247960|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8243199956|         39|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8242734508|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8240528651|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8238506615|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8238694358|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8236898413|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8235994026|         39|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8234788520|         39|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8234788520
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:17 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:17 CET: Iteration 17 of 17
+# experimentsUsedSoFar: 25428
+# remainingBudget: 172
+# currentBudget: 172
+# nbConfigurations: 9
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         29|          9|       1221|   0.8212479949|          9|00:00:01|   NA|  NA|    NA|
+|x|         27|          9|       1221|   0.8212479949|         14|00:00:00|+1.00|1.00|0.0000|
+|x|          9|          9|       1221|   0.8209066590|         19|00:00:00|+1.00|1.00|0.0000|
+|x|          3|          9|       1221|   0.8207359910|         24|00:00:00|+1.00|1.00|0.0000|
+|-|         11|          4|       1221|   0.8206335902|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8209066590|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8209554212|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8209919930|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8207928803|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8207359910|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8206894452|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8206506570|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8205390664|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8250514184|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8247295896|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8243839890|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8243802260|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8240924345|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8238349369|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8238079906|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8235885614|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8234356262|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8235186002|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8234239916|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8233369517|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8233747620|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8234476977|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8233325652|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8234019259|         29|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8234019259
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:20 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:20 CET: Iteration 18 of 18
+# experimentsUsedSoFar: 25457
+# remainingBudget: 143
+# currentBudget: 143
+# nbConfigurations: 8
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         30|          8|       1221|   0.8191999793|          8|00:00:00|   NA|  NA|    NA|
+|x|         15|          8|       1221|   0.8202239871|         12|00:00:00|+1.00|1.00|0.0000|
+|x|         27|          8|       1221|   0.8205653230|         16|00:00:00|+1.00|1.00|0.0000|
+|x|         23|          8|       1221|   0.8202239871|         20|00:00:00|+1.00|1.00|0.0000|
+|-|          5|          4|       1221|   0.8202239871|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8202239871|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8203702739|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8202239871|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8201102085|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8205311894|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8205032620|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8204799891|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8205390664|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8205165608|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8204970558|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8207999915|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8210672876|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8210204376|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8209246240|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8210431933|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8211017081|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8211083575|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8210699066|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8209919930|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8211660743|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8211298402|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8212479949|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8211748515|         24|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8233313047|         24|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8232618610|         24|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8232618610
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:23 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:23 CET: Iteration 19 of 19
+# experimentsUsedSoFar: 25481
+# remainingBudget: 119
+# currentBudget: 119
+# nbConfigurations: 7
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         31|          7|       1221|   0.8202239871|          7|00:00:00|   NA|  NA|    NA|
+|x|         19|          7|       1221|   0.8202239871|         10|00:00:00|+1.00|1.00|0.0000|
+|x|         22|          7|       1221|   0.8215893308|         13|00:00:00|+1.00|1.00|0.0000|
+|x|          2|          7|       1221|   0.8225280046|         16|00:00:00|+1.00|1.00|0.0000|
+|-|          4|          4|       1221|   0.8218623996|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8214186629|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8212479949|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8211199939|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8211342163|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8214527965|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8213410865|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8213333289|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8212479949|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8211017081|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8210431933|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8209279925|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8208263446|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8207928803|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8208168337|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8207871914|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8210041835|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8209221742|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8209808624|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8210773269|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8210022330|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8211692251|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8211721425|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8234057086|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8232959941|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8232277274|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8231638651|         19|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8231638651
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:26 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:26 CET: Iteration 20 of 20
+# experimentsUsedSoFar: 25500
+# remainingBudget: 100
+# currentBudget: 100
+# nbConfigurations: 7
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         32|          7|       1221|   0.8202239871|          7|00:00:00|   NA|  NA|    NA|
+|x|         20|          7|       1221|   0.8227840066|         10|00:00:00|+1.00|1.00|0.0000|
+|x|         11|          7|       1221|   0.8219306668|         13|00:00:00|+1.00|1.00|0.0000|
+|x|          4|          7|       1221|   0.8212479949|         16|00:00:00|+1.00|1.00|0.0000|
+|-|         14|          4|       1221|   0.8208383918|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8207359910|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8209554212|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8287999928|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8284159965|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8276991963|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8270196319|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8267946641|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8262104575|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8257097091|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8253439943|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8250879943|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8248018763|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8244906598|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8242660980|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8243199944|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8241249465|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8239941760|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8238747768|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8238933285|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8238694358|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8237686111|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8236752550|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8235154237|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8234019259|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8232959946|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8231638651|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8230719939|         19|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:28 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:28 CET: Iteration 21 of 21
+# experimentsUsedSoFar: 25519
+# remainingBudget: 81
+# currentBudget: 81
+# nbConfigurations: 6
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|          6|       1221|   0.8202239871|          2|00:00:00|   NA|  NA|    NA|
+|x|         17|          6|       1221|   0.8207359910|          4|00:00:00|+1.00|1.00|0.0000|
+|x|         20|          6|       1221|   0.8222720027|          6|00:00:00|+1.00|1.00|0.0000|
+|x|         21|          6|       1221|   0.8215039968|          8|00:00:00|+1.00|1.00|0.0000|
+|-|         30|          4|       1221|   0.8210431933|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8207359910|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8205165608|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8208639920|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8207928803|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8206335902|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8205963536|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8205653230|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8205390664|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8208822778|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8209066590|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8211839944|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8211275234|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8210204376|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8210324143|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8210431933|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8210041835|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8211549033|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8238747768|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8237226605|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8235827136|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8234535318|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8232959928|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8231862783|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8231547516|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8231935938|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8231308326|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8230719939|         10|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:29 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:29 CET: Iteration 22 of 22
+# experimentsUsedSoFar: 25529
+# remainingBudget: 71
+# currentBudget: 71
+# nbConfigurations: 6
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|          6|       1221|   0.8212479949|          2|00:00:00|   NA|  NA|    NA|
+|x|         30|          6|       1221|   0.8202239871|          4|00:00:00|+1.00|1.00|0.0000|
+|x|         14|          6|       1221|   0.8198826512|          6|00:00:00|+1.00|1.00|0.0000|
+|x|          5|          6|       1221|   0.8199679852|          8|00:00:00|+1.00|1.00|0.0000|
+|-|         26|          4|       1221|   0.8198143840|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8198826512|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8199314134|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8198399842|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8199964298|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8204287887|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8203170787|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8207359910|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8207753759|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8207359910|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8207018574|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8206719905|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8206456374|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8206791017|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8239966223|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8239615917|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8239786597|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8237614469|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8236076443|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8234666586|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8233369517|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8234141469|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8232580666|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8231497066|         10|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8232253728|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8231594602|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8231308326|         10|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8230719939|         10|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:31 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:31 CET: Iteration 23 of 23
+# experimentsUsedSoFar: 25539
+# remainingBudget: 61
+# currentBudget: 61
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          2|          5|       1221|   0.8253440261|          1|00:00:00|   NA|  NA|    NA|
+|x|         27|          5|       1221|   0.8232960105|          2|00:00:00|+1.00|1.00|0.0000|
+|x|         30|          5|       1221|   0.8219306668|          3|00:00:00|+1.00|1.00|0.0000|
+|x|          8|          5|       1221|   0.8215039968|          4|00:00:00|+1.00|1.00|0.0000|
+|-|         23|          4|       1221|   0.8210431933|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8215893308|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8213942817|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8217599988|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8214755522|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8214527965|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8213410865|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8212479949|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8210904552|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8210285647|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8209749262|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8209279925|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8209468161|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8209066590|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8209246240|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8208895922|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8210041835|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8210618117|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8209808624|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8209493260|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8208793521|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8208541457|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8208687328|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8208091344|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8229781985|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8230570594|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8231308326|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8230719939|          5|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:31 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:31 CET: Iteration 24 of 24
+# experimentsUsedSoFar: 25544
+# remainingBudget: 56
+# currentBudget: 56
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         21|          5|       1221|   0.8191999793|          1|00:00:00|   NA|  NA|    NA|
+|x|         19|          5|       1221|   0.8197119832|          2|00:00:00|+1.00|1.00|0.0000|
+|x|         10|          5|       1221|   0.8205653230|          3|00:00:00|+1.00|1.00|0.0000|
+|x|          8|          5|       1221|   0.8204799891|          4|00:00:00|+1.00|1.00|0.0000|
+|-|         11|          4|       1221|   0.8204287887|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8309759895|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8295862760|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8282879889|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8279608819|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8271871924|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8265541738|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8259413242|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8255802989|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8254171354|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8250709256|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8247039914|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8247416405|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8245475491|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8245894689|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8243711948|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8242224710|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8240407218|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8239192989|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8237653275|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8236236739|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8234535318|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8234856239|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8235154237|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8234372365|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8232959946|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8231968976|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8230719939|          5|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:32 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:32 CET: Iteration 25 of 25
+# experimentsUsedSoFar: 25549
+# remainingBudget: 51
+# currentBudget: 51
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          2|          5|       1221|   0.8253440261|          1|00:00:00|   NA|  NA|    NA|
+|x|         23|          5|       1221|   0.8222720027|          2|00:00:00|+1.00|1.00|0.0000|
+|x|         28|          5|       1221|   0.8215893308|          3|00:00:00|+1.00|1.00|0.0000|
+|x|          1|          5|       1221|   0.8209919930|          4|00:00:00|+1.00|1.00|0.0000|
+|-|         20|          4|       1221|   0.8218623996|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8215893308|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8215405686|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8213759959|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8214755522|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8214527965|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8212479949|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8211626609|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8210904552|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8209554212|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8208383918|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8207359910|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8244404617|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8242062132|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8239427272|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8238079906|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8238323728|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8236683553|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8236521664|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8236799935|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8235827136|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8234535318|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8233339190|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8232228501|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8232959941|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8232277274|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8231638651|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8230719939|          5|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:33 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:33 CET: Iteration 26 of 26
+# experimentsUsedSoFar: 25554
+# remainingBudget: 46
+# currentBudget: 46
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|          5|       1221|   0.8212479949|          1|00:00:00|   NA|  NA|    NA|
+|x|         32|          5|       1221|   0.8207359910|          2|00:00:00|+1.00|1.00|0.0000|
+|x|          7|          5|       1221|   0.8417279919|          3|00:00:00|+1.00|1.00|0.0000|
+|x|          3|          5|       1221|   0.8363519907|          4|00:00:00|+1.00|1.00|0.0000|
+|-|         25|          4|       1221|   0.8331263900|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8311466575|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8294399892|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8281599879|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8271644314|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8265727878|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8259956241|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8259413242|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|       1221|   0.8255015291|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8252708486|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8248661240|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8245759904|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8246211690|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8244337704|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8242122029|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8239615917|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|       1221|   0.8240274219|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         31|          4|       1221|   0.8238545385|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8238747768|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         22|          4|       1221|   0.8238933285|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8237465549|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8235716866|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8234476977|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|       1221|   0.8233325652|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8232606834|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8231935938|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8230647675|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8230719939|          5|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:34 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:34 CET: Iteration 27 of 27
+# experimentsUsedSoFar: 25559
+# remainingBudget: 41
+# currentBudget: 41
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         31|          5|       1221|   0.8202239871|          1|00:00:00|   NA|  NA|    NA|
+|x|         18|          5|       1221|   0.8227840066|          2|00:00:00|+1.00|1.00|0.0000|
+|x|          8|          5|       1221|   0.8219306668|          3|00:00:00|+1.00|1.00|0.0000|
+|x|         22|          5|       1221|   0.8225280046|          4|00:00:00|+1.00|1.00|0.0000|
+|-|          5|          4|       1221|   0.8220672011|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|       1221|   0.8215893308|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         28|          4|       1221|   0.8213942817|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|       1221|   0.8212479949|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|       1221|   0.8210204376|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|       1221|   0.8272895932|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         20|          4|       1221|   0.8271127235|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         32|          4|       1221|   0.8265386621|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         30|          4|       1221|   0.8259741481|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|       1221|   0.8257828525|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         27|          4|       1221|   0.8254805287|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|       1221|   0.8252159953|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|       1221|   0.8249223478|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|       1221|   0.8247182171|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         26|          4|       1221|   0.8244277835|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|       1221|   0.8242687941|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|       1221|   0.8240761842|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         21|          4|       1221|   0.8238545385|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|       1221|   0.8238747768|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|       1221|   0.8237226605|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|       1221|   0.8236236739|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         23|          4|       1221|   0.8234535318|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         25|          4|       1221|   0.8233339190|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|       1221|   0.8232959935|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         29|          4|       1221|   0.8232253728|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|       1221|   0.8232959946|          5|00:00:00|+1.00|1.00|0.0000|
+|.|         24|          4|       1221|   0.8231968976|          5|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|       1221|   0.8230719939|          5|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:        1221    mean value:    0.8230719939
+Description of the best-so-far configuration:
+     .ID. bx by tx ty up ro .PARENT.
+1221 1221  2  5  5  0  1  1      166
+
+# 2022-02-14 15:18:34 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# 2022-02-14 15:18:34 CET: Stopped because there is not enough budget left to race more than the minimum (4)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 28
+# nbIterations: 28
+# experimentsUsedSoFar: 25564
+# timeUsed: 0
+# remainingBudget: 36
+# currentBudget: 36
+# number of elites: 4
+# nbConfigurations: 4
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+     bx by tx ty up ro
+1221  2  5  5  0  1  1
+1371  2  5  5  0  1  1
+1394  2  5  5  0  1  1
+1473  2  5  5  0  1  1
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+1221  --block_size_x 2 --block_size_y 5 --tile_size_x 5 --tile_size_y 0 --use_padding 1 --read_only 1
+1371  --block_size_x 2 --block_size_y 5 --tile_size_x 5 --tile_size_y 0 --use_padding 1 --read_only 1
+1394  --block_size_x 2 --block_size_y 5 --tile_size_x 5 --tile_size_y 0 --use_padding 1 --read_only 1
+1473  --block_size_x 2 --block_size_y 5 --tile_size_x 5 --tile_size_y 0 --use_padding 1 --read_only 1

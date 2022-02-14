@@ -161,6 +161,5 @@ if __name__=='__main__':
     ###  GET CACHED FITNESS FOR GPU  ###
     irace_gpu_reader = iRace_GPU_reader(GPU_space)
     fitness = irace_gpu_reader.return_GPU_score(conv_params)
-    print(conv_params)
     print(str(fitness) + '\n')
     sys.exit(0)

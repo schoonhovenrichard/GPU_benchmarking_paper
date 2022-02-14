@@ -1,0 +1,619 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.4.1.9fcaeaf
+# Copyright (C) 2010-2020
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace
+# called with: -s scenario.txt --exec-dir=temp_dir/irace-out-b6400-r8 --max-experiments 6400
+# 2022-02-14 14:38:37 CET: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 4
+# minNbSurvival: 4
+# nbParameters: 6
+# seed: 521035450
+# confidence level: 0.95
+# budget: 6400
+# mu: 5
+# deterministic: TRUE
+
+# 2022-02-14 14:38:37 CET: Iteration 1 of 4
+# experimentsUsedSoFar: 0
+# remainingBudget: 6400
+# currentBudget: 1600
+# nbConfigurations: 266
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|        266|        140|   0.8335360289|        266|00:00:28|   NA|  NA|    NA|
+|x|          2|        266|        140|   0.8340480030|        532|00:00:29|+1.00|1.00|0.0000|
+|x|          3|        266|        140|   0.8335360090|        798|00:00:30|+1.00|1.00|0.0000|
+|x|          4|        266|        140|   0.8340480030|       1064|00:00:29|+1.00|1.00|0.0000|
+|-|          5|          1|        140|   0.8339456081|       1330|00:00:30|   NA|  NA|    NA|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8339456081
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:41:04 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+# 2022-02-14 14:41:04 CET: Iteration 2 of 4
+# experimentsUsedSoFar: 1330
+# remainingBudget: 5070
+# currentBudget: 1690
+# nbConfigurations: 242
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          6|        242|        140|   0.8345599771|        242|00:00:25|   NA|  NA|    NA|
+|x|          4|        242|        140|   0.8350719810|        483|00:00:25|+1.00|1.00|0.0000|
+|x|          1|        242|        140|   0.8345599969|        724|00:00:27|+1.00|1.00|0.0000|
+|x|          2|        242|        140|   0.8345599920|        965|00:00:27|+1.00|1.00|0.0000|
+|-|          3|          2|        140|   0.8341503978|       1206|00:00:28|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8340480030
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:43:20 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+456  7  1  1  3  0  0
+# 2022-02-14 14:43:20 CET: Iteration 3 of 4
+# experimentsUsedSoFar: 2536
+# remainingBudget: 3864
+# currentBudget: 1932
+# nbConfigurations: 243
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|        243|        140|   0.8345599771|        243|00:00:28|   NA|  NA|    NA|
+|x|          3|        243|        140|   0.8335359991|        484|00:00:28|+1.00|1.00|0.0000|
+|x|          4|        243|        140|   0.8342186610|        725|00:00:26|+1.00|1.00|0.0000|
+|x|          5|        243|        140|   0.8340480030|        967|00:00:25|+1.00|1.00|0.0000|
+|-|          2|          4|        140|   0.8341503978|       1208|00:00:27|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8341211421
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:45:37 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+456  7  1  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+# 2022-02-14 14:45:37 CET: Iteration 4 of 4
+# experimentsUsedSoFar: 3744
+# remainingBudget: 2656
+# currentBudget: 2656
+# nbConfigurations: 298
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|        298|        140|   0.8355839849|        298|00:00:35|   NA|  NA|    NA|
+|x|          5|        298|        140|   0.8345600069|        592|00:00:32|+1.00|1.00|0.0000|
+|x|          1|        298|        140|   0.8342186809|        888|00:00:33|+1.00|1.00|0.0000|
+|x|          3|        298|        140|   0.8337920159|       1182|00:00:35|+1.00|1.00|0.0000|
+|-|          2|          7|        140|   0.8339456081|       1476|00:00:33|+1.00|1.00|0.0000|
+|!|          4|          7|        140|   0.8342186709|       1479|00:00:00|+1.00|1.00|0.0000|
+|!|          6|          7|        140|   0.8342674289|       1484|00:00:00|+1.00|1.00|0.0000|
+|-|          7|          6|        140|   0.8343039975|       1487|00:00:00|+1.00|1.00|0.0000|
+|=|          9|          6|        140|   0.8343324396|       1493|00:00:00|+1.00|1.00|0.0000|
+|=|         10|          6|        140|   0.8341503978|       1499|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8341503978
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:48:32 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:48:32 CET: Iteration 5 of 5
+# experimentsUsedSoFar: 5243
+# remainingBudget: 1157
+# currentBudget: 1157
+# nbConfigurations: 108
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         11|        108|        140|   0.8335360289|        108|00:00:12|   NA|  NA|    NA|
+|x|         10|        108|        140|   0.8330240250|        212|00:00:11|+1.00|1.00|0.0000|
+|x|          4|        108|        140|   0.8338773449|        316|00:00:12|+1.00|1.00|0.0000|
+|x|          2|        108|        140|   0.8340480030|        420|00:00:11|+1.00|1.00|0.0000|
+|-|          9|          4|        140|   0.8341503978|        524|00:00:12|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8338773350|        524|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8338285770|        524|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8340480030|        524|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8339911169|        524|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8340480030|        524|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8340945461|        524|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8340945461
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:49:34 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:49:34 CET: Iteration 6 of 6
+# experimentsUsedSoFar: 5767
+# remainingBudget: 633
+# currentBudget: 633
+# nbConfigurations: 56
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         12|         56|        140|   0.8335360289|         56|00:00:06|   NA|  NA|    NA|
+|x|          7|         56|        140|   0.8340480030|        108|00:00:06|+1.00|1.00|0.0000|
+|x|          6|         56|        140|   0.8342186610|        160|00:00:06|+1.00|1.00|0.0000|
+|x|         10|         56|        140|   0.8337920010|        212|00:00:06|+1.00|1.00|0.0000|
+|-|          9|          4|        140|   0.8339455962|        264|00:00:05|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8338773350|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8336822901|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8339200020|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|        140|   0.8339911103|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8339456022|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8340945461|        264|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8340480030|        264|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8340480030
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:05 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:05 CET: Iteration 7 of 7
+# experimentsUsedSoFar: 6031
+# remainingBudget: 369
+# currentBudget: 369
+# nbConfigurations: 32
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|         32|        140|   0.8345599771|         32|00:00:03|   NA|  NA|    NA|
+|x|          5|         32|        140|   0.8340480030|         60|00:00:02|+1.00|1.00|0.0000|
+|x|          2|         32|        140|   0.8342186610|         88|00:00:02|+1.00|1.00|0.0000|
+|x|          9|         32|        140|   0.8343039900|        116|00:00:02|+1.00|1.00|0.0000|
+|-|         10|          4|        140|   0.8339455962|        144|00:00:02|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8340479930|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8338285685|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8340479955|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8339911103|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8341503978|        144|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8340945461|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8341333320|        144|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8340873856|        144|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8340873856
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:21 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:21 CET: Iteration 8 of 8
+# experimentsUsedSoFar: 6175
+# remainingBudget: 225
+# currentBudget: 225
+# nbConfigurations: 19
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         14|         19|        140|   0.8407040238|         19|00:00:02|   NA|  NA|    NA|
+|x|          6|         19|        140|   0.8376320004|         34|00:00:01|+1.00|1.00|0.0000|
+|x|          3|         19|        140|   0.8359253407|         49|00:00:01|+1.00|1.00|0.0000|
+|x|         10|         19|        140|   0.8350720108|         64|00:00:01|+1.00|1.00|0.0000|
+|-|          5|          4|        140|   0.8347648144|         79|00:00:01|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8349013428|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8348525763|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8346880078|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|        140|   0.8346737822|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|        140|   0.8346624017|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8347461820|         79|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|        140|   0.8347306649|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8346387698|         79|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8345600026|         79|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8345600026
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:29 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:29 CET: Iteration 9 of 9
+# experimentsUsedSoFar: 6254
+# remainingBudget: 146
+# currentBudget: 146
+# nbConfigurations: 13
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         15|         13|        140|   0.8335360289|         13|00:00:01|   NA|  NA|    NA|
+|x|          2|         13|        140|   0.8340480030|         22|00:00:00|+1.00|1.00|0.0000|
+|x|         13|         13|        140|   0.8342186610|         31|00:00:00|+1.00|1.00|0.0000|
+|x|          6|         13|        140|   0.8343039900|         40|00:00:00|+1.00|1.00|0.0000|
+|-|          7|          4|        140|   0.8343551874|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8345599870|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8344137073|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|        140|   0.8341759965|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8341048890|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8340480030|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8346530958|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8344746729|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8345600046|         49|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8344868634|         49|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|        140|   0.8344917377|         49|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8344917377
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:34 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:34 CET: Iteration 10 of 10
+# experimentsUsedSoFar: 6303
+# remainingBudget: 97
+# currentBudget: 97
+# nbConfigurations: 9
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         16|          9|        140|   0.8355839849|          9|00:00:00|   NA|  NA|    NA|
+|x|          9|          9|        140|   0.8350719810|         14|00:00:00|+1.00|1.00|0.0000|
+|x|          8|          9|        140|   0.8352426489|         19|00:00:00|+1.00|1.00|0.0000|
+|x|          4|          9|        140|   0.8353279829|         24|00:00:00|+1.00|1.00|0.0000|
+|-|         15|          4|        140|   0.8349695921|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8349013229|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8347062809|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8345599994|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8345599969|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8343551993|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8349323652|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|        140|   0.8347306699|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8346387744|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|        140|   0.8346331460|         29|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|        140|   0.8346282681|         29|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8345600031|         29|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8345600031
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:37 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:37 CET: Iteration 11 of 11
+# experimentsUsedSoFar: 6332
+# remainingBudget: 68
+# currentBudget: 68
+# nbConfigurations: 7
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|          7|        140|   0.8345599771|          7|00:00:00|   NA|  NA|    NA|
+|x|          7|          7|        140|   0.8345599771|         10|00:00:00|+1.00|1.00|0.0000|
+|x|         10|          7|        140|   0.8338773251|         13|00:00:00|+1.00|1.00|0.0000|
+|x|          4|          7|        140|   0.8343039900|         16|00:00:00|+1.00|1.00|0.0000|
+|-|          3|          4|        140|   0.8339455962|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8342186610|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8351451414|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|        140|   0.8351999968|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8350151115|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8348672032|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|        140|   0.8348392736|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8348159989|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8347175396|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|        140|   0.8347062852|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|        140|   0.8346965313|         19|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8346239999|         19|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|        140|   0.8345600016|         19|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8345600016
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:39 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:39 CET: Iteration 12 of 12
+# experimentsUsedSoFar: 6351
+# remainingBudget: 49
+# currentBudget: 49
+# nbConfigurations: 6
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         18|          6|        140|   0.8355839849|          6|00:00:00|   NA|  NA|    NA|
+|x|          4|          6|        140|   0.8355839849|          8|00:00:00|+1.00|1.00|0.0000|
+|x|         16|          6|        140|   0.8355839849|         10|00:00:00|+1.00|1.00|0.0000|
+|x|          2|          6|        140|   0.8353279829|         12|00:00:00|+1.00|1.00|0.0000|
+|-|         13|          4|        140|   0.8351743817|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8349013229|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|        140|   0.8345599941|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|        140|   0.8345599920|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|        140|   0.8345599903|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8343551934|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8342807239|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8343039950|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8342449207|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8342674247|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|        140|   0.8342186650|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8343039975|         14|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8346804696|         14|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8346168896|         14|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8346168896
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:40 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:40 CET: Iteration 13 of 13
+# experimentsUsedSoFar: 6365
+# remainingBudget: 35
+# currentBudget: 35
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         19|          5|        140|   0.8345599771|          5|00:00:00|   NA|  NA|    NA|
+|x|          1|          5|        140|   0.8340480030|          6|00:00:00|+1.00|1.00|0.0000|
+|x|         17|          5|        140|   0.8342186610|          7|00:00:00|+1.00|1.00|0.0000|
+|x|          7|          5|        140|   0.8343039900|          8|00:00:00|+1.00|1.00|0.0000|
+|-|         11|          4|        140|   0.8341503978|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         10|          4|        140|   0.8338773350|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8336822901|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8345600069|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          9|          4|        140|   0.8345600035|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|        140|   0.8346624017|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8345600041|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         12|          4|        140|   0.8344746729|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8344812347|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|        140|   0.8345600026|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          2|          4|        140|   0.8345600009|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|        140|   0.8345599994|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|        140|   0.8344997658|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8345600002|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8346138942|          9|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8346138942
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:42 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:42 CET: Iteration 14 of 14
+# experimentsUsedSoFar: 6374
+# remainingBudget: 26
+# currentBudget: 26
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         20|          5|        140|   0.8345599771|          5|00:00:00|   NA|  NA|    NA|
+|x|         12|          5|        140|   0.8340480030|          6|00:00:00|+1.00|1.00|0.0000|
+|x|          2|          5|        140|   0.8342186610|          7|00:00:00|+1.00|1.00|0.0000|
+|x|          9|          5|        140|   0.8343039900|          8|00:00:00|+1.00|1.00|0.0000|
+|-|         10|          4|        140|   0.8339455962|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         19|          4|        140|   0.8340479930|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          4|          4|        140|   0.8342674204|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          7|          4|        140|   0.8343039900|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         17|          4|        140|   0.8343324330|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          3|          4|        140|   0.8341503918|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         13|          4|        140|   0.8341876268|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         16|          4|        140|   0.8343039900|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          6|          4|        140|   0.8343236813|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          5|          4|        140|   0.8342674204|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          8|          4|        140|   0.8343551914|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         14|          4|        140|   0.8347519934|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         11|          4|        140|   0.8346804661|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         15|          4|        140|   0.8346168862|          9|00:00:00|+1.00|1.00|0.0000|
+|.|          1|          4|        140|   0.8345599990|          9|00:00:00|+1.00|1.00|0.0000|
+|.|         18|          4|        140|   0.8346111983|          9|00:00:00|+1.00|1.00|0.0000|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         140    mean value:    0.8346111983
+Description of the best-so-far configuration:
+    .ID. bx by tx ty up ro .PARENT.
+140  140  5  2  1  3  0  0       NA
+
+# 2022-02-14 14:50:42 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# 2022-02-14 14:50:42 CET: Stopped because there is not enough budget left to race more than the minimum (4)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 15
+# nbIterations: 15
+# experimentsUsedSoFar: 6383
+# timeUsed: 0
+# remainingBudget: 17
+# currentBudget: 17
+# number of elites: 4
+# nbConfigurations: 4
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    bx by tx ty up ro
+140  5  2  1  3  0  0
+530  5  2  1  3  0  0
+579  5  2  1  3  0  0
+756  5  2  1  3  0  0
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+140  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+530  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+579  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+756  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
