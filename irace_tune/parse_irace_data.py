@@ -60,9 +60,6 @@ if __name__ == '__main__':
     with open(scenario_file) as f:
         scenario = f.readlines()
     cache_fn = ((scenario[2].split('=')[1]).split('/')[1]).split('.')[0]
-    firstTest = int(((scenario[-2].split('=')[1]).strip(' ')).strip('\n'))
-    nbConfigurations = int(((scenario[-1].split('=')[1]).strip(' ')).strip('\n'))
-    print("PARSING iRace run:", cache_fn, "firstTest:", firstTest, "nbConfigurations:", nbConfigurations)
 
     # Read the original cache_file
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -79,13 +76,15 @@ if __name__ == '__main__':
     irace_gpu_reader = iRace_GPU_reader(GPU_space)
 
     # create results dict
-    budgets = [200, 400, 800, 1600, 3200, 6400]
+    budgets = [400, 800, 1600, 3200, 6400]
     result_dict = {}
     for bud in budgets:
         result_dict[bud] = {'mean_times':[], 'fevals_used':[]}
 
     # iterate over output files
     it = 0
+    firstTest = None
+    nbConfigurations = None
     for subdir, dirs, files in os.walk(rootdir):
         for file in files:
             if file == 'stdout.txt':
@@ -98,6 +97,27 @@ if __name__ == '__main__':
                 stdout = os.path.join(subdir, file)
                 with open(stdout) as f:
                     output_file = f.readlines()
+
+                if it == 1:
+                    for ls in output_file:
+                        if firstTest is None and 'firstTest' in ls:
+                            idx = ls.find('firstTest')
+                            substr = ls[idx:idx+30]
+                            if '=' in substr:
+                                valstr = substr.split('=')[1]
+                                valstr = valstr.strip(' ')
+                                valstr = valstr.strip('\n')
+                                firstTest = int(valstr)
+                        if nbConfigurations is None and 'nbConfigurations' in ls:
+                            idx = ls.find('nbConfigurations')
+                            substr = ls[idx:idx+40]
+                            if '=' in substr:
+                                valstr = substr.split('=')[1]
+                                valstr = valstr.strip(' ')
+                                valstr = valstr.strip('\n')
+                                nbConfigurations = int(valstr)
+                    print("PARSING iRace run:", cache_fn, "firstTest:", firstTest, "nbConfigurations:", nbConfigurations)
+
                 results = parse_irace_output(output_file)
                 fevals = results[0]
                 if fevals is None:
@@ -118,6 +138,8 @@ if __name__ == '__main__':
 
 
     # Save all the results to file
+    if firstTest is None or nbConfigurations is None:
+        raise Exception("Somehow did not parse the hyperparameters properly.")
     exper_runs = int(it/len(budgets))
     export_filename = "tune_hyperpars_iRace_" + cache_fn + "_firstTest="+str(firstTest) + "_nbConfigurations="+str(nbConfigurations) +"_runs={0}".format(exper_runs) + ".csv"
 
@@ -139,6 +161,8 @@ if __name__ == '__main__':
         fevals_used = vals['fevals_used']
         fracs = [best_fit/float(x) for x in times]
         success_rate = (np.array(fracs) == 1.0).sum()/float(exper_runs)
+        print(key)
+        print(vals)
         experiment_results.append(["iRace", statistics.mean(fracs), statistics.stdev(fracs), success_rate, statistics.mean(fevals_used), statistics.stdev(fevals_used), settings])
 
     with open(export_filename, "w", newline="") as f:

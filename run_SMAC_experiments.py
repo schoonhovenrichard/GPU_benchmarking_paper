@@ -74,11 +74,11 @@ if __name__ == '__main__':
 
     GEMM_files = ['GEMM_A100_processed.json',
     'GEMM_V100_processed.json',
-    'GEMM_RTX_2070_SUPER_processed.json',
+    'GEMM_RTX_2070_SUPER_processed.json',#2 tuning
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
-    'GEMM_GTX_1080Ti_processed.json',
-    'GEMM_P100_processed.json',
+    'GEMM_GTX_1080Ti_processed.json',#5 tuning
+    'GEMM_P100_processed.json',# 6 tuning
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 
@@ -93,6 +93,7 @@ if __name__ == '__main__':
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
     test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
+    #test_files = GEMM_files[0:2] + GEMM_files[3:5] + GEMM_files[7:]
 
     for filename in test_files:
         ###  SETUP THE GPU CACHE DATA  ###

@@ -8,7 +8,7 @@ if __name__ == '__main__':
     data_path = root_dir + 'GPU_benchmarking_paper/processed_cache_files/'
     save_path = current_dir + '/stochastic_cache_files/'
 
-    filename = 'convolution_P100_processed.json'
+    filename = 'pnpoly_RTX_2070_SUPER_processed.json'
     with open(data_path + filename, 'r') as myfile:
         data=myfile.read()
     data = json.loads(data)
