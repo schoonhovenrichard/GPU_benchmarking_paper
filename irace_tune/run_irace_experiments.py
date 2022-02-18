@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     ftests = [2,5,10]
     nconfgs = [0,10,50]
-    base_dir = 22
+    base_dir = 10
     for ft in ftests:
         for nc in nconfgs:
             start = timer()
@@ -23,6 +23,7 @@ if __name__ == '__main__':
                     stdout_fn = f"{tmp_dir}/stdout.txt"
                     with open(stdout_fn, "w+") as file_open:
                         subprocess.run(["/ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace/bin/irace",
+                            #"--scenario", "conv_scenario_GTX_1080Ti.txt",
                             "--scenario", "GEMM_scenario_RTX_2070_SUPER.txt",
                             f"--exec-dir={tmp_dir}",
                             "--max-experiments", str(budget),
@@ -31,7 +32,6 @@ if __name__ == '__main__':
                             '--num-configurations', str(nc)],
                             stdout=file_open)
                             #stderr=f"{tmp_dir}/stderr.txt")
-                    raise Exception("PAUSE2")
             base_dir += 1
             end = timer()
             elapsed = end - start

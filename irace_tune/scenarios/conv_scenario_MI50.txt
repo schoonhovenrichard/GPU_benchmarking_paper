@@ -1,5 +1,5 @@
 trainInstancesDir = "stochastic_cache_files/"
 trainInstancesFile = "convolution_instances/MI50_convolution_15x15_processed.txt"
 targetRunner = "conv_gputune_runner.py"
-parameters = "conv_parameters.txt"
+parameterFile = "conv_parameters.txt"
 deterministic = "1"

@@ -87,8 +87,6 @@ if __name__=='__main__':
     instance = sys.argv[4]
     cand_params = sys.argv[5:]
 
-    print(configuration_id, instance_id, seed, instance)
-
     ###  LOAD THE GPU CACHE  DATA  ###
     # Firstly, load instance to see which cache file to load.
     #with open(instance, 'r') as myfile:
@@ -133,7 +131,6 @@ if __name__=='__main__':
 
     # Parse parameters
     GEMM_params = []
-    print(cand_params)
     while cand_params:
         # Get and remove first and second elements.
         param = cand_params.pop(0)
@@ -170,7 +167,7 @@ if __name__=='__main__':
             GEMM_params.append((param, SB))
         else:
             target_runner_error("unknown parameter %s" % (param))
-    print("\niRace parsed the param values:", GEMM_params)
+    #print("\niRace parsed the param values:", GEMM_params)
 
     # Sanity checks
     if None in [MWG, NWG, MDIMC, NDIMC, MDIMA, NDIMB, VWM, VWN, SA, SB]:
@@ -180,8 +177,6 @@ if __name__=='__main__':
     ###  GET CACHED FITNESS FOR GPU  ###
     irace_gpu_reader = iRace_GPU_reader(GPU_space)
     fitness = irace_gpu_reader.return_GPU_score(GEMM_params)
-    print(fitness)
-    raise Exception("PAUSE")
     if fitness > 1000000:
         print(str('inf') + '\n')
         sys.exit(0)
