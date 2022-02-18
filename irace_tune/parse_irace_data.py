@@ -6,6 +6,7 @@ import gpu_utils
 import csv
 import numpy as np
 import statistics
+import warnings
 
 
 def parse_irace_output(file):
@@ -24,7 +25,7 @@ def parse_irace_output(file):
         if 'experimentsUsedSoFar' in ls:
             budget_used = int(ls.split(' ')[-1])
     if budget_used is None:
-        raise Exception("Unable to parse budget used!")
+        warnings.warn("Unable to parse budget used, no sensible config found!")
     print("Parsed budget used:", budget_used)
 
     # Parse the best configs (can be multiple)
@@ -54,7 +55,7 @@ def parse_irace_output(file):
 if __name__ == '__main__':
     #NOTE: This assumes that we currently have the experimental
     # data of one experiment in temp_dir
-    rootdir = 'temp_dir'
+    rootdir = 'temp_dir3'
     scenario_file = 'scenario.txt'
     with open(scenario_file) as f:
         scenario = f.readlines()
@@ -78,7 +79,7 @@ if __name__ == '__main__':
     irace_gpu_reader = iRace_GPU_reader(GPU_space)
 
     # create results dict
-    budgets = [200, 400, 800, 1600, 3200, 6400, 25600]
+    budgets = [200, 400, 800, 1600, 3200, 6400]
     result_dict = {}
     for bud in budgets:
         result_dict[bud] = {'mean_times':[], 'fevals_used':[]}
@@ -99,23 +100,26 @@ if __name__ == '__main__':
                     output_file = f.readlines()
                 results = parse_irace_output(output_file)
                 fevals = results[0]
-                best_meantime = 100000000
-                best_cfg = None
-                for cfg in results[1]:
-                    mean_time = irace_gpu_reader.return_GPU_score(cfg)
-                    if mean_time < best_meantime:
-                        best_meantime = mean_time
-                        best_cfg = cfg
-                print(fevals, best_meantime)
+                if fevals is None:
+                    continue
+                else:
+                    best_meantime = 100000000
+                    best_cfg = None
+                    for cfg in results[1]:
+                        mean_time = irace_gpu_reader.return_GPU_score(cfg)
+                        if mean_time < best_meantime:
+                            best_meantime = mean_time
+                            best_cfg = cfg
+                    print(fevals, best_meantime)
 
-                # Save to dict
-                result_dict[max_budget_run]['mean_times'].append(best_meantime)
-                result_dict[max_budget_run]['fevals_used'].append(fevals)
+                    # Save to dict
+                    result_dict[max_budget_run]['mean_times'].append(best_meantime)
+                    result_dict[max_budget_run]['fevals_used'].append(fevals)
 
 
     # Save all the results to file
     exper_runs = int(it/len(budgets))
-    export_filename = "tune_hyperpars_iRace_" + cache_fn + "_runs={0}".format(exper_runs) + ".csv"
+    export_filename = "tune_hyperpars_iRace_" + cache_fn + "_firstTest="+str(firstTest) + "_nbConfigurations="+str(nbConfigurations) +"_runs={0}".format(exper_runs) + ".csv"
 
     ### Compute optimal fitness for reference
     best_fit = 100000000
@@ -135,10 +139,7 @@ if __name__ == '__main__':
         fevals_used = vals['fevals_used']
         fracs = [best_fit/float(x) for x in times]
         success_rate = (np.array(fracs) == 1.0).sum()/float(exper_runs)
-        if len(fracs) == 1:
-            experiment_results.append(["iRace", fracs[0], 0, success_rate, fevals_used[0], 0, settings])
-        else:
-            experiment_results.append(["iRace", statistics.mean(fracs), statistics.stdev(fracs), success_rate, statistics.mean(fevals_used), statistics.stdev(fevals_used), settings])
+        experiment_results.append(["iRace", statistics.mean(fracs), statistics.stdev(fracs), success_rate, statistics.mean(fevals_used), statistics.stdev(fevals_used), settings])
 
     with open(export_filename, "w", newline="") as f:
         writer = csv.writer(f)

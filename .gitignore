@@ -8,4 +8,5 @@ build/
 .hypothesis/
 BayesianOptimization-autotuning/
 scratch_dir/
-#irace_tune/temp_dir/
+irace_tune/temp_dir/
+irace_tune/25600_runs/

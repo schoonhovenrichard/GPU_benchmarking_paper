@@ -99,9 +99,9 @@ def get_best_settings(fevalpartition, margin, maxfevals):
             entry = clean_up_hyperpars(elem[6:])
             #NOTE: For differential evolution, we have to remove iterations as it depends
             # only on pop_size and problem bitstring size.
-            devoent = entry[0].split(";")[:-1]
-            devoentry = tuple(["".join(devoent)])
-            entry = devoentry
+            #devoent = entry[0].split(";")[:-1]
+            #devoentry = tuple(["".join(devoent)])
+            #entry = devoentry
             fevalsettings[i].append(entry)#Need hashable for sets later
     return fevalsettings
 
@@ -250,10 +250,11 @@ if __name__ == '__main__':
         ("ParticleSwarm", 0.012),#DONE
         ("GeneticAlgorithm", 0.055),#DONE
         ("SimulatedAnnealing", 0.13),#12 DONE
+        ("SMAC4BB", 0.07),
     ]
     #NOTE: Choose different limits for different Fevals to get best possible params
 
-    algorithm, margin = algos[0]
+    algorithm, margin = algos[13]
     print("\nSearching for optimal settings for", algorithm, "Margin", margin)
 
     ### Get the files

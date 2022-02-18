@@ -15,25 +15,223 @@
 #     Copyright (C) 2003 Mauro Birattari
 #------------------------------------------------------------------------------
 # installed at: /ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace
-# called with: -s scenario.txt --exec-dir=temp_dir/irace-out-b200-r9 --max-experiments 200
-# 2022-02-14 11:31:45 CET: Initialization
+# called with: -s scenario.txt --exec-dir=temp_dir/irace-out-b200-r9 --max-experiments 200 --debug-level 3 --first-test 2 --num-configurations 0
+## irace scenario:
+scenarioFile = "./scenario.txt"
+parameterFile = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/parameters.txt"
+execDir = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/temp_dir/irace-out-b200-r9"
+logFile = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/temp_dir/irace-out-b200-r9/irace.Rdata"
+recoveryFile = NULL
+instances = c("/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run1.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run2.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run3.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run4.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run8.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run9.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run10.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run12.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run13.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run14.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run15.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run16.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run20.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run22.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run24.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run25.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run28.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run29.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run30.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json", "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json")
+initConfigurations = NULL
+trainInstancesDir = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files"
+trainInstancesFile = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/convolution_instances/convolution_P100_processed.txt"
+configurationsFile = ""
+forbiddenExps = NULL = expression()
+forbiddenFile = ""
+targetRunner = "/ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py"
+targetRunnerRetries = 0
+targetRunnerData = ""
+targetRunnerParallel = NULL
+targetEvaluator = NULL
+maxExperiments = 200
+maxTime = 0
+budgetEstimation = 0.02
+digits = 4
+debugLevel = 3
+nbIterations = 0
+nbExperimentsPerIteration = 0
+sampleInstances = TRUE
+testType = "friedman"
+firstTest = 2
+eachTest = 1
+minNbSurvival = 0
+nbConfigurations = 0
+mu = 5
+confidence = 0.95
+deterministic = TRUE
+seed = NA_character_
+parallel = 0
+loadBalancing = TRUE
+mpi = FALSE
+batchmode = "0"
+softRestart = TRUE
+softRestartThreshold = 1e-04
+testInstancesDir = ""
+testInstancesFile = ""
+testInstances = NULL
+testNbElites = 1
+testIterationElites = FALSE
+elitist = TRUE
+elitistNewInstances = 1
+elitistLimit = 2
+repairConfiguration = NULL
+capping = FALSE
+cappingType = "median"
+boundType = "candidate"
+boundMax = NULL
+boundDigits = 0
+boundPar = 1
+boundAsTimeout = TRUE
+postselection = 0
+aclib = FALSE
+## end of irace scenario
+# --- Parameters Hierarchy ---
+[1] "bx" "by" "tx" "ty" "up" "ro"
+bx by tx ty up ro 
+ 1  1  1  1  1  1 
+bx by tx ty up ro 
+"" "" "" "" "" "" 
+  Parameter Level Depends.on
+1        bx     1           
+2        by     1           
+3        tx     1           
+4        ty     1           
+5        up     1           
+6        ro     1           
+
+# ------------------------
+$names
+[1] "bx" "by" "tx" "ty" "up" "ro"
+
+$types
+ bx  by  tx  ty  up  ro 
+"i" "i" "i" "i" "c" "c" 
+
+$switches
+               bx                by                tx                ty                up                ro 
+"--block_size_x " "--block_size_y "  "--tile_size_x "  "--tile_size_y "  "--use_padding "    "--read_only " 
+
+$domain
+$domain$bx
+[1]  0 11
+
+$domain$by
+[1] 0 5
+
+$domain$tx
+[1] 0 7
+
+$domain$ty
+[1] 0 7
+
+$domain$up
+[1] "0" "1"
+
+$domain$ro
+[1] "0" "1"
+
+
+$conditions
+$conditions$bx
+[1] TRUE
+
+$conditions$by
+[1] TRUE
+
+$conditions$tx
+[1] TRUE
+
+$conditions$ty
+[1] TRUE
+
+$conditions$up
+[1] TRUE
+
+$conditions$ro
+[1] TRUE
+
+
+$isFixed
+   bx    by    tx    ty    up    ro 
+FALSE FALSE FALSE FALSE FALSE FALSE 
+
+$transform
+$transform$bx
+[1] ""
+
+$transform$by
+[1] ""
+
+$transform$tx
+[1] ""
+
+$transform$ty
+[1] ""
+
+$transform$up
+[1] ""
+
+$transform$ro
+[1] ""
+
+
+$depends
+$depends$bx
+character(0)
+
+$depends$by
+character(0)
+
+$depends$tx
+character(0)
+
+$depends$ty
+character(0)
+
+$depends$up
+character(0)
+
+$depends$ro
+character(0)
+
+
+$hierarchy
+bx by tx ty up ro 
+ 1  1  1  1  1  1 
+
+$nbParameters
+[1] 6
+
+$nbFixed
+[1] 0
+
+$nbVariable
+[1] 6
+
+# 2022-02-18 00:05:55 CET: Parameters have been read
+# 2022-02-18 00:05:55 CET: RNGkind: Mersenne-Twister Inversion Rejection
+# 2022-02-18 00:05:55 CET: .Random.seed: 10403, 624, -1957489437, -562413368, -1644689367, 540122582, -359316897, -1337722604, -1826064123, 1586702850, 1593621915, -1549814752, -685187679, 1016833774, 386712215, -575635988, -89796099, -193986406, 1850887507, -752344456, 1130082841, 1251074822, 39852495, -502059580, 812816885, 931904050, 1300931595, -966464560, -358980207, 442282526, -2090588153, 1967351964, -1142509331, -542853430, 720937411, -1424789464, 1802164233, 1234203702, -1295397569, 944017012, 412481253, 1149589090, -91543941, -656601216, -229709439, -192050866, -1902253705, 583401292, -439333923, -410781446, 290263603, -690542120, 558135801, -1744809626, 231300271, -1599923420, 102862805, 755170962, 820331755, 285417264, -414881423, 576793726, -1550776601, 1600340476, -1361993011, 1173407530, 51814051, 1036930952, 1204262889, 896826006, 857065503, -877014060, 1734632645, 1229435586, 88080219, 1938954976, 305980769, -1748329554, 1926529111, 1057370284, -115755587, 2106466650, -472103149, -300687048, -1986842151, -700452922, -1071247473, -590104444, 1315796405, -766086414, 1174558155, -2080046448, -72065711, 360503006, 1656706503, 542755676, 1117226157, -1983969398, 149228419, -863838488, 1225148361, 326480118, 1076966143, 435931444, 1628160677, 301088546, -346863557, -191441344, 1542115649, 1491787278, -9926857, 1556681228, -1795551331, 245791162, -1455952909, 1152796824, -1874863687, -1696023002, -1674694033, -1677916700, -926004331, -1835133102, -2028349781, 1447204336, 182403377, 1279766846, 1789334695, -125893444, 1974490765, -1993902102, 1302063203, -116842936, 18802601, 1596725078, -1965814305, -27103596, 587468933, 1335688066, -1258487525, -926727776, -263148255, 914772078, -871236073, 1382458220, -706127491, 2128937498, 1083703507, 1922457592, -985501287, -946684794, 10077519, 259457860, 1891373429, -453907534, -1973172341, -1433151152, -205646575, -346440802, -1056947321, -735384036, 43260013, -1371400118, -26004157, -784790104, 2114549641, -533746250, -1615439681, -2142911500, 113593957, -1084233758, 108341755, 1223646464, -328828671, -80416050, -863443721, -1573460788, -1805675683, 1046592122, -1523284557, 2072782680, 882047353, -1982469402, 673237039, -1801867100, 2108606293, 1282011154, -2112346005, -1882141520, -1857496847, -481626626, -947723673, 1270187900, 1606077005, -282662742, 1688400419, -823481080, 1237186409, -1441237994, -409988193, -755119788, -1580762043, 710083650, 536068827, -1175246752, 1763980513, 1032766766, 1350908887, 2056377900, 1691663677, 1228186330, -297436525, -814768456, 1713992025, 1531595078, 695941903, -1262678524, 1662938421, 1478370418, 1013905739, 13725712, -1166570287, -256679842, 1004990791, -1552494372, -1080267731, -840046326, -446488829, -671744920, 1781819209, 478046838, -1491517825, 1440906932, -981296603, 1703825570, -575616069, 1285989312, 2072109249, 1613481870, 62849719, -1244694644, -1748969699, 662027066, 1325588339, 1243137560, 1576917305, 25679782, -144630289, 624499556, -796720363, -1557755694, 597703211, -462568592, 1111634097, -1674904898, 937717799, -876164548, 280034829, 1487870314, 32226275, 1043528648, 1633994537, -486960938, -16131745, -1806965740, 2137958405, 1378471170, -1209776997, 501337888, 880245921, -1851524626, -303154793, -632829716, 966516989, -314768486, 379892819, 861904248, -1677184743, -1910073850, 1619685583, -949626684, -1319859979, -728031950, 1038347019, 226346704, -140458863, 977913118, 825450247, 1627222940, -42958867, 696416714, 1467271363, -1082545368, 759633673, -182327498, -333847489, 1167194484, 419669477, -583173790, -1027199621, 914139776, -1594029951, -863019954, 1925898359, 441633356, 316529373, 983727098, -1335690957, 1058809048, 473987321, 1589544038, 263140271, -1466218972, 755695317, -1617698414, 762448875, 987331120, -1517598607, -341328002, -108282393, -1418539780, -330108467, 1719667242, -1623833181, -2052978040, 1205032681, -1768985194, 1191272223, 1292680916, 398037957, -2009662, -1366391205, -1957743136, -905280415, -679088466, 1376581463, 1414036396, -1476475715, 1002316890, -1552568813, -1926865864, 1453240537, 484942534, -1954060657, 36791172, -1491180363, -1020733966, 813866187, 391699856, 318356561, -1663243810, -1096446777, -1619077540, -3124307, -1044395382, -1368903037, 646191592, -1493072183, 1457136630, -998749697, -1173081036, 1023963557, -1087544798, -948613317, -47091392, -1265110975, 1159704846, -1486062025, 310435084, 964075165, -1465385798, -1827351821, -1453964392, 1058724025, -1103498970, 919275887, 964702436, -1090078059, 175241810, 558734763, 970191088, 48504881, 109134910, 171494311, -579235908, 375432589, 2035923690, 1984073571, -1544038072, -1127635287, 295307862, -180968225, -939501164, -2039988347, 741973634, -172849125, 1492868256, 1637698593, 1945412462, -358517481, -1957433748, -1010997123, -981990118, 1048078291, -1954293000, 1168961689, -2075299962, 1345461327, -538988988, 1346109557, 1283935922, 1980436107, 623031376, 876770321, -1389572450, -1040352633, -1313146596, -897849491, 1466293066, 66935875, 1809139880, 1998829193, -295231306, 1173647295, -567726348, 760282469, 1679690466, -1115803397, 1468332032, -837642239, -1902328370, -278668297, -1592152116, -11853219, 1648770426, -2133300045, -1752751528, 1447884921, -54911514, -227238097, -1297622108, 1916155477, 1820381970, 1089662827, 1209870256, 1645000689, -512259842, 665557351, 345707132, 1922701645, -1308873814, -2133812957, 1475635208, 1074247273, 1624860438, -9852257, -1880705964, -1489327291, -1879922878, 1058032091, -1650048160, -219163679, -1951393746, -445926697, -500555476, 1620560957, -617962022, 1366090131, -1657267784, -655167399, 18349126, 340431375, -1691305724, 2020432949, 1500940146, 809320523, -40154352, 1127934929, -1074171042, -654628793, -1435378724, 557005613, 1798614026, 838092291, -1372768408, -43145655, 680058230, 1179538815, -1668224588, -1516418779, -456166494, 916509371, -1137230144, -986906687, 767990414, 1483798967, -1998765428, 404448797, 406666810, -1016215949, -663830248, -1315514311, -1224799578, -2006190865, -1361951132, -229019115, 243297234, -1910374101, -1938481552, -1966796879, 826969534, -811325657, -1013492420, -1530966771, -249078678, 2023776995, 542619336, 290293289, 1359840214, 458911839, -276836588, 368105221, -1546883070, -60306533, 806349344, 901913505, 58215662, 808169623, 2072712172, 307097597, -1919547750, 101915475, -251455368, 1076932633, -1878570746, -40843313, 786727876, -1418561547, -1833533390, 1087975947, 662872528, -408738927, -368912354, 1633588743, 1550024348, -2018095379, 1038892234, -770904125, -867441112, 1503614473, 838818358, 1531312959, -1609866124, 565007589, 436313186, -2070072197, 1644709248, 833038209, 1734160206, -1336682633, 1284216140, -140023331, 994901754, 1687478323, -87220264, 1622702073, 1237890918, -26146129, -2000719580, -1422889515, -114244462, -895823125, -308554448, 80553841, 1790595710, 1071805671, 489576444, 277889229, -677688022, -680399709, 1004651912, 811275753, 1861640342, -1094126049, -242505260, 776651461, -1601767230, 1601768795, -1493675808, -1579932831, -2146614866, 2023845463, 976668332, 748671933, -1384503462, 1177228563, 1973737272, 1797664729, -304392762, -238764657, 1438322308, 889934773, 1627863282, 1235149771, -375867248, -1992615087, 589022, 2028454855, 1515184476, 1103438509, -800289398, 1040669059, 1693537512, 1803077065, -141912330, -627351297, 1398316852, -582934363, -1670085342, -1187817925, 1069026368, 1799425857, 1075872782, -2066975433, 786737164, -777048675, -63602758
+# 2022-02-18 00:05:55 CET: Initialization
 # Elitist race
 # Elitist new instances: 1
 # Elitist limit: 2
 # nbIterations: 4
 # minNbSurvival: 4
 # nbParameters: 6
-# seed: 835351052
+# seed: 1257948375
 # confidence level: 0.95
 # budget: 200
 # mu: 5
 # deterministic: TRUE
 
-# 2022-02-14 11:31:45 CET: Iteration 1 of 4
+# 2022-02-18 00:05:55 CET: Iteration 1 of 4
 # experimentsUsedSoFar: 0
 # remainingBudget: 200
 # currentBudget: 50
 # nbConfigurations: 8
+# 2022-02-18 00:05:55 CET: Sample 8 configurations from uniform distribution
+# 2022-02-18 00:05:55 CET: Configurations for the race n 1 (elite configurations listed first, then new configurations):
+  .ID. bx by tx ty up ro .PARENT.
+1    1 11  0  3  6  1  0       NA
+2    2 10  5  0  5  1  1       NA
+3    3  3  3  2  4  0  1       NA
+4    4 11  0  7  3  1  0       NA
+5    5 11  2  1  7  1  0       NA
+6    6  6  1  0  2  1  0       NA
+7    7  5  3  0  0  1  1       NA
+8    8  7  2  0  2  0  0       NA
+# 2022-02-18 00:05:55 CET: Launch race
 # Markers:
      x No test is performed.
      c Configurations are discarded only due to capping.
@@ -45,56 +243,177 @@
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
 | |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|          1|          8|          6|    1.225728035|          8|00:00:00|   NA|  NA|    NA|
-|x|          2|          8|          6|    1.224704027|         16|00:00:00|+1.00|1.00|0.0000|
-|x|          3|          8|          6|    1.224704027|         24|00:00:00|+1.00|1.00|0.0000|
-|x|          4|          8|          6|    1.224960029|         32|00:00:00|+1.00|1.00|0.0000|
-|-|          5|          1|          6|    1.224499226|         40|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 1 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 11 --block_size_y 0 --tile_size_x 3 --tile_size_y 6 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:55 CET: DONE (1) Elapsed wall-clock seconds: 0.09
+3.852191925048828
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 2 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 10 --block_size_y 5 --tile_size_x 0 --tile_size_y 5 --use_padding 1 --read_only 1
+# 2022-02-18 00:05:55 CET: DONE (2) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 3 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 3 --block_size_y 3 --tile_size_x 2 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:05:55 CET: DONE (3) Elapsed wall-clock seconds: 0.09
+11.384032249450684
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 4 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 11 --block_size_y 0 --tile_size_x 7 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:55 CET: DONE (4) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 5 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 11 --block_size_y 2 --tile_size_x 1 --tile_size_y 7 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:55 CET: DONE (5) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 6 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 6 --block_size_y 1 --tile_size_x 0 --tile_size_y 2 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:55 CET: DONE (6) Elapsed wall-clock seconds: 0.09
+1.8823360204696655
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 7 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 0 --use_padding 1 --read_only 1
+# 2022-02-18 00:05:55 CET: DONE (7) Elapsed wall-clock seconds: 0.09
+1.9540799856185913
+
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:55 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4811840057373047
+
+# 2022-02-18 00:05:55 CET: Immediately rejected configurations: 2, 4, 5
+|x|          1|          5|          8|    1.481184006|          8|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:05:55 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 1 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 11 --block_size_y 0 --tile_size_x 3 --tile_size_y 6 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (1) Elapsed wall-clock seconds: 0.09
+3.811840057373047
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 3 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 3 --block_size_y 3 --tile_size_x 2 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:05:56 CET: DONE (3) Elapsed wall-clock seconds: 0.09
+11.389920234680176
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 6 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 1 --tile_size_x 0 --tile_size_y 2 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (6) Elapsed wall-clock seconds: 0.09
+1.8833600282669067
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 7 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 0 --use_padding 1 --read_only 1
+# 2022-02-18 00:05:56 CET: DONE (7) Elapsed wall-clock seconds: 0.09
+1.9545600414276123
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4833600521087646
+
+|=|          2|          5|          8|    1.482272029|         13|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 1 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 11 --block_size_y 0 --tile_size_x 3 --tile_size_y 6 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (1) Elapsed wall-clock seconds: 0.09
+3.804095983505249
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 3 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 3 --block_size_y 3 --tile_size_x 2 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:05:56 CET: DONE (3) Elapsed wall-clock seconds: 0.09
+11.397088050842285
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 6 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 6 --block_size_y 1 --tile_size_x 0 --tile_size_y 2 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (6) Elapsed wall-clock seconds: 0.09
+1.8833600282669067
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 7 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 0 --use_padding 1 --read_only 1
+# 2022-02-18 00:05:56 CET: DONE (7) Elapsed wall-clock seconds: 0.09
+1.9541759490966797
+
+# 2022-02-18 00:05:56 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:56 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4821439981460571
+
+|-|          3|          1|          8|    1.482229352|         18|00:00:00|   NA|  NA|    NA|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:           6    mean value:     1.224499226
+# Stopped because number of alive configurations (1) <= minimum number of configurations (4)
+Best-so-far configuration:           8    mean value:     1.482229352
 Description of the best-so-far configuration:
   .ID. bx by tx ty up ro .PARENT.
-6    6  2  5  7  0  0  0       NA
+8    8  7  2  0  2  0  0       NA
 
-# 2022-02-14 11:31:50 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-  bx by tx ty up ro
-6  2  5  7  0  0  0
-# 2022-02-14 11:31:50 CET: Iteration 2 of 4
-# experimentsUsedSoFar: 40
-# remainingBudget: 160
-# currentBudget: 53
-# nbConfigurations: 8
-# Markers:
-     x No test is performed.
-     c Configurations are discarded only due to capping.
-     - The test is performed and some configurations are discarded.
-     = The test is performed but no configuration is discarded.
-     ! The test is performed and configurations could be discarded but elite configurations are preserved.
-     . All alive configurations are elite and nothing is discarded
-
-+-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
-+-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|          6|          8|         12|    1.164288044|          8|00:00:00|   NA|  NA|    NA|
-|x|          2|          8|         12|    1.163264036|         15|00:00:00|+1.00|1.00|0.0000|
-|x|          4|          8|         12|    1.163605372|         22|00:00:00|+1.00|1.00|0.0000|
-|x|          3|          8|         12|    1.164032042|         29|00:00:00|+1.00|1.00|0.0000|
-|-|          1|          2|         12|    1.163673639|         36|00:00:00|+1.00|1.00|0.0000|
-+-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:           6    mean value:     1.224192023
-Description of the best-so-far configuration:
+# 2022-02-18 00:05:56 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              27.6 Mb
+# 2022-02-18 00:05:56 CET: Results for the race of iteration 1 (from best to worst, according to the sum of ranks):
+  .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+8    8  7  2  0  2  0  0       NA    TRUE      1
+1    1 11  0  3  6  1  0       NA   FALSE    Inf
+2    2 10  5  0  5  1  1       NA   FALSE    Inf
+3    3  3  3  2  4  0  1       NA   FALSE    Inf
+4    4 11  0  7  3  1  0       NA   FALSE    Inf
+5    5 11  2  1  7  1  0       NA   FALSE    Inf
+6    6  6  1  0  2  1  0       NA   FALSE    Inf
+7    7  5  3  0  0  1  1       NA   FALSE    Inf
+# 2022-02-18 00:05:56 CET: Extracting elites
+# 2022-02-18 00:05:56 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+  .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK. .WEIGHT.
+8    8  7  2  0  2  0  0       NA    TRUE      1        1
+# 2022-02-18 00:05:56 CET: Initialise model
+# 2022-02-18 00:05:56 CET: End of iteration 1
+# 2022-02-18 00:05:56 CET: All configurations (sampling order):
   .ID. bx by tx ty up ro .PARENT.
-6    6  2  5  7  0  0  0       NA
-
-# 2022-02-14 11:31:53 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-   bx by tx ty up ro
-6   2  5  7  0  0  0
-12  7  2  5  1  0  0
-# 2022-02-14 11:31:53 CET: Iteration 3 of 4
-# experimentsUsedSoFar: 76
-# remainingBudget: 124
-# currentBudget: 62
+1    1 11  0  3  6  1  0       NA
+2    2 10  5  0  5  1  1       NA
+3    3  3  3  2  4  0  1       NA
+4    4 11  0  7  3  1  0       NA
+5    5 11  2  1  7  1  0       NA
+6    6  6  1  0  2  1  0       NA
+7    7  5  3  0  0  1  1       NA
+8    8  7  2  0  2  0  0       NA
+# 2022-02-18 00:05:56 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             108.9 Kb
+                  iraceResults :              35.1 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.3 Mb
+                            gc :              27.8 Mb
+# 2022-02-18 00:05:56 CET: Iteration 2 of 4
+# experimentsUsedSoFar: 18
+# remainingBudget: 182
+# currentBudget: 60
 # nbConfigurations: 9
+# 2022-02-18 00:05:56 CET: Update model
+# Model:
+$bx
+$bx$`8`
+[1] 3.889087 7.000000
+
+
+$by
+$by$`8`
+[1] 1.767767 2.000000
+
+
+$tx
+$tx$`8`
+[1] 2.474874 0.000000
+
+
+$ty
+$ty$`8`
+[1] 2.474874 2.000000
+
+
+$up
+$up$`8`
+[1] 0.625 0.375
+
+
+$ro
+$ro$`8`
+[1] 0.625 0.375
+
+
+# 2022-02-18 00:05:56 CET: Sample 8 configurations from model
+# 2022-02-18 00:05:56 CET: Computing similarity of configurations ...... DONE
+# 2022-02-18 00:05:57 CET: Configurations for the race n 2 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+# 2022-02-18 00:05:57 CET: Launch race
 # Markers:
      x No test is performed.
      c Configurations are discarded only due to capping.
@@ -106,27 +425,210 @@ Description of the best-so-far configuration:
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
 | |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|          7|          9|         12|    1.166336060|          9|00:00:00|   NA|  NA|    NA|
-|x|          6|          9|         12|    1.165312052|         16|00:00:00|+1.00|1.00|0.0000|
-|x|          4|          9|         12|    1.164970716|         23|00:00:00|+1.00|1.00|0.0000|
-|x|          2|          9|         12|    1.164288044|         30|00:00:00|+1.00|1.00|0.0000|
-|-|          1|          2|         12|    1.163878441|         37|00:00:00|+1.00|1.00|0.0000|
-|.|          3|          2|         12|    1.164117376|         37|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4815360307693481
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 9 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 5 --block_size_y 5 --tile_size_x 1 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:05:57 CET: DONE (9) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 10 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 7 --block_size_y 4 --tile_size_x 0 --tile_size_y 5 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (10) Elapsed wall-clock seconds: 0.09
+2.376415967941284
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 11 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 9 --block_size_y 2 --tile_size_x 0 --tile_size_y 6 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (11) Elapsed wall-clock seconds: 0.09
+1.5181119441986084
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 12 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 9 --block_size_y 0 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (12) Elapsed wall-clock seconds: 0.09
+3.0590720176696777
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 13 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 6 --block_size_y 1 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (13) Elapsed wall-clock seconds: 0.09
+1.9362879991531372
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 14 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 9 --block_size_y 4 --tile_size_x 1 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (14) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 15 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 6 --block_size_y 3 --tile_size_x 4 --tile_size_y 3 --use_padding 1 --read_only 1
+# 2022-02-18 00:05:57 CET: DONE (15) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3412799835205078
+
+# 2022-02-18 00:05:57 CET: Immediately rejected configurations: 9, 14, 15
+|x|          4|          6|         16|    1.341279984|          9|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 10 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 4 --tile_size_x 0 --tile_size_y 5 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:57 CET: DONE (10) Elapsed wall-clock seconds: 0.11
+2.3857600688934326
+
+# 2022-02-18 00:05:57 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 11 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 9 --block_size_y 2 --tile_size_x 0 --tile_size_y 6 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (11) Elapsed wall-clock seconds: 0.09
+1.5185920000076294
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 12 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 9 --block_size_y 0 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (12) Elapsed wall-clock seconds: 0.09
+3.061824083328247
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 13 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 1 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (13) Elapsed wall-clock seconds: 0.09
+1.907647967338562
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3343039751052856
+
+|=|          2|          6|         16|    1.337791979|         14|00:00:00|+1.00|1.00|0.0002|
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 10 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 7 --block_size_y 4 --tile_size_x 0 --tile_size_y 5 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (10) Elapsed wall-clock seconds: 0.09
+2.3954238891601562
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 11 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 9 --block_size_y 2 --tile_size_x 0 --tile_size_y 6 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (11) Elapsed wall-clock seconds: 0.10
+1.5120960474014282
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 12 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 9 --block_size_y 0 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (12) Elapsed wall-clock seconds: 0.09
+3.052896022796631
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 13 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 6 --block_size_y 1 --tile_size_x 3 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (13) Elapsed wall-clock seconds: 0.09
+1.9336960315704346
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3334399461746216
+
+|-|          1|          2|         16|    1.336341302|         19|00:00:00|+1.00|1.00|0.0000|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:           6    mean value:     1.224265167
+# Stopped because number of alive configurations (2) <= minimum number of configurations (4)
+Best-so-far configuration:           8    mean value:     1.482056022
 Description of the best-so-far configuration:
   .ID. bx by tx ty up ro .PARENT.
-6    6  2  5  7  0  0  0       NA
+8    8  7  2  0  2  0  0       NA
 
-# 2022-02-14 11:31:57 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-   bx by tx ty up ro
-6   2  5  7  0  0  0
-12  7  2  5  1  0  0
-# 2022-02-14 11:31:57 CET: Iteration 4 of 4
-# experimentsUsedSoFar: 113
-# remainingBudget: 87
-# currentBudget: 87
+# 2022-02-18 00:05:58 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:05:58 CET: Results for the race of iteration 2 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+8     8  7  2  0  2  0  0       NA    TRUE      1
+16   16  5  2  1  4  1  0        8    TRUE      2
+9     9  5  5  1  4  0  1        8   FALSE    Inf
+10   10  7  4  0  5  0  0        8   FALSE    Inf
+11   11  9  2  0  6  0  0        8   FALSE    Inf
+12   12  9  0  3  2  0  0        8   FALSE    Inf
+13   13  6  1  3  2  0  0        8   FALSE    Inf
+14   14  9  4  1  5  1  0        8   FALSE    Inf
+15   15  6  3  4  3  1  1        8   FALSE    Inf
+# 2022-02-18 00:05:58 CET: Extracting elites
+# 2022-02-18 00:05:58 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+8     8  7  2  0  2  0  0       NA    TRUE      1 0.666666666666667
+16   16  5  2  1  4  1  0        8    TRUE      2 0.333333333333333
+# 2022-02-18 00:05:58 CET: End of iteration 2
+# 2022-02-18 00:05:58 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+# 2022-02-18 00:05:58 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             217.7 Kb
+                  iraceResults :             151.3 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.5 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:05:58 CET: Iteration 3 of 4
+# experimentsUsedSoFar: 37
+# remainingBudget: 163
+# currentBudget: 81
 # nbConfigurations: 11
+# 2022-02-18 00:05:58 CET: Update model
+# Model:
+$bx
+$bx$`8`
+[1] 2.696543 7.000000
+
+$bx$`16`
+[1] 2.696543 5.000000
+
+
+$by
+$by$`8`
+[1] 1.225701 2.000000
+
+$by$`16`
+[1] 1.225701 2.000000
+
+
+$tx
+$tx$`8`
+[1] 1.715982 0.000000
+
+$tx$`16`
+[1] 1.715982 1.000000
+
+
+$ty
+$ty$`8`
+[1] 1.715982 2.000000
+
+$ty$`16`
+[1] 1.715982 4.000000
+
+
+$up
+$up$`8`
+[1] 0.8030927 0.1969073
+
+$up$`16`
+[1] 0.3125 0.6875
+
+
+$ro
+$ro$`8`
+[1] 0.8030927 0.1969073
+
+$ro$`16`
+[1] 0.8030927 0.1969073
+
+
+# 2022-02-18 00:05:58 CET: Sample 9 configurations from model
+# 2022-02-18 00:05:58 CET: Computing similarity of configurations ......... DONE
+# 2022-02-18 00:05:58 CET: Configurations for the race n 3 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+8     8  7  2  0  2  0  0       NA
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+# 2022-02-18 00:05:58 CET: Launch race
 # Markers:
      x No test is performed.
      c Configurations are discarded only due to capping.
@@ -138,28 +640,226 @@ Description of the best-so-far configuration:
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
 | |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|          8|         11|         12|    1.163264036|         11|00:00:01|   NA|  NA|    NA|
-|x|          3|         11|         12|    1.164288044|         20|00:00:00|+1.00|1.00|0.0000|
-|x|          6|         11|         12|    1.164288044|         29|00:00:00|+1.00|1.00|0.0000|
-|x|          2|         11|         12|    1.163776040|         38|00:00:00|+1.00|1.00|0.0000|
-|-|          7|          2|         12|    1.164288044|         47|00:00:00|+1.00|1.00|0.0000|
-|.|          1|          2|         12|    1.163946708|         47|00:00:00|+1.00|1.00|0.0000|
-|.|          4|          2|         12|    1.163995470|         47|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:58 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.482208013534546
+
+# 2022-02-18 00:05:58 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3379199504852295
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 17 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 6 --block_size_y 1 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (17) Elapsed wall-clock seconds: 0.09
+1.6678719520568848
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 18 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 4 --block_size_y 4 --tile_size_x 2 --tile_size_y 0 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (18) Elapsed wall-clock seconds: 0.09
+1.851647973060608
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 19 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 6 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (19) Elapsed wall-clock seconds: 0.09
+1.4775359630584717
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 20 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 6 --block_size_y 3 --tile_size_x 4 --tile_size_y 1 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (20) Elapsed wall-clock seconds: 0.10
+1.7638399600982666
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 21 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 6 --block_size_y 1 --tile_size_x 2 --tile_size_y 0 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (21) Elapsed wall-clock seconds: 0.09
+3.037247896194458
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 22 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 5 --block_size_y 1 --tile_size_x 2 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:05:59 CET: DONE (22) Elapsed wall-clock seconds: 0.09
+2.3851840496063232
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 23 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 4 --block_size_y 2 --tile_size_x 3 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (23) Elapsed wall-clock seconds: 0.09
+18.669343948364258
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 24 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 7 --block_size_y 3 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (24) Elapsed wall-clock seconds: 0.09
+1.4428800344467163
+
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 25 32 1817399848 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run32.json   --block_size_x 7 --block_size_y 3 --tile_size_x 2 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:05:59 CET: DONE (25) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:05:59 CET: Immediately rejected configurations: 25
+|x|          5|         10|         16|    1.337919950|         11|00:00:01|   NA|  NA|    NA|
+# 2022-02-18 00:05:59 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 17 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 1 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (17) Elapsed wall-clock seconds: 0.09
+1.666111946105957
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 18 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 4 --block_size_y 4 --tile_size_x 2 --tile_size_y 0 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (18) Elapsed wall-clock seconds: 0.09
+1.8518719673156738
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 19 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 6 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (19) Elapsed wall-clock seconds: 0.09
+1.478592038154602
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 20 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 3 --tile_size_x 4 --tile_size_y 1 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (20) Elapsed wall-clock seconds: 0.09
+1.7624000310897827
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 21 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 1 --tile_size_x 2 --tile_size_y 0 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (21) Elapsed wall-clock seconds: 0.10
+3.032991886138916
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 22 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 1 --tile_size_x 2 --tile_size_y 4 --use_padding 0 --read_only 1
+# 2022-02-18 00:06:00 CET: DONE (22) Elapsed wall-clock seconds: 0.10
+2.401247978210449
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 23 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 4 --block_size_y 2 --tile_size_x 3 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (23) Elapsed wall-clock seconds: 0.09
+18.632991790771484
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 24 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 3 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (24) Elapsed wall-clock seconds: 0.09
+1.4398399591445923
+
+|-|          2|          2|         16|    1.336111963|         19|00:00:00|+1.00|1.00|0.0000|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:           6    mean value:     1.224320024
+# Stopped because number of alive configurations (2) <= minimum number of configurations (4)
+Best-so-far configuration:           8    mean value:     1.482086420
 Description of the best-so-far configuration:
   .ID. bx by tx ty up ro .PARENT.
-6    6  2  5  7  0  0  0       NA
+8    8  7  2  0  2  0  0       NA
 
-# 2022-02-14 11:32:02 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-   bx by tx ty up ro
-6   2  5  7  0  0  0
-12  7  2  5  1  0  0
-# 2022-02-14 11:32:02 CET: Iteration 5 of 5
-# experimentsUsedSoFar: 160
-# remainingBudget: 40
-# currentBudget: 40
-# nbConfigurations: 5
+# 2022-02-18 00:06:00 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:00 CET: Results for the race of iteration 3 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+8     8  7  2  0  2  0  0       NA    TRUE      1
+16   16  5  2  1  4  1  0        8    TRUE      2
+17   17  6  1  0  3  0  0        8   FALSE    Inf
+18   18  4  4  2  0  1  0        8   FALSE    Inf
+19   19  5  3  0  6  0  0       16   FALSE    Inf
+20   20  6  3  4  1  1  0        8   FALSE    Inf
+21   21  6  1  2  0  0  0        8   FALSE    Inf
+22   22  5  1  2  4  0  1        8   FALSE    Inf
+23   23  4  2  3  3  0  0        8   FALSE    Inf
+24   24  7  3  1  3  0  0        8   FALSE    Inf
+25   25  7  3  2  5  1  0       16   FALSE    Inf
+# 2022-02-18 00:06:00 CET: Extracting elites
+# 2022-02-18 00:06:00 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+8     8  7  2  0  2  0  0       NA    TRUE      1 0.666666666666667
+16   16  5  2  1  4  1  0        8    TRUE      2 0.333333333333333
+# 2022-02-18 00:06:00 CET: End of iteration 3
+# 2022-02-18 00:06:00 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+# 2022-02-18 00:06:00 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             254.1 Kb
+                  iraceResults :             263.3 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.7 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:00 CET: Iteration 4 of 4
+# experimentsUsedSoFar: 56
+# remainingBudget: 144
+# currentBudget: 144
+# nbConfigurations: 17
+# 2022-02-18 00:06:00 CET: Update model
+# Model:
+$bx
+$bx$`8`
+[1] 1.717086 7.000000
+
+$bx$`16`
+[1] 1.717086 5.000000
+
+
+$by
+$by$`8`
+[1] 0.7804937 2.0000000
+
+$by$`16`
+[1] 0.7804937 2.0000000
+
+
+$tx
+$tx$`8`
+[1] 1.092691 0.000000
+
+$tx$`16`
+[1] 1.092691 1.000000
+
+
+$ty
+$ty$`8`
+[1] 1.092691 2.000000
+
+$ty$`16`
+[1] 1.092691 4.000000
+
+
+$up
+$up$`8`
+[1] 0.93952115 0.06047885
+
+$up$`16`
+[1] 0.09269152 0.90730848
+
+
+$ro
+$ro$`8`
+[1] 0.93952115 0.06047885
+
+$ro$`16`
+[1] 0.93952115 0.06047885
+
+
+# 2022-02-18 00:06:00 CET: Sample 15 configurations from model
+# 2022-02-18 00:06:00 CET: Computing similarity of configurations ............... DONE
+# 2022-02-18 00:06:00 CET: Configurations for the race n 4 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+8     8  7  2  0  2  0  0       NA
+16   16  5  2  1  4  1  0        8
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+# 2022-02-18 00:06:00 CET: Launch race
 # Markers:
      x No test is performed.
      c Configurations are discarded only due to capping.
@@ -171,27 +871,313 @@ Description of the best-so-far configuration:
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
 | |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|          9|          5|         32|   0.8570880294|          5|00:00:00|   NA|  NA|    NA|
-|x|          8|          5|         32|   0.8570880294|          8|00:00:00|+1.00|1.00|0.0001|
-|x|          3|          5|         32|   0.8587946892|         11|00:00:00|+1.00|1.00|0.0001|
-|x|          6|          5|         32|   0.8578560203|         14|00:00:00|+0.99|0.99|0.0001|
-|-|          1|          3|         32|   0.8579072118|         17|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.48089599609375
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:00 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3382079601287842
+
+# 2022-02-18 00:06:00 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 26 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 8 --block_size_y 1 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 1
+# 2022-02-18 00:06:01 CET: DONE (26) Elapsed wall-clock seconds: 0.09
+1.434399962425232
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 27 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 4 --block_size_y 2 --tile_size_x 2 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (27) Elapsed wall-clock seconds: 0.09
+1.6614079475402832
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 28 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 1 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (28) Elapsed wall-clock seconds: 0.09
+1.447808027267456
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 29 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (29) Elapsed wall-clock seconds: 0.09
+1.403488039970398
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 30 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 4 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (30) Elapsed wall-clock seconds: 0.09
+1.8113919496536255
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 31 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 9 --block_size_y 1 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (31) Elapsed wall-clock seconds: 0.10
+1.7218879461288452
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 32 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (32) Elapsed wall-clock seconds: 0.09
+1.551743984222412
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2737280130386353
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 34 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 4 --block_size_y 3 --tile_size_x 2 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (34) Elapsed wall-clock seconds: 0.09
+1.856160044670105
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 35 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 10 --block_size_y 3 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:01 CET: DONE (35) Elapsed wall-clock seconds: 0.09
+1.7817920446395874
+
+# 2022-02-18 00:06:01 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 36 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 5 --block_size_y 1 --tile_size_x 2 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (36) Elapsed wall-clock seconds: 0.09
+2.4062399864196777
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 37 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 6 --block_size_y 2 --tile_size_x 4 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (37) Elapsed wall-clock seconds: 0.09
+40.83001708984375
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 38 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 8 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (38) Elapsed wall-clock seconds: 0.09
+1.6388800144195557
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 39 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (39) Elapsed wall-clock seconds: 0.09
+1.4426239728927612
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 40 11 1984828921 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run11.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (40) Elapsed wall-clock seconds: 0.09
+1.3865280151367188
+
+|x|          6|         17|         33|    1.273728013|         17|00:00:01|   NA|  NA|    NA|
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 26 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 8 --block_size_y 1 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 1
+# 2022-02-18 00:06:02 CET: DONE (26) Elapsed wall-clock seconds: 0.09
+1.438815951347351
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 27 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 4 --block_size_y 2 --tile_size_x 2 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (27) Elapsed wall-clock seconds: 0.09
+1.6714240312576294
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 28 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 1 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (28) Elapsed wall-clock seconds: 0.09
+1.4473919868469238
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 29 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (29) Elapsed wall-clock seconds: 0.09
+1.4032319784164429
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 30 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 4 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (30) Elapsed wall-clock seconds: 0.09
+1.8127360343933105
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 31 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 9 --block_size_y 1 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:02 CET: DONE (31) Elapsed wall-clock seconds: 0.09
+1.723423957824707
+
+# 2022-02-18 00:06:02 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 32 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (32) Elapsed wall-clock seconds: 0.09
+1.5485759973526
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2745280265808105
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 34 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 4 --block_size_y 3 --tile_size_x 2 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (34) Elapsed wall-clock seconds: 0.09
+1.842911958694458
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 35 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 10 --block_size_y 3 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (35) Elapsed wall-clock seconds: 0.09
+1.7825599908828735
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 36 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 1 --tile_size_x 2 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (36) Elapsed wall-clock seconds: 0.09
+2.401792049407959
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 37 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 6 --block_size_y 2 --tile_size_x 4 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (37) Elapsed wall-clock seconds: 0.09
+40.96540832519531
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 38 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 8 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (38) Elapsed wall-clock seconds: 0.09
+1.6362240314483643
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 39 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (39) Elapsed wall-clock seconds: 0.09
+1.4383360147476196
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 40 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (40) Elapsed wall-clock seconds: 0.09
+1.3872959613800049
+
+|-|          1|          3|         33|    1.274128020|         32|00:00:01|+1.00|1.00|0.0003|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:           6    mean value:     1.224135134
+# Stopped because number of alive configurations (3) <= minimum number of configurations (4)
+Best-so-far configuration:           8    mean value:     1.481888016
 Description of the best-so-far configuration:
   .ID. bx by tx ty up ro .PARENT.
-6    6  2  5  7  0  0  0       NA
+8    8  7  2  0  2  0  0       NA
 
-# 2022-02-14 11:32:03 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-   bx by tx ty up ro
-6   2  5  7  0  0  0
-12  7  2  5  1  0  0
-32  1  5  7  0  0  0
-# 2022-02-14 11:32:03 CET: Iteration 6 of 6
-# experimentsUsedSoFar: 177
-# remainingBudget: 23
-# currentBudget: 23
-# nbConfigurations: 5
+# 2022-02-18 00:06:03 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:03 CET: Results for the race of iteration 4 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+8     8  7  2  0  2  0  0       NA    TRUE      1
+16   16  5  2  1  4  1  0        8    TRUE      2
+33   33  5  2  0  3  0  0        8    TRUE      3
+26   26  8  1  1  3  0  1        8   FALSE    Inf
+27   27  4  2  2  3  1  0       16   FALSE    Inf
+28   28  6  2  1  1  1  0        8   FALSE    Inf
+29   29  7  2  1  2  0  0        8   FALSE    Inf
+30   30  4  2  1  2  0  0        8   FALSE    Inf
+31   31  9  1  1  1  0  0        8   FALSE    Inf
+32   32  5  3  1  2  0  0        8   FALSE    Inf
+34   34  4  3  2  3  1  0       16   FALSE    Inf
+35   35 10  3  0  2  0  0        8   FALSE    Inf
+36   36  5  1  2  4  1  0       16   FALSE    Inf
+37   37  6  2  4  4  1  0       16   FALSE    Inf
+38   38  8  3  0  3  0  0        8   FALSE    Inf
+39   39  6  2  1  3  0  0        8   FALSE    Inf
+40   40  7  2  1  1  0  0        8   FALSE    Inf
+# 2022-02-18 00:06:03 CET: Extracting elites
+# 2022-02-18 00:06:03 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+8     8  7  2  0  2  0  0       NA    TRUE      1 0.500000000000000
+16   16  5  2  1  4  1  0        8    TRUE      2 0.333333333333333
+33   33  5  2  0  3  0  0        8    TRUE      3 0.166666666666667
+# 2022-02-18 00:06:03 CET: End of iteration 4
+# 2022-02-18 00:06:03 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+# 2022-02-18 00:06:03 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             254.1 Kb
+                  iraceResults :             304.8 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.7 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:03 CET: Iteration 5 of 5
+# experimentsUsedSoFar: 88
+# remainingBudget: 112
+# currentBudget: 112
+# nbConfigurations: 13
+# 2022-02-18 00:06:03 CET: Update model
+# Model:
+$bx
+$bx$`8`
+[1] 1.169837 7.000000
+
+$bx$`16`
+[1] 1.169837 5.000000
+
+$bx$`33`
+[1] 1.169837 5.000000
+
+
+$by
+$by$`8`
+[1] 0.5317441 2.0000000
+
+$by$`16`
+[1] 0.5317441 2.0000000
+
+$by$`33`
+[1] 0.5317441 2.0000000
+
+
+$tx
+$tx$`8`
+[1] 0.7444418 0.0000000
+
+$tx$`16`
+[1] 0.7444418 1.0000000
+
+$tx$`33`
+[1] 0.7444418 0.0000000
+
+
+$ty
+$ty$`8`
+[1] 0.7444418 2.0000000
+
+$ty$`16`
+[1] 0.7444418 4.0000000
+
+$ty$`33`
+[1] 0.7444418 3.0000000
+
+
+$up
+$up$`8`
+[1] 0.98442913 0.01557087
+
+$up$`16`
+[1] 0.02366805 0.97633195
+
+$up$`33`
+[1] 0.98442913 0.01557087
+
+
+$ro
+$ro$`8`
+[1] 0.98442913 0.01557087
+
+$ro$`16`
+[1] 0.98442913 0.01557087
+
+$ro$`33`
+[1] 0.98442913 0.01557087
+
+
+# 2022-02-18 00:06:03 CET: Sample 10 configurations from model
+# 2022-02-18 00:06:03 CET: Computing similarity of configurations ............ DONE
+# 2022-02-18 00:06:03 CET: Configurations for the race n 5 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+8     8  7  2  0  2  0  0       NA
+16   16  5  2  1  4  1  0        8
+33   33  5  2  0  3  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+# 2022-02-18 00:06:03 CET: Launch race
 # Markers:
      x No test is performed.
      c Configurations are discarded only due to capping.
@@ -203,39 +1189,1996 @@ Description of the best-so-far configuration:
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
 | |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-|x|         10|          5|         32|   0.8611840010|          5|00:00:00|   NA|  NA|    NA|
-|x|          3|          5|         32|   0.8616960049|          7|00:00:00|+1.00|1.00|0.0000|
-|x|          5|          5|         32|   0.8611840010|         11|00:00:00|+1.00|1.00|0.0000|
-|x|          9|          5|         32|   0.8601600081|         13|00:00:00|+1.00|1.00|0.0002|
-|-|          7|          3|         32|   0.8597504020|         16|00:00:00|+1.00|1.00|0.0000|
-|.|          8|          3|         32|   0.8593066732|         16|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:03 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4832960367202759
+
+# 2022-02-18 00:06:03 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (16) Elapsed wall-clock seconds: 0.10
+1.3290239572525024
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2760640382766724
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 41 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 9 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (41) Elapsed wall-clock seconds: 0.09
+1.568608045578003
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 42 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 6 --block_size_y 3 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (42) Elapsed wall-clock seconds: 0.09
+1.8035839796066284
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 43 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 9 --block_size_y 3 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (43) Elapsed wall-clock seconds: 0.09
+1.7881920337677002
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 44 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (44) Elapsed wall-clock seconds: 0.09
+1.460576057434082
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 45 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 8 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (45) Elapsed wall-clock seconds: 0.09
+1.42576003074646
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 46 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 2 --tile_size_x 3 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (46) Elapsed wall-clock seconds: 0.09
+35.41312026977539
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 47 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 6 --block_size_y 3 --tile_size_x 1 --tile_size_y 4 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (47) Elapsed wall-clock seconds: 0.10
+1.7609280347824097
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 48 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (48) Elapsed wall-clock seconds: 0.09
+2.2422080039978027
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 49 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 7 --block_size_y 3 --tile_size_x 0 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:04 CET: DONE (49) Elapsed wall-clock seconds: 0.09
+1.6246720552444458
+
+# 2022-02-18 00:06:04 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 50 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (50) Elapsed wall-clock seconds: 0.09
+1.301759958267212
+
+|x|          7|         13|         33|    1.276064038|         13|00:00:01|   NA|  NA|    NA|
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2756799459457397
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 41 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 9 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (41) Elapsed wall-clock seconds: 0.09
+1.5694719552993774
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 42 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 3 --tile_size_x 1 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (42) Elapsed wall-clock seconds: 0.09
+1.8050880432128906
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 43 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 9 --block_size_y 3 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (43) Elapsed wall-clock seconds: 0.09
+1.7872960567474365
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 44 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (44) Elapsed wall-clock seconds: 0.09
+1.4648640155792236
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 45 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 8 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (45) Elapsed wall-clock seconds: 0.09
+1.428671956062317
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 46 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 3 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (46) Elapsed wall-clock seconds: 0.09
+35.33977508544922
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 47 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 3 --tile_size_x 1 --tile_size_y 4 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (47) Elapsed wall-clock seconds: 0.09
+1.7625919580459595
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 48 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:05 CET: DONE (48) Elapsed wall-clock seconds: 0.09
+2.0815680027008057
+
+# 2022-02-18 00:06:05 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 49 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 3 --tile_size_x 0 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (49) Elapsed wall-clock seconds: 0.09
+1.6256959438323975
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 50 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (50) Elapsed wall-clock seconds: 0.09
+1.307487964630127
+
+|-|          2|          3|         33|    1.275871992|         24|00:00:01|+1.00|1.00|0.0003|
 +-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
-Best-so-far configuration:          12    mean value:     1.163571239
+# Stopped because number of alive configurations (3) <= minimum number of configurations (4)
+Best-so-far configuration:           8    mean value:     1.482089162
+Description of the best-so-far configuration:
+  .ID. bx by tx ty up ro .PARENT.
+8    8  7  2  0  2  0  0       NA
+
+# 2022-02-18 00:06:06 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:06 CET: Results for the race of iteration 5 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+8     8  7  2  0  2  0  0       NA    TRUE      1
+16   16  5  2  1  4  1  0        8    TRUE      2
+33   33  5  2  0  3  0  0        8    TRUE      3
+41   41  9  2  0  3  0  0        8   FALSE    Inf
+42   42  6  3  1  1  0  0        8   FALSE    Inf
+43   43  9  3  0  2  0  0        8   FALSE    Inf
+44   44  5  3  0  4  1  0       16   FALSE    Inf
+45   45  8  2  1  3  0  0        8   FALSE    Inf
+46   46  5  2  3  4  1  0       16   FALSE    Inf
+47   47  6  3  1  4  0  0       33   FALSE    Inf
+48   48  5  3  1  5  1  0       16   FALSE    Inf
+49   49  7  3  0  1  0  0        8   FALSE    Inf
+50   50  7  2  1  4  1  0       16   FALSE    Inf
+# 2022-02-18 00:06:06 CET: Extracting elites
+# 2022-02-18 00:06:06 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+8     8  7  2  0  2  0  0       NA    TRUE      1 0.500000000000000
+16   16  5  2  1  4  1  0        8    TRUE      2 0.333333333333333
+33   33  5  2  0  3  0  0        8    TRUE      3 0.166666666666667
+# 2022-02-18 00:06:06 CET: End of iteration 5
+# 2022-02-18 00:06:06 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+# 2022-02-18 00:06:06 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             254.1 Kb
+                  iraceResults :             309.5 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.7 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:06 CET: Iteration 6 of 6
+# experimentsUsedSoFar: 112
+# remainingBudget: 88
+# currentBudget: 88
+# nbConfigurations: 10
+# 2022-02-18 00:06:06 CET: Update model
+# Model:
+$bx
+$bx$`8`
+[1] 0.8458157 7.0000000
+
+$bx$`16`
+[1] 0.8458157 5.0000000
+
+$bx$`33`
+[1] 0.8458157 5.0000000
+
+
+$by
+$by$`8`
+[1] 0.3844617 2.0000000
+
+$by$`16`
+[1] 0.3844617 2.0000000
+
+$by$`33`
+[1] 0.3844617 2.0000000
+
+
+$tx
+$tx$`8`
+[1] 0.5382463 0.0000000
+
+$tx$`16`
+[1] 0.5382463 1.0000000
+
+$tx$`33`
+[1] 0.5382463 0.0000000
+
+
+$ty
+$ty$`8`
+[1] 0.5382463 2.0000000
+
+$ty$`16`
+[1] 0.5382463 4.0000000
+
+$ty$`33`
+[1] 0.5382463 3.0000000
+
+
+$up
+$up$`8`
+[1] 0.996617908 0.003382092
+
+$up$`16`
+[1] 0.005131824 0.994868176
+
+$up$`33`
+[1] 0.996617908 0.003382092
+
+
+$ro
+$ro$`8`
+[1] 0.996617908 0.003382092
+
+$ro$`16`
+[1] 0.996617908 0.003382092
+
+$ro$`33`
+[1] 0.996617908 0.003382092
+
+
+# 2022-02-18 00:06:06 CET: Sample 7 configurations from model
+# 2022-02-18 00:06:06 CET: Computing similarity of configurations ......... DONE
+# 2022-02-18 00:06:06 CET: Soft restart: 8 52 54 51 53 !
+# Model:
+$bx
+$bx$`8`
+[1] 1.617987 7.000000
+
+$bx$`16`
+[1] 1.617987 5.000000
+
+$bx$`33`
+[1] 0.8458157 5.0000000
+
+
+$by
+$by$`8`
+[1] 0.7354487 2.0000000
+
+$by$`16`
+[1] 0.7354487 2.0000000
+
+$by$`33`
+[1] 0.3844617 2.0000000
+
+
+$tx
+$tx$`8`
+[1] 1.029628 0.000000
+
+$tx$`16`
+[1] 1.029628 1.000000
+
+$tx$`33`
+[1] 0.5382463 0.0000000
+
+
+$ty
+$ty$`8`
+[1] 1.029628 2.000000
+
+$ty$`16`
+[1] 1.029628 4.000000
+
+$ty$`33`
+[1] 0.5382463 3.0000000
+
+
+$up
+$up$`8`
+[1] 0.90657376 0.09342624
+
+$up$`16`
+[1] 0.09472972 0.90527028
+
+$up$`33`
+[1] 0.996617908 0.003382092
+
+
+$ro
+$ro$`8`
+[1] 0.90657376 0.09342624
+
+$ro$`16`
+[1] 0.90657376 0.09342624
+
+$ro$`33`
+[1] 0.996617908 0.003382092
+
+
+# 2022-02-18 00:06:06 CET: Configurations for the race n 6 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+8     8  7  2  0  2  0  0       NA
+16   16  5  2  1  4  1  0        8
+33   33  5  2  0  3  0  0        8
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+# 2022-02-18 00:06:06 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4814399480819702
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.332319974899292
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.276479959487915
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 51 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 1 --block_size_y 2 --tile_size_x 2 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (51) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 52 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (52) Elapsed wall-clock seconds: 0.09
+1.5583360195159912
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 53 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 4 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (53) Elapsed wall-clock seconds: 0.09
+2.1546878814697266
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 54 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 6 --block_size_y 3 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (54) Elapsed wall-clock seconds: 0.09
+1.538432002067566
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 55 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:06 CET: DONE (55) Elapsed wall-clock seconds: 0.09
+1.5495359897613525
+
+# 2022-02-18 00:06:06 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 56 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 7 --block_size_y 1 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (56) Elapsed wall-clock seconds: 0.09
+1.5579839944839478
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 57 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 6 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (57) Elapsed wall-clock seconds: 0.09
+1.6375679969787598
+
+# 2022-02-18 00:06:07 CET: Immediately rejected configurations: 51
+|x|          8|          9|         33|    1.276479959|         10|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3377280235290527
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2748479843139648
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 52 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (52) Elapsed wall-clock seconds: 0.09
+1.5590399503707886
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 53 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 4 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (53) Elapsed wall-clock seconds: 0.09
+2.152992010116577
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 54 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 6 --block_size_y 3 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (54) Elapsed wall-clock seconds: 0.09
+1.5389440059661865
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 55 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 3 --tile_size_x 0 --tile_size_y 1 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (55) Elapsed wall-clock seconds: 0.09
+1.5503360033035278
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 56 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 7 --block_size_y 1 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (56) Elapsed wall-clock seconds: 0.09
+1.5604480504989624
+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 57 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 6 --block_size_y 3 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:07 CET: DONE (57) Elapsed wall-clock seconds: 0.09
+1.6369279623031616
+
+|-|          3|          3|         33|    1.275663972|         18|00:00:00|+1.00|1.00|0.0004|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (3) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.335527971
 Description of the best-so-far configuration:
    .ID. bx by tx ty up ro .PARENT.
-12   12  7  2  5  1  0  0        6
+16   16  5  2  1  4  1  0        8
 
-# 2022-02-14 11:32:05 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
-   bx by tx ty up ro
-12  7  2  5  1  0  0
-6   2  5  7  0  0  0
-32  1  5  7  0  0  0
-# 2022-02-14 11:32:05 CET: Stopped because there is not enough budget left to race more than the minimum (4)
+# 2022-02-18 00:06:07 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:07 CET: Results for the race of iteration 6 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE      8
+8     8  7  2  0  2  0  0       NA    TRUE     16
+33   33  5  2  0  3  0  0        8    TRUE     17
+51   51  1  2  2  5  1  0       16   FALSE    Inf
+52   52  5  2  0  2  0  0       33   FALSE    Inf
+53   53  4  3  0  3  0  0        8   FALSE    Inf
+54   54  6  3  0  4  1  0       16   FALSE    Inf
+55   55  5  3  0  1  0  0        8   FALSE    Inf
+56   56  7  1  1  2  0  0        8   FALSE    Inf
+57   57  6  3  0  3  0  0        8   FALSE    Inf
+# 2022-02-18 00:06:07 CET: Extracting elites
+# 2022-02-18 00:06:07 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE      8 0.500000000000000
+8     8  7  2  0  2  0  0       NA    TRUE     16 0.333333333333333
+33   33  5  2  0  3  0  0        8    TRUE     17 0.166666666666667
+# 2022-02-18 00:06:07 CET: End of iteration 6
+# 2022-02-18 00:06:07 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+# 2022-02-18 00:06:07 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             290.3 Kb
+                  iraceResults :             313.7 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.7 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:07 CET: Iteration 7 of 7
+# experimentsUsedSoFar: 130
+# remainingBudget: 70
+# currentBudget: 70
+# nbConfigurations: 9
+# 2022-02-18 00:06:07 CET: Update model
+# Model:
+$bx
+$bx$`16`
+[1] 1.200282 5.000000
+
+$bx$`8`
+[1] 1.200282 7.000000
+
+$bx$`33`
+[1] 0.6274568 5.0000000
+
+
+$by
+$by$`16`
+[1] 0.5455826 2.0000000
+
+$by$`8`
+[1] 0.5455826 2.0000000
+
+$by$`33`
+[1] 0.2852076 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.7638156 1.0000000
+
+$tx$`8`
+[1] 0.7638156 0.0000000
+
+$tx$`33`
+[1] 0.3992907 0.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.7638156 4.0000000
+
+$ty$`8`
+[1] 0.7638156 2.0000000
+
+$ty$`33`
+[1] 0.3992907 3.0000000
+
+
+$up
+$up$`16`
+[1] 0.01738861 0.98261139
+
+$up$`8`
+[1] 0.98284655 0.01715345
+
+$up$`33`
+[1] 0.999368595 0.000631405
+
+
+$ro
+$ro$`16`
+[1] 0.98284655 0.01715345
+
+$ro$`8`
+[1] 0.98284655 0.01715345
+
+$ro$`33`
+[1] 0.999368595 0.000631405
+
+
+# 2022-02-18 00:06:07 CET: Sample 6 configurations from model
+# 2022-02-18 00:06:07 CET: Computing similarity of configurations ........ DONE
+# 2022-02-18 00:06:07 CET: Soft restart: 33 62 !
+# Model:
+$bx
+$bx$`16`
+[1] 1.200282 5.000000
+
+$bx$`8`
+[1] 1.200282 7.000000
+
+$bx$`33`
+[1] 1.140165 5.000000
+
+
+$by
+$by$`16`
+[1] 0.5455826 2.0000000
+
+$by$`8`
+[1] 0.5455826 2.0000000
+
+$by$`33`
+[1] 0.5182567 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.7638156 1.0000000
+
+$tx$`8`
+[1] 0.7638156 0.0000000
+
+$tx$`33`
+[1] 0.7255594 0.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.7638156 4.0000000
+
+$ty$`8`
+[1] 0.7638156 2.0000000
+
+$ty$`33`
+[1] 0.7255594 3.0000000
+
+
+$up
+$up$`16`
+[1] 0.01738861 0.98261139
+
+$up$`8`
+[1] 0.98284655 0.01715345
+
+$up$`33`
+[1] 0.90862122 0.09137878
+
+
+$ro
+$ro$`16`
+[1] 0.98284655 0.01715345
+
+$ro$`8`
+[1] 0.98284655 0.01715345
+
+$ro$`33`
+[1] 0.90862122 0.09137878
+
+
+# 2022-02-18 00:06:07 CET: Configurations for the race n 7 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+8     8  7  2  0  2  0  0       NA
+33   33  5  2  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+# 2022-02-18 00:06:07 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:07 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3367040157318115
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4808319807052612
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2748479843139648
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 58 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (58) Elapsed wall-clock seconds: 0.09
+1.4017599821090698
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 59 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (59) Elapsed wall-clock seconds: 0.09
+1.5011839866638184
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 60 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (60) Elapsed wall-clock seconds: 0.09
+1.4202560186386108
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 61 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 8 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (61) Elapsed wall-clock seconds: 0.09
+1.5482560396194458
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 62 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 6 --block_size_y 2 --tile_size_x 2 --tile_size_y 2 --use_padding 0 --read_only 1
+# 2022-02-18 00:06:08 CET: DONE (62) Elapsed wall-clock seconds: 0.09
+1.6275520324707031
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 63 31 2093104778 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run31.json   --block_size_x 7 --block_size_y 3 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (63) Elapsed wall-clock seconds: 0.09
+1.5738879442214966
+
+|x|          9|          9|         33|    1.274847984|          9|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 58 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:08 CET: DONE (58) Elapsed wall-clock seconds: 0.09
+1.407647967338562
+
+# 2022-02-18 00:06:08 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 59 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 3 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (59) Elapsed wall-clock seconds: 0.09
+1.5062079429626465
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 60 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (60) Elapsed wall-clock seconds: 0.09
+1.422976016998291
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 61 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 8 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (61) Elapsed wall-clock seconds: 0.09
+1.5463039875030518
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 62 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 6 --block_size_y 2 --tile_size_x 2 --tile_size_y 2 --use_padding 0 --read_only 1
+# 2022-02-18 00:06:09 CET: DONE (62) Elapsed wall-clock seconds: 0.09
+1.6118719577789307
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 63 21 39795770 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run21.json   --block_size_x 7 --block_size_y 3 --tile_size_x 1 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (63) Elapsed wall-clock seconds: 0.09
+1.5815999507904053
+
+|-|          8|          3|         33|    1.275663972|         15|00:00:00|+1.00|1.00|0.0003|
+|.|          2|          3|         33|    1.275669297|         15|00:00:00|+1.00|1.00|0.0002|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (3) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.335658643
+Description of the best-so-far configuration:
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+
+# 2022-02-18 00:06:09 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:09 CET: Results for the race of iteration 7 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE      9
+8     8  7  2  0  2  0  0       NA    TRUE     18
+33   33  5  2  0  3  0  0        8    TRUE     19
+58   58  7  2  1  2  0  0        8   FALSE    Inf
+59   59  5  3  1  4  1  0       16   FALSE    Inf
+60   60  5  2  0  4  1  0       16   FALSE    Inf
+61   61  8  2  0  2  0  0        8   FALSE    Inf
+62   62  6  2  2  2  0  1        8   FALSE    Inf
+63   63  7  3  1  2  0  0        8   FALSE    Inf
+# 2022-02-18 00:06:09 CET: Extracting elites
+# 2022-02-18 00:06:09 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE      9 0.500000000000000
+8     8  7  2  0  2  0  0       NA    TRUE     18 0.333333333333333
+33   33  5  2  0  3  0  0        8    TRUE     19 0.166666666666667
+# 2022-02-18 00:06:09 CET: End of iteration 7
+# 2022-02-18 00:06:09 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+# 2022-02-18 00:06:09 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             290.3 Kb
+                  iraceResults :             352.9 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.8 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:09 CET: Iteration 8 of 8
+# experimentsUsedSoFar: 145
+# remainingBudget: 55
+# currentBudget: 55
+# nbConfigurations: 8
+# 2022-02-18 00:06:09 CET: Update model
+# Model:
+$bx
+$bx$`16`
+[1] 0.9178848 5.0000000
+
+$bx$`8`
+[1] 0.9178848 7.0000000
+
+$bx$`33`
+[1] 0.8719119 5.0000000
+
+
+$by
+$by$`16`
+[1] 0.4172204 2.0000000
+
+$by$`8`
+[1] 0.4172204 2.0000000
+
+$by$`33`
+[1] 0.3963236 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.5841085 1.0000000
+
+$tx$`8`
+[1] 0.5841085 0.0000000
+
+$tx$`33`
+[1] 0.554853 0.000000
+
+
+$ty
+$ty$`16`
+[1] 0.5841085 4.0000000
+
+$ty$`8`
+[1] 0.5841085 2.0000000
+
+$ty$`33`
+[1] 0.554853 3.000000
+
+
+$up
+$up$`16`
+[1] 0.002834245 0.997165755
+
+$up$`8`
+[1] 0.997203978 0.002796022
+
+$up$`33`
+[1] 0.98528326 0.01471674
+
+
+$ro
+$ro$`16`
+[1] 0.997203978 0.002796022
+
+$ro$`8`
+[1] 0.997203978 0.002796022
+
+$ro$`33`
+[1] 0.98528326 0.01471674
+
+
+# 2022-02-18 00:06:09 CET: Sample 5 configurations from model
+# 2022-02-18 00:06:09 CET: Computing similarity of configurations ....... DONE
+# 2022-02-18 00:06:09 CET: Configurations for the race n 8 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+8     8  7  2  0  2  0  0       NA
+33   33  5  2  0  3  0  0        8
+64   64  6  2  1  4  1  0       16
+65   65  5  2  2  5  1  0       16
+66   66  6  1  1  4  1  0       16
+67   67  5  2  0  4  1  0       16
+68   68  3  2  1  4  1  0       16
+# 2022-02-18 00:06:09 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.344223976135254
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4801599979400635
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.276576042175293
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 64 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (64) Elapsed wall-clock seconds: 0.09
+1.3946559429168701
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 65 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 5 --block_size_y 2 --tile_size_x 2 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (65) Elapsed wall-clock seconds: 0.09
+30.25279998779297
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 66 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 6 --block_size_y 1 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:09 CET: DONE (66) Elapsed wall-clock seconds: 0.09
+1.6275520324707031
+
+# 2022-02-18 00:06:09 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 67 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (67) Elapsed wall-clock seconds: 0.09
+1.4196159839630127
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 68 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 3 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (68) Elapsed wall-clock seconds: 0.09
+inf
+
+# 2022-02-18 00:06:10 CET: Immediately rejected configurations: 68
+|x|         10|          7|         33|    1.276576042|          8|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2758079767227173
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 64 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (64) Elapsed wall-clock seconds: 0.09
+1.3991039991378784
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 65 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 5 --block_size_y 2 --tile_size_x 2 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (65) Elapsed wall-clock seconds: 0.09
+30.295679092407227
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 66 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 6 --block_size_y 1 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (66) Elapsed wall-clock seconds: 0.09
+1.6275520324707031
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 67 7 1216988388 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run7.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (67) Elapsed wall-clock seconds: 0.09
+1.4222400188446045
+
+|=|          4|          7|         33|    1.276192009|         13|00:00:00|+1.00|1.00|0.0000|
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 64 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (64) Elapsed wall-clock seconds: 0.09
+1.3897279500961304
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 65 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 2 --tile_size_y 5 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (65) Elapsed wall-clock seconds: 0.09
+30.29395294189453
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 66 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 6 --block_size_y 1 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:10 CET: DONE (66) Elapsed wall-clock seconds: 0.09
+1.6318399906158447
+
+# 2022-02-18 00:06:10 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 67 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (67) Elapsed wall-clock seconds: 0.09
+1.422271966934204
+
+|-|          2|          3|         33|    1.276021322|         17|00:00:00|+1.00|1.00|0.0005|
+|.|          9|          3|         33|    1.275727987|         17|00:00:00|+1.00|1.00|0.0004|
+|.|          3|          3|         33|    1.275551987|         17|00:00:00|+1.00|1.00|0.0003|
+|.|          1|          3|         33|    1.275381327|         17|00:00:00|+1.00|1.00|0.0003|
+|.|          6|          3|         33|    1.275145139|         17|00:00:00|+1.00|1.00|0.0003|
+|.|          7|          3|         33|    1.275260001|         17|00:00:00|+1.00|1.00|0.0005|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (3) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.336515176
+Description of the best-so-far configuration:
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+
+# 2022-02-18 00:06:11 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:11 CET: Results for the race of iteration 8 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE     10
+8     8  7  2  0  2  0  0       NA    TRUE     20
+33   33  5  2  0  3  0  0        8    TRUE     21
+64   64  6  2  1  4  1  0       16   FALSE    Inf
+65   65  5  2  2  5  1  0       16   FALSE    Inf
+66   66  6  1  1  4  1  0       16   FALSE    Inf
+67   67  5  2  0  4  1  0       16   FALSE    Inf
+68   68  3  2  1  4  1  0       16   FALSE    Inf
+# 2022-02-18 00:06:11 CET: Extracting elites
+# 2022-02-18 00:06:11 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.          .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE     10 0.500000000000000
+8     8  7  2  0  2  0  0       NA    TRUE     20 0.333333333333333
+33   33  5  2  0  3  0  0        8    TRUE     21 0.166666666666667
+# 2022-02-18 00:06:11 CET: End of iteration 8
+# 2022-02-18 00:06:11 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+64   64  6  2  1  4  1  0       16
+65   65  5  2  2  5  1  0       16
+66   66  6  1  1  4  1  0       16
+67   67  5  2  0  4  1  0       16
+68   68  3  2  1  4  1  0       16
+# 2022-02-18 00:06:11 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             326.7 Kb
+                  iraceResults :             355.7 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.8 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:11 CET: Iteration 9 of 9
+# experimentsUsedSoFar: 162
+# remainingBudget: 38
+# currentBudget: 38
+# nbConfigurations: 6
+# 2022-02-18 00:06:11 CET: Update model
+# Model:
+$bx
+$bx$`16`
+[1] 0.7643073 5.0000000
+
+$bx$`8`
+[1] 0.7643073 7.0000000
+
+$bx$`33`
+[1] 0.7260264 5.0000000
+
+
+$by
+$by$`16`
+[1] 0.3474124 2.0000000
+
+$by$`8`
+[1] 0.3474124 2.0000000
+
+$by$`33`
+[1] 0.330012 2.000000
+
+
+$tx
+$tx$`16`
+[1] 0.4863773 1.0000000
+
+$tx$`8`
+[1] 0.4863773 0.0000000
+
+$tx$`33`
+[1] 0.4620168 0.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.4863773 4.0000000
+
+$ty$`8`
+[1] 0.4863773 2.0000000
+
+$ty$`33`
+[1] 0.4620168 3.0000000
+
+
+$up
+$up$`16`
+[1] 0.0004116338 0.9995883662
+
+$up$`8`
+[1] 0.9995939153 0.0004060847
+
+$up$`33`
+[1] 0.997866285 0.002133715
+
+
+$ro
+$ro$`16`
+[1] 0.9995939153 0.0004060847
+
+$ro$`8`
+[1] 0.9995939153 0.0004060847
+
+$ro$`33`
+[1] 0.997866285 0.002133715
+
+
+# 2022-02-18 00:06:11 CET: Sample 3 configurations from model
+# 2022-02-18 00:06:11 CET: Computing similarity of configurations ..... DONE
+# 2022-02-18 00:06:11 CET: Soft restart: 33 69 !
+# Model:
+$bx
+$bx$`16`
+[1] 0.7643073 5.0000000
+
+$bx$`8`
+[1] 0.7643073 7.0000000
+
+$bx$`33`
+[1] 1.047111 5.000000
+
+
+$by
+$by$`16`
+[1] 0.3474124 2.0000000
+
+$by$`8`
+[1] 0.3474124 2.0000000
+
+$by$`33`
+[1] 0.4759596 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.4863773 1.0000000
+
+$tx$`8`
+[1] 0.4863773 0.0000000
+
+$tx$`33`
+[1] 0.6663435 0.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.4863773 4.0000000
+
+$ty$`8`
+[1] 0.4863773 2.0000000
+
+$ty$`33`
+[1] 0.6663435 3.0000000
+
+
+$up
+$up$`16`
+[1] 0.0004116338 0.9995883662
+
+$up$`8`
+[1] 0.9995939153 0.0004060847
+
+$up$`33`
+[1] 0.90750323 0.09249677
+
+
+$ro
+$ro$`16`
+[1] 0.9995939153 0.0004060847
+
+$ro$`8`
+[1] 0.9995939153 0.0004060847
+
+$ro$`33`
+[1] 0.90750323 0.09249677
+
+
+# 2022-02-18 00:06:11 CET: Configurations for the race n 9 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+8     8  7  2  0  2  0  0       NA
+33   33  5  2  0  3  0  0        8
+69   69  5  2  0  4  1  0       16
+70   70  7  2  0  2  0  0        8
+71   71  5  2  1  3  1  0       16
+# 2022-02-18 00:06:11 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.3402880430221558
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.4825279712677002
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.274399995803833
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 69 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (69) Elapsed wall-clock seconds: 0.09
+1.421280026435852
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 70 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (70) Elapsed wall-clock seconds: 0.09
+1.4825279712677002
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 27 80722011 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run27.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (71) Elapsed wall-clock seconds: 0.10
+1.193120002746582
+
+|x|         11|          6|         71|    1.193120003|          6|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 69 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (69) Elapsed wall-clock seconds: 0.09
+1.419935941696167
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 70 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (70) Elapsed wall-clock seconds: 0.09
+1.4832960367202759
+
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 18 1597046684 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run18.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:11 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.2002880573272705
+
+|=|          7|          6|         71|    1.196704030|          9|00:00:00|+1.00|1.00|0.0010|
+# 2022-02-18 00:06:11 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 69 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (69) Elapsed wall-clock seconds: 0.09
+1.4213119745254517
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 70 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (70) Elapsed wall-clock seconds: 0.09
+1.4821439981460571
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.1996159553527832
+
+|-|          3|          4|         71|    1.197674672|         12|00:00:00|+1.00|1.00|0.0007|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (4) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.336858164
+Description of the best-so-far configuration:
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+
+# 2022-02-18 00:06:12 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:12 CET: Results for the race of iteration 9 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE     11
+8     8  7  2  0  2  0  0       NA    TRUE     22
+33   33  5  2  0  3  0  0        8    TRUE     23
+71   71  5  2  1  3  1  0       16    TRUE     24
+69   69  5  2  0  4  1  0       16   FALSE    Inf
+70   70  7  2  0  2  0  0        8   FALSE    Inf
+# 2022-02-18 00:06:12 CET: Extracting elites
+# 2022-02-18 00:06:12 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK. .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE     11      0.4
+8     8  7  2  0  2  0  0       NA    TRUE     22      0.3
+33   33  5  2  0  3  0  0        8    TRUE     23      0.2
+71   71  5  2  1  3  1  0       16    TRUE     24      0.1
+# 2022-02-18 00:06:12 CET: End of iteration 9
+# 2022-02-18 00:06:12 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+64   64  6  2  1  4  1  0       16
+65   65  5  2  2  5  1  0       16
+66   66  6  1  1  4  1  0       16
+67   67  5  2  0  4  1  0       16
+68   68  3  2  1  4  1  0       16
+69   69  5  2  0  4  1  0       16
+70   70  7  2  0  2  0  0        8
+71   71  5  2  1  3  1  0       16
+# 2022-02-18 00:06:12 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             326.7 Kb
+                  iraceResults :             394.5 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.9 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:12 CET: Iteration 10 of 10
+# experimentsUsedSoFar: 174
+# remainingBudget: 26
+# currentBudget: 26
+# nbConfigurations: 5
+# 2022-02-18 00:06:12 CET: Update model
+# Model:
+$bx
+$bx$`16`
+[1] 0.7643073 5.0000000
+
+$bx$`8`
+[1] 0.7643073 7.0000000
+
+$bx$`33`
+[1] 1.047111 5.000000
+
+$bx$`71`
+[1] 0.7643073 5.0000000
+
+
+$by
+$by$`16`
+[1] 0.3474124 2.0000000
+
+$by$`8`
+[1] 0.3474124 2.0000000
+
+$by$`33`
+[1] 0.4759596 2.0000000
+
+$by$`71`
+[1] 0.3474124 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.4863773 1.0000000
+
+$tx$`8`
+[1] 0.4863773 0.0000000
+
+$tx$`33`
+[1] 0.6663435 0.0000000
+
+$tx$`71`
+[1] 0.4863773 1.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.4863773 4.0000000
+
+$ty$`8`
+[1] 0.4863773 2.0000000
+
+$ty$`33`
+[1] 0.6663435 3.0000000
+
+$ty$`71`
+[1] 0.4863773 3.0000000
+
+
+$up
+$up$`16`
+[1] 5.382483e-05 9.999462e-01
+
+$up$`8`
+[1] 9.999469e-01 5.309928e-05
+
+$up$`33`
+[1] 0.98804911 0.01195089
+
+$up$`71`
+[1] 5.382483e-05 9.999462e-01
+
+
+$ro
+$ro$`16`
+[1] 9.999469e-01 5.309928e-05
+
+$ro$`8`
+[1] 9.999469e-01 5.309928e-05
+
+$ro$`33`
+[1] 0.98804911 0.01195089
+
+$ro$`71`
+[1] 9.999469e-01 5.309928e-05
+
+
+# 2022-02-18 00:06:12 CET: Sample 1 configurations from model
+# 2022-02-18 00:06:12 CET: Computing similarity of configurations .... DONE
+# 2022-02-18 00:06:12 CET: Configurations for the race n 10 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+8     8  7  2  0  2  0  0       NA
+33   33  5  2  0  3  0  0        8
+71   71  5  2  1  3  1  0       16
+72   72  7  2  1  4  1  0       16
+# 2022-02-18 00:06:12 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 26 118169805 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (16) Elapsed wall-clock seconds: 0.10
+1.3350399732589722
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 26 118169805 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.480031967163086
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 26 118169805 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.2757439613342285
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 26 118169805 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.1995840072631836
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 72 26 118169805 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run26.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (72) Elapsed wall-clock seconds: 0.09
+1.3034240007400513
+
+|x|         12|          5|         71|    1.199584007|          5|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.197376012802124
+
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 72 17 1447485760 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run17.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:12 CET: DONE (72) Elapsed wall-clock seconds: 0.09
+1.3100800514221191
+
+|=|         10|          5|         71|    1.198480010|          7|00:00:00|+1.00|1.00|0.0008|
+# 2022-02-18 00:06:12 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.2014720439910889
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 72 6 1601929443 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run6.json   --block_size_x 7 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (72) Elapsed wall-clock seconds: 0.09
+1.307487964630127
+
+|-|          2|          4|         71|    1.199477355|          9|00:00:00|+1.00|1.00|0.0006|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (4) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.336706648
+Description of the best-so-far configuration:
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+
+# 2022-02-18 00:06:13 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:13 CET: Results for the race of iteration 10 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE     12
+8     8  7  2  0  2  0  0       NA    TRUE     24
+33   33  5  2  0  3  0  0        8    TRUE     25
+71   71  5  2  1  3  1  0       16    TRUE     26
+72   72  7  2  1  4  1  0       16   FALSE    Inf
+# 2022-02-18 00:06:13 CET: Extracting elites
+# 2022-02-18 00:06:13 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK. .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE     12      0.4
+8     8  7  2  0  2  0  0       NA    TRUE     24      0.3
+33   33  5  2  0  3  0  0        8    TRUE     25      0.2
+71   71  5  2  1  3  1  0       16    TRUE     26      0.1
+# 2022-02-18 00:06:13 CET: End of iteration 10
+# 2022-02-18 00:06:13 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+64   64  6  2  1  4  1  0       16
+65   65  5  2  2  5  1  0       16
+66   66  6  1  1  4  1  0       16
+67   67  5  2  0  4  1  0       16
+68   68  3  2  1  4  1  0       16
+69   69  5  2  0  4  1  0       16
+70   70  7  2  0  2  0  0        8
+71   71  5  2  1  3  1  0       16
+72   72  7  2  1  4  1  0       16
+# 2022-02-18 00:06:13 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             326.7 Kb
+                  iraceResults :             396.1 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.9 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:13 CET: Iteration 11 of 11
+# experimentsUsedSoFar: 183
+# remainingBudget: 17
+# currentBudget: 17
+# nbConfigurations: 5
+# 2022-02-18 00:06:13 CET: Update model
+# Model:
+$bx
+$bx$`16`
+[1] 0.7643073 5.0000000
+
+$bx$`8`
+[1] 0.7643073 7.0000000
+
+$bx$`33`
+[1] 1.047111 5.000000
+
+$bx$`71`
+[1] 0.7643073 5.0000000
+
+
+$by
+$by$`16`
+[1] 0.3474124 2.0000000
+
+$by$`8`
+[1] 0.3474124 2.0000000
+
+$by$`33`
+[1] 0.4759596 2.0000000
+
+$by$`71`
+[1] 0.3474124 2.0000000
+
+
+$tx
+$tx$`16`
+[1] 0.4863773 1.0000000
+
+$tx$`8`
+[1] 0.4863773 0.0000000
+
+$tx$`33`
+[1] 0.6663435 0.0000000
+
+$tx$`71`
+[1] 0.4863773 1.0000000
+
+
+$ty
+$ty$`16`
+[1] 0.4863773 4.0000000
+
+$ty$`8`
+[1] 0.4863773 2.0000000
+
+$ty$`33`
+[1] 0.6663435 3.0000000
+
+$ty$`71`
+[1] 0.4863773 3.0000000
+
+
+$up
+$up$`16`
+[1] 6.398559e-06 9.999936e-01
+
+$up$`8`
+[1] 9.999937e-01 6.312308e-06
+
+$up$`33`
+[1] 0.998581315 0.001418685
+
+$up$`71`
+[1] 6.398559e-06 9.999936e-01
+
+
+$ro
+$ro$`16`
+[1] 9.999937e-01 6.312308e-06
+
+$ro$`8`
+[1] 9.999937e-01 6.312308e-06
+
+$ro$`33`
+[1] 0.998581315 0.001418685
+
+$ro$`71`
+[1] 9.999937e-01 6.312308e-06
+
+
+# 2022-02-18 00:06:13 CET: Sample 1 configurations from model
+# 2022-02-18 00:06:13 CET: Computing similarity of configurations .... DONE
+# 2022-02-18 00:06:13 CET: Configurations for the race n 11 (elite configurations listed first, then new configurations):
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+8     8  7  2  0  2  0  0       NA
+33   33  5  2  0  3  0  0        8
+71   71  5  2  1  3  1  0       16
+73   73  5  2  0  3  1  0       71
+# 2022-02-18 00:06:13 CET: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 16 5 754082962 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (16) Elapsed wall-clock seconds: 0.09
+1.343999981880188
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 8 5 754082962 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (8) Elapsed wall-clock seconds: 0.09
+1.480191946029663
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 33 5 754082962 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (33) Elapsed wall-clock seconds: 0.09
+1.273568034172058
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 5 754082962 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.195647954940796
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 73 5 754082962 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run5.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (73) Elapsed wall-clock seconds: 0.09
+1.2736320495605469
+
+|x|         13|          5|         71|    1.195647955|          5|00:00:00|   NA|  NA|    NA|
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 71 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (71) Elapsed wall-clock seconds: 0.09
+1.199295997619629
+
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 73 19 55559635 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run19.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (73) Elapsed wall-clock seconds: 0.09
+1.274399995803833
+
+|=|          1|          5|         71|    1.197471976|          7|00:00:00|+0.90|0.95|0.0010|
+# 2022-02-18 00:06:13 CET: /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/conv_gputune_runner.py 73 23 1517890204 /ufs/schoonho/Documents/PhD/GPU_benchmarking_paper/irace_tune/stochastic_cache_files/convolution_P100_processed_run23.json   --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 1 --read_only 0
+# 2022-02-18 00:06:13 CET: DONE (73) Elapsed wall-clock seconds: 0.09
+1.272704005241394
+
+|-|          3|          4|         71|    1.198186636|          8|00:00:00|+1.00|1.00|0.0005|
+|.|         12|          4|         71|    1.198535979|          8|00:00:00|+1.00|1.00|0.0004|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (4) <= minimum number of configurations (4)
+Best-so-far configuration:          16    mean value:     1.337267674
+Description of the best-so-far configuration:
+   .ID. bx by tx ty up ro .PARENT.
+16   16  5  2  1  4  1  0        8
+
+# 2022-02-18 00:06:13 CET: Memory used in race():
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.1 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:13 CET: Results for the race of iteration 11 (from best to worst, according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK.
+16   16  5  2  1  4  1  0        8    TRUE     13
+8     8  7  2  0  2  0  0       NA    TRUE     26
+33   33  5  2  0  3  0  0        8    TRUE     27
+71   71  5  2  1  3  1  0       16    TRUE     28
+73   73  5  2  0  3  1  0       71   FALSE    Inf
+# 2022-02-18 00:06:13 CET: Extracting elites
+# 2022-02-18 00:06:13 CET: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. bx by tx ty up ro .PARENT. .ALIVE. .RANK. .WEIGHT.
+16   16  5  2  1  4  1  0        8    TRUE     13      0.4
+8     8  7  2  0  2  0  0       NA    TRUE     26      0.3
+33   33  5  2  0  3  0  0        8    TRUE     27      0.2
+71   71  5  2  1  3  1  0       16    TRUE     28      0.1
+# 2022-02-18 00:06:13 CET: End of iteration 11
+# 2022-02-18 00:06:13 CET: All configurations (sampling order):
+   .ID. bx by tx ty up ro .PARENT.
+1     1 11  0  3  6  1  0       NA
+2     2 10  5  0  5  1  1       NA
+3     3  3  3  2  4  0  1       NA
+4     4 11  0  7  3  1  0       NA
+5     5 11  2  1  7  1  0       NA
+6     6  6  1  0  2  1  0       NA
+7     7  5  3  0  0  1  1       NA
+8     8  7  2  0  2  0  0       NA
+9     9  5  5  1  4  0  1        8
+10   10  7  4  0  5  0  0        8
+11   11  9  2  0  6  0  0        8
+12   12  9  0  3  2  0  0        8
+13   13  6  1  3  2  0  0        8
+14   14  9  4  1  5  1  0        8
+15   15  6  3  4  3  1  1        8
+16   16  5  2  1  4  1  0        8
+17   17  6  1  0  3  0  0        8
+18   18  4  4  2  0  1  0        8
+19   19  5  3  0  6  0  0       16
+20   20  6  3  4  1  1  0        8
+21   21  6  1  2  0  0  0        8
+22   22  5  1  2  4  0  1        8
+23   23  4  2  3  3  0  0        8
+24   24  7  3  1  3  0  0        8
+25   25  7  3  2  5  1  0       16
+26   26  8  1  1  3  0  1        8
+27   27  4  2  2  3  1  0       16
+28   28  6  2  1  1  1  0        8
+29   29  7  2  1  2  0  0        8
+30   30  4  2  1  2  0  0        8
+31   31  9  1  1  1  0  0        8
+32   32  5  3  1  2  0  0        8
+33   33  5  2  0  3  0  0        8
+34   34  4  3  2  3  1  0       16
+35   35 10  3  0  2  0  0        8
+36   36  5  1  2  4  1  0       16
+37   37  6  2  4  4  1  0       16
+38   38  8  3  0  3  0  0        8
+39   39  6  2  1  3  0  0        8
+40   40  7  2  1  1  0  0        8
+41   41  9  2  0  3  0  0        8
+42   42  6  3  1  1  0  0        8
+43   43  9  3  0  2  0  0        8
+44   44  5  3  0  4  1  0       16
+45   45  8  2  1  3  0  0        8
+46   46  5  2  3  4  1  0       16
+47   47  6  3  1  4  0  0       33
+48   48  5  3  1  5  1  0       16
+49   49  7  3  0  1  0  0        8
+50   50  7  2  1  4  1  0       16
+51   51  1  2  2  5  1  0       16
+52   52  5  2  0  2  0  0       33
+53   53  4  3  0  3  0  0        8
+54   54  6  3  0  4  1  0       16
+55   55  5  3  0  1  0  0        8
+56   56  7  1  1  2  0  0        8
+57   57  6  3  0  3  0  0        8
+58   58  7  2  1  2  0  0        8
+59   59  5  3  1  4  1  0       16
+60   60  5  2  0  4  1  0       16
+61   61  8  2  0  2  0  0        8
+62   62  6  2  2  2  0  1        8
+63   63  7  3  1  2  0  0        8
+64   64  6  2  1  4  1  0       16
+65   65  5  2  2  5  1  0       16
+66   66  6  1  1  4  1  0       16
+67   67  5  2  0  4  1  0       16
+68   68  3  2  1  4  1  0       16
+69   69  5  2  0  4  1  0       16
+70   70  7  2  0  2  0  0        8
+71   71  5  2  1  3  1  0       16
+72   72  7  2  1  4  1  0       16
+73   73  5  2  0  3  1  0       71
+# 2022-02-18 00:06:13 CET: Memory used in irace():
+                       catInfo :              52.9 Kb
+                 forbiddenExps :             326.7 Kb
+                  iraceResults :             398.1 Kb
+          .irace$target.runner :             110.8 Kb
+                         Total :               0.9 Mb
+                            gc :              28.3 Mb
+# 2022-02-18 00:06:14 CET: Stopped because there is not enough budget left to race more than the minimum (4)
 # You may either increase the budget or set 'minNbSurvival' to a lower value
-# Iteration: 7
-# nbIterations: 7
-# experimentsUsedSoFar: 193
+# Iteration: 12
+# nbIterations: 12
+# experimentsUsedSoFar: 191
 # timeUsed: 0
-# remainingBudget: 7
-# currentBudget: 7
-# number of elites: 3
-# nbConfigurations: 3
+# remainingBudget: 9
+# currentBudget: 9
+# number of elites: 4
+# nbConfigurations: 4
 # Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
    bx by tx ty up ro
-12  7  2  5  1  0  0
-6   2  5  7  0  0  0
-32  1  5  7  0  0  0
+16  5  2  1  4  1  0
+8   7  2  0  2  0  0
+33  5  2  0  3  0  0
+71  5  2  1  3  1  0
 # Best configurations as commandlines (first number is the configuration ID; same order as above):
-12  --block_size_x 7 --block_size_y 2 --tile_size_x 5 --tile_size_y 1 --use_padding 0 --read_only 0
-6   --block_size_x 2 --block_size_y 5 --tile_size_x 7 --tile_size_y 0 --use_padding 0 --read_only 0
-32  --block_size_x 1 --block_size_y 5 --tile_size_x 7 --tile_size_y 0 --use_padding 0 --read_only 0
+16  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 4 --use_padding 1 --read_only 0
+8   --block_size_x 7 --block_size_y 2 --tile_size_x 0 --tile_size_y 2 --use_padding 0 --read_only 0
+33  --block_size_x 5 --block_size_y 2 --tile_size_x 0 --tile_size_y 3 --use_padding 0 --read_only 0
+71  --block_size_x 5 --block_size_y 2 --tile_size_x 1 --tile_size_y 3 --use_padding 1 --read_only 0

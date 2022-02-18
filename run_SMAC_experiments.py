@@ -92,8 +92,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    #tune_files = GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    tune_files = pnpoly_files[4:6]
+    test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
 
     for filename in tune_files:
         ###  SETUP THE GPU CACHE DATA  ###
@@ -137,7 +136,6 @@ if __name__ == '__main__':
         ## Define experimental parameters
         #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
         maxfevals = [25, 50, 100, 200, 400]
-        #maxfevals = [400]
         minvar = 1e-10
         exper_runs = 20
         output_dir = '/experiment_files/'
@@ -158,77 +156,77 @@ if __name__ == '__main__':
         cs.add_hyperparameters(cs_pars)
 
         #EI, LCB, PI, TS
-        #acqstr = "EI"
-        for acqstr in ["EI", "LCB", "PI"]:
-            experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
-            # Use 'gp' or 'gp_mcmc' here
-            model_type = 'gp'
+        acqstr = "LCB"
+        # Use 'gp' or 'gp_mcmc' here
+        model_type = 'gp'
 
-            # Run for different function eval limits
-            for maxfeval in maxfevals:
-                if acqstr == "EI":
-                    acq_fun = EI
-                elif acqstr == "LCB":
-                    acq_fun = LCB
-                elif acqstr == "PI":
-                    acq_fun = PI
-                elif acqstr == "TS":
-                    acq_fun = TS
+        experiment_results = [[filename[:-5]],["Algorithm", "Mean fraction of optimum", "StDev fraction of optimum", "Success rate", "Mean function evaluations", "StDev function evaluations", "Settings","MaxFEval"]]
 
-                # Define object for SMAC GPU tuning
-                smacgpu = SMAC_GPU(GPU_space)
+        # Run for different function eval limits
+        for maxfeval in maxfevals:
+            if acqstr == "EI":
+                acq_fun = EI
+            elif acqstr == "LCB":
+                acq_fun = LCB
+            elif acqstr == "PI":
+                acq_fun = PI
+            elif acqstr == "TS":
+                acq_fun = TS
 
-                # SMAC scenario object
-                scenario = Scenario({
-                    'run_obj': 'quality',  # we optimize quality (alternative to runtime)
-                    'wallclock-limit': 2.3*maxfeval,  # max duration to run the optimization (in seconds)
-                    'cs': cs,  # configuration space
-                    'deterministic': 'true',
-                    'limit_resources': True,  # Uses pynisher to limit memory and runtime
-                                              # Alternatively, you can also disable this.
-                                              # Then you should handle runtime and memory yourself in the TA
-                    'cutoff': 10,  # runtime limit for target algorithm
-                    'memory_limit': 128*3072,  # adapt this to reasonable value for your hardware
-                    "runcount-limit": maxfeval,
-                })
+            # Define object for SMAC GPU tuning
+            smacgpu = SMAC_GPU(GPU_space)
 
-                results = [[],[]]
-                for i in range(exper_runs):
-                    # Optimize, using a SMAC-object
-                    smac = SMAC4BB(scenario=scenario,
-                                   model_type=model_type,
-                                   #rng=np.random.RandomState(42),
-                                   acquisition_function=acq_fun,  # or others like PI, LCB as acquisition functions
-                                   tae_runner=smacgpu.return_GPU_score)
+            # SMAC scenario object
+            scenario = Scenario({
+                'run_obj': 'quality',  # we optimize quality (alternative to runtime)
+                'wallclock-limit': 3.0*maxfeval,  # max duration to run the optimization (in seconds)
+                'cs': cs,  # configuration space
+                'deterministic': 'true',
+                'limit_resources': True,  # Uses pynisher to limit memory and runtime
+                                          # Alternatively, you can also disable this.
+                                          # Then you should handle runtime and memory yourself in the TA
+                'cutoff': 10,  # runtime limit for target algorithm
+                'memory_limit': 128*3072,  # adapt this to reasonable value for your hardware
+                "runcount-limit": maxfeval,
+            })
 
-                    # Start optimization
-                    try:
-                        incumbent = smac.optimize()
-                    finally:
-                        incumbent = smac.solver.incumbent
-                    #inccfg = incumbent.get_dictionary()
-                    #inc_vec = smacgpu.map_cfg_to_kernelcfg(inccfg)
-                    #inc_fitness = smacgpu.gpu_space.get_runtime(inc_vec)
+            results = [[],[]]
+            for i in range(exper_runs):
+                # Optimize, using a SMAC-object
+                smac = SMAC4BB(scenario=scenario,
+                               model_type=model_type,
+                               #rng=np.random.RandomState(42),
+                               acquisition_function=acq_fun,  # or others like PI, LCB as acquisition functions
+                               tae_runner=smacgpu.return_GPU_score)
 
-                    # It returns: Status, Cost, Runtime, Additional Infos
-                    inc_value = smac.get_tae_runner().run(
-                        config=incumbent)
-                    #print('Optimized Value: %.4f' % inc_value[1])
-                    #print(smac.stats.submitted_ta_runs)
-                    #print(smac.stats.finished_ta_runs)
-                    #print(smac.stats.n_configs)
-                    results[0].append(best_fit/float(inc_value[1]))
-                    results[1].append(smac.stats.finished_ta_runs)
+                # Start optimization
+                try:
+                    incumbent = smac.optimize()
+                finally:
+                    incumbent = smac.solver.incumbent
+                #inccfg = incumbent.get_dictionary()
+                #inc_vec = smacgpu.map_cfg_to_kernelcfg(inccfg)
+                #inc_fitness = smacgpu.gpu_space.get_runtime(inc_vec)
 
-                settings = "model_type=" + model_type + "; acq_func=" + acqstr
-                success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
+                # It returns: Status, Cost, Runtime, Additional Infos
+                inc_value = smac.get_tae_runner().run(
+                    config=incumbent)
+                #print('Optimized Value: %.4f' % inc_value[1])
+                #print(smac.stats.submitted_ta_runs)
+                #print(smac.stats.finished_ta_runs)
+                #print(smac.stats.n_configs)
+                results[0].append(best_fit/float(inc_value[1]))
+                results[1].append(smac.stats.finished_ta_runs)
 
-                algo_name = "SMAC4BB_"+model_type+"_"+acqstr
-                experiment_results.append([algo_name, statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
+            settings = "model_type=" + model_type + "; acq_func=" + acqstr
+            success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
 
-            ### Write results to file
-            if LOG_RESULTS:
-                export_filename = algo_name+"_"+ filename[:-15] + "_runs={0}".format(exper_runs) + ".csv"
-                with open(export_filename, "w", newline="") as f:
-                    writer = csv.writer(f)
-                    writer.writerows(experiment_results)
+            algo_name = "SMAC4BB_"+model_type+"_"+acqstr
+            experiment_results.append([algo_name, statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
+
+        ### Write results to file
+        if LOG_RESULTS:
+            export_filename = algo_name+"_"+ filename[:-15] + "_runs={0}".format(exper_runs) + ".csv"
+            with open(export_filename, "w", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerows(experiment_results)
