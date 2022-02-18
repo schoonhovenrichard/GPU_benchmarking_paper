@@ -94,7 +94,7 @@ if __name__ == '__main__':
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
     test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
 
-    for filename in tune_files:
+    for filename in test_files:
         ###  SETUP THE GPU CACHE DATA  ###
 
         with open(data_path + filename, 'r') as myfile:
@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
         ## Define experimental parameters
         #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
-        maxfevals = [25, 50, 100, 200, 400]
+        maxfevals = [25, 50, 100, 200, 400, 800]
         minvar = 1e-10
         exper_runs = 20
         output_dir = '/experiment_files/'
@@ -179,7 +179,7 @@ if __name__ == '__main__':
             # SMAC scenario object
             scenario = Scenario({
                 'run_obj': 'quality',  # we optimize quality (alternative to runtime)
-                'wallclock-limit': 3.0*maxfeval,  # max duration to run the optimization (in seconds)
+                'wallclock-limit': 3.5*maxfeval,  # max duration to run the optimization (in seconds)
                 'cs': cs,  # configuration space
                 'deterministic': 'true',
                 'limit_resources': True,  # Uses pynisher to limit memory and runtime
