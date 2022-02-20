@@ -1,0 +1,7 @@
+GEMM_GTX_1080Ti_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,1.5836602e-07,0.0,0.0,0,0.0,firstTest=5; nbConfigurations=50
+iRace,0.9289593282212069,0.06422844988706679,0.0,386.9,60.272437039385316,firstTest=5; nbConfigurations=50
+iRace,0.9755762655581974,0.02040485748760889,0.3,1132.7,57.14513685928722,firstTest=5; nbConfigurations=50
+iRace,0.9900972397840955,0.01597920806933882,0.6,2331.6,74.81414007763209,firstTest=5; nbConfigurations=50
+iRace,1.0,0.0,1.0,4970.9,42.098957495669914,firstTest=5; nbConfigurations=50

@@ -1,5 +1,0 @@
-trainInstancesDir = "stochastic_cache_files/"
-trainInstancesFile = "pnpoly_instances/pnpoly_RTX_2070_SUPER_processed.txt"
-targetRunner = "pnpoly_gputune_runner.py"
-parameterFile = "pnpoly_parameters.txt"
-deterministic = "1"

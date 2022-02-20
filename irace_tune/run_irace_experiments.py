@@ -24,7 +24,10 @@ if __name__ == '__main__':
                     with open(stdout_fn, "w+") as file_open:
                         subprocess.run(["/ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace/bin/irace",
                             #"--scenario", "conv_scenario_GTX_1080Ti.txt",
-                            "--scenario", "GEMM_scenario_RTX_2070_SUPER.txt",
+                            #"--scenario", "GEMM_scenario_P100.txt",
+                            #"--scenario", "pnpoly_scenario_RTX_2070_SUPER.txt",
+                            #"--scenario", "pnpoly_scenario_GTX_1080Ti.txt",
+                            "--scenario", "pnpoly_scenario_P100.txt",
                             f"--exec-dir={tmp_dir}",
                             "--max-experiments", str(budget),
                             '--debug-level', str(3),

@@ -1,0 +1,7 @@
+GEMM_RTX_2070_SUPER_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,1.7111732999999996e-07,0.0,0.0,0,0.0,firstTest=2; nbConfigurations=50
+iRace,0.9463816628311257,0.04016134511206777,0.1,368.1,14.39482931858211,firstTest=2; nbConfigurations=50
+iRace,0.9531442064683449,0.06551472464392284,0.4,966.8,28.330588102300702,firstTest=2; nbConfigurations=50
+iRace,0.9919383279653824,0.01721351990018147,0.4,1964.3,62.5744889445105,firstTest=2; nbConfigurations=50
+iRace,1.0,0.0,1.0,4933.2,36.23932793097699,firstTest=2; nbConfigurations=50
