@@ -33,7 +33,17 @@ def read_process_file(experiment_dir, data_file):
                 float(list_data[i][4]),
                 float(list_data[i][5])]
         dat += list_data[i][6:]
-        hyperdata.append(dat)
+        fevals = dat[4]
+        frac = dat[1]
+        print(fevals, frac)
+        if fevals == 0:
+            print("HOI")
+            continue
+        elif frac < 0.001:
+            print("HOI2")
+            continue
+        else:
+            hyperdata.append(dat)
     hyperdata.sort(key=lambda x: x[4]) # Sort on function evaluations
     return hyperdata
 
@@ -43,7 +53,7 @@ def partition_feval(hyperdata, maxfevals):
     maxfevals2 = maxfevals + [1000000]#One extra for overflow
     fevalpartition = [[] for x in range(len(maxfevals2))]
     idx = 0
-    error = 0.05
+    error = 0.1#TODO
     found_entries = []# Some algorithms never use many fevals, check if bin is relevant
     for i in range(len(maxfevals2)):
         found = False
@@ -236,7 +246,7 @@ def find_common_settings(kernels, margin, dir_files, maxfevals):
 if __name__ == '__main__':
     ## Which algorithms to run
     #maxfevals = [50,100,150,200,400,600,800,1000,2000]
-    maxfevals = [25,50,100,200,400,800,1600]
+    maxfevals = [25,50,100,200,400,800,1600, 3200, 6400, 20000]
     algos = [("GLS", 0.02),#DONE
         ("DifferentialEvolution", 0.018),#TODO: REMOVE ITERATIONS AS SPECIFIED LINE 98
         ("BasinHopping", 0.16),
@@ -251,10 +261,11 @@ if __name__ == '__main__':
         ("GeneticAlgorithm", 0.055),#DONE
         ("SimulatedAnnealing", 0.13),#12 DONE
         ("SMAC4BB", 0.07),
+        ("iRace", 0.015),
     ]
     #NOTE: Choose different limits for different Fevals to get best possible params
 
-    algorithm, margin = algos[13]
+    algorithm, margin = algos[14]
     print("\nSearching for optimal settings for", algorithm, "Margin", margin)
 
     ### Get the files

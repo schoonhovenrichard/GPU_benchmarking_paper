@@ -56,7 +56,7 @@ def parse_irace_output(file):
 if __name__ == '__main__':
     #NOTE: This assumes that we currently have the experimental
     # data of one experiment in temp_dir
-    for dir_idx in range(1, 50):
+    for dir_idx in range(1, 51):
         rootdir = f'temp_dir{dir_idx}'
         #print(rootdir)
         if len(list(os.walk(rootdir))) == 0:

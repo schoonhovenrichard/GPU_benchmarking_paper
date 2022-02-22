@@ -1,5 +1,0 @@
-trainInstancesDir = "stochastic_cache_files/"
-trainInstancesFile = "GEMM_instances/GEMM_A100_processed.txt"
-targetRunner = "GEMM_gputune_runner.py"
-parameterFile = "GEMM_parameters.txt"
-deterministic = "1"
