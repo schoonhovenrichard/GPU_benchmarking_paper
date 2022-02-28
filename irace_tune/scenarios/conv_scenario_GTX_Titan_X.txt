@@ -1,0 +1,5 @@
+trainInstancesDir = "stochastic_cache_files/"
+trainInstancesFile = "convolution_instances/convolution_GTX_Titan_X_processed.txt"
+targetRunner = "conv_gputune_runner.py"
+parameterFile = "conv_parameters.txt"
+deterministic = "1"

@@ -43,7 +43,7 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X.json',
     ]
 
-    for filename in FJ_files:
+    for filename in convolution_files[2:3]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -67,7 +67,7 @@ if __name__ == '__main__':
                 continue
 
         # If want to do WHITEBOX
-        restrict_space = True
+        restrict_space = False
         if restrict_space:
             new_dict = copy.deepcopy(data)
             # The restrictions are

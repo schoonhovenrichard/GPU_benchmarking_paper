@@ -26,7 +26,7 @@ import bloopy.algorithms.basin_hopping as bashop
 import bloopy.algorithms.random_sampling as randsl
 
 
-def run_experiment_ga(iters, population_size, bsize, ffunc, reproductor, selector, mutation, best_fit, sspace, maxtime, maxfeval, minvar):
+def run_experiment_ga(iters, population_size, bsize, ffunc, reproductor, selector, mutation, best_fit, sspace, maxtime, maxfeval, minvar, caching=None):
     frac_optim = []
     func_evals = []
     for it in range(iters):
@@ -40,7 +40,8 @@ def run_experiment_ga(iters, population_size, bsize, ffunc, reproductor, selecto
                     min_max_problem=-1,
                     searchspace=sspace,
                     input_pop=input_pop,
-                    mutation=mutation)
+                    mutation=mutation,
+                    caching=caching)
 
         # Solve with GA
         x = test_ga.solve(min_variance=minvar,
@@ -92,7 +93,7 @@ if __name__ == '__main__':
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
-    for filename in convolution_files:
+    for filename in convolution_files[0:1]:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -115,7 +116,14 @@ if __name__ == '__main__':
         nr_vars = len(searchspace.keys())
 
         # Construct the GPU tuning space
-        GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'])
+        mode = 'STOCHASTIC'
+        #mode = 'DETERMINISTIC'
+        if mode == 'DETERMINISTIC':
+            GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='time')
+            CACHE = True
+        elif mode == 'STOCHASTIC':
+            GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='times')
+            CACHE = False
 
         disc_space = utils.discrete_space(GPU_space.get_runtime, searchspace)
 
@@ -132,14 +140,17 @@ if __name__ == '__main__':
 
         ## Define experimental parameters
         maxtime = 6
-        maxfevals = [25,50,100,200,400,800,1600]
+        if mode == 'DETERMINISTIC':
+            maxfevals = [25,50,100,200,400,800,1600]
+        elif mode == 'STOCHASTIC':
+            maxfevals = [25,50,100,200,400,800,1600,3200,6400]
         #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
         minvar = 1e-10
         exper_runs = 50
         output_dir = '/experiment_files/'
 
         #NOTE: To log results, set LOG_results to True
-        LOG_RESULTS = True
+        LOG_RESULTS = False
 
         ## Which algorithms to run
         allruns = False
@@ -169,6 +180,9 @@ if __name__ == '__main__':
             PSO = False
 
         ILS = True
+        #DSA = True
+        #GA = True
+        #RANDSAM = True
 
         ### SEED
         #np.random.seed(1234567)
@@ -183,7 +197,8 @@ if __name__ == '__main__':
                     test_rand = randsl.random_sampling(disc_space.fitness,
                             bsize,
                             -1,
-                            searchspace)
+                            searchspace,
+                            caching=CACHE)
 
                     x = test_rand.solve(max_time=maxtime,#seconds
                                 stopping_fitness=best_fit,
@@ -270,6 +285,8 @@ if __name__ == '__main__':
             paramsettings[400] = ["Powell"]
             paramsettings[800] = ["Powell"]
             paramsettings[1600] = ["Powell"]
+            paramsettings[3200] = ["Powell"]
+            paramsettings[6400] = ["Powell"]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -285,7 +302,8 @@ if __name__ == '__main__':
                     test_dsa = dsa.dual_annealing(disc_space.fitness,
                             -1,
                             searchspace,
-                            method=method)
+                            method=method,
+                            caching=CACHE)
 
                     x = test_dsa.solve(max_iter=iterations,
                                 max_time=maxtime,#seconds
@@ -577,6 +595,8 @@ if __name__ == '__main__':
             paramsettings[400] = [0.05, 80, rep.onepoint_crossover, sel.tournament8_selection]
             paramsettings[800] = [0.02, 128, rep.twopoint_crossover, sel.tournament4_selection]
             paramsettings[1600] = [0.02, 320, rep.twopoint_crossover, sel.tournament4_selection]
+            paramsettings[3200] = [0.02, 640, rep.twopoint_crossover, sel.tournament4_selection]
+            paramsettings[6400] = [0.02, 1280, rep.twopoint_crossover, sel.tournament4_selection]
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -590,7 +610,7 @@ if __name__ == '__main__':
                 reproductor = combi[2]
                 selector = combi[3]
 
-                results = run_experiment_ga(exper_runs, population_size, bsize, disc_space.fitness, reproductor, selector, mutate, best_fit, searchspace, maxtime, maxfeval, minvar)
+                results = run_experiment_ga(exper_runs, population_size, bsize, disc_space.fitness, reproductor, selector, mutate, best_fit, searchspace, maxtime, maxfeval, minvar, caching=CACHE)
 
                 settings = "pop_size=" + str(population_size) + "; reproductor=" + str(reproductor) + "; selector=" + str(selector) + "; mutation=" + str(mutate)
                 success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
@@ -808,6 +828,8 @@ if __name__ == '__main__':
                 paramsettings[400] = [1.0, 25, 'Hamming', True]
                 paramsettings[800] = [0.05, 10, 'adjacent', True]
                 paramsettings[1600] = [0.05, 10, 'adjacent', True]
+                paramsettings[3200] = [0.05, 10, 'adjacent', True]
+                paramsettings[6400] = [0.05, 10, 'adjacent', True]
             elif ILS_TYPE == "Best":
                 paramsettings[25] = [1.0, 25, 'adjacent']
                 paramsettings[50] = [1.0, 25, 'adjacent']
@@ -816,6 +838,8 @@ if __name__ == '__main__':
                 paramsettings[400] = [1.0, 25, 'Hamming']
                 paramsettings[800] = [0.05, 25, 'adjacent']
                 paramsettings[1600] = [0.05, 25, 'adjacent']
+                paramsettings[3200] = [0.05, 25, 'adjacent']
+                paramsettings[6400] = [0.05, 25, 'adjacent']
 
             hprun = 0
             for maxfeval in maxfevals:
@@ -839,7 +863,8 @@ if __name__ == '__main__':
                                 wsize,
                                 noimprove=noimp,
                                 searchspace=searchspace,
-                                neighbour=nbour)
+                                neighbour=nbour,
+                                caching=CACHE)
                     elif ILS_TYPE == 'RandomGreedy':
                         test_ils = ils.RandomGreedyILS(disc_space.fitness,
                                 bsize,
@@ -848,7 +873,8 @@ if __name__ == '__main__':
                                 noimprove=noimp,
                                 searchspace=searchspace,
                                 neighbour=nbour,
-                                restart_search=restart)
+                                restart_search=restart,
+                                caching=CACHE)
                     elif ILS_TYPE == 'OrderedGreedy':
                         test_ils = ils.OrderedGreedyILS(disc_space.fitness,
                                 bsize,
@@ -858,7 +884,8 @@ if __name__ == '__main__':
                                 searchspace=searchspace,
                                 neighbour=nbour,
                                 restart_search=restart,
-                                order=None)
+                                order=None,
+                                caching=CACHE)
                     elif ILS_TYPE == 'Stochastic':
                         test_ils = ils.StochasticILS(disc_space.fitness,
                                 bsize,
@@ -866,7 +893,8 @@ if __name__ == '__main__':
                                 wsize,
                                 noimprove=noimp,
                                 searchspace=searchspace,
-                                neighbour=nbour)
+                                neighbour=nbour,
+                                caching=CACHE)
 
                     iterations = 100000
                     x = test_ils.solve(iterations,

@@ -9,7 +9,6 @@ build/
 BayesianOptimization-autotuning/
 scratch_dir/
 irace_tune/temp_dir/
-irace_tune/temp_dir2/
-irace_tune/temp_dir3/
-irace_tune/temp_dir4/
+irace_tune/temp_dir?/
+irace_tune/temp_dir??/
 irace_tune/25600_runs/

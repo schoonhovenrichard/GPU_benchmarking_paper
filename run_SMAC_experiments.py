@@ -74,11 +74,11 @@ if __name__ == '__main__':
 
     GEMM_files = ['GEMM_A100_processed.json',
     'GEMM_V100_processed.json',
-    'GEMM_RTX_2070_SUPER_processed.json',
+    'GEMM_RTX_2070_SUPER_processed.json',#2 tuning
     'GEMM_TITAN_RTX_processed.json',
     'MI50_GEMM_processed.json',
-    'GEMM_GTX_1080Ti_processed.json',
-    'GEMM_P100_processed.json',
+    'GEMM_GTX_1080Ti_processed.json',#5 tuning
+    'GEMM_P100_processed.json',# 6 tuning
     'GEMM_K20_processed.json',
     'GEMM_GTX_Titan_X_processed.json']
 

@@ -1,0 +1,5 @@
+bx "--block_size_x " i (0,30)
+ts "--tile_size " i (0, 10)
+bm "--between_method " i (0, 3)
+ups "--use_precomputed_slopes " c (0, 1)
+um "--use_method " i (0, 2)
