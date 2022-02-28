@@ -92,7 +92,8 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
+    test_files = convolution_files[0:1]
+    #test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
     #test_files = GEMM_files[0:2] + GEMM_files[3:5] + GEMM_files[7:]
     #test_files = pnpoly_files[0:2] + pnpoly_files[3:4] + pnpoly_files[6:]
 
@@ -120,7 +121,14 @@ if __name__ == '__main__':
         nr_vars = len(searchspace.keys())
 
         # Construct the GPU tuning space
-        GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'])
+        mode = 'STOCHASTIC'
+        #mode = 'DETERMINISTIC'
+        if mode == 'DETERMINISTIC':
+            GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='time')
+            CACHE = True
+        elif mode == 'STOCHASTIC':
+            GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='times')
+            CACHE = False
 
         disc_space = utils.discrete_space(GPU_space.get_runtime, searchspace)
 
@@ -136,9 +144,13 @@ if __name__ == '__main__':
         print("There are", len(data['cache'].keys()), "keys in the searchspace")
 
         ## Define experimental parameters
-        maxfevals = [25, 50, 100, 200, 400]
+        if mode == 'DETERMINISTIC':
+            maxfevals = [25, 50, 100, 200, 400]
+        elif mode == 'STOCHASTIC':
+            maxfevals = [25, 50, 100, 200, 400, 800]
+
         minvar = 1e-10
-        exper_runs = 20
+        exper_runs = 5
         output_dir = '/experiment_files/'
         LOG_RESULTS = True
 
@@ -178,11 +190,15 @@ if __name__ == '__main__':
             smacgpu = SMAC_GPU(GPU_space)
 
             # SMAC scenario object
+            if mode == 'DETERMINISTIC':
+                det = 'true'
+            elif mode == 'STOCHASTIC':
+                det = 'false'
             scenario = Scenario({
                 'run_obj': 'quality',  # we optimize quality (alternative to runtime)
                 'wallclock-limit': 9*maxfeval,  # max duration to run the optimization (in seconds)
                 'cs': cs,  # configuration space
-                'deterministic': 'true',
+                'deterministic': det,
                 'limit_resources': True,  # Uses pynisher to limit memory and runtime
                                           # Alternatively, you can also disable this.
                                           # Then you should handle runtime and memory yourself in the TA
@@ -222,7 +238,7 @@ if __name__ == '__main__':
             settings = "model_type=" + model_type + "; acq_func=" + acqstr
             success_rate = (np.array(results[0]) == 1.0).sum()/float(exper_runs)
 
-            algo_name = "SMAC4BB_"+model_type+"_"+acqstr
+            algo_name = "SMAC4BB_" + mode + "_" + model_type + "_" + acqstr
             experiment_results.append([algo_name, statistics.mean(results[0]), statistics.stdev(results[0]), success_rate, statistics.mean(results[1]), statistics.stdev(results[1]), settings, maxfeval])
 
         ### Write results to file
