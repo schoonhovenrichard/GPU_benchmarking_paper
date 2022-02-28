@@ -1,0 +1,7 @@
+pnpoly_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.9934923575350898,0.0030349958368582506,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.9967404135548424,0.0013713753273295306,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.9987442193988832,0.0009922828623162737,1.3333333333333333e-01,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.9988984058273458,0.0004548209819584166,0.06666666666666667,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.9994692799674944,0.0004893697228246406,0.0,400,0.0,model_type=gp; acq_func=LCB,400

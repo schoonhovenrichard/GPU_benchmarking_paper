@@ -1,0 +1,7 @@
+convolution_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.5988310553312739,0.20489843969623728,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.8327713026319261,0.10072069057780278,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.8740256900463393,0.08471686933899353,0.0,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.9289395044099472,0.06970110628647624,2.6666666666666666e-01,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.960072048745899,0.0538545764991606,0.13333333333333333,400,0.0,model_type=gp; acq_func=LCB,400

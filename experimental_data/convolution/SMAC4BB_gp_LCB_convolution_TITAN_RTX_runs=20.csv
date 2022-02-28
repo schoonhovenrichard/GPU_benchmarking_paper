@@ -1,0 +1,7 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.7101111193877089,0.1770661764031003,6.666666666666667e-02,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.9056279728163593,0.09754108262972812,0.13333333333333333,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.915894877025253,0.10321516881319605,0.2,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.9405989962133295,0.08055605369305698,0.2,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.9782378776048665,0.04594930586381168,0.26666666666666666,400,0.0,model_type=gp; acq_func=LCB,400

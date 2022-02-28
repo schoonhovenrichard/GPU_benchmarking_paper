@@ -1,0 +1,7 @@
+convolution_A100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.6903457927393207,0.17728985067330927,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.7752983010795369,0.07705021246252591,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.836740245868322,0.035025259306547776,0.0,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.8498666260036769,0.025219282020864604,0.0,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.8850503353742227,0.03553033709550365,6.666666666666667e-02,400,0.0,model_type=gp; acq_func=LCB,400

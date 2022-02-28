@@ -1,0 +1,7 @@
+pnpoly_V100_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.9899847526922956,0.014305349571764667,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.9968818557035056,0.0013230071472043624,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.9971633579505397,0.0016959726391305202,6.666666666666667e-02,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.9984883734420756,0.0008250271431182655,0.13333333333333333,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.9987583190270632,0.0008552308480523602,0.26666666666666666,400,0.0,model_type=gp; acq_func=LCB,400

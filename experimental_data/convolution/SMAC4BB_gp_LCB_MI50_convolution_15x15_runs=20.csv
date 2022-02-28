@@ -1,0 +1,7 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_gp_LCB,0.6632660137987945,0.12723125542645453,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_gp_LCB,0.7282207686462974,0.1527721057412017,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_gp_LCB,0.8203303013016494,0.13050443241118748,0.0,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_gp_LCB,0.8989573762491674,0.08210648034219634,2.6666666666666666e-01,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_gp_LCB,0.9605644814027721,0.053437334413661594,0.5333333333333333,400,0.0,model_type=gp; acq_func=LCB,400
