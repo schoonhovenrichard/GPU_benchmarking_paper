@@ -56,10 +56,9 @@ if __name__ == '__main__':
                 stdout_fn = f"{tmp_dir}/stdout.txt"
                 with open(stdout_fn, "w+") as file_open:
                     subprocess.run(["/ufs/schoonho/R/x86_64-redhat-linux-gnu-library/4.0/irace/bin/irace",
-                        #"--scenario", "GEMM_scenario_P100.txt",
-                        #"--scenario", "conv_scenario_A100.txt",
-                        #"--scenario", "pnpoly_scenario_A100.txt",
-                        "--scenario", "GEMM_scenario_A100.txt",
+                        "--scenario", "conv_scenario_MI50.txt",
+                        #"--scenario", "GEMM_scenario_MI50.txt",
+                        #"--scenario", "pnpoly_scenario_GTX_Titan_X.txt",
                         f"--exec-dir={tmp_dir}",
                         "--max-experiments", str(budget),
                         '--debug-level', str(3),

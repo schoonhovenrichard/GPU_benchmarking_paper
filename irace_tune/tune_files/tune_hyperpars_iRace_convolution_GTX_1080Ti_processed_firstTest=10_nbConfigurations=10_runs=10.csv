@@ -1,7 +1,0 @@
-convolution_GTX_1080Ti_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.8217559712335549,0.06600084358995272,0.0,330,25.871477215909675,firstTest=10; nbConfigurations=10
-iRace,0.8322495110937331,0.07632958198147508,0.1,683,25.197001585285676,firstTest=10; nbConfigurations=10
-iRace,0.8640240443201936,0.0661709075651899,0.1,1369.5,56.98391585936041,firstTest=10; nbConfigurations=10
-iRace,0.895938236679143,0.05897075382641753,0.1,2994.222222222222,45.419648220174984,firstTest=10; nbConfigurations=10
-iRace,0.8838634631405391,0.05061001325473539,0.1,6198.3,26.081283199515575,firstTest=10; nbConfigurations=10

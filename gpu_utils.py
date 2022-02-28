@@ -1,3 +1,5 @@
+import random
+
 class GPU_tuning_space:
     def __init__(self, tune_params, orig_params, fitness_dict, objective='time', multi_objective_weights=None):
         self.tune_params = tune_params
@@ -7,7 +9,7 @@ class GPU_tuning_space:
 
         # For GPU tuning, there are missing configurations that
         # need to be scored poorly
-        self.fail_fit = 1e7
+        self.fail_fit = 1e10
 
         # set the base settings list
         self.settings = []
@@ -47,7 +49,13 @@ class GPU_tuning_space:
         if not str_key in self.fitness_dict.keys():
             return float(self.fail_fit)
 
-        if isinstance(self.objective_var, str):
+        if self.objective_var == 'times':#Stochastic version:
+            if self.fitness_dict[str_key]['time'] > 1e+10:# Failed compilations have no 'times' key
+                return self.fitness_dict[str_key]['time']
+            times = self.fitness_dict[str_key][self.objective_var]
+            random_time = random.choice(times)
+            return float(random_time)
+        elif isinstance(self.objective_var, str):
             return float(self.fitness_dict[str_key][self.objective_var])
         elif isinstance(self.objective_var, list):
             fit = float(self.fitness_dict[str_key][self.objective_var[0]])

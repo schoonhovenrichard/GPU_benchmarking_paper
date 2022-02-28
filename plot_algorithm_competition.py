@@ -26,12 +26,13 @@ if __name__ == '__main__':
         "BestTabu",
         "SimulatedAnnealing",
         "RandomSampling",
+        "SMAC4BB",
         ]
     maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000,1000000]
 
     ###    LOAD DATA    ###
-    kernel = "convolution"
-    #kernel = "GEMM"
+    #kernel = "convolution"
+    kernel = "GEMM"
     #kernel = "pnpoly"
     file_dir = experiment_dir + kernel + '/'
     exper_files = [f for f in os.listdir(file_dir) if os.path.isfile(os.path.join(file_dir, f))]
@@ -45,7 +46,7 @@ if __name__ == '__main__':
             data_files[alg] = data_files[alg] + [f]
         else:
             print(f.split("_"))
-            raise Exception("APUSE")
+            raise Exception("Unknown algorithm found in data file")
 
     ###    LOAD RELEVANT DATA IN PANDAS DF    ###
     GPUs = ["A100", "RTX_2070_SUPER", "TITAN_RTX", "MI50", "V100", "K20", "GTX_Titan_X", "GTX_1080Ti", "P100"]
@@ -59,7 +60,7 @@ if __name__ == '__main__':
             for gp in GPUs:
                 if gp in f:
                     gpuname = gp
-            if gpuname == "P100":#WAS USED FOR TUNING, NOT COUNTED HERE
+            if gpuname == "P100" or gpuname == 'GTX_1080Ti' or gpuname == 'RTX_2070_SUPER':#WAS USED FOR TUNING, NOT COUNTED HERE
                 continue
             elif gpuname is None:
                 print(f)
@@ -102,11 +103,11 @@ if __name__ == '__main__':
 
     matplotlib.rc('font', **font)
 
-    arr = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] for alg in algos]
+    arr = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] for alg in algos]
     rowidx = 0
     dflist= []
-    GPUs = ["A100", "RTX_2070_SUPER", "TITAN_RTX", "MI50", "V100", "K20", "GTX_Titan_X", "GTX_1080Ti"]# Redefine without P100
-    pnpolyGPUs = ["A100", "RTX_2070_SUPER", "TITAN_RTX", "V100", "K20", "GTX_Titan_X", "GTX_1080Ti"]
+    GPUs = ["A100", "TITAN_RTX", "MI50", "V100", "K20", "GTX_Titan_X"]# Redefine without P100
+    pnpolyGPUs = ["A100", "TITAN_RTX", "V100", "K20", "GTX_Titan_X"]
     for compare in algos:
         if "RandomGreedy" in compare:
             compare = compare[6:]
@@ -123,10 +124,15 @@ if __name__ == '__main__':
             #for gpu in pnpolyGPUs:
             for gpu in GPUs:
                 l2 = l1[l1.GPU == gpu]
+                if l2.size == 0:
+                    continue
+
                 comparel2 = comparel1[comparel1.GPU == gpu]
+                if comparel2.size == 0:
+                    continue
                 #NOTE Choose low or high range, low-range is (0,4)
-                for x in range(0,4):
-                #for x in range(4,l2.shape[0]):
+                #for x in range(0,4):
+                for x in range(4,min(l2.shape[0], comparel2.shape[0])):
                     fo = l2.iloc[x].iloc[4]
                     fostd = l2.iloc[x].iloc[5]
                     test = comparel2.iloc[x]

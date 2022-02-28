@@ -1,8 +1,0 @@
-convolution_RTX_2070_SUPER_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,1.2208920046687126e-08,0.0,0.0,0,0.0,firstTest=5; nbConfigurations=50
-iRace,1.2208920046687126e-08,0.0,0.0,0,0.0,firstTest=5; nbConfigurations=50
-iRace,0.8132819530087005,0.08861727540115229,0.0,402.6,50.53315743153202,firstTest=5; nbConfigurations=50
-iRace,0.8967565090500589,0.0745820202746518,0.0,1154.3,55.920677948521174,firstTest=5; nbConfigurations=50
-iRace,0.9585172000707475,0.05396300144208527,0.2,2431.3,62.54607190792329,firstTest=5; nbConfigurations=50
-iRace,0.9646474031042098,0.053260991004331085,0.4,5004,70.15379929523101,firstTest=5; nbConfigurations=50

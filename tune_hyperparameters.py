@@ -105,12 +105,13 @@ if __name__ == '__main__':
         ## Define experimental parameters
         maxtime = 2.5
         #maxfevals = [50,100,150,200,400,600,800,1000,2000]
-        maxfevals = [25,50,100,200,400,800,1600]
+        #maxfevals = [25,50,100,200,400,800,1600]
+        maxfevals = [1000]
         minvar = 0.00001
         exper_runs = 20
 
         #NOTE: To log results, set LOG_results to True
-        LOG_RESULTS = True
+        LOG_RESULTS = False
 
         ## Which algorithms to run
         allruns = False
@@ -143,7 +144,7 @@ if __name__ == '__main__':
             GILS = False
             BILS = False
 
-        SAN = True
+        PSO = True
 
         # Basin Hopping
         if BASH:

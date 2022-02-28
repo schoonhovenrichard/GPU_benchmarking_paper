@@ -1,7 +1,0 @@
-convolution_P100_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.8555146884683764,0.04261976190673021,0.0,325.8,30.58612612134971,firstTest=10; nbConfigurations=10
-iRace,0.9129027195169128,0.050704801274826836,0.1,702.4,20.227593914144993,firstTest=10; nbConfigurations=10
-iRace,0.9272570910254991,0.06258274617964132,0.0,1375.2,35.505242179461646,firstTest=10; nbConfigurations=10
-iRace,0.9432925834403604,0.04230662180075258,0.1,2990.222222222222,29.329071660119833,firstTest=10; nbConfigurations=10
-iRace,0.9347749383839882,0.0332572911035834,0.0,6199.7,31.972383916957668,firstTest=10; nbConfigurations=10
