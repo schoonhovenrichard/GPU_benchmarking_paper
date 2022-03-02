@@ -101,8 +101,14 @@ if __name__ == '__main__':
         current_dir = os.path.dirname(os.path.abspath(__file__))
         project_dir = "/".join(current_dir.split('/')[:-2]) + "/"
         data_path = project_dir + 'GPU_benchmarking_paper/processed_cache_files/'
-        with open(data_path + cache_fn + '.json', 'r') as myfile:
-            data=myfile.read()
+        if 'GEMM' in cache_fn:
+            with open(data_path + 'MI50_GEMM_processed.json', 'r') as myfile:
+                data=myfile.read()
+        elif 'convolution' in cache_fn:
+            with open(data_path + 'MI50_convolution_15x15_processed.json', 'r') as myfile:
+                data=myfile.read()
+        #with open(data_path + cache_fn + '.json', 'r') as myfile:
+        #    data=myfile.read()
         data = json.loads(data)
 
         # Create the GPU space

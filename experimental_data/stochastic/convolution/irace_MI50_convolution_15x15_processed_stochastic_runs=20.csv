@@ -1,0 +1,8 @@
+MI50_convolution_15x15_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,0.8096323079737914,0.18285545601487363,0.15,177.8,6.329546420932296,firstTest=2; nbConfigurations=0
+iRace,0.8550232310903642,0.1583781957540645,0.3,379.25,1.6503588126605426,firstTest=2; nbConfigurations=0
+iRace,0.9223746460432689,0.1482486658120145,0.55,778.4375,3.982775414205526,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,0.15,1579,0.0,firstTest=2; nbConfigurations=0
+iRace,0.9774423040959515,0.0596820535127327,0.3,3177.714285714286,5.1869800370506445,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,0.1,6376,8.48528137423857,firstTest=2; nbConfigurations=0

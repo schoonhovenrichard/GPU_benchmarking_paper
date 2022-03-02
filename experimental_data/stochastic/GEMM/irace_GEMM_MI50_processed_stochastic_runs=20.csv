@@ -1,0 +1,7 @@
+GEMM_MI50_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,0.9092559621158705,0.07920013778191642,0.0,377.95,14.587215022246815,firstTest=2; nbConfigurations=0
+iRace,0.9715874886019304,0.05089230544539746,0.3,773.35,8.305198118616659,firstTest=2; nbConfigurations=0
+iRace,0.9907050714336145,0.008401967762862556,0.4,1564.35,17.40016636339102,firstTest=2; nbConfigurations=0
+iRace,0.9988036873956079,0.003782851177560563,0.9,3164.35,2.4553914898486253,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,1.0,6363.3,0.5712405705774795,firstTest=2; nbConfigurations=0

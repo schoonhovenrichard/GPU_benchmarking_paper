@@ -51,6 +51,12 @@ def run_experiment_ga(iters, population_size, bsize, ffunc, reproductor, selecto
                     stopping_fitness=best_fit,
                     max_funcevals=maxfeval,
                     verbose=False)
+        if mode == 'DETERMINISTIC':
+            frac_optim.append(best_fit/float(x[0]))
+        elif mode == 'STOCHASTIC':# Need to save the mean time as ultimate fitness
+            mean_fit = disc_space_mean.fitness(x[1].bitstring)
+            frac_optim.append(best_fit/float(mean_fit))
+
         frac_optim.append(best_fit/float(x[0]))
         func_evals.append(x[4])
     return frac_optim, func_evals
@@ -93,7 +99,7 @@ if __name__ == '__main__':
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
-    for filename in convolution_files[0:1]:
+    for filename in GEMM_files:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -123,7 +129,9 @@ if __name__ == '__main__':
             CACHE = True
         elif mode == 'STOCHASTIC':
             GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='times')
+            GPU_space_mean = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='time')
             CACHE = False
+            disc_space_mean = utils.discrete_space(GPU_space_mean.get_runtime, searchspace)
 
         disc_space = utils.discrete_space(GPU_space.get_runtime, searchspace)
 
@@ -150,7 +158,7 @@ if __name__ == '__main__':
         output_dir = '/experiment_files/'
 
         #NOTE: To log results, set LOG_results to True
-        LOG_RESULTS = False
+        LOG_RESULTS = True
 
         ## Which algorithms to run
         allruns = False
@@ -179,8 +187,8 @@ if __name__ == '__main__':
             ILS = False
             PSO = False
 
-        ILS = True
-        #DSA = True
+        #ILS = True
+        DSA = True
         #GA = True
         #RANDSAM = True
 
@@ -309,7 +317,12 @@ if __name__ == '__main__':
                                 max_time=maxtime,#seconds
                                 stopping_fitness=best_fit,
                                 max_funcevals=maxfeval)
-                    results[0].append(best_fit/float(x[0]))
+
+                    if mode == 'DETERMINISTIC':
+                        results[0].append(best_fit/float(x[0]))
+                    elif mode == 'STOCHASTIC':# Need to save the mean time as ultimate fitness
+                        mean_fit = disc_space_mean.fitness(x[1].bitstring)
+                        results[0].append(best_fit/float(mean_fit))
                     results[1].append(x[2])
 
                 settings = "iterations=" + str(iterations) + "; method=" + method
@@ -902,7 +915,12 @@ if __name__ == '__main__':
                                 stopping_fitness=best_fit,
                                 max_funcevals=maxfeval,
                                 verbose=False)
-                    results[0].append(best_fit/float(x[0]))
+
+                    if mode == 'DETERMINISTIC':
+                        results[0].append(best_fit/float(x[0]))
+                    elif mode == 'STOCHASTIC':# Need to save the mean time as ultimate fitness
+                        mean_fit = disc_space_mean.fitness(x[1].bitstring)
+                        results[0].append(best_fit/float(mean_fit))
                     results[1].append(x[2])
 
                 settings = "walksize=" + str(walksize) + "; no_improve=" + str(noimp) + "; iterations=" + str(iterations)

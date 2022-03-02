@@ -1,0 +1,8 @@
+convolution_TITAN_RTX_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,0.8146016781978006,0.08409066295981824,0.0,184,8.53475865289452,firstTest=2; nbConfigurations=0
+iRace,0.8807577944950007,0.08435641661715558,0.0,380.65,7.761409258904631,firstTest=2; nbConfigurations=0
+iRace,0.9191621059164619,0.07300266103595052,0.1,770.8,13.426603599217723,firstTest=2; nbConfigurations=0
+iRace,0.970890232893566,0.052449247052650146,0.35,1569.85,10.922092531340224,firstTest=2; nbConfigurations=0
+iRace,0.9929901939984583,0.019881160556516213,0.45,3165,12.949293823460636,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,0.1,6364.5,0.7071067811865476,firstTest=2; nbConfigurations=0

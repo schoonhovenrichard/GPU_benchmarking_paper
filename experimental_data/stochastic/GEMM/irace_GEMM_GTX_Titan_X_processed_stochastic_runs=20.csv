@@ -1,0 +1,7 @@
+GEMM_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,0.9356915438114498,0.04506786858537495,0.1,376.8,11.985078442094482,firstTest=2; nbConfigurations=0
+iRace,0.9776414243471858,0.01903813595843585,0.3,771.8947368421053,11.826968883972603,firstTest=2; nbConfigurations=0
+iRace,0.9878626305724282,0.012962291727189325,0.5,1569.15,4.145701642094274,firstTest=2; nbConfigurations=0
+iRace,0.9978038800276222,0.006578184837830074,0.85,3162.2631578947367,6.665350747319703,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,0.65,6363.692307692308,0.8548504142651104,firstTest=2; nbConfigurations=0

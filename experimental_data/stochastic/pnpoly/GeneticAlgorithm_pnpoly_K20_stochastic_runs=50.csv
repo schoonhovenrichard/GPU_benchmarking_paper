@@ -1,0 +1,11 @@
+pnpoly_K20_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+Genetic algorithm,0.8577199898583361,0.09194652471754883,0.0,31.52,1.9191834998567618,pop_size=8; reproductor=<function onepoint_crossover at 0x7fda26d11040>; selector=<function tournament8_selection at 0x7fda26d190d0>; mutation=0.02,25
+Genetic algorithm,0.8750895289875663,0.08335075446232841,0.06,47.8,5.066899385990914,pop_size=10; reproductor=<function onepoint_crossover at 0x7fda26d11040>; selector=<function tournament8_selection at 0x7fda26d190d0>; mutation=0.02,50
+Genetic algorithm,0.9495866686286725,0.05509195352052743,0.2,98,7.2843135908468355,pop_size=20; reproductor=<function onepoint_crossover at 0x7fda26d11040>; selector=<function tournament8_selection at 0x7fda26d190d0>; mutation=0.02,100
+Genetic algorithm,0.9806255418348113,0.022463559308642966,0.16,192,26.802375770419598,pop_size=40; reproductor=<function onepoint_crossover at 0x7fda26d11040>; selector=<function tournament8_selection at 0x7fda26d190d0>; mutation=0.05,200
+Genetic algorithm,0.9887975551202998,0.015356766353518157,0.14,377.6,56.081573240618496,pop_size=80; reproductor=<function onepoint_crossover at 0x7fda26d11040>; selector=<function tournament8_selection at 0x7fda26d190d0>; mutation=0.05,400
+Genetic algorithm,0.9998122311779537,0.0021730587886363887,0.5,732.16,126.79267345085964,pop_size=128; reproductor=<function twopoint_crossover at 0x7fda26d110d0>; selector=<function tournament4_selection at 0x7fda26d19040>; mutation=0.02,800
+Genetic algorithm,0.9989937290640273,0.004052887265532158,0.4,1433.6,243.9618571725958,pop_size=320; reproductor=<function twopoint_crossover at 0x7fda26d110d0>; selector=<function tournament4_selection at 0x7fda26d19040>; mutation=0.02,1600
+Genetic algorithm,1.0001413410982067,0.0008266100542914905,0.48,2406.4,678.79172363961,pop_size=640; reproductor=<function twopoint_crossover at 0x7fda26d110d0>; selector=<function tournament4_selection at 0x7fda26d19040>; mutation=0.02,3200
+Genetic algorithm,1.000223126803251,0.00038030549420253637,0.62,4121.6,1043.7283249613047,pop_size=1280; reproductor=<function twopoint_crossover at 0x7fda26d110d0>; selector=<function tournament4_selection at 0x7fda26d19040>; mutation=0.02,6400

@@ -9,7 +9,7 @@ if __name__ == '__main__':
     ### Get the files
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = "/".join(current_dir.split('/')[:-1]) + "/"
-    experiment_dir = root_dir + 'GPU_benchmarking_paper/experimental_data/'
+    experiment_dir = root_dir + 'GPU_benchmarking_paper/experimental_data/deterministic/'
 
     algos = [
         "RandomGreedyMLS",
@@ -28,12 +28,16 @@ if __name__ == '__main__':
         "RandomSampling",
         "SMAC4BB",
         ]
-    maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000,1000000]
 
     ###    LOAD DATA    ###
-    #kernel = "convolution"
-    kernel = "GEMM"
+    kernel = "convolution"
+    #kernel = "GEMM"
     #kernel = "pnpoly"
+
+    fevalrange = 'lowrange'
+    #fevalrange = 'highrange'
+
+
     file_dir = experiment_dir + kernel + '/'
     exper_files = [f for f in os.listdir(file_dir) if os.path.isfile(os.path.join(file_dir, f))]
     data_files = dict()
@@ -120,9 +124,11 @@ if __name__ == '__main__':
                 algo = algo[6:]
             l1 = fulldf[fulldf.Algorithm == algo]
             algcount = 0
-            #NOTE: Choose different GPUs if pnpoly
-            #for gpu in pnpolyGPUs:
-            for gpu in GPUs:
+            if kernel == 'pnpoly':
+                theGPUs = pnpolyGPUs
+            else:
+                theGPUs = GPUs
+            for gpu in theGPUs:
                 l2 = l1[l1.GPU == gpu]
                 if l2.size == 0:
                     continue
@@ -130,9 +136,13 @@ if __name__ == '__main__':
                 comparel2 = comparel1[comparel1.GPU == gpu]
                 if comparel2.size == 0:
                     continue
-                #NOTE Choose low or high range, low-range is (0,4)
-                #for x in range(0,4):
-                for x in range(4,min(l2.shape[0], comparel2.shape[0])):
+                if fevalrange == 'lowrange':
+                    a = 0
+                    b = 4
+                elif fevalrange == 'highrange':
+                    a = 4
+                    b = min(l2.shape[0], comparel2.shape[0])
+                for x in range(a ,b):
                     fo = l2.iloc[x].iloc[4]
                     fostd = l2.iloc[x].iloc[5]
                     test = comparel2.iloc[x]
@@ -153,6 +163,44 @@ if __name__ == '__main__':
 
     competitiondf = pd.DataFrame(dflist, columns=["Algorithm1", "Algorithm2", "1beats2"])
 
+
+    ordered_algos = [
+        "BasinHopping",
+        "DualAnnealing",
+        "DifferentialEvolution",
+        "ParticleSwarm",
+        "RandomGreedyILS",
+        "BestILS",
+        "RandomGreedyTabu",
+        "BestTabu",
+        "RandomGreedyMLS",
+        "BestMLS",
+        "SimulatedAnnealing",
+        "GLS",
+        "GeneticAlgorithm",
+        "SMAC4BB",
+        "RandomSampling",
+        ]
+
+    count = 0
+    print('\nWINS:')
+    for algo in ordered_algos:
+        if "RandomGreedy" in algo:
+            algo = algo[6:]
+        print(algo+':', competitiondf[competitiondf.Algorithm2 == algo]['1beats2'].sum())
+        count += competitiondf[competitiondf.Algorithm2 == algo]['1beats2'].sum()
+    print("COUNT:", count)
+
+    count = 0
+    print('\nLOSSES:')
+    for algo in ordered_algos:
+        if "RandomGreedy" in algo:
+            algo = algo[6:]
+        print(algo+':', competitiondf[competitiondf.Algorithm1 == algo]['1beats2'].sum())
+        count += competitiondf[competitiondf.Algorithm1 == algo]['1beats2'].sum()
+    print("COUNT:", count)
+
+
     ### Make the seaborn heatmap
     sns.set_context("paper", rc={"font.size":1,"axes.titlesize":1,"axes.labelsize":1})
     sns.set(font_scale = 0.7)
@@ -167,8 +215,13 @@ if __name__ == '__main__':
     ax.set_ylabel('')
     ax.set_xlabel('')
     #NOTE: Set correct title
-    ax.set_title('Algorithm Column beats Row - convolution feval > 100', fontsize=9)
-    #ax.set_title('Algorithm Column beats Row - convolution feval <= 100', fontsize=9)
+    title_str = "Algorithm Column beats Row - " + kernel
+    if fevalrange == 'lowrange':
+        title_str += ' feval <= 200'
+    elif fevalrange == 'highrange':
+        title_str += ' feval > 200'
+
+    ax.set_title(title_str, fontsize=9)
 
     fig.set_size_inches(5, 4.5)
     plt.show()

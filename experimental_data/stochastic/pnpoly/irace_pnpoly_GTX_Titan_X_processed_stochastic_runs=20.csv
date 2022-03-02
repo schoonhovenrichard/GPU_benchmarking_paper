@@ -1,0 +1,8 @@
+pnpoly_GTX_Titan_X_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
+iRace,0.9062909321507269,0.08673485006032683,0.0,182.65,7.795241463462451,firstTest=2; nbConfigurations=0
+iRace,0.9392008377763919,0.08598668214429775,0.25,381.95,9.14488640544108,firstTest=2; nbConfigurations=0
+iRace,0.9480086119554817,0.05841227170759024,0.05,775.45,11.514178902096045,firstTest=2; nbConfigurations=0
+iRace,0.9905656920113017,0.022029545270806028,0.6,1569.9,12.434671392183187,firstTest=2; nbConfigurations=0
+iRace,0.9982308256121071,0.0043442661522044915,0.85,3158,21.068809573445417,firstTest=2; nbConfigurations=0
+iRace,1.0,0.0,1.0,6361.9,14.359665734271115,firstTest=2; nbConfigurations=0

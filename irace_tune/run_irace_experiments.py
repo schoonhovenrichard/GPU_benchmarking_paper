@@ -8,11 +8,12 @@ if __name__ == '__main__':
     budgets = [200, 400, 800, 1600, 3200, 6400]
     exper_runs = 20
 
-    if False:
-        #ftests = [2,5,10]
-        ftests = [10]
-        nconfgs = [10,50]
-        #nconfgs = [0,10,50]
+    tune_hyperpars = False
+    run_experiment = True
+
+    if tune_hyperpars: #FOR HYPERPARAMETER TUNING
+        ftests = [2,5,10]
+        nconfgs = [0,10,50]
         base_dir = 1
         for ft in ftests:
             for nc in nconfgs:
@@ -42,7 +43,8 @@ if __name__ == '__main__':
                 print("time in seconds:", elapsed)
                 print("time in minutes:", elapsed/60.0)
                 print("time in hours:", elapsed/3600.0)
-    if True:
+
+    if run_experiment: #FOR EXPERIMENTS
         base_dir = 10
         firstTest = 2
         nbConfigurations = 0
