@@ -1,0 +1,7 @@
+MI50_GEMM_processed
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
+SMAC4BB_STOCHASTIC_gp_LCB,0.3932334010699212,0.21836435834710805,0.0,25,0.0,model_type=gp; acq_func=LCB,25
+SMAC4BB_STOCHASTIC_gp_LCB,0.5906574086616523,0.13024040405124593,0.0,50,0.0,model_type=gp; acq_func=LCB,50
+SMAC4BB_STOCHASTIC_gp_LCB,0.5610633934443863,0.24459980430632355,0.0,100,0.0,model_type=gp; acq_func=LCB,100
+SMAC4BB_STOCHASTIC_gp_LCB,0.7269314621635501,0.10044271078745594,0.0,200,0.0,model_type=gp; acq_func=LCB,200
+SMAC4BB_STOCHASTIC_gp_LCB,0.7567651346839342,0.1155853645415372,0.0,400,0.0,model_type=gp; acq_func=LCB,400
