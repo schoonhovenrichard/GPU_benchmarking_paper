@@ -92,10 +92,9 @@ if __name__ == '__main__':
     'pnpoly_GTX_Titan_X_processed.json']
 
     #tune_files = convolution_files[1:2] + convolution_files[5:7] + GEMM_files[2:3] + GEMM_files[5:7] + pnpoly_files[2:3] + pnpoly_files[4:6]
-    test_files = convolution_files[0:1]
     #test_files = convolution_files[0:1] + convolution_files[2:5] + convolution_files[7:]
     #test_files = GEMM_files[0:2] + GEMM_files[3:5] + GEMM_files[7:]
-    #test_files = pnpoly_files[0:2] + pnpoly_files[3:4] + pnpoly_files[6:]
+    test_files = pnpoly_files[0:2] + pnpoly_files[3:4] + pnpoly_files[6:]
 
     for filename in test_files:
         ###  SETUP THE GPU CACHE DATA  ###
@@ -144,13 +143,10 @@ if __name__ == '__main__':
         print("There are", len(data['cache'].keys()), "keys in the searchspace")
 
         ## Define experimental parameters
-        if mode == 'DETERMINISTIC':
-            maxfevals = [25, 50, 100, 200, 400]
-        elif mode == 'STOCHASTIC':
-            maxfevals = [25, 50, 100, 200, 400, 800]
+        maxfevals = [25, 50, 100, 200, 400]
 
         minvar = 1e-10
-        exper_runs = 5
+        exper_runs = 20
         output_dir = '/experiment_files/'
         LOG_RESULTS = True
 
@@ -196,7 +192,7 @@ if __name__ == '__main__':
                 det = 'false'
             scenario = Scenario({
                 'run_obj': 'quality',  # we optimize quality (alternative to runtime)
-                'wallclock-limit': 9*maxfeval,  # max duration to run the optimization (in seconds)
+                'wallclock-limit': 10*maxfeval,  # max duration to run the optimization (in seconds)
                 'cs': cs,  # configuration space
                 'deterministic': det,
                 'limit_resources': True,  # Uses pynisher to limit memory and runtime
