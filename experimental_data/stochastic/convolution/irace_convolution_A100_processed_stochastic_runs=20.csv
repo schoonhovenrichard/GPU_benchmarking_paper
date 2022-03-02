@@ -1,8 +1,8 @@
-convolution_A100_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.848185000257058,0.025780760711894394,0.0,184.1,10.507641329803253,firstTest=2; nbConfigurations=0
-iRace,0.8754734287401514,0.027435709195317067,0.0,375.3,13.669404946044557,firstTest=2; nbConfigurations=0
-iRace,0.8785360016880215,0.015289243749923642,0.0,777.1,14.538153071722766,firstTest=2; nbConfigurations=0
-iRace,0.8827914144163503,0.0109261948213296,0.0,1569.7,10.897126613059639,firstTest=2; nbConfigurations=0
-iRace,0.9084598930979356,0.04770227635223863,0.2,3158.5,15.452814425994072,firstTest=2; nbConfigurations=0
-iRace,0.922351096030329,0.0536752530018259,0.25,6354.611111111111,26.232308074740672,firstTest=2; nbConfigurations=0
+convolution_A100_processed,,,,,,,,
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,,
+iRace,0.848185000257058,0.025780760711894,0,184.1,10.5076413298033,firstTest=2, nbConfigurations=0,200
+iRace,0.875473428740151,0.027435709195317,0,375.3,13.6694049460446,firstTest=2, nbConfigurations=0,400
+iRace,0.878536001688021,0.015289243749924,0,777.1,14.5381530717228,firstTest=2, nbConfigurations=0,800
+iRace,0.88279141441635,0.01092619482133,0,1569.7,10.8971266130596,firstTest=2, nbConfigurations=0,1600
+iRace,0.908459893097936,0.047702276352239,0.2,3158.5,15.4528144259941,firstTest=2, nbConfigurations=0,3200
+iRace,0.922351096030329,0.053675253001826,0.25,6354.61111111111,26.2323080747407,firstTest=2, nbConfigurations=0,6400

@@ -1,6 +1,6 @@
-GEMM_TITAN_RTX_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.9420623700653635,0.054505245549864426,0.0,380.57894736842104,11.955081622815761,firstTest=2; nbConfigurations=0
-iRace,0.9701949290297305,0.03202142564145919,0.0,778.15,12.436258533650282,firstTest=2; nbConfigurations=0
-iRace,0.9940227141480954,0.006211602246597226,0.2,1570.9,10.847750191192933,firstTest=2; nbConfigurations=0
-iRace,0.9977298071220501,0.00358680710731065,0.5,3163.529411764706,2.426871624613247,firstTest=2; nbConfigurations=0
+GEMM_TITAN_RTX_processed,,,,,,,,
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,,
+iRace,0.942062370065364,0.054505245549865,0,380.578947368421,11.9550816228158,firstTest=2, nbConfigurations=0,400
+iRace,0.97019492902973,0.032021425641459,0,778.15,12.4362585336503,firstTest=2, nbConfigurations=0,800
+iRace,0.994022714148095,0.006211602246597,0.2,1570.9,10.8477501911929,firstTest=2, nbConfigurations=0,1600
+iRace,0.99772980712205,0.003586807107311,0.5,3163.52941176471,2.42687162461325,firstTest=2, nbConfigurations=0,3200

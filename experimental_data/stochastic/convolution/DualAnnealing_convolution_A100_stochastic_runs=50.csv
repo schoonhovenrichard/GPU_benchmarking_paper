@@ -1,11 +1,11 @@
-convolution_A100_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval
-Dual annealing,0.7481325501403163,0.15540531324622017,0.0,25,0.0,iterations=1000000; method=COBYLA,25
-Dual annealing,0.6872464702186366,0.18208316085855583,0.02,49.74,1.8384776310850237,iterations=1000000; method=Powell,50
-Dual annealing,0.8017720966373406,0.11454522691172853,0.0,100,0.0,iterations=1000000; method=Powell,100
-Dual annealing,0.8421509658117906,0.036077826412944956,0.0,200,0.0,iterations=1000000; method=Powell,200
-Dual annealing,0.8661503842983669,0.041029329154569964,0.04,397.3,18.805394362864533,iterations=1000000; method=Powell,400
-Dual annealing,0.875480141702113,0.023018507104986957,0.0,800,0.0,iterations=1000000; method=Powell,800
-Dual annealing,0.9105865399057818,0.04635088567583799,0.18,1398.76,465.474458844666,iterations=1000000; method=Powell,1600
-Dual annealing,0.9051882176101382,0.03268132933041246,0.08,3025.62,641.815374622672,iterations=1000000; method=Powell,3200
-Dual annealing,0.9131994453896871,0.03906349285542959,0.1,6123.34,1143.6800717554768,iterations=1000000; method=Powell,6400
+convolution_A100_processed,,,,,,,,
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,MaxFEval,
+Dual annealing,0.748649782571253,0.137123299232122,0,25,0,iterations=1000000, method=COBYLA,25
+Dual annealing,0.75942026180612,0.155895395694268,0,50,0,iterations=1000000, method=Powell,50
+Dual annealing,0.807516435479255,0.099600287188331,0,100,0,iterations=1000000, method=Powell,100
+Dual annealing,0.829949489658281,0.08387144811542,0,200,0,iterations=1000000, method=Powell,200
+Dual annealing,0.85574010575247,0.059708154416609,0,400,0,iterations=1000000, method=Powell,400
+Dual annealing,0.879973242430993,0.032663335864922,0.02,790.1,70.0035713374682,iterations=1000000, method=Powell,800
+Dual annealing,0.898120072161846,0.034607206950639,0.06,1562.1,224.871323749601,iterations=1000000, method=Powell,1600
+Dual annealing,0.895296461149115,0.017037213769865,0,3200,0,iterations=1000000, method=Powell,3200
+Dual annealing,0.915276201328839,0.037747551383865,0.1,5920.9,1559.80705570285,iterations=1000000, method=Powell,6400

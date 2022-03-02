@@ -1,8 +1,8 @@
-pnpoly_V100_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.9819811923284717,0.018158519444543254,0.0,184.25,6.927253575932034,firstTest=2; nbConfigurations=0
-iRace,0.9962683478581271,0.0056355738683336295,0.1,383.1,8.807293628160219,firstTest=2; nbConfigurations=0
-iRace,0.9984766474887768,0.0012467604359002267,0.15,778.55,11.422392596631362,firstTest=2; nbConfigurations=0
-iRace,0.9990841841217656,0.0006300579013134586,0.3,1572.3,10.458439050279972,firstTest=2; nbConfigurations=0
-iRace,0.9992235379248522,0.0009189247190298475,0.5,3165.8,3.3654592241585224,firstTest=2; nbConfigurations=0
-iRace,0.9994447613059425,0.0007025139952732363,0.6,6366.2,5.217379862687683,firstTest=2; nbConfigurations=0
+pnpoly_V100_processed,,,,,,,,
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,,
+iRace,0.981981192328472,0.018158519444543,0,184.25,6.92725357593203,firstTest=2, nbConfigurations=0,200
+iRace,0.996268347858127,0.005635573868334,0.1,383.1,8.80729362816022,firstTest=2, nbConfigurations=0,400
+iRace,0.998476647488777,0.0012467604359,0.15,778.55,11.4223925966314,firstTest=2, nbConfigurations=0,800
+iRace,0.999084184121766,0.000630057901313,0.3,1572.3,10.45843905028,firstTest=2, nbConfigurations=0,1600
+iRace,0.999223537924852,0.00091892471903,0.5,3165.8,3.36545922415852,firstTest=2, nbConfigurations=0,3200
+iRace,0.999444761305942,0.000702513995273,0.6,6366.2,5.21737986268768,firstTest=2, nbConfigurations=0,6400

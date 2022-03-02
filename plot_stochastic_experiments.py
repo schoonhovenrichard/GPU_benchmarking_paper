@@ -12,14 +12,10 @@ if __name__ == '__main__':
     experiment_dir = root_dir + 'GPU_benchmarking_paper/experimental_data/stochastic/'
 
     algos = [
-        #"RandomGreedyMLS",
         "RandomGreedyILS",
         "DualAnnealing",
-        #"GLS",
         "GeneticAlgorithm",
-        #"SimulatedAnnealing",
-        #"RandomSampling",
-        #"SMAC4BB",
+        "SMAC4BB",
         'irace',
         ]
     budgets = [25,50,100,200,400,800,1600,3200,6400]
@@ -72,7 +68,7 @@ if __name__ == '__main__':
                 for k in range(len(list_data)):
                     list_data[k].append(gpuname)
                 algdata.append(list_data)
-        columns = ["Algorithm", "GPU", "Func_evals", "Func_evals_std", "Fraction_optim", "Fraction_optim_std", "Success_rate"]
+        columns = ["Algorithm", "GPU", "Func_evals", "Func_evals_std", "Fraction_optim", "Fraction_optim_std", "Success_rate", "Max_budget"]
         for gpudat in algdata:
             entries = [[] for i in range(len(budgets))]
             for dat in gpudat:
@@ -82,25 +78,29 @@ if __name__ == '__main__':
                 feval = float(dat[4])
                 feval_std = float(dat[5])
                 gpu = dat[-1]
+                maxfev = int(dat[-2])
                 if "RandomGreedy" in alg:
                     alg = alg[6:]
 
                 for i, budget in enumerate(budgets):
                     if feval <= 1.03*budget:
-                        entries[i] = [alg, gpu, feval, feval_std, fracopt, fracopt_std, success]
+                        entries[i] = [alg, gpu, feval, feval_std, fracopt, fracopt_std, success, maxfev]
                         break
-                entry = [alg, gpu, feval, feval_std, fracopt, fracopt_std, success]
+                entry = [alg, gpu, feval, feval_std, fracopt, fracopt_std, success, maxfev]
                 plot_lst.append(entry)
             for entry in entries:
                 if len(entry) == 0:
-                    dataframe_lst.append([alg, gpu, -np.inf, -np.inf, -np.inf, -np.inf, -np.inf])
+                    dataframe_lst.append([alg, gpu, -np.inf, -np.inf, -np.inf, -np.inf, -np.inf, -np.inf])
                 else:
                     dataframe_lst.append(entry)
     fulldf = pd.DataFrame(dataframe_lst, columns=columns)
     plotdf = pd.DataFrame(plot_lst, columns=columns)
 
-    graphs = False
-    competition_grid = True
+    ### PLOT TYPE
+    graphs = True
+    grid_graphs = False
+    competition_grid = False
+
     if competition_grid:
         ###    PERFORM COMPETITIONS    ###
         from scipy.stats import ttest_ind_from_stats
@@ -186,12 +186,8 @@ if __name__ == '__main__':
         ordered_algos = [
             "DualAnnealing",
             "RandomGreedyILS",
-            #"RandomGreedyMLS",
-            #"SimulatedAnnealing",
-            #"GLS",
             "GeneticAlgorithm",
-            #"SMAC4BB",
-            #"RandomSampling",
+            "SMAC4BB",
             'irace',
             ]
 
@@ -262,15 +258,60 @@ if __name__ == '__main__':
         sns.set(font_scale = 1.35)
 
         # Select subset to plot
-        g = sns.jointplot(data=plotdf, y='Fraction_optim', x='Func_evals', hue='Algorithm', ylim=(0.3, 1.05), xlim=(-200,6600), space=0.05, height=6.5)
-        g.set_axis_labels("Average function evaluations used", "Fraction of optimum", size=15)
-        legend_properties = {'size':18}
+        #g = sns.jointplot(data=plotdf, y='Fraction_optim', x='Func_evals', hue='Algorithm', ylim=(0.3, 1.05), xlim=(-200,6600), space=0.05, height=6.5)
+        #g.set_axis_labels("Average function evaluations used", "Fraction of optimum", size=15)
+        #legend_properties = {'size':18}
         #legend_properties = {'weight':'bold','size':18}
-        legendMain=g.ax_joint.legend(prop=legend_properties,loc='lower right')
+        #legendMain=g.ax_joint.legend(prop=legend_properties,loc='lower right')
         #g.fig.suptitle('Fraction of optimal GPU setting')
 
-        #ax.plot_joint(sns.kdeplot, zorder=0, levels=1)
-        #ax = sns.jointplot(data=plotdf, x='Fraction_optim', y='Func_evals', hue='Algorithm', kind="kde", levels=2)
+        fig, ax = plt.subplots()
+        fig.set_figheight(7)
+        fig.set_figwidth(11)
+        g = sns.lineplot(data=plotdf, x="Max_budget", y='Fraction_optim', hue='Algorithm', ax=ax)
+        g.set(xscale="log")
+        g.set(xlim=(25, 6400))
+        ticks = budgets
+        g.set(xticks=ticks)
+        g.set(xticklabels=ticks)
+
+        g.set_title('Fraction of optimal fitness (stochastic) for {0}'.format(kernel), size=19)
+        g.set_xlabel("Max budget", fontsize=21)
+        g.set_ylabel("Fraction of optimal fitness", fontsize=21)
+        ax.tick_params(labelsize=13)
+
+        legend_properties = {'size':20}
+        legendMain=g.legend(prop=legend_properties, loc='lower right')
+
+        #fig,ax = plt.subplots()
+        #for gpu_model, subdf in plotdf.groupby('GPU'):
+        #    ax = sns.lineplot(data=subdf, y='Fraction_optim', x='Func_evals', hue='Algorithm')
+
+        #ax = sns.jointplot(data=plotdf, y='Fraction_optim', x='Func_evals', hue='Algorithm', kind="kde", levels=5)
+        #ax.plot_joint(sns.kdeplot, zorder=0, levels=5)
         #ax = sns.boxplot(data=plotdf, x="GPU", y="Fraction_optim", hue="Algorithm", order=GPUs)
         plt.show()
 
+
+    if grid_graphs:
+        plotGPUs = ["A100", "TITAN_RTX", "MI50", "V100", "K20", "GTX_Titan_X"]
+
+        height = 4
+        fig, axes = plt.subplots(
+            nrows=1,
+            ncols=6,
+            figsize=(height * 6, height)
+        )
+        print(axes)
+        fig.patch.set_alpha(1.0)
+        for ax, gpu in zip(axes, plotGPUs):
+            print(ax)
+            print(gpu)
+            gpudf = plotdf[plotdf.GPU == gpu]
+            #sns.lineplot(data=gpudf, y='Fraction_optim', x='Func_evals', hue='Algorithm', ax=ax)
+            sns.lineplot(data=gpudf, y='Fraction_optim', x='Max_budget', hue='Algorithm', ax=ax)
+            #pcm = ax.imshow(v.squeeze(), cmap=cmap, clim=clim)
+            #fig.colorbar(pcm, ax=ax)
+            ax.set_title(gpu)
+        fig.tight_layout()
+        plt.show()

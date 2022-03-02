@@ -1,7 +1,7 @@
-GEMM_A100_processed
-Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings
-iRace,0.9406178187480208,0.058797327444914026,0.0,380.55,7.323178774850512,firstTest=2; nbConfigurations=0
-iRace,0.9903960488085991,0.00931032958460693,0.15,775.5,5.6054484772923345,firstTest=2; nbConfigurations=0
-iRace,0.9944494910005011,0.005055826310291339,0.15,1570.5,5.236511494456873,firstTest=2; nbConfigurations=0
-iRace,0.9975401099483482,0.003917842744208493,0.4,3160.65,9.729364127001798,firstTest=2; nbConfigurations=0
-iRace,0.9984587108869576,0.002894970212359485,0.55,6363.8,0.6958523739384593,firstTest=2; nbConfigurations=0
+GEMM_A100_processed,,,,,,,,
+Algorithm,Mean fraction of optimum,StDev fraction of optimum,Success rate,Mean function evaluations,StDev function evaluations,Settings,,
+iRace,0.940617818748021,0.058797327444914,0,380.55,7.32317877485051,firstTest=2, nbConfigurations=0,400
+iRace,0.990396048808599,0.009310329584607,0.15,775.5,5.60544847729233,firstTest=2, nbConfigurations=0,800
+iRace,0.994449491000501,0.005055826310291,0.15,1570.5,5.23651149445687,firstTest=2, nbConfigurations=0,1600
+iRace,0.997540109948348,0.003917842744209,0.4,3160.65,9.7293641270018,firstTest=2, nbConfigurations=0,3200
+iRace,0.998458710886958,0.002894970212359,0.55,6363.8,0.695852373938459,firstTest=2, nbConfigurations=0,6400
