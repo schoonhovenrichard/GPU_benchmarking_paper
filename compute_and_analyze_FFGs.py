@@ -107,7 +107,7 @@ if __name__ == '__main__':
         glob_fit = disc_space.fitness(indiv.bitstring)
         print("Global minimum:", bestkey, "with fitness", glob_fit)
 
-        
+
         ## Loop through the space and assign point types to each point.
         ## Also build the space dictionary.
         nidxs_dict = anutil.build_nodeidxs_dict(boundary_list, disc_space.fitness, bsize)
@@ -177,7 +177,7 @@ if __name__ == '__main__':
             writer.writerows(centralities)
 
         #NOTE: (Un)comment continue if you only want to compute pagerank centralities
-        #continue
+        continue
 
         ## Plot the graph with NetworkX
         color_map = []
@@ -231,8 +231,8 @@ if __name__ == '__main__':
             pos = nx.kamada_kawai_layout(G)
             pltnodes = nx.drawing.nx_pylab.draw_networkx_nodes(G, pos, ax=ax, node_size=size_map, node_color=color_map, cmap=my_cmap, vmin=0.75, vmax=1.0, linewidths=0.0)
             nx.drawing.nx_pylab.draw_networkx_edges(G, pos, ax=ax, arrows=True, arrowstyle=arst, arrowsize=arz, width=wdth, node_size=size_map, alpha=alp)
-            
-            plt.draw_if_interactive() 
+
+            plt.draw_if_interactive()
             ax.set_axis_off()
             plt.draw_if_interactive()
 

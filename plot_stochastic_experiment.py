@@ -25,8 +25,6 @@ if __name__ == '__main__':
     #kernel = "GEMM"
     #kernel = "pnpoly"
 
-    #fevalrange = 'lowrange'
-    #fevalrange = 'highrange'
     fevalrange = 'all'
 
 
