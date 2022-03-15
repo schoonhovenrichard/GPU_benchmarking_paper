@@ -275,7 +275,7 @@ if __name__ == '__main__':
         g.set(xticks=ticks)
         g.set(xticklabels=ticks)
 
-        g.set_title('Fraction of optimal fitness (stochastic) for {0}'.format(kernel), size=19)
+        g.set_title('Fraction of optimal fitness (stochastic) for {0}'.format(kernel), size=24)
         g.set_xlabel("Max budget", fontsize=21)
         g.set_ylabel("Fraction of optimal fitness", fontsize=21)
         ax.tick_params(labelsize=13)

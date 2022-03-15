@@ -99,7 +99,9 @@ if __name__ == '__main__':
     'pnpoly_K20_processed.json',
     'pnpoly_GTX_Titan_X_processed.json']
 
-    for filename in convolution_files:
+    dedisp_files = ["dedisp-NVIDIA_GeForce_GTX_1080_Ti-pwr-cache.json"]
+
+    for filename in dedisp_files:
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
@@ -122,8 +124,8 @@ if __name__ == '__main__':
         nr_vars = len(searchspace.keys())
 
         # Construct the GPU tuning space
-        mode = 'STOCHASTIC'
-        #mode = 'DETERMINISTIC'
+        #mode = 'STOCHASTIC'
+        mode = 'DETERMINISTIC'
         if mode == 'DETERMINISTIC':
             GPU_space = gpu_utils.GPU_tuning_space(searchspace, searchspace_orig, data['cache'], objective='time')
             CACHE = True
@@ -148,14 +150,14 @@ if __name__ == '__main__':
 
         ## Define experimental parameters
         if mode == 'DETERMINISTIC':
-            maxfevals = [25,50,100,200,400,800,1600]
+            maxfevals = [25,50,100,200,400,800,1600,3200,6400]
             #maxfevals = [25,50,75,100,150,200,400,600,800,1000,2000]
         elif mode == 'STOCHASTIC':
             maxfevals = [25,50,100,200,400,800,1600,3200,6400]
 
         minvar = 1e-10
         maxtime = 20
-        exper_runs = 50
+        exper_runs = 20
         output_dir = '/experiment_files/'
 
         #NOTE: To log results, set LOG_results to True
@@ -189,8 +191,8 @@ if __name__ == '__main__':
             PSO = False
 
         #ILS = True
-        DSA = True
-        #GA = True
+        #DSA = True
+        GA = True
         #RANDSAM = True
 
         ### SEED

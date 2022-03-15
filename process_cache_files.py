@@ -1,6 +1,9 @@
 import json
 import os
 import copy
+import statistics
+import numpy as np
+
 
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -47,6 +50,23 @@ if __name__ == '__main__':
         with open(data_path + filename, 'r') as myfile:
             data=myfile.read()
         data = json.loads(data)
+        print(data['tune_params'])
+
+        average_stdev = 0.0
+        N = 0
+        compiled_points = 0
+        for key, val in data['cache'].items():
+            meantime = val['time']
+            if meantime < 1e10:
+                compiled_points += 1
+            if 'times' in val.keys():
+                normalized_times = (np.array(val['times'])/float(meantime))
+                stdev = statistics.stdev(normalized_times)
+                average_stdev += stdev
+                N += 1
+        print('Average normalized stdev of runtime:', average_stdev/float(N))
+        print("Number of valid points in space:", compiled_points)
+        continue
 
         print("Device: " + str(data['device_name']))
         print("Kernel name: " + str(data['kernel_name']))

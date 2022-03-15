@@ -9,7 +9,7 @@ if __name__ == '__main__':
     ### Get the files
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = "/".join(current_dir.split('/')[:-1]) + "/"
-    experiment_dir = root_dir + 'GPU_benchmarking_paper/experimental_data/'
+    experiment_dir = root_dir + 'GPU_benchmarking_paper/experimental_data/deterministic/'
 
     algos = [
         "RandomSampling",
@@ -202,8 +202,8 @@ if __name__ == '__main__':
     # SEABORN
     # Select subset to plot
     #NOTE: Choose subset of algorithm you wish to plot
-    #subset = ["GreedyILS"]
-    subset = ["DualAnnealing"]
+    subset = ["GreedyILS"]
+    #subset = ["DualAnnealing"]
     frames = []
     for sub in subset:
         frames.append(fulldf[fulldf.Algorithm == sub])
