@@ -211,6 +211,11 @@ Send an email to ```richard.schoonhoven@cwi.nl```.
 
 If you use our benchmarking data, or some of our scripts in one of your research projects, please cite us:
 ```
-@misc{TODO: WILL BE FILLED IN UPON PUBLICATION
+@article{schoonhoven2022benchmarking,
+  title={Benchmarking optimization algorithms for auto-tuning GPU kernels},
+  author={Schoonhoven, Richard and van Werkhoven, Ben and Batenburg, K Joost},
+  journal={IEEE Transactions on Evolutionary Computation},
+  year={2022},
+  publisher={IEEE}
 }
 ```
